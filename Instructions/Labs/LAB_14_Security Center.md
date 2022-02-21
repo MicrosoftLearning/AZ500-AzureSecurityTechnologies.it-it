@@ -1,23 +1,23 @@
 ---
 lab:
-  title: 14 - Centro sicurezza di Azure
-  module: Module 04 - Manage Security Operations
-ms.openlocfilehash: 33134a5d1f7f5138083c1889c04f3296c3f05586
-ms.sourcegitcommit: 2eb153f2856445e5afaa218a012cb92e3d48f24b
+  title: 14 - Microsoft Defender for Cloud
+  module: Module 04 - Microsoft Defender for Cloud
+ms.openlocfilehash: 7b0d5647cd326bdca5dd89c63806465aba59afbb
+ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "132625734"
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137818181"
 ---
-# <a name="lab-14-azure-security-center"></a>Lab 14: Centro sicurezza di Azure
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# <a name="lab-14-microsoft-defender-for-cloud"></a>Lab 14: Microsoft Defender for Cloud
+# <a name="student-lab-manual"></a>Manuale del lab per studenti
 
 ## <a name="lab-scenario"></a>Scenario del lab
 
-È stato chiesto di creare un modello di verifica di un ambiente basato sul Centro sicurezza. In particolare, sarà necessario:
+È stata ricevuta la richiesta di creare un modello di verifica di un ambiente basato su Microsoft Defender for Cloud. In particolare, sarà necessario:
 
-- Configurare il Centro sicurezza per monitorare una macchina virtuale.
-- Consultare le raccomandazioni del Centro sicurezza per la macchina virtuale.
+- Configurare Microsoft Defender for Cloud per monitorare una macchina virtuale.
+- Esaminare le raccomandazioni di Microsoft Defender for Cloud per la macchina virtuale.
 - Implementare le raccomandazioni per la configurazione guest e l'accesso Just-In-Time alle macchine virtuali. 
 - Capire come poter usare il punteggio di sicurezza per determinare lo stato di avanzamento del processo di creazione di un'infrastruttura più sicura.
 
@@ -27,101 +27,104 @@ ms.locfileid: "132625734"
 
 In questo lab verrà completato l'esercizio seguente:
 
-- Esercizio 1: Implementare il Centro sicurezza
+- Esercizio 1: Implementare Microsoft Defender for Cloud
 
-### <a name="exercise-1-implement-security-center"></a>Esercizio 1: Implementare il Centro sicurezza
+### <a name="exercise-1-implement-microsoft-defender-for-cloud"></a>Esercizio 1: Implementare Microsoft Defender for Cloud
 
 In questo esercizio verranno eseguite le attività seguenti:
 
-- Attività 1: Configurare il Centro sicurezza
-- Attività 2: Esaminare le raccomandazioni del Centro sicurezza
-- Attività 3: Implementare la raccomandazione del Centro sicurezza per abilitare l'accesso Just-In-Time alle macchine virtuali
+- Attività 1: Configurare Microsoft Defender for Cloud
+- Attività 2: Esaminare le raccomandazioni di Microsoft Defender for Cloud
+- Attività 3: Implementare la raccomandazione di Microsoft Defender for Cloud per abilitare l'accesso JIT (Just-In-Time) alla macchina virtuale
 
-#### <a name="task-1-configure-security-center"></a>Attività 1: Configurare il Centro sicurezza
+#### <a name="task-1-configure-microsoft-defender-for-cloud"></a>Attività 1: Configurare Microsoft Defender for Cloud
 
-In questa attività si eseguirà l'onboarding e la configurazione del Centro sicurezza.
+In questa attività si eseguiranno l'onboarding e la configurazione di Microsoft Defender for Cloud.
 
 1. Accedere al portale di Azure **`https://portal.azure.com/`** .
 
     >**Nota**: accedere al portale di Azure con un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per il lab.
 
-1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Centro sicurezza** e premere **INVIO**.
+2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Microsoft Defender for Cloud** e premere **INVIO**.
 
-1. Nel pannello **Centro sicurezza \| Attività iniziali** fare clic su **Aggiorna** e quindi su **Installa agenti**.
+3. Se l'operazione non è stata completata in precedenza, nel pannello **Microsoft Defender for Cloud \| Introduzione** fare clic su **Aggiorna**.
      
-1. Nel pannello **Centro sicurezza \| Attività iniziali**, nella sezione **Gestione** disponibile nel menu verticale a sinistra, fare clic su **Prezzi e impostazioni**.
+4. Se l'operazione non è stata completata in precedenza, nel pannello **Microsoft Defender for Cloud \| Introduzione** scorrere verso il basso nella scheda **Installa agenti** e fare clic su **Installa agenti**.
 
-1. Nel pannello **Centro sicurezza \| Prezzi e impostazioni** fare clic sulla voce che rappresenta la sottoscrizione e nel pannello **Impostazioni \| Piani di Azure Defender** verificare che sia selezionata l'opzione **Azure Defender - On**. 
+5. Nel pannello **Microsoft Defender for Cloud \| Introduzione**, nella scheda **Aggiorna** >> nella sezione **Select workspaces with enhanced security features** (Seleziona aree di lavoro con funzionalità di sicurezza avanzate) >> attivare il **piano di Microsoft Defender** selezionando l'area di lavoro Log Analytics. 
 
-    >**Nota**: verificare tutte le funzionalità disponibili nel livello Azure Defender e assicurarsi che Azure Defender sia attivato per ogni tipo di risorsa. 
+    >**Nota**: esaminare tutte le funzionalità disponibili nell'ambito dei piani di Microsoft Defender. 
 
-1. Se sono state apportate modifiche, fare clic su **Salva**.
+6. Nel pannello **Piani di Defender** selezionare **Abilitare tutti i piani di Microsoft Defender for Cloud** e fare clic su **Salva**.
 
-1. Nel pannello **Impostazioni \| Piani di Azure Defender** selezionare **Abilita tutto** e fare clic su **Salva**.
+7. Passare a **Microsoft Defender for Cloud**  e fare clic su **Impostazioni ambiente** nelle impostazioni di gestione nella barra dei menu verticale a sinistra.
 
-1. Nel pannello **Impostazioni \| Piani di Azure Defender**, nella barra dei menu verticale disponibile sul lato sinistro, fare clic su **Provisioning automatico**.
+8. Nel pannello **Microsoft Defender for Cloud | Impostazioni ambiente** fare clic sulla sottoscrizione pertinente. 
 
-1. Nel pannello **Impostazioni \| Provisioning automatico** assicurarsi che l'opzione **Provisioning automatico** sia impostata su **Sì** per il primo elemento **Agente di Log Analytics per VM di Azure**. 
+9. Nel pannello **Impostazioni | Piani di Defender**, nel menu verticale a sinistra fare clic su **Provisioning automatico**.
 
-1. Nel pannello **Impostazioni \| Provisioning automatico**, nel menu verticale disponibile sul lato sinistro, fare clic su **Automazione del flusso di lavoro**.
+10. Nel pannello **Impostazioni | Provisioning automatico** verificare che l'opzione Provisioning automatico sia impostata su **Sì** per la prima voce, **Agente di Log Analytics per VM di Azure**.
 
-1. Nel pannello **Impostazioni \| Automazione del flusso di lavoro** fare clic su **+ Aggiungi l'automazione del flusso di lavoro**.
+11. Nel pannello **Impostazioni \| Automazione del flusso di lavoro** fare clic su **+ Aggiungi l'automazione del flusso di lavoro**.
 
-1. Nel pannello **Aggiungi l'automazione del flusso di lavoro** consultare le impostazioni disponibili. 
+12. Nel pannello **Aggiungi l'automazione del flusso di lavoro** consultare le impostazioni disponibili. 
 
-    >**Nota**: è possibile attivare avvisi di rilevamento delle minacce basati su azioni e le raccomandazioni del Centro sicurezza. È inoltre possibile configurare un'azione basata su app per la logica. 
+    >**Nota**: è possibile attivare gli avvisi di rilevamento delle minacce basati sulle azioni e le raccomandazioni di Microsoft Defender for Cloud. È inoltre possibile configurare un'azione basata su app per la logica. 
 
-1. Nel pannello **Aggiungi l'automazione del flusso di lavoro** fare clic su **Annulla**.
+13. Nel pannello **Aggiungi l'automazione del flusso di lavoro** fare clic su **Annulla**.
 
-    >**Nota**: il Centro sicurezza offre molte informazioni dettagliate sulle macchine virtuali, tra cui lo stato della procedura di aggiornamento del sistema, le configurazioni di sicurezza del sistema operativo e la protezione degli endpoint.
+    >**Nota**: Microsoft Defender for Cloud offre molte informazioni dettagliate sulle macchine virtuali, tra cui lo stato di aggiornamento del sistema, le configurazioni di sicurezza del sistema operativo e la protezione degli endpoint.
 
-1. Tornare al pannello **Centro sicurezza \| Prezzi e impostazioni** e fare clic sulla voce che rappresenta l'area di lavoro Log Analytics creata nel lab precedente.
+14. Tornare al pannello **Microsoft Defender for Cloud \| Impostazioni ambiente**, espandere la sottoscrizione e fare clic sulla voce che rappresenta l'area di lavoro Log Analytics creata nel lab precedente.
 
-1. Nel pannello **Impostazioni \| Piani di Azure Defender** assicurarsi che sia selezionata l'opzione **Azure Defender - On** e fare clic su **Salva**.
+15. Nel pannello **Impostazioni \| Piani di Defender** verificare che l'opzione **Abilitare tutti i piani di Microsoft Defender for Cloud** sia selezionata e fare clic su **Salva**.
+
+16. Selezionare **Raccolta dati** nel riquadro **Microsoft Defender for Cloud \| Impostazioni**. Selezionare **Tutti gli eventi** e **Salva**.
 
 
-#### <a name="task-2-review-the-security-center-recommendation"></a>Attività 2: Esaminare le raccomandazioni del Centro sicurezza
+#### <a name="task-2-review-the-microsoft-defender-for-cloud-recommendation"></a>Attività 2: Esaminare la raccomandazione di Microsoft Defender for Cloud
 
-In questa attività si esamineranno le raccomandazioni del Centro sicurezza. 
+In questa attività si esamineranno le raccomandazioni di Microsoft Defender for Cloud. 
 
-1. Nel portale di Azure tornare al pannello **Centro sicurezza \| Panoramica**. 
+1. Nel portale di Azure tornare al pannello **Microsoft Defender for Cloud \| Panoramica**. 
 
-1. Nel pannello **Centro sicurezza \| Panoramica** osservare il riquadro **Punteggio di sicurezza**.
+2. Nel pannello **Microsoft Defender for Cloud \| Panoramica** esaminare il riquadro **Punteggio di sicurezza**.
 
     >**Nota**: registrare il punteggio corrente, se disponibile.
 
-1. Tornare al pannello **Centro sicurezza \| Panoramica**  e selezionare **Risorse valutate**.
+3. Tornare al pannello **Microsoft Defender for Cloud \| Panoramica** e selezionare **Risorse valutate**.
 
-1. Nel pannello **Inventario** selezionare la voce **myVM**.
+4. Nel pannello **Inventario** selezionare la voce **myVM**.
 
     >**Nota**: potrebbe essere necessario attendere alcuni minuti e aggiornare la pagina del browser per poter visualizzare la voce.
     
-1. Nel pannello **Integrità delle risorse**, nella scheda **Raccomandazioni**, esaminare l'elenco delle raccomandazioni per **myVM**.
+5. Nel pannello **Integrità delle risorse**, nella scheda **Raccomandazioni**, esaminare l'elenco delle raccomandazioni per **myVM**.
 
 
-#### <a name="task-3-implement-the-security-center-recommendation-to-enable-just-in-time-vm-access"></a>Attività 3: Implementare la raccomandazione del Centro sicurezza per abilitare l'accesso Just-In-Time alle macchine virtuali
+#### <a name="task-3-implement-the-microsoft-defender-for-cloud-recommendation-to-enable-just-in-time-vm-access"></a>Attività 3: Implementare la raccomandazione di Microsoft Defender for Cloud per abilitare l'accesso JIT (Just-In-Time) alla macchina virtuale
 
-In questa attività verrà implementata la raccomandazione del Centro sicurezza per abilitare l'accesso Just-In-Time alla macchina virtuale. 
+In questa attività si implementerà la raccomandazione di Microsoft Defender for Cloud per abilitare l'accesso JIT (Just-In-Time) alla macchina virtuale. 
 
-1. Nel portale di Azure tornare al pannello **Centro sicurezza \| Panoramica** e selezionare il riquadro **Azure Defender**.
+1. Nel portale di Azure tornare al pannello **Microsoft Defender for Cloud \| Panoramica** e selezionare **Protezioni carico di lavoro** nel riquadro **Sicurezza cloud**.
 
-1. Nel pannello **Azure Defender**, nella sezione **Protezione avanzata**, fare clic sul riquadro **Accesso Just-In-Time alla VM** e nel pannello **Accesso Just-In-Time alla VM** fare clic su **Prova accesso Just-In-Time alla VM**.
+2. Nel pannello **Protezioni carico di lavoro**, nella sezione **Protezione avanzata** fare clic sul riquadro **Accesso Just-In-Time alla VM** e nel pannello **Accesso Just-In-Time alla VM** fare clic su **Try Just in time VM access** (Prova accesso Just-In-Time alla VM).
 
-1. Nel pannello **Accesso Just-In-Time alla VM** selezionare **Non configurato** e quindi fare clic sulla voce **myVM**.
+    >**Nota**: se le macchine virtuali non sono elencate, passare al pannello **Macchina virtuale**, fare clic su **Configurazione** e selezionare l'opzione **Enable the Just-in-time VMs** (Abilita VM Just-In-Time) in **Accesso Just-In-Time alla VM**. Ripetere il passaggio precedente per tornare a **Microsoft Defender for Cloud** e aggiornare la pagina. Verrà visualizzata la macchina virtuale.
+
+3. Nel pannello **Accesso Just-In-Time alla VM** selezionare **Non configurato** e quindi fare clic sulla voce **myVM**.
 
     >**Nota**: potrebbe essere necessario attendere alcuni minuti prima che la voce **myVM** diventi disponibile.
 
-1. Selezionare **Abilita JIT in 1 VM**.
+4. Selezionare **Abilita JIT in 1 VM**.
 
-1. Nel pannello **Configurazione dell'accesso JIT alla VM**, all'estrema destra della riga che fa riferimento alla porta **22**, fare clic sul pulsante con i puntini di sospensione e quindi su **Elimina**.
+5. Nel pannello **Configurazione dell'accesso JIT alla VM**, all'estrema destra della riga che fa riferimento alla porta **22**, fare clic sul pulsante con i puntini di sospensione e quindi su **Elimina**.
 
-1. Nel pannello **Configurazione dell'accesso JIT alla VM** fare clic su **Salva**.
+6. Nel pannello **Configurazione dell'accesso JIT alla VM** fare clic su **Salva**.
 
     >**Nota**: monitorare lo stato di avanzamento della configurazione facendo clic sull'icona **Notifiche** sulla barra degli strumenti e visualizzando il pannello **Notifiche**. 
 
     >**Nota**: la propagazione nel punteggio di sicurezza delle raccomandazioni implementate in questo lab può richiedere del tempo. Controllare periodicamente il punteggio di sicurezza per verificare che sia stata presa in considerazione l'implementazione di queste funzionalità. 
 
-> Risultati: è stato eseguito l'onboarding del Centro sicurezza e sono state implementate le raccomandazioni relative alle macchine virtuali. 
+> Risultati: è stato eseguito l'onboarding di Microsoft Defender for Cloud e sono state implementate le raccomandazioni per la macchina virtuale. 
 
-
->**Nota**: non rimuovere le risorse da questo lab poiché saranno necessarie per il lab su Azure Sentinel.
+    >**Note**: Do not remove the resources from this lab as they are needed for the Azure Sentinel lab.

@@ -2,12 +2,12 @@
 lab:
   title: 02 - Criteri di Azure
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: cde2b0c001dedef2b29c2da320e2952f9766b069
-ms.sourcegitcommit: 2eb153f2856445e5afaa218a012cb92e3d48f24b
+ms.openlocfilehash: d530ee043d5cf56d6f805e597d7a35eee47b3d5e
+ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "132625683"
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137818159"
 ---
 # <a name="lab-02-azure-policy"></a>Lab 02 - Criteri di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -136,9 +136,9 @@ In questa attività verrà testata l'assegnazione del criterio Località consent
 
     > **Nota**: se l'avviso **Convalida non riuscita** non viene visualizzato, fare clic su **Indietro** e attendere ancora alcuni minuti.
 
-1. Fare clic sul messaggio di errore per aprire il pannello **Errori**. Verrà visualizzato il messaggio di errore dettagliato che indica che la distribuzione della risorsa **myVnet** non è consentita dal criterio.
+1. Nella scheda **Informazioni di base** fare clic sul collegamento del messaggio di errore per aprire il pannello **Assegnazione criteri**. Verrà visualizzata l'assegnazione dei criteri che limita la posizione.
 
-1. Chiudere il pannello **Errori**, nel pannello **Crea rete virtuale** fare clic sulla scheda **Informazioni di base** e nel menu a discesa **Area** selezionare **(Europa) Regno Unito meridionale**.
+1. Chiudere il pannello **Assegnazione criteri**, nel pannello **Crea rete virtuale** fare clic sulla scheda **Informazioni di base** e nel menu a discesa **Area** selezionare **(Europa) Regno Unito meridionale**.
 
 1. Fare clic su **Rivedi e crea**, verificare che la convalida sia riuscita, fare clic su **Crea** e verificare che la rete virtuale sia stata creata. 
 

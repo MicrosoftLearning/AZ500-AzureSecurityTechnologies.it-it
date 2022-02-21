@@ -2,12 +2,12 @@
 lab:
   title: 09 - Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: d4b8e21e2bc795f4e9147ddc1ca81db2ddbc52cd
-ms.sourcegitcommit: 2eb153f2856445e5afaa218a012cb92e3d48f24b
+ms.openlocfilehash: 1bc1e0c7430d50681f6008e619f77c7412e420a7
+ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "132625676"
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137818186"
 ---
 # <a name="lab-09-configuring-and-securing-acr-and-aks"></a>Lab 09: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -59,29 +59,29 @@ In questa attività verrà creato un gruppo di risorse per il lab e un'istanza d
 
     >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per questo lab e il ruolo Amministratore globale nel tenant di Azure AD associato alla sottoscrizione.
 
-1. Nel portale di Azure aprire Cloud Shell facendo clic sulla prima icona nell'angolo in alto a destra. Se richiesto, fare clic su **Bash** e su **Crea archivio**.
+2. Nel portale di Azure aprire Cloud Shell facendo clic sulla prima icona nell'angolo in alto a destra. Se richiesto, fare clic su **Bash** e su **Crea archivio**.
 
-1. Accertarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **Bash**.
+3. Accertarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **Bash**.
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per creare un nuovo gruppo di risorse per questo lab:
+4. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per creare un nuovo gruppo di risorse per questo lab:
 
     ```sh
     az group create --name AZ500LAB09 --location eastus
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell, eseguire questo comando per verificare la creazione del gruppo di risorse:
+5. Nella sessione di Bash all'interno del riquadro Cloud Shell, eseguire questo comando per verificare la creazione del gruppo di risorse:
 
     ```
     az group list --query "[?name=='AZ500LAB09']" -o table
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per creare una nuova istanza di Registro Azure Container che abbia un nome univoco a livello globale: 
+6. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per creare una nuova istanza di Registro Azure Container che abbia un nome univoco a livello globale: 
 
     ```sh
     az acr create --resource-group AZ500LAB09 --name az500$RANDOM$RANDOM --sku Basic
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per verificare la creazione del nuovo Registro Azure Container:
+7. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per verificare la creazione del nuovo Registro Azure Container:
 
     ```sh
     az acr list --resource-group AZ500LAB09
@@ -99,7 +99,7 @@ In questa attività verrà creato un Dockerfile, da cui verrà creata un'immagin
     echo FROM nginx > Dockerfile
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per creare un'immagine dal Dockerfile ed eseguirne il push nel nuovo Registro Azure Container. 
+2. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per creare un'immagine dal Dockerfile ed eseguirne il push nel nuovo Registro Azure Container. 
 
     >**Nota**: il punto finale al termine della riga di comando è necessario. Definisce la directory corrente come percorso del Dockerfile. 
 
@@ -111,17 +111,17 @@ In questa attività verrà creato un Dockerfile, da cui verrà creata un'immagin
 
     >**Nota**: attendere il completamento del comando. L'operazione potrebbe richiedere circa due minuti.
 
-1. Chiudere il riquadro Cloud Shell.
+3. Chiudere il riquadro Cloud Shell.
 
-1. Nel portale di Azure passare al gruppo di risorse **AZ500Lab09** e nell'elenco delle risorse fare clic sulla voce che rappresenta l'istanza di Registro Azure Container di cui è stato effettuato il provisioning nell'attività precedente.
+4. Nel portale di Azure passare al gruppo di risorse **AZ500Lab09** e nell'elenco delle risorse fare clic sulla voce che rappresenta l'istanza di Registro Azure Container di cui è stato effettuato il provisioning nell'attività precedente.
 
-1. Nella sezione **Servizi** del pannello Registro container fare clic su **Repository**. 
+5. Nella sezione **Servizi** del pannello Registro container fare clic su **Repository**. 
 
-1. Verificare che l'elenco di repository includa la nuova immagine del contenitore denominata **sample/nginx**.
+6. Verificare che l'elenco di repository includa la nuova immagine del contenitore denominata **sample/nginx**.
 
-1. Fare clic sulla voce **sample/nginx** e verificare la presenza del tag **v1** che identifica la versione dell'immagine.
+7. Fare clic sulla voce **sample/nginx** e verificare la presenza del tag **v1** che identifica la versione dell'immagine.
 
-1. Fare clic sulla voce **v1** per visualizzare il manifesto dell'immagine.
+8. Fare clic sulla voce **v1** per visualizzare il manifesto dell'immagine.
 
     >**Nota**: il manifesto include il digest sha256, la data di creazione del manifesto e le voci della piattaforma. 
 
@@ -131,9 +131,9 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **servizi Kubernetes** e premere **INVIO**.
 
-1. Nel pannello **Servizi Kubernetes** fare clic su **+ Crea** e nel menu a discesa fare clic su **+ Aggiungi cluster Kubernetes**.
+2. Nel pannello **Servizi Kubernetes** fare clic su **+ Crea** e nel menu a discesa fare clic su **+ Crea un cluster Kubernetes**
 
-1. Nella scheda **Dati principali** del pannello **Crea cluster Kubernetes** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
+3. Nella scheda **Informazioni di base** del pannello **Crea un cluster Kubernetes** fare clic su **Change preset configurations** (Modifica configurazioni predefinite), selezionare **Sviluppo/test ($)** e fare clic su **Applica**. Specificare ora le impostazioni seguenti, senza modificare i valori predefiniti per le altre impostazioni:
 
     |Impostazione|Valore|
     |----|----|
@@ -144,51 +144,51 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
     |Zone di disponibilità |**Nessuno**|
     |Numero di nodi|**1**|
 
-1. Fare clic su **Avanti: Pool di nodi >** e, nella scheda **Pool di nodi** del pannello **Crea cluster Kubernetes**, specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
+4. Fare clic su **Avanti: Pool di nodi >** e, nella scheda **Pool di nodi** del pannello **Crea cluster Kubernetes**, specificare le impostazioni seguenti e non modificare i valori predefiniti per le altre impostazioni:
 
     |Impostazione|Valore|
     |----|----|
     |Abilitare i nodi virtuali|Casella di controllo deselezionata|
     |Set di scalabilità di macchine virtuali|Casella di controllo deselezionata|
     
-1. Fare clic su **Avanti: Autenticazione >** ; nella scheda **Autenticazione** del pannello **Crea cluster Kubernetes** accettare le impostazioni predefinite e fare clic su **Avanti: Rete >** . 
+5. Fare clic su **Avanti: Autenticazione >** ; nella scheda **Autenticazione** del pannello **Crea cluster Kubernetes** accettare le impostazioni predefinite e fare clic su **Avanti: Rete >** . 
 
-1. Nella scheda **Rete** del pannello **Crea cluster Kubernetes** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
+6. Nella scheda **Rete** del pannello **Crea cluster Kubernetes** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
     |Impostazione|Valore|
     |----|----|
     |Configurazione di rete|**Azure CNI**|
-    |Prefisso nome DNS|Qualsiasi nome host DNS valido e univoco a livello globale|
+    |Prefisso nome DNS|**Lasciare il valore predefinito**|
 
     >**Nota**: il servizio Azure Kubernetes può essere configurato come cluster privato. In questo modo viene assegnato un indirizzo IP privato al server API per garantire che il traffico di rete tra il server API e i pool di nodi rimanga solo nella rete privata. Per altre informazioni, visitare la pagina [Creare un cluster privato del servizio Azure Kubernetes](https://docs.microsoft.com/en-us/azure/aks/private-clusters).
 
-1. Fare clic su **Avanti: Integrazioni >** , nella scheda **Integrazioni** del pannello **Crea cluster Kubernetes** impostare **Monitoraggio contenitori** su **Disabilitato**. 
+7. Fare clic su **Avanti: Integrazioni >** , nella scheda **Integrazioni** del pannello **Crea cluster Kubernetes** impostare **Monitoraggio contenitori** su **Disabilitato**. 
 
     >**Nota**: negli scenari di produzione è necessario abilitare il monitoraggio. Il monitoraggio è disabilitato in questo caso perché non è trattato nel lab. 
 
-1. Fare clic su **Rivedi e crea** e quindi su **Crea**.
+8. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
     >**Nota**: attendere il completamento della distribuzione. L'operazione potrebbe richiedere circa 10 minuti.
 
-1. Al termine della distribuzione, nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Gruppi di risorse** e premere **INVIO**.
+9. Al termine della distribuzione, nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Gruppi di risorse** e premere **INVIO**.
 
-1. Nel pannello **Gruppi di risorse**, nell'elenco dei gruppi di risorse, prendere nota del nuovo gruppo di risorse denominato **MC_AZ500LAB09_MyKubernetesCluster_eastus** che contiene i componenti dei nodi del servizio Azure Kubernetes. Esaminare le risorse nel gruppo di risorse. 
+10. Nel pannello **Gruppi di risorse**, nell'elenco dei gruppi di risorse, prendere nota del nuovo gruppo di risorse denominato **MC_AZ500LAB09_MyKubernetesCluster_eastus** che contiene i componenti dei nodi del servizio Azure Kubernetes. Esaminare le risorse nel gruppo di risorse. 
     
-1. Tornare al pannello **Gruppi di risorse** e fare clic sulla voce **AZ500LAB09**. 
+11. Tornare al pannello **Gruppi di risorse** e fare clic sulla voce **AZ500LAB09**. 
 
     >**Nota**: nell'elenco delle risorse prendere nota del cluster del servizio Azure Kubernetes e della rete virtuale corrispondente.
 
-1. Nel portale di Azure aprire una sessione di Bash in Cloud Shell. 
+12. Nel portale di Azure aprire una sessione di Bash in Cloud Shell. 
 
     >**Nota**: accertarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **Bash**.
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per connettersi al cluster Kubernetes:
+13. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per connettersi al cluster Kubernetes:
 
     ```sh
     az aks get-credentials --resource-group AZ500LAB09 --name MyKubernetesCluster
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per elencare i nodi del cluster Kubernetes: 
+14. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per elencare i nodi del cluster Kubernetes: 
 
     ```sh
     kubectl get nodes
@@ -212,7 +212,7 @@ In questa attività verrà concessa al cluster del servizio Azure Kubernetes l'a
 
     >**Nota**: il completamento del comando può richiedere alcuni minuti. 
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per concedere il ruolo Collaboratore alla rete virtuale del cluster del servizio Azure Kubernetes. 
+2. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per concedere il ruolo Collaboratore alla rete virtuale del cluster del servizio Azure Kubernetes. 
 
     ```sh
     RG_AKS=AZ500LAB09
@@ -234,7 +234,7 @@ In questa attività verrà eseguito il download dei file manifesto, verrà modif
 
 1. Nella sessione di Bash all'interno del riquadro Cloud Shell fare clic sull'icona **Carica/Scarica file**, nel menu a discesa fare clic su **Carica**, nella finestra di dialogo **Apri** selezionare **\\Allfiles\\Labs\\09\\nginxexternal.yaml** e quindi fare clic su **Apri**. Successivamente, selezionare **\\Allfiles\\Labs\\09\\nginxinternal.yaml** e fare clic su **Apri**.
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per identificare il nome dell'istanza di Registro Azure Container:
+2. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per identificare il nome dell'istanza di Registro Azure Container:
 
     ```sh
     echo $ACRNAME
@@ -242,7 +242,7 @@ In questa attività verrà eseguito il download dei file manifesto, verrà modif
 
     >**Nota**: registrare il nome dell'istanza di Registro Azure Container. Questo valore sarà necessario più avanti in questa attività.
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per aprire il file nginxexternal.yaml e modificarne il contenuto. 
+3. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per aprire il file nginxexternal.yaml e modificarne il contenuto. 
 
     ```sh
     code ./nginxexternal.yaml
@@ -250,17 +250,17 @@ In questa attività verrà eseguito il download dei file manifesto, verrà modif
 
     >**Nota**: si tratta del file yaml *esterno*.
 
-1. Nel riquadro dell'editor scorrere fino alla **riga 24** e sostituire il segnaposto **`<ACRUniquename>`** con il nome del Registro Azure Container.
+4. Nel riquadro dell'editor scorrere fino alla **riga 24** e sostituire il segnaposto **`<ACRUniquename>`** con il nome del Registro Azure Container.
 
-1. Nell'angolo in alto a destra del riquadro dell'editor fare clic sull'icona con i **puntini di sospensione**, fare clic su **Salva** e quindi su **Chiudi editor**. 
+5. Nell'angolo in alto a destra del riquadro dell'editor fare clic sull'icona con i **puntini di sospensione**, fare clic su **Salva** e quindi su **Chiudi editor**. 
 
-1. Nella sessione di Bash nel riquadro Cloud Shell eseguire questo comando per applicare la modifica al cluster:
+6. Nella sessione di Bash nel riquadro Cloud Shell eseguire questo comando per applicare la modifica al cluster:
 
     ```sh
     kubectl apply -f nginxexternal.yaml
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell, esaminare l'output del comando eseguito nell'attività precedente per verificare che la distribuzione e il servizio corrispondente siano stati creati. 
+7. Nella sessione di Bash all'interno del riquadro Cloud Shell, esaminare l'output del comando eseguito nell'attività precedente per verificare che la distribuzione e il servizio corrispondente siano stati creati. 
 
     ```
     deployment.apps/nginxexternal created
@@ -277,11 +277,11 @@ In questa attività verificare che il contenitore sia accessibile esternamente u
     kubectl get service nginxexternal
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell esaminare l'output e registrare il valore nella colonna External-IP. Saranno necessari nel passaggio successivo. 
+2. Nella sessione di Bash all'interno del riquadro Cloud Shell esaminare l'output e registrare il valore nella colonna External-IP. Saranno necessari nel passaggio successivo. 
 
-1. Aprire Internet Explorer e passare all'indirizzo IP identificato nel passaggio precedente.
+3. Aprire una nuova scheda del browser e passare all'indirizzo IP identificato nel passaggio precedente.
 
-1. Assicurarsi che la pagina **Benvenuti in nginx!** sia visualizzata. 
+4. Assicurarsi che la pagina **Benvenuti in nginx!** sia visualizzata. 
 
 #### <a name="task-7-deploy-an-internal-service-to-aks"></a>Attività 7: Distribuire un servizio interno nel servizio Azure Kubernetes
 
@@ -295,30 +295,30 @@ In questa attività verrà distribuito il servizio interno nel servizio Azure Ku
 
     >**Nota**: si tratta del file yaml *interno*.
 
-1. Nel riquadro dell'editor scorrere fino alla riga contenente il riferimento all'immagine del contenitore e sostituire il segnaposto **`<ACRUniquename>`** con il nome del Registro Azure Container.
+2. Nel riquadro dell'editor scorrere fino alla riga contenente il riferimento all'immagine del contenitore e sostituire il segnaposto **`<ACRUniquename>`** con il nome del Registro Azure Container.
 
-1. Nell'angolo in alto a destra del riquadro dell'editor fare clic sull'icona con i **puntini di sospensione**, fare clic su **Salva** e quindi su **Chiudi editor**. 
+3. Nell'angolo in alto a destra del riquadro dell'editor fare clic sull'icona con i **puntini di sospensione**, fare clic su **Salva** e quindi su **Chiudi editor**. 
 
-1. Nella sessione di Bash nel riquadro Cloud Shell eseguire questo comando per applicare la modifica al cluster:
+4. Nella sessione di Bash nel riquadro Cloud Shell eseguire questo comando per applicare la modifica al cluster:
 
     ```sh
     kubectl apply -f nginxinternal.yaml
     ```
 
-1.  Nella sessione di Bash all'interno del riquadro Cloud Shell esaminare l'output per verificare che la distribuzione e il servizio siano stati creati:
+5.  Nella sessione di Bash all'interno del riquadro Cloud Shell esaminare l'output per verificare che la distribuzione e il servizio siano stati creati:
 
     ```
     deployment.apps/nginxinternal created
     service/nginxinternal created
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per recuperare informazioni sul servizio nginxinternal, quali nome, tipo, indirizzi IP e porte. 
+6. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per recuperare informazioni sul servizio nginxinternal, quali nome, tipo, indirizzi IP e porte. 
 
     ```sh
     kubectl get service nginxinternal
     ```
 
-1. Esaminare l'output nella sessione di Bash all'interno del riquadro Cloud Shell. In questo caso External-IP è un indirizzo IP privato. 
+7. Esaminare l'output nella sessione di Bash all'interno del riquadro Cloud Shell. In questo caso External-IP è un indirizzo IP privato. Se lo stato è **In sospeso**, eseguire di nuovo il comando precedente.
 
     >**Nota**: registrare questo indirizzo IP. Sarà necessario nell'attività successiva. 
 
@@ -336,23 +336,23 @@ In questa attività si userà uno dei pod in esecuzione nel cluster del servizio
     kubectl get pods
     ```
 
-1. Nell'elenco dei pod copiare la prima voce nella colonna **NAME**.
+2. Nell'elenco dei pod copiare la prima voce nella colonna **NAME**.
 
     >**Nota**: si tratta del pod che verrà usato nei passaggi successivi.
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per connettersi in modo interattivo al primo pod (sostituire il segnaposto `<pod_name>` con il nome copiato nel passaggio precedente):
+3. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per connettersi in modo interattivo al primo pod (sostituire il segnaposto `<pod_name>` con il nome copiato nel passaggio precedente):
 
     ```sh
     kubectl exec -it <pod_name> -- /bin/bash
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per verificare che il sito Web nginx sia disponibile tramite l'indirizzo IP privato del servizio (sostituire il segnaposto `<internal_IP>` con l'indirizzo IP registrato nell'attività precedente):
+4. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per verificare che il sito Web nginx sia disponibile tramite l'indirizzo IP privato del servizio (sostituire il segnaposto `<internal_IP>` con l'indirizzo IP registrato nell'attività precedente):
 
     ```sh
     curl http://<internal_IP>
     ```
 
-1. Chiudere il riquadro Cloud Shell.
+5. Chiudere il riquadro Cloud Shell.
 
 > Risultato: il Registro Azure Container e il servizio Azure Kubernetes sono stati configurati e protetti.
 
@@ -363,12 +363,12 @@ In questa attività si userà uno dei pod in esecuzione nel cluster del servizio
 
 1. Nel portale di Azure aprire Cloud Shell facendo clic sulla prima icona nell'angolo in alto a destra. 
 
-1. Nel menu a discesa in alto a sinistra del riquadro Cloud Shell selezionare **PowerShell** e, quando richiesto, fare clic su **Conferma**.
+2. Nel menu a discesa in alto a sinistra del riquadro Cloud Shell selezionare **PowerShell** e, quando richiesto, fare clic su **Conferma**.
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per rimuovere il gruppo di risorse creato in questo lab:
+3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per rimuovere il gruppo di risorse creato in questo lab:
   
     ```powershell
     Remove-AzResourceGroup -Name "AZ500LAB09" -Force -AsJob
     ```
 
-1.  Chiudere il riquadro **Cloud Shell**. 
+4.  Chiudere il riquadro **Cloud Shell**. 

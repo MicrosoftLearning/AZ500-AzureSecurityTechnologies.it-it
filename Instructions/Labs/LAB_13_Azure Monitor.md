@@ -2,12 +2,12 @@
 lab:
   title: 13 - Monitoraggio di Azure
   module: Module 04 - Manage security operations
-ms.openlocfilehash: cf654eb2550d7daf9f416953746e0e432f3d2662
-ms.sourcegitcommit: 2eb153f2856445e5afaa218a012cb92e3d48f24b
+ms.openlocfilehash: 225c12f6239dfc1cbdc18727c4b21c2d03fb7bbf
+ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "132625674"
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137818174"
 ---
 # <a name="lab-13-azure-monitor"></a>Lab 13: Monitoraggio di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -46,11 +46,11 @@ In questo esercizio verranno eseguite le attività seguenti:
 
     >**Nota**: accedere al portale di Azure con un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per il lab.
 
-1. Aprire Cloud Shell facendo clic sulla prima icona in alto a destra nel portale di Azure. Se richiesto, selezionare **PowerShell** e **Crea risorsa di archiviazione**.
+2. Aprire Cloud Shell facendo clic sulla prima icona in alto a destra nel portale di Azure. Se richiesto, selezionare **PowerShell** e **Crea risorsa di archiviazione**.
 
-1. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **PowerShell**.
+3. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **PowerShell**.
 
-1. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per creare un gruppo di risorse che verrà usato in questo lab:
+4. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per creare un gruppo di risorse che verrà usato in questo lab:
   
     ```powershell
     New-AzResourceGroup -Name AZ500LAB131415 -Location 'EastUS'
@@ -58,28 +58,28 @@ In questo esercizio verranno eseguite le attività seguenti:
 
     >**Nota**: questo gruppo di risorse verrà usato per i lab 13, 14 e 15. 
 
-1. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per creare una nuova macchina virtuale di Azure. 
+5. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per creare una nuova macchina virtuale di Azure. 
 
     ```powershell
     New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389
     ```
 
-1.  Verranno chieste le seguenti credenziali.
+6.  Verranno chieste le seguenti credenziali.
 
     |Impostazione|Valore|
     |---|---|
-    |Nome utente|**localadmin**|
-    |Password|**Pa55w.rd1234**|
+    |User |**localadmin**|
+    |Password|**Usare di nuovo la password creata nel lab del modulo 6 (Esercizio 1, Attività 2)**|
 
     >**Nota**: attendere il completamento della distribuzione. 
 
-1. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per verificare che sia stata creata la macchina virtuale denominata **myVM** e che il parametro **ProvisioningState** sia impostato su **Operazione riuscita**.
+7. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per verificare che sia stata creata la macchina virtuale denominata **myVM** e che il parametro **ProvisioningState** sia impostato su **Operazione riuscita**.
 
     ```powershell
     Get-AzVM -Name 'myVM' -ResourceGroupName 'AZ500LAB131415' | Format-Table
     ```
 
-1. Chiudere il riquadro Cloud Shell. 
+8. Chiudere il riquadro Cloud Shell. 
 
 #### <a name="task-2-create-a-log-analytics-workspace"></a>Attività 2: Creare un'area di lavoro Log Analytics
 
@@ -87,9 +87,9 @@ In questa attività si creerà un'area di lavoro Log Analytics.
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **aree di lavoro Log Analytics** e premere **INVIO**.
 
-1. Nel pannello **Aree di lavoro Log Analytics** fare clic su **+ Crea**.
+2. Nel pannello **Aree di lavoro Log Analytics** fare clic su **+ Crea**.
 
-1. Nella scheda **Dati principali** del pannello **Crea area di lavoro Log Analytics** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
+3. Nella scheda **Dati principali** del pannello **Crea area di lavoro Log Analytics** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
     |Impostazione|Valore|
     |---|---|
@@ -98,9 +98,9 @@ In questa attività si creerà un'area di lavoro Log Analytics.
     |Nome|Qualunque nome univoco a livello globale, valido|
     |Region|**(Stati Uniti) Stati Uniti orientali**|
 
-1. Fare clic su **Avanti: Piano tariffario >** ; nella scheda **Piano tariffario** del pannello **Crea area di lavoro Log Analytics** accettare il piano tariffario predefinito **Con pagamento in base al consumo (per GB 2018)** e fare clic su **Rivedi e crea**.
+4. Selezionare **Rivedi e crea**.
 
-1. Nella scheda **Rivedi e crea** del pannello **Crea area di lavoro Log Analytics** fare clic su **Crea**.
+5. Nella scheda **Rivedi e crea** del pannello **Crea area di lavoro Log Analytics** selezionare **Crea**.
 
 #### <a name="task-3-enable-the-log-analytics-virtual-machine-extension"></a>Attività 3: Abilitare l'estensione macchina virtuale Log Analytics
 
@@ -108,15 +108,15 @@ In questa attività si abiliterà l'estensione macchina virtuale Log Analytics. 
 
 1. Nel portale di Azure tornare al pannello **Area di lavoro Log Analytics** e nell'elenco delle aree di lavoro fare clic sulla voce che rappresenta l'area di lavoro creata nell'attività precedente.
 
-1. Nel pannello Area di lavoro Log Analytics, nella sezione **Connettere un'origine dati**, fare clic sulla voce **Macchine virtuali**.
+2. Nella pagina **Panoramica** del pannello Area di lavoro Log Analytics, nella sezione **Connettere un'origine dati** fare clic sulla voce **Macchine virtuali di Azure**.
 
     >**Nota**: per la corretta installazione dell'agente è necessario che la macchina virtuale sia in esecuzione.
 
-1. Nell'elenco delle macchine virtuali individuare la voce che rappresenta la macchina virtuale di Azure **myVM** distribuita nella prima attività di questo esercizio e osservare come sia elencata come **Non connessa**.
+3. Nell'elenco delle macchine virtuali individuare la voce che rappresenta la macchina virtuale di Azure **myVM** distribuita nella prima attività di questo esercizio e osservare come sia elencata come **Non connessa**.
 
-1. Fare clic sulla voce **myVM** e quindi, nel pannello **myVM**, fare clic su **Connetti**. 
+4. Fare clic sulla voce **myVM** e quindi, nel pannello **myVM**, fare clic su **Connetti**. 
 
-1. Attendere che la macchina virtuale si connetta all'area di lavoro Log Analytics.
+5. Attendere che la macchina virtuale si connetta all'area di lavoro Log Analytics.
 
     >**Nota**: questa operazione potrebbe richiedere alcuni minuti. Lo **Stato** visualizzato nel pannello **myVM** passerà da **In fase di connessione** a **Questa area di lavoro**. 
 
@@ -126,17 +126,17 @@ In questa attività verrà configurata la raccolta del Registro di sistema di Wi
 
 1. Nel portale di Azure tornare all'area di lavoro Log Analytics creata in precedenza in questo esercizio.
 
-1. Nel pannello Area di lavoro Log Analytics, nella **sezione Impostazioni,** fare clic su **Configurazione agenti**.
+2. Nel pannello Area di lavoro Log Analytics, nella **sezione Impostazioni,** fare clic su **Configurazione agenti**.
 
-1. Nel pannello **Configurazione agenti** consultare le impostazioni configurabili, ad esempio Registri eventi di Windows, Contatori delle prestazioni di Windows, Contatori delle prestazioni di Linux, Log IIS e Syslog. 
+3. Nel pannello **Configurazione agenti** consultare le impostazioni configurabili, ad esempio Registri eventi di Windows, Contatori delle prestazioni di Windows, Contatori delle prestazioni di Linux, Log IIS e Syslog. 
 
-1. Assicurarsi che l'opzione **Registri eventi di Windows** sia selezionata, fare clic su **+ Aggiungi registro eventi di Windows** e, nell'elenco dei tipi di log eventi, selezionare **Sistema**.
+4. Assicurarsi che l'opzione **Registri eventi di Windows** sia selezionata, fare clic su **+ Aggiungi registro eventi di Windows** e, nell'elenco dei tipi di log eventi, selezionare **Sistema**.
 
     >**Nota**: in questo modo vengono aggiunti i registri eventi all'area di lavoro. Altre opzioni includono, ad esempio, **Eventi hardware** o il **Servizio di gestione delle chiavi**.  
 
-1. Deselezionare la casella di controllo **Informazioni**, lasciando selezionate le caselle di controllo **Errore** e **Avviso**.
+5. Deselezionare la casella di controllo **Informazioni**, lasciando selezionate le caselle di controllo **Errore** e **Avviso**.
 
-1. Selezionare **Contatori delle prestazioni di Windows**, fare clic su **+ Aggiungi contatore delle prestazioni**, consultare l'elenco dei contatori delle prestazioni disponibili e aggiungere i contatori seguenti:
+6. Selezionare **Contatori delle prestazioni di Windows**, fare clic su **+ Aggiungi contatore delle prestazioni**, consultare l'elenco dei contatori delle prestazioni disponibili e aggiungere i contatori seguenti:
 
     - Processo(\*)\%tempo processore
     - Event Tracing for Windows\Utilizzo memoria totale --- Pool non di paging
@@ -144,7 +144,7 @@ In questa attività verrà configurata la raccolta del Registro di sistema di Wi
 
     >**Nota**: i contatori vengono aggiunti e configurati con un intervallo di raccolta dei campioni di 60 secondi.
   
-1. Nel pannello **Configurazione agenti** fare clic su **Applica**.
+7. Nel pannello **Configurazione agenti** fare clic su **Applica**.
 
 #### <a name="task-5-view-and-query-collected-data"></a>Attività 5: Visualizzare ed eseguire query sui dati raccolti
 
@@ -152,17 +152,17 @@ In questa attività si eseguirà una ricerca log nella raccolta dati.
 
 1. Nel portale di Azure tornare all'area di lavoro Log Analytics creata in precedenza in questo esercizio.
 
-1. Nel pannello Area di lavoro Log Analytics, nella sezione **Generale**, fare clic su **Log**.
+2. Nel pannello Area di lavoro Log Analytics, nella sezione **Generale**, fare clic su **Log**.
 
-1. Se necessario, chiudere la finestra di **benvenuto a Log Analysis**. 
+3. Se necessario, chiudere la finestra di **benvenuto a Log Analysis**. 
 
-1. Nel pannello **Query**, nella colonna **Tutte le query**, scorrere verso il basso fino alla fine dell'elenco dei tipi di risorse e fare clic su **Macchine virtuali**.
+4. Nel pannello **Query**, nella colonna **Tutte le query**, scorrere verso il basso fino alla fine dell'elenco dei tipi di risorse e fare clic su **Macchine virtuali**.
     
-1. Esaminare l'elenco delle query predefinite, selezionare **Uso memoria e CPU** e fare clic sul pulsante **Esegui** corrispondente.
+5. Esaminare l'elenco delle query predefinite, selezionare **Uso memoria e CPU** e fare clic sul pulsante **Esegui** corrispondente.
 
     >**Nota**: è possibile iniziare con la query **Memoria disponibile della macchina virtuale**. Se non si ottiene alcun risultato, verificare che l'ambito sia impostato sulla macchina virtuale.
 
-1. La query verrà automaticamente aperta in una nuova scheda di query. 
+6. La query verrà automaticamente aperta in una nuova scheda di query. 
 
     >**Nota**: Log Analytics usa il linguaggio di query Kusto. È possibile personalizzare query esistenti oppure crearne nuove. 
 
@@ -175,8 +175,8 @@ In questa attività si eseguirà una ricerca log nella raccolta dati.
     >**Nota**: è possibile generare un carico aggiuntivo sulla macchina virtuale di Azure distribuita nei passaggi precedenti di questo lab seguendo questa procedura:
 
     1. Passare al pannello della macchina virtuale di Azure.
-    1. Nel panello della macchina virtuale di Azure, nella sezione **Operazioni**, selezionare **Esegui comando** e, nel pannello **Esegui script di comandi**, digitare lo script seguente e fare clic su **Esegui**:
-    2. 
+    2. Nel panello della macchina virtuale di Azure, nella sezione **Operazioni**, selezionare **Esegui comando** e nel pannello **RunPowerShellScript** digitare lo script seguente e fare clic su **Esegui**:
+    3. 
        ```cmd
        cmd
        :loop
@@ -184,7 +184,7 @@ In questa attività si eseguirà una ricerca log nella raccolta dati.
        goto loop
        ```
        
-    1. Tornare al pannello Log Analytics ed eseguire nuovamente la query. Potrebbe essere necessario attendere alcuni minuti per poter raccogliere i dati ed eseguire nuovamente la query.
+    4. Tornare al pannello Log Analytics ed eseguire nuovamente la query. Potrebbe essere necessario attendere alcuni minuti per poter raccogliere i dati ed eseguire nuovamente la query.
 
 > Risultati: è stata usata un'area di lavoro Log Analytics per configurare origini dati e log di query. 
 

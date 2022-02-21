@@ -2,12 +2,12 @@
 lab:
   title: 01 - Controllo degli accessi in base al ruolo
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: e5ba41dc944bb38479479a321221ed1d4e034971
-ms.sourcegitcommit: 2eb153f2856445e5afaa218a012cb92e3d48f24b
+ms.openlocfilehash: de375fd6fc9dbc8fb612e4110420924b70ec1c71
+ms.sourcegitcommit: 5247ed01fe1b7396f54b04e46891a5d412f69943
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "132625684"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "135528557"
 ---
 # <a name="lab-01-role-based-access-control"></a>Lab 01: Controllo degli accessi in base al ruolo
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -45,28 +45,28 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 In questa attività si creerà un account utente per Joseph Price. 
 
-1. Accedere al portale di Azure **`https://portal.azure.com/`** .
+1. Avviare una sessione del browser e accedere al portale di Azure **`https://portal.azure.com/`** .
 
     >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per questo lab e il ruolo Amministratore globale nel tenant di Azure AD associato alla sottoscrizione.
 
-1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Azure Active Directory** e premere **INVIO**.
+2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Azure Active Directory** e premere **INVIO**.
 
-1. Nel pannello **Panoramica** del tenant di Azure Active Directory selezionare **Utenti** nella sezione **Gestisci** e quindi **+ Nuovo utente**.
+3. Nel pannello **Panoramica** del tenant di Azure Active Directory selezionare **Utenti** nella sezione **Gestisci** e quindi **+ Nuovo utente**.
 
-1. Nel pannello **Nuovo utente** verificare che l'opzione **Crea utente** sia selezionata e specificare le impostazioni seguenti:
+4. Nel pannello **Nuovo utente** verificare che l'opzione **Crea utente** sia selezionata e specificare le impostazioni seguenti:
 
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**Joseph**|
    |Nome|**Joseph Price**|
 
-1. Fare clic sull'icona di copia accanto a **Nome utente** per copiare l'utente completo.
+5. Fare clic sull'icona di copia accanto a **Nome utente** per copiare l'utente completo.
 
-1. Assicurarsi che sia selezionata l'opzione **Password generata automaticamente** e selezionare la casella di controllo **Mostra password** per identificare la password generata automaticamente. Sarà necessario fornire questa password, insieme al nome utente, a Joseph. 
+6. Assicurarsi che sia selezionata l'opzione **Password generata automaticamente** e selezionare la casella di controllo **Mostra password** per identificare la password generata automaticamente. Sarà necessario fornire questa password, insieme al nome utente, a Joseph. 
 
-1. Fare clic su **Crea**.
+7. Fare clic su **Crea**.
 
-1. Aggiornare il pannello **Utenti \| Tutti gli utenti** per verificare che il nuovo utente sia stato creato nel tenant di Azure AD.
+8. Aggiornare il pannello **Utenti \| Tutti gli utenti** per verificare che il nuovo utente sia stato creato nel tenant di Azure AD.
 
 #### <a name="task2-use-the-azure-portal-to-create-a-senior-admins-group-and-add-the-user-account-of-joseph-price-to-the-group"></a>Attività 2: Usare il portale di Azure per creare un gruppo Senior Admins e aggiungere l'account utente di Joseph Price al gruppo.
 
@@ -74,9 +74,9 @@ In questa attività si creerà il gruppo *Senior Admins*, si aggiungerà l'accou
 
 1. Nel portale di Azure tornare al pannello che mostra il tenant di Azure Active Directory. 
 
-1. Nella sezione **Gestisci** fare clic su **Gruppi** e quindi selezionare **+ Nuovo gruppo**.
+2. Nella sezione **Gestisci** fare clic su **Gruppi** e quindi selezionare **+ Nuovo gruppo**.
  
-1. Nel pannello **Nuovo gruppo** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
+3. Nel pannello **Nuovo gruppo** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
    |Impostazione|Valore|
    |---|---|
@@ -84,11 +84,11 @@ In questa attività si creerà il gruppo *Senior Admins*, si aggiungerà l'accou
    |Nome gruppo|**Senior Admins**|
    |Tipo di appartenenza|**Assegnato**|
     
-1. Fare clic sul collegamento **Non sono stati selezionati proprietari**, nel pannello **Aggiungi proprietari** selezionare **Joseph Price** e fare clic su **Seleziona**.
+4. Fare clic sul collegamento **Non sono stati selezionati proprietari**, nel pannello **Aggiungi proprietari** selezionare **Joseph Price** e fare clic su **Seleziona**.
 
-1. Fare clic sul collegamento **Nessun membro selezionato**, nel pannello **Aggiungi membri** selezionare **Joseph Price** e fare clic su **Seleziona**.
+5. Fare clic sul collegamento **Nessun membro selezionato**, nel pannello **Aggiungi membri** selezionare **Joseph Price** e fare clic su **Seleziona**.
 
-1. Tornare al pannello **Nuovo gruppo** e fare clic su **Crea**.
+6. Tornare al pannello **Nuovo gruppo** e fare clic su **Crea**.
 
 > Risultato: è stato usato il portale di Azure per creare un utente e un gruppo e assegnare l'utente al gruppo. 
 
@@ -107,40 +107,40 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
 
 1. Aprire Cloud Shell facendo clic sulla prima icona in alto a destra nel portale di Azure. Se richiesto, selezionare **PowerShell** e **Crea risorsa di archiviazione**.
 
-1. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **PowerShell**.
+2. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **PowerShell**.
 
    >**Nota**: per incollare il testo copiato in Cloud Shell, fare clic con il pulsante destro del mouse nella finestra del riquadro e scegliere **Incolla**. In alternativa, è possibile usare la combinazione di tasti **MAIUSC+INS**.
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un oggetto profilo password:
+3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un oggetto profilo password:
 
     ```powershell
     $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
     ```
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per impostare il valore della password all'interno dell'oggetto profilo:
+4. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per impostare il valore della password all'interno dell'oggetto profilo:
     ```powershell
-    $passwordProfile.Password = 'Pa55w.rd1234'
+    $passwordProfile.Password = "Pa55w.rd1234"
     ```
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per connettersi ad Azure Active Directory:
+5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per connettersi ad Azure Active Directory:
 
     ```powershell
     Connect-AzureAD
     ```
       
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Azure AD: 
+6. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Azure AD: 
 
     ```powershell
     $domainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
     ```
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un account utente per Isabel Garcia: 
+7. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un account utente per Isabel Garcia: 
 
     ```powershell
     New-AzureADUser -DisplayName 'Isabel Garcia' -PasswordProfile $passwordProfile -UserPrincipalName "Isabel@$domainName" -AccountEnabled $true -MailNickName 'Isabel'
     ```
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli utenti di Azure AD (gli account di Joseph e Isabel saranno inclusi tra quelli elencati): 
+8. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli utenti di Azure AD (gli account di Joseph e Isabel saranno inclusi tra quelli elencati): 
 
     ```powershell
     Get-AzureADUser 
@@ -156,25 +156,25 @@ In questa attività si creerà il gruppo Junior Admins e si aggiungerà l'accoun
     New-AzureADGroup -DisplayName 'Junior Admins' -MailEnabled $false -SecurityEnabled $true -MailNickName JuniorAdmins
     ```
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare i gruppi nel tenant di Azure AD (l'elenco includerà i gruppi Senior Admins e Junior Admins):
+2. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare i gruppi nel tenant di Azure AD (l'elenco includerà i gruppi Senior Admins e Junior Admins):
 
     ```powershell
     Get-AzureADGroup
     ```
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per ottenere un riferimento all'account utente di Isabel Garcia:
+3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per ottenere un riferimento all'account utente di Isabel Garcia:
 
     ```powershell
     $user = Get-AzureADUser -Filter "MailNickName eq 'Isabel'"
     ```
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per aggiungere l'account utente di Isabel al gruppo Junior Admins:
+4. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per aggiungere l'account utente di Isabel al gruppo Junior Admins:
     
     ```powershell
     Add-AzADGroupMember -MemberUserPrincipalName $user.userPrincipalName -TargetGroupDisplayName "Junior Admins" 
     ```
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per verificare che il gruppo Junior Admins contenga l'account utente di Isabel:
+5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per verificare che il gruppo Junior Admins contenga l'account utente di Isabel:
 
     ```powershell
     Get-AzADGroupMember -GroupDisplayName "Junior Admins"
@@ -198,19 +198,19 @@ In questa attività si creerà un account utente per Dylan Williams.
 
 1. Nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell selezionare **Bash** e, quando richiesto, fare clic su **Conferma**. 
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Azure AD:
+2. Nella sessione di Bash all'interno del riquadro di Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Azure AD:
 
     ```cli
     DOMAINNAME=$(az ad signed-in-user show --query 'userPrincipalName' | cut -d '@' -f 2 | sed 's/\"//')
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per creare l'utente Dylan Williams. Usare *dominio*.
+3. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per creare l'utente Dylan Williams. Usare *dominio*.
  
     ```cli
     az ad user create --display-name "Dylan Williams" --password "Pa55w.rd1234" --user-principal-name Dylan@$DOMAINNAME
     ```
       
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli account utente Azure AD (l'elenco includerà gli account utente di Joseph, Isabel e Dylan).
+4. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli account utente Azure AD (l'elenco includerà gli account utente di Joseph, Isabel e Dylan).
     
     ```cli
     az ad user list --output table
@@ -226,37 +226,37 @@ In questa attività si creerà il gruppo Service Desk e si assegnerà Dylan al g
     az ad group create --display-name "Service Desk" --mail-nickname "ServiceDesk"
     ```
  
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare i gruppi di Azure AD (l'elenco includerà i gruppi Service Desk, Senior Admins e Junior Admins):
+2. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare i gruppi di Azure AD (l'elenco includerà i gruppi Service Desk, Senior Admins e Junior Admins):
 
     ```cli
     az ad group list -o table
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per ottenere un riferimento all'account utente di Dylan Williams: 
+3. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per ottenere un riferimento all'account utente di Dylan Williams: 
 
     ```cli
     USER=$(az ad user list --filter "displayname eq 'Dylan Williams'")
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per ottenere la proprietà objectId dell'account utente di Dylan Williams: 
+4. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per ottenere la proprietà objectId dell'account utente di Dylan Williams: 
 
     ```cli
     OBJECTID=$(echo $USER | jq '.[].objectId' | tr -d '"')
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per aggiungere l'account utente di Dylan al gruppo Service Desk: 
+5. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per aggiungere l'account utente di Dylan al gruppo Service Desk: 
 
     ```cli
     az ad group member add --group "Service Desk" --member-id $OBJECTID
     ```
 
-1. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare i membri del gruppo Service Desk e verificare che includa l'account utente di Dylan:
+6. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare i membri del gruppo Service Desk e verificare che includa l'account utente di Dylan:
 
     ```cli
     az ad group member list --group "Service Desk"
     ```
 
-1. Chiudere il riquadro Cloud Shell.
+7. Chiudere il riquadro Cloud Shell.
 
 > Risultato: usando l'interfaccia della riga di comando di Azure sono stati creati un account utente e un account di gruppo e l'account utente è stato aggiunto al gruppo. 
 
@@ -274,7 +274,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Gruppi di risorse** e premere **INVIO**.
 
-1. Nel pannello **Gruppi di risorse** fare clic su **+ Crea** e specificare le impostazioni seguenti:
+2. Nel pannello **Gruppi di risorse** fare clic su **+ Crea** e specificare le impostazioni seguenti:
 
    |Impostazione|Valore|
    |---|---|
@@ -282,40 +282,40 @@ In questo esercizio verranno eseguite le attività seguenti:
    |Nome del gruppo di risorse|**AZ500Lab01**|
    |Location|**Stati Uniti orientali**|
 
-1. Fare clic su **Rivedi e crea** e quindi su **Crea**.
+3. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
    >**Nota**: attendere che il gruppo di risorse venga distribuito. Usare l'icona **Notifica** (in alto a destra) per controllare lo stato di avanzamento della distribuzione.
 
-1. Tornare al pannello **Gruppi di risorse**, aggiornare la pagina e verificare che il nuovo gruppo di risorse venga visualizzato nell'elenco dei gruppi di risorse.
+4. Tornare al pannello **Gruppi di risorse**, aggiornare la pagina e verificare che il nuovo gruppo di risorse venga visualizzato nell'elenco dei gruppi di risorse.
 
 
 #### <a name="task-2-assign-the-service-desk-virtual-machine-contributor-permissions"></a>Attività 2: Assegnare a Service Desk le autorizzazioni Collaboratore macchina virtuale. 
 
 1. Nel pannello **Gruppi di risorse** fare clic sulla voce del gruppo di risorse **AZ500LAB01**.
 
-1. Nel pannello **AZ500Lab01** fare clic su **Controllo di accesso (IAM)** .
+2. Nel pannello **AZ500Lab01** fare clic su **Controllo di accesso (IAM)** nel riquadro centrale.
 
-1. Nel pannello **AZ500Lab01 \| Controllo di accesso (IAM)** fare clic su **+ Aggiungi** e nel menu a discesa fare clic su **Aggiungi un'assegnazione di ruolo**.
+3. Nel pannello **AZ500Lab01 \| Controllo di accesso (IAM)** fare clic su **+ Aggiungi** e nel menu a discesa fare clic su **Aggiungi un'assegnazione di ruolo**.
 
-1. Nel pannello **Aggiungi un'assegnazione di ruolo** specificare le impostazioni seguenti:
+4. Nel pannello **Aggiungi assegnazione di ruolo** specificare le impostazioni seguenti e fare clic su **Avanti** dopo ogni passaggio:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
-   |Ruolo|**Collaboratore macchine virtuali**|
-   |Assegna accesso a|**Utente, gruppo o entità servizio**|
-   |Select|**Service Desk**|
+   |Ruolo nella scheda di ricerca|**Collaboratore macchine virtuali**|
+   |Assegna accesso a (nel riquadro Membri)|**Utente, gruppo o entità servizio**|
+   |Seleziona (+Seleziona membri)|**Service Desk**|
 
-1. Scegliere **Salva** per creare l'assegnazione di ruolo.
+5. Fare clic su **Verifica e assegna** per creare l'assegnazione di ruolo.
 
-1. Nel pannello **Controllo di accesso (IAM)** selezionare **Assegnazioni di ruolo**.
+6. Nel pannello **Controllo di accesso (IAM)** selezionare **Assegnazioni di ruolo**.
 
-1. Nel pannello **AZ500Lab01 \| Controllo di accesso (IAM)** digitare **Dylan Williams** nella casella di testo **Cerca per nome o indirizzo di posta** nella scheda **Verifica l'accesso**.
+7. Nel pannello **AZ500Lab01 \| Controllo di accesso (IAM)** digitare **Dylan Williams** nella casella di testo **Cerca per nome o indirizzo di posta** nella scheda **Verifica l'accesso**.
 
-1. Nell'elenco dei risultati della ricerca selezionare l'account utente di Dylan Williams e nel pannello **Assegnazioni di Dylan Williams - AZ500Lab01** visualizzare la nuova assegnazione creata.
+8. Nell'elenco dei risultati della ricerca selezionare l'account utente di Dylan Williams e nel pannello **Assegnazioni di Dylan Williams - AZ500Lab01** visualizzare la nuova assegnazione creata.
 
-1. Chiudere il pannello **Assegnazioni di Dylan Williams - AZ500Lab01**.
+9. Chiudere il pannello **Assegnazioni di Dylan Williams - AZ500Lab01**.
 
-1. Ripetere gli stessi ultimi due passaggi per controllare l'accesso per **Joseph Price**. 
+10. Ripetere gli stessi ultimi due passaggi per controllare l'accesso per **Joseph Price**. 
 
 > Risultato: sono state assegnate e controllate le autorizzazioni di controllo degli accessi in base al ruolo. 
 
@@ -325,12 +325,12 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 1. Nel portale di Azure aprire Cloud Shell facendo clic sulla prima icona nell'angolo in alto a destra. 
 
-1. Nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell selezionare **PowerShell** e, quando richiesto, fare clic su **Conferma**. 
+2. Nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell selezionare **PowerShell** e, quando richiesto, fare clic su **Conferma**. 
 
-1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per rimuovere il gruppo di risorse creato in questo lab:
+3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per rimuovere il gruppo di risorse creato in questo lab:
   
     ```
     Remove-AzResourceGroup -Name "AZ500LAB01" -Force -AsJob
     ```
 
-1.  Chiudere il riquadro **Cloud Shell**. 
+4.  Chiudere il riquadro **Cloud Shell**. 
