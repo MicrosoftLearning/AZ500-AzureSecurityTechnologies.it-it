@@ -2,12 +2,12 @@
 lab:
   title: 05 - Azure AD Privileged Identity Management
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 667957928942772466dae3fdffb9d9f34dccbf34
-ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
+ms.openlocfilehash: f0fc7615d2e2e3a26782366d7a630ed9984bd3f0
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/27/2022
-ms.locfileid: "137818171"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703528"
 ---
 # <a name="lab-05-azure-ad-privileged-identity-management"></a>Lab 05: Azure AD Privileged Identity Management
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -32,6 +32,12 @@ In questo lab verranno completati gli esercizi seguenti:
 - Esercizio 1: Configurare utenti e ruoli di PIM.
 - Esercizio 2: Attivare i ruoli di PIM con e senza approvazione.
 - Esercizio 3: Creare una verifica di accesso ed esaminare le funzionalità di controllo di PIM.
+
+## <a name="azure-ad-privileged-identity-management-diagram"></a>Schema di gestione identità con privilegi di Azure AD
+
+![image](https://user-images.githubusercontent.com/91347931/157522920-264ce57e-5c55-4a9d-8f35-e046e1a1e219.png)
+
+## <a name="instructions"></a>Istruzioni
 
 ### <a name="exercise-1---configure-pim-users-and-roles"></a>Esercizio 1: Configurare utenti e ruoli di PIM
 
