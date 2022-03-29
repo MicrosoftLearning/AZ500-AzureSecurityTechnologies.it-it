@@ -2,12 +2,12 @@
 lab:
   title: 11 - Protezione del database SQL di Azure
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 3c2985a409eef913f7a46fd868df91a9aba4ad18
-ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
+ms.openlocfilehash: 1112086c681d4d81e186ad87a8a01085f42f8490
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/27/2022
-ms.locfileid: "137818162"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703480"
 ---
 # <a name="lab-11-securing-azure-sql-database"></a>Lab 11: Protezione del database SQL di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -27,6 +27,12 @@ ms.locfileid: "137818162"
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Implementare funzionalità di sicurezza per il database SQL
+
+## <a name="securing-azure-sql-database-diagram"></a>Diagramma della protezione del database SQL di Azure
+
+![image](https://user-images.githubusercontent.com/91347931/157533836-7250fa58-a109-4882-a55b-d3fa3baf34ab.png)
+
+## <a name="instructions"></a>Istruzioni
 
 ## <a name="lab-files"></a>File del lab:
 

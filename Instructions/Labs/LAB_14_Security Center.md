@@ -2,12 +2,12 @@
 lab:
   title: 14 - Microsoft Defender for Cloud
   module: Module 04 - Microsoft Defender for Cloud
-ms.openlocfilehash: 7b0d5647cd326bdca5dd89c63806465aba59afbb
-ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
+ms.openlocfilehash: 6ec274b75692321577c8966e07349211209eaa02
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/27/2022
-ms.locfileid: "137818181"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703588"
 ---
 # <a name="lab-14-microsoft-defender-for-cloud"></a>Lab 14: Microsoft Defender for Cloud
 # <a name="student-lab-manual"></a>Manuale del lab per studenti
@@ -28,6 +28,12 @@ ms.locfileid: "137818181"
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Implementare Microsoft Defender for Cloud
+
+## <a name="microsoft-defender-for-cloud-diagram"></a>Diagramma di Microsoft Defender for Cloud
+
+![image](https://user-images.githubusercontent.com/91347931/157537800-94a64b6e-026c-41b2-970e-f8554ce1e0ab.png)
+
+## <a name="instructions"></a>Istruzioni
 
 ### <a name="exercise-1-implement-microsoft-defender-for-cloud"></a>Esercizio 1: Implementare Microsoft Defender for Cloud
 

@@ -2,12 +2,12 @@
 lab:
   title: 06 - Implementare la sincronizzazione della directory
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 8aba2385b49c444ee0e9a1faa92b425d8c6ca82a
-ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
+ms.openlocfilehash: 96871a9f1e59adde1489533ecbab8a1e85a89fbc
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/27/2022
-ms.locfileid: "137818182"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703516"
 ---
 # <a name="lab-06-implement-directory-synchronization"></a>Lab 06: Implementare la sincronizzazione della directory
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -29,6 +29,12 @@ In questo lab verranno completati gli esercizi seguenti:
 - Esercizio 1: Distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
 - Esercizio 2: Creare e configurare un tenant di Azure Active Directory
 - Esercizio 3: Sincronizzare la foresta di Active Directory con un tenant di Azure Active Directory
+
+## <a name="implement-directory-synchronization"></a>Implementare la sincronizzazione della directory
+
+![image](https://user-images.githubusercontent.com/91347931/157525374-8f740f14-c2db-47b3-98f8-7feb9bc122b5.png)
+
+## <a name="instructions"></a>Istruzioni
 
 ### <a name="exercise-1-deploy-an-azure-vm-hosting-an-active-directory-domain-controller"></a>Esercizio 1: Distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
 

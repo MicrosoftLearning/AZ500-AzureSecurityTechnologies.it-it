@@ -2,12 +2,12 @@
 lab:
   title: 15 - Microsoft Sentinel
   module: Module 04 - Manage Security Operations
-ms.openlocfilehash: dab51412936208c1c4f092ba931ca06c76f7bf40
-ms.sourcegitcommit: cf250c5d85d2189156f6ea2ec2a25768d564d8c1
+ms.openlocfilehash: 63a24bbc17b846d3587cf3fb83ab46b7235d5fcd
+ms.sourcegitcommit: 18aa464705a8f1e78ccbbb82d5d8f57a830b6cea
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "136957524"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "140666113"
 ---
 # <a name="lab-15-microsoft-sentinel"></a>Lab 15: Microsoft Sentinel
 # <a name="student-lab-manual"></a>Manuale del lab per studenti
@@ -29,6 +29,12 @@ ms.locfileid: "136957524"
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Implementare Microsoft Sentinel
+
+## <a name="microsoft-sentinel-diagram"></a>Diagramma di Microsoft Sentinel
+
+![image](https://user-images.githubusercontent.com/91347931/157538440-4953be73-90be-4edd-bd23-b678326ba637.png)
+
+## <a name="instructions"></a>Istruzioni
 
 ## <a name="lab-files"></a>File del lab:
 
@@ -57,6 +63,8 @@ In questa attività si eseguirà l'onboarding di Microsoft Sentinel e si connett
 
 2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure, digitare **Microsoft Sentinel** e premere **INVIO**.
 
+    >**Nota**: se questo è il primo tentativo di attivare Microsoft Sentinel nel dashboard di Azure, seguire questa procedura: Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure, digitare **Microsoft Sentinel** e premere **INVIO**. Selezionare **Microsoft Sentinel** dalla visualizzazione **Servizi**.
+  
 3. Nel pannello **Microsoft Sentinel** fare clic su **+ Crea**.
 
 4. Nel pannello **Add Microsoft Sentinel to a workspace** (Aggiungi Microsoft Sentinel a un'area di lavoro) selezionare l'area di lavoro Log Analytics creata nel lab su Monitoraggio di Azure e fare clic su **Aggiungi**.

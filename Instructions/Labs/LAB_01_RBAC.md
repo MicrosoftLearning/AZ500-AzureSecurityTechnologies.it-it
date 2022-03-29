@@ -2,12 +2,12 @@
 lab:
   title: 01 - Controllo degli accessi in base al ruolo
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: de375fd6fc9dbc8fb612e4110420924b70ec1c71
-ms.sourcegitcommit: 5247ed01fe1b7396f54b04e46891a5d412f69943
+ms.openlocfilehash: da0086efa92f860f38d3bade2b18dfbcca84884c
+ms.sourcegitcommit: ff9f02863c270d4261acd5a77e8e29cf241679c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "135528557"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "139714074"
 ---
 # <a name="lab-01-role-based-access-control"></a>Lab 01: Controllo degli accessi in base al ruolo
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -31,6 +31,12 @@ In questo lab verranno completati gli esercizi seguenti
 - Esercizio 2: Creare il gruppo Junior Admins con l'account utente Isabel Garcia come membro (PowerShell).
 - Esercizio 3: Creare il gruppo Service Desk con l'utente Dylan Williams come membro (interfaccia della riga di comando di Azure). 
 - Esercizio 4: Assegnare il ruolo Collaboratore macchina virtuale al gruppo Service Desk.
+
+## <a name="role-based-access-control-architecture-diagram"></a>Diagramma dell'architettura del controllo degli accessi in base al ruolo
+
+![image](https://user-images.githubusercontent.com/91347931/157751243-5aa6e521-9bc1-40af-839b-4fd9927479d7.png)
+
+## <a name="instructions"></a>Istruzioni
 
 ### <a name="exercise-1-create-the-senior-admins-group-with-the-user-account-joseph-price-as-its-member"></a>Esercizio 1: Creare il gruppo Senior Admins con l'account utente Joseph Price come membro. 
 

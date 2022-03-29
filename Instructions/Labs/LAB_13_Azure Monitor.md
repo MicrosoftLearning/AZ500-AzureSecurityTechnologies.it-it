@@ -2,12 +2,12 @@
 lab:
   title: 13 - Monitoraggio di Azure
   module: Module 04 - Manage security operations
-ms.openlocfilehash: aaffb30146595c6f0576efc74a832f9031ed3e3e
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 060e7731cb8ec5d523afd62ae973aab3556dba3e
+ms.sourcegitcommit: 472a3c306cfa4b6a6c966e7eae253382135ed501
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703486"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "140804484"
 ---
 # <a name="lab-13-azure-monitor"></a>Lab 13: Monitoraggio di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -66,6 +66,19 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 5. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per creare una nuova macchina virtuale di Azure. 
 
+    >**Attenzione:** il comando New-AzVm non funziona nell'interfaccia della riga di comando di Azure versione 4.24 e Microsoft sta attualmente indagando per la risoluzione.  In questo lab è possibile installare e ripristinare Az.Compute versione 4.23.0, che non è interessato da questo problema.
+   
+    >**Istruzioni:** ripristino di Az.Compute versione 4.23.0 
+  
+   #### <a name="step-1-download-the-working-version-of-the-module-4230-into-your-cloud-shell-session"></a>Passaggio 1: Scaricare la versione funzionante del modulo (4.23.0) nella sessione di Cloud Shell 
+   **Tipo**: Install-Module -Name Az.Compute -Force -RequiredVersion 4.23.0
+
+   #### <a name="step-2-start-a-new-powershell-session-that-will-allow-the-azcompute-assembly-version-to-be-loaded"></a>Passaggio 2: Avviare una nuova sessione di PowerShell che consentirà il caricamento della versione dell'assembly Az.Compute 
+   **Digitare**: pwsh
+
+   #### <a name="step-3-verify-that-version-4230-is-loaded"></a>Passaggio 3: Verificare che venga caricata la versione 4.23.0
+   **Tipo**: Get-Module -Name Az.Compute
+   
     ```powershell
     New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389
     ```
