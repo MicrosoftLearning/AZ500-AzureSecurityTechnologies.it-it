@@ -2,12 +2,12 @@
 lab:
   title: 05 - Azure AD Privileged Identity Management
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: f0fc7615d2e2e3a26782366d7a630ed9984bd3f0
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 6ef7c51d334587e5e4e7116194fa46f2eb5d1df0
+ms.sourcegitcommit: 1da29a6d959a7f91dbbcbabf5ec06869c98fc1f1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703528"
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "141267270"
 ---
 # <a name="lab-05-azure-ad-privileged-identity-management"></a>Lab 05: Azure AD Privileged Identity Management
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -372,7 +372,7 @@ In questa attività si esamineranno gli avvisi di PIM, le informazioni di riepil
 
 9. Nel pannello **Azure Active Directory Premium P2 - Utenti con licenza** selezionare le caselle di controllo relative agli account utente a cui sono state assegnate le licenze di **Azure Active Directory Premium P2**. Fare clic su **Rimuovi licenza** nel riquadro superiore e, quando richiesto, selezionare **Sì** per confermare.
 
-10. Nel portale di Azure passare al pannello **Utenti - Tutti gli utenti (anteprima)** , fare clic sulla voce che rappresenta l'account utente **aaduser1**, quindi nel pannello **aaduser1 - Profilo** fare clic su **Elimina** e, quando richiesto, selezionare **Sì** per confermare.
+10. Nel portale di Azure passare al pannello **Utenti - Tutti gli utenti**, fare clic sulla voce che rappresenta l'account utente **aaduser1**, quindi nel pannello **aaduser1 - Profilo** fare clic su **Elimina** e, quando richiesto, selezionare **OK** per confermare.
 
 11. Ripetere la stessa sequenza di passaggi per eliminare gli account utente rimanenti creati.
 
