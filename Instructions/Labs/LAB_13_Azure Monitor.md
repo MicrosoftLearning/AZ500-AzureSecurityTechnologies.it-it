@@ -2,12 +2,12 @@
 lab:
   title: 13 - Monitoraggio di Azure
   module: Module 04 - Manage security operations
-ms.openlocfilehash: 060e7731cb8ec5d523afd62ae973aab3556dba3e
-ms.sourcegitcommit: 472a3c306cfa4b6a6c966e7eae253382135ed501
+ms.openlocfilehash: df6fbcf475fe0a5cefec130ab713f92997dcf206
+ms.sourcegitcommit: 022221e69467f2fdccf2e02bb54e6ec395570668
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "140804484"
+ms.lasthandoff: 04/21/2022
+ms.locfileid: "143988958"
 ---
 # <a name="lab-13-azure-monitor"></a>Lab 13: Monitoraggio di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -88,7 +88,7 @@ In questo esercizio verranno eseguite le attività seguenti:
     |Impostazione|Valore|
     |---|---|
     |User |**localadmin**|
-    |Password|**Usare di nuovo la password creata nel lab del modulo 6 (Esercizio 1, Attività 2)**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere il completamento della distribuzione. 
 
@@ -157,6 +157,7 @@ In questa attività verrà configurata la raccolta del Registro di sistema di Wi
 
 6. Selezionare **Contatori delle prestazioni di Windows**, fare clic su **+ Aggiungi contatore delle prestazioni**, consultare l'elenco dei contatori delle prestazioni disponibili e aggiungere i contatori seguenti:
 
+    - Memoria(\*)\MB disponibili memoria
     - Processo(\*)\%tempo processore
     - Event Tracing for Windows\Utilizzo memoria totale --- Pool non di paging
     - Event Tracing for Windows\Utilizzo memoria totale --- Pool di paging

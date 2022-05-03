@@ -2,12 +2,12 @@
 lab:
   title: " Lab 12 - Endpoint servizio e protezione dell'archiviazione"
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 197d13a2da3097d8a2b2568a0628bd74bbd7914e
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 1bb9722fadd7d5323e8485a073f828c40bd7784b
+ms.sourcegitcommit: 7a85045fa5b0e6450a346aed7e75cd2e1cb6412a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703504"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "144018073"
 ---
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Lab 12: Endpoint servizio e protezione dell'archiviazione
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -135,9 +135,11 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
 
     |Impostazione|Valore|
     |---|---|
-    |Source (Sorgente)|**VirtualNetwork**|
+    |Source (Sorgente)|**Tag del servizio**|
+    |Tag del servizio di origine|**VirtualNetwork**|
     |Intervalli di porte di origine|**\***|
-    |Destination|Nell'elenco a discesa selezionare **Tag del servizio** e fare clic su **Archiviazione**|
+    |Destination|**Tag del servizio**|
+    |Tag del servizio di destinazione|**Archiviazione**|
     |Intervalli di porte di destinazione|**\***|
     |Protocollo|**qualsiasi**|
     |Azione|**Consentito**|
@@ -152,9 +154,11 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
 
     |Impostazione|Valore|
     |---|---|
-    |Source (Sorgente)|**VirtualNetwork**|
+    |Source (Sorgente)|**Tag del servizio**|
+    |Tag del servizio di origine|**VirtualNetwork**|
     |Intervalli di porte di origine|**\***|
-    |Destination|Nell'elenco a discesa selezionare **Tag del servizio** e fare clic su **Internet**|
+    |Destination|**Tag del servizio**|
+    |Tag del servizio di destinazione|**Internet**|
     |Intervalli di porte di destinazione|**\***|
     |Protocollo|**qualsiasi**|
     |Azione|**Nega**|
@@ -173,7 +177,8 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
     |---|---|
     |Source (Sorgente)|**qualsiasi**|
     |Intervalli di porte di origine|**\***|
-    |Destination|**VirtualNetwork**|
+    |Destination|**Tag del servizio**|
+    |Tag del servizio di destinazione|**VirtualNetwork**|
     |Intervalli di porte di destinazione|**3389**|
     |Protocollo|**TCP**|
     |Azione|**Consentito**|
@@ -266,7 +271,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Macchine virtuali** e premere **INVIO**.
 
-2. Nel pannello **Macchine virtuali** fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale**.
+2. Nel pannello **Macchine virtuali** fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale di Azure**.
 
 3. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -276,9 +281,9 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
     |Resource group|**AZ500LAB12**|
     |Nome macchina virtuale|**myVmPrivate**|
     |Region|**(Stati Uniti) Stati Uniti orientali**|
-    |Immagine|**Windows Server 2022 Datacenter - Gen 2**|
+    |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
     |Username|**localadmin**|
-    |Password|**Usare di nuovo la password creata nel lab del modulo 6 (Esercizio 1, Attività 2)**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
     |Porte in ingresso pubbliche|**Nessuno**|
     |Si ha già una licenza di Windows Server|**No**|
 
@@ -301,7 +306,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
     >**Nota**: la seconda macchina virtuale verrà connessa alla subnet Pubblica.
 
-8. Nel pannello **Macchine virtuali** fare clic su **+ Aggiungi** e nell'elenco a discesa fare clic su **+ Macchina virtuale**.
+8. Nel pannello **Macchine virtuali** fare clic su **+ Aggiungi** e nell'elenco a discesa fare clic su **+ Macchina virtuale di Azure**.
 
 9. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -311,9 +316,9 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
     |Resource group|**AZ500LAB12**|
     |Nome macchina virtuale|**myVmPublic**|
     |Region|**(Stati Uniti) Stati Uniti orientali**|
-    |Immagine|**Windows Server 2022 Datacenter - Gen 2**|
+    |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
     |Username|**localadmin**|
-    |Password|**Usare di nuovo la password creata nel lab del modulo 6 (Esercizio 1, Attività 2)**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
     |Porte in ingresso pubbliche|**Nessuno**|
     |Si ha già una licenza di Windows Server|**No**|
 
@@ -351,7 +356,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**localadmin**|
-    |Password|**Usare di nuovo la password creata nel lab del modulo 6 (Esercizio 1, Attività 2)**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di Server Manager.
 
@@ -401,7 +406,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**localadmin**|
-    |Password|**Usare di nuovo la password creata nel lab del modulo 6 (Esercizio 1, Attività 2)**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di Server Manager.
 
