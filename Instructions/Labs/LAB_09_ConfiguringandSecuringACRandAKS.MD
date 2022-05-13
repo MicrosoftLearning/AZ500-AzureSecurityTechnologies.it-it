@@ -2,12 +2,12 @@
 lab:
   title: 09 - Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: f3e03b483065cad12a6206b3ce2106441d05efe0
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 062531406ffcfac6e4c8e279c24cbb1959eebc43
+ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703498"
+ms.lasthandoff: 04/04/2022
+ms.locfileid: "141368691"
 ---
 # <a name="lab-09-configuring-and-securing-acr-and-aks"></a>Lab 09: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -139,7 +139,7 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
 
 2. Nel pannello **Servizi Kubernetes** fare clic su **+ Crea** e nel menu a discesa fare clic su **+ Crea un cluster Kubernetes**
 
-3. Nella scheda **Informazioni di base** del pannello **Crea un cluster Kubernetes** fare clic su **Change preset configurations** (Modifica configurazioni predefinite), selezionare **Sviluppo/test ($)** e fare clic su **Applica**. Specificare ora le impostazioni seguenti, senza modificare i valori predefiniti per le altre impostazioni:
+3. Nella scheda **Informazioni di base** del pannello **Crea un cluster Kubernetes** selezionare **Configurazione predefinita del cluster** e selezionare **Sviluppo/test ($)** . Specificare ora le impostazioni seguenti, senza modificare i valori predefiniti per le altre impostazioni:
 
     |Impostazione|Valore|
     |----|----|
@@ -155,9 +155,8 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
     |Impostazione|Valore|
     |----|----|
     |Abilitare i nodi virtuali|Casella di controllo deselezionata|
-    |Set di scalabilità di macchine virtuali|Casella di controllo deselezionata|
     
-5. Fare clic su **Avanti: Autenticazione >** ; nella scheda **Autenticazione** del pannello **Crea cluster Kubernetes** accettare le impostazioni predefinite e fare clic su **Avanti: Rete >** . 
+5. Fare clic su **Avanti: Accesso >** , nella scheda **Accesso** del pannello **Crea cluster Kubernetes** accettare le impostazioni predefinite e fare clic su **Avanti: Rete >** . 
 
 6. Nella scheda **Rete** del pannello **Crea cluster Kubernetes** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 

@@ -2,12 +2,12 @@
 lab:
   title: 04 - MFA, accesso condizionale e AAD Identity Protection
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: c4b21d80083316c681f5916c5fe75973220695d1
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: f63f8a24c0d9b7c870967ee8c83292bd80b617f9
+ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703522"
+ms.lasthandoff: 04/04/2022
+ms.locfileid: "141368706"
 ---
 # <a name="lab-04-mfa-conditional-access-and-aad-identity-protection"></a>Lab 04: MFA, accesso condizionale e AAD Identity Protection
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -80,6 +80,8 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
 
 9. Nel pannello **Distribuzione personalizzata** assicurarsi che siano configurate le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
+>**Nota**: è necessario creare una password univoca che verrà usata per la creazione delle macchine virtuali per il resto del corso. La password deve avere una lunghezza di almeno 12 caratteri e soddisfare i requisiti di complessità definiti (la password deve includere tre dei seguenti elementi: un carattere minuscolo, un carattere maiuscolo, un numero e un carattere speciale). [Requisiti delle password delle macchine virtuali](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-). Prendere nota della password.
+
    |Impostazione|Valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
@@ -88,10 +90,10 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
    |Dimensioni macchina virtuale|**Standard_D2s_v3**|
    |Nome VM|**az500-04-vm1**|
    |Nome utente amministratore|**Studente**|
-   |Password amministratore|**Pa55w.rd1234**|
+   |Password amministratore|**Creare la password e prenderne nota per riferimento futuro. Questa password verrà chiesta per l'accesso al lab necessario.**|
    |Nome della rete virtuale|**az500-04-vnet1**|
 
-    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [ **https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
 10. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
@@ -162,7 +164,7 @@ In questa attività si creeranno tre utenti: aaduser1 (amministratore globale), 
 
 1. Tornare nel pannello di Azure Active Directory **AdatumLab500-04** e fare clic su **Utenti** nella sezione **Gestisci**.
 
-2. Nel pannello **Utenti \| Tutti gli utenti (anteprima)** fare clic su **+ Nuovo utente**. 
+2. Nel pannello **Utenti \| Tutti gli utenti** fare clic su **+ Nuovo utente**. 
 
 3. Nel pannello **Nuovo utente** assicurarsi che sia selezionata l'opzione **Crea utente** e specificare le impostazioni seguenti, lasciando i valori predefiniti per le altre, quindi fare clic su **Crea**:
 
@@ -179,7 +181,7 @@ In questa attività si creeranno tre utenti: aaduser1 (amministratore globale), 
 
     >**Nota**: registrare la password dell'utente. Sarà necessaria più avanti in questo lab. 
 
-4. Tornare al pannello **Utenti \| Tutti gli utenti (anteprima)** e fare clic su **+ Nuovo utente**. 
+4. Nel pannello **Utenti \| Tutti gli utenti** fare clic su **+ Nuovo utente**. 
 
 5. Nel pannello **Nuovo utente** assicurarsi che sia selezionata l'opzione **Crea utente** e specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -194,7 +196,7 @@ In questa attività si creeranno tre utenti: aaduser1 (amministratore globale), 
 
     >**Nota**: registrare il nome utente completo e la password.
 
-6. Tornare al pannello **Utenti \| Tutti gli utenti (anteprima)** e fare clic su **+ Nuovo utente**. 
+6. Nel pannello **Utenti \| Tutti gli utenti** fare clic su **+ Nuovo utente**. 
 
 7. Fare clic su **Nuovo utente**, completare impostazioni di configurazione del nuovo utente e quindi fare clic su **Crea**.
 
@@ -215,7 +217,7 @@ In questa attività si creeranno tre utenti: aaduser1 (amministratore globale), 
 
 In questa attività si assegnerà ogni utente alla licenza di Azure Active Directory Premium P2.
 
-1. Nel pannello **Utenti \| Tutti gli utenti (anteprima)** fare clic sulla voce che rappresenta l'account utente. 
+1. Nel pannello **Utenti \| Tutti gli utenti** fare clic sulla voce che rappresenta l'account utente. 
 
 2. Nel pannello che visualizza le proprietà dell'account utente fare clic su **Modifica**.  Verificare che l'opzione Località di utilizzo sia impostata su **Stati Uniti** e in caso contrario impostarla e fare clic su **Salva**.
 
@@ -431,7 +433,7 @@ In questa attività si visualizzeranno le opzioni di Azure AD Identity Protectio
 
 3. Nella sezione **Sicurezza \| Attività iniziali** fare clic su **Identity Protection** nella sezione **Proteggi**.
 
-4. Nel pannello **Identity Protection \| Panoramica**  esaminare le opzioni **Proteggi**, **Report** e **Notifica**. 
+4. Nel pannello **Identity Protection \| Panoramica** esaminare i grafici **Nuovi utenti a rischio rilevati** e **Nuovi accessi a rischio rilevati** e le altre informazioni sugli utenti a rischio. 
 
 #### <a name="task-2-configure-a-user-risk-policy"></a>Attività 2: Configurare un criterio di rischio utente
 
@@ -484,7 +486,7 @@ In questa attività si configurerà un criterio di rischio di accesso.
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**Studente**|
-   |Password|**Pa55w.rd1234**|
+   |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**.  
 

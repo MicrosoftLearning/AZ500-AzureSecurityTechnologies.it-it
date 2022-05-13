@@ -2,12 +2,12 @@
 lab:
   title: 08 - Firewall di Azure
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: cb13c319b70c994bed74b1079bc4ad8fe6209361
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 1657a251f1355150d6386f8793825369be955705
+ms.sourcegitcommit: e9389f8de66fec6d456a3f303bd350e380df7ff2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703510"
+ms.lasthandoff: 04/04/2022
+ms.locfileid: "141371916"
 ---
 # <a name="lab-08-azure-firewall"></a>Lab 08: Firewall di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -167,13 +167,14 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
    |Impostazione|valore|
    |---|---|
    |Nome route|**FW-DG**|
-   |Prefisso indirizzo|**0.0.0.0/0**
+   |Origine prefisso indirizzo|**Indirizzi IP**|
+   |Indirizzi IP/Intervalli CIDR di origine|**0.0.0.0/0**
    |Tipo hop successivo|**Appliance virtuale**|
    |Indirizzo hop successivo|Indirizzo IP privato del firewall identificato nell'attività precedente|
 
     >**Nota**: Firewall di Azure è in realtà un servizio gestito, ma l'appliance virtuale è efficace in questa situazione.
     
-11.  Fare clic su **OK** per aggiungere la route. 
+11.  Fare clic su **Aggiungi** per aggiungere la route. 
 
 
 #### <a name="task-4-configure-an-application-rule"></a>Attività 4: Configurare una regola dell'applicazione

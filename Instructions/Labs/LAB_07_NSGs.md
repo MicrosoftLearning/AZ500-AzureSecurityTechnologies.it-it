@@ -2,12 +2,12 @@
 lab:
   title: 07 - Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: e33f0a1f5c30a86d2b2a47069c6f4d759d60e782
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: d7cfed1e861215cf32c3b51c4a07aa6886575000
+ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703492"
+ms.lasthandoff: 04/04/2022
+ms.locfileid: "141368702"
 ---
 # <a name="lab-07-network-security-groups-and-application-security-groups"></a>Lab 07: Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -197,7 +197,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Macchine virtuali** e premere **INVIO**.
 
-2. Nel pannello **Macchine virtuali** fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale**.
+2. Nel pannello **Macchine virtuali** fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale di Azure**.
 
 3. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -207,10 +207,10 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
    |Resource group|**AZ500LAB07**|
    |Nome macchina virtuale|**myVmWeb**|
    |Region|**(Stati Uniti) Stati Uniti orientali**|
-   |Immagine|**Windows Server 2022 Datacenter - Gen2**|
+   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
-   |Password|**Usare di nuovo la password creata nel lab del modulo 6 (Esercizio 1, Attività 2)**|
+   |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    |Conferma password|**Digitare nuovamente la password**|
    |Porte in ingresso pubbliche|**Nessuno**|
    |Usare una licenza esistente di Windows Server |**No**|
@@ -235,7 +235,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 In questa attività si creerà una macchina virtuale da usare come server di gestione.
 
-1. Nel portale di Azure passare al pannello **Macchine virtuali**, fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale**.
+1. Nel portale di Azure passare al pannello **Macchine virtuali**, fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale di Azure**.
 
 2. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -245,10 +245,10 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
    |Resource group|**AZ500LAB07**|
    |Nome macchina virtuale|**myVMMgmt**|
    |Region|(Stati Uniti) Stati Uniti orientali|
-   |Immagine|**Windows Server 2022 Datacenter - Gen 2**|
+   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
-   |Password|**Usare di nuovo la password creata nel lab del modulo 6 (Esercizio 1, Attività 2)**|
+   |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    |Porte in ingresso pubbliche|**Nessuno**|
    |Si ha già una licenza di Windows Server|**No**|
 
@@ -301,7 +301,7 @@ In questa attività si testeranno i filtri del traffico di rete. Si dovrà esser
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**Studente**|
-   |Password|**Usare di nuovo la password creata nel lab del modulo 6 (Esercizio 1, Attività 2)**|
+   |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: verificare che la connessione Desktop remoto sia riuscita. A questo punto è stato confermato che è possibile connettersi tramite Desktop remoto a myVMMgmt.
 
