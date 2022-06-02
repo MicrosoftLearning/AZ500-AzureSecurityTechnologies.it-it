@@ -2,12 +2,12 @@
 lab:
   title: 09 - Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: 062531406ffcfac6e4c8e279c24cbb1959eebc43
-ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
+ms.openlocfilehash: 167dca080d65d97997b3a884015bfa2228c17a23
+ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141368691"
+ms.lasthandoff: 05/31/2022
+ms.locfileid: "145955419"
 ---
 # <a name="lab-09-configuring-and-securing-acr-and-aks"></a>Lab 09: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -148,6 +148,7 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
     |Nome del cluster Kubernetes|**MyKubernetesCluster**|
     |Region|**(Stati Uniti) Stati Uniti orientali**|
     |Zone di disponibilità |**Nessuno**|
+    |Metodo di scalabilità|**Manuale**|
     |Numero di nodi|**1**|
 
 4. Fare clic su **Avanti: Pool di nodi >** e, nella scheda **Pool di nodi** del pannello **Crea cluster Kubernetes**, specificare le impostazioni seguenti e non modificare i valori predefiniti per le altre impostazioni:
