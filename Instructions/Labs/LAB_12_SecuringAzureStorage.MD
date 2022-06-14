@@ -2,12 +2,12 @@
 lab:
   title: " Lab 12 - Endpoint servizio e protezione dell'archiviazione"
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 1bb9722fadd7d5323e8485a073f828c40bd7784b
-ms.sourcegitcommit: 7a85045fa5b0e6450a346aed7e75cd2e1cb6412a
+ms.openlocfilehash: d47890d94d7f1a008024ebedf5154d487cb35792
+ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "144018073"
+ms.lasthandoff: 05/31/2022
+ms.locfileid: "145955410"
 ---
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Lab 12: Endpoint servizio e protezione dell'archiviazione
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -247,7 +247,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 14. Tornare al pannello dell'account di archiviazione, quindi nella sezione **Sicurezza e rete** fare clic su **Rete**.
 
-15. Nel pannello **Firewall e reti virtuali** selezionare l'opzione **Reti selezionate** e fare clic sul collegamento **+ Aggiungi rete virtuale esistente**. 
+15. Nel pannello **Firewall e reti virtuali** selezionare l'opzione **Abilitato da reti virtuali e indirizzi IP selezionati** e fare clic sul collegamento **+ Aggiungi rete virtuale esistente**. 
 
 16. Nel pannello **Aggiungi reti** specificare le impostazioni seguenti:
 

@@ -2,12 +2,12 @@
 lab:
   title: 10 - Key Vault (implementazione di dati protetti con la configurazione di Always Encrypted)
   module: Module 03 - Secure Data and Applications
-ms.openlocfilehash: aa30698684cad8837b95fe823ce16a4043b63e5c
-ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
+ms.openlocfilehash: c31dd6e930e0f1d1b82e7c6ea502bb6fa51a7dd7
+ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141368713"
+ms.lasthandoff: 05/31/2022
+ms.locfileid: "145955383"
 ---
 # <a name="lab-10-key-vault-implementing-secure-data-by-setting-up-always-encrypted"></a>Lab 10 - Key Vault (implementazione di dati protetti con la configurazione di Always Encrypted)
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -133,7 +133,7 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
     |Impostazione|Valore|
     |----|----|
     |Configura dal modello (facoltativo)|**Gestione di chiavi, segreti e certificati**|
-    |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto** per selezionare **16 autorizzazioni** in totale. Assicurarsi che le autorizzazioni per **Rotation Policy Operations** (Operazioni criteri di rotazione) siano **deselezionate** |
+    |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto** per selezionare **17 autorizzazioni** in totale (assicurarsi che le autorizzazioni per **Operazioni criteri di rotazione** siano **deselezionate**) |
     |Autorizzazioni dei segreti|Fare clic su **Seleziona tutto** per selezionare **8 autorizzazioni** in totale|
     |Autorizzazioni per i certificati|Fare clic su **Seleziona tutto** per selezionare **16 autorizzazioni** in totale|
     |Selezionare un'entità|Fare clic su **Nessuna selezione**, selezionare il proprio account utente nel pannello **Entità** e fare clic su **Seleziona**|
@@ -315,7 +315,7 @@ Con la distribuzione del modello di ARM nell'Esercizio 1 è stato effettuato il 
    
 4. Prendere nota del valore di **Stringa di connessione ADO.NET**. Sarà necessario più avanti.
 
-    >**Nota**: quando si usa la stringa di connessione, assicurarsi di sostituire il segnaposto `{your_password}` con **Pa55w.rd1234**.
+    >**Nota**: quando si usa la stringa di connessione, assicurarsi di sostituire il `{your_password}` segnaposto con la password configurata con la distribuzione in Esercizio 1.
 
 #### <a name="task-4-log-on-to-the-azure-vm-running-visual-studio-2019-and-sql-management-studio-2018"></a>Attività 4: Accedere alla macchina virtuale di Azure che esegue Visual Studio 2019 e SQL Management Studio 2018
 
@@ -402,7 +402,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
 14. Nella pagina **Selezione colonna** selezionare le colonne **SSN** e **Birthdate**, impostare il valore di **Tipo di crittografia** della colonna **SSN** su **Deterministico** e quello della colonna **Birthdate** su **Casuale**, quindi fare clic su **Avanti**.
 
-    >**Nota**: se durante l'esecuzione della crittografia viene generato un errore come **Exception has been thrown by the target of an invocation** (È stata generata un'eccezione dalla destinazione di una chiamata) correlato a **Rotary(Microsoft.SQLServer.Management.ServiceManagement)** , assicurarsi che i valori di **Autorizzazioni delle chiavi** per **Rotation Policy Operations** (Operazioni criteri di rotazione) siano **deselezionati**. In caso contrario, nel portale di Azure passare a **Key Vault** >> **Criteri di accesso** >> **Autorizzazioni delle chiavi** >> deselezionare tutti i valori in **Rotation Policy Operations** (Operazioni criteri di rotazione). 
+    >**Nota**: se durante l'esecuzione della crittografia viene generato un errore come **È stata generata un'eccezione dalla destinazione di una chiamata** correlato a **Rotary(Microsoft.SQLServer.Management.ServiceManagement)** , assicurarsi che i valori di **Autorizzazioni delle chiavi** per **Operazioni criteri di rotazione** siano **deselezionati**. In caso contrario, nel portale di Azure passare a **Key Vault** >> **Criteri di accesso** >> **Autorizzazioni delle chiavi** >> deselezionare tutti i valori in **Operazioni criteri di rotazione** >> in **Operazioni relative alle chiavi con privilegi** >> deselezionare **Release**.
 
 15. Nella pagina **Configurazione della chiave master** selezionare **Azure Key Vault**, fare clic su **Accedi**, quando richiesto eseguire l'autenticazione usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza di Azure Key Vault in questo lab, assicurarsi che l'opzione Key Vault venga visualizzata nell'elenco a discesa **Selezionare un insieme di credenziali delle chiavi di Azure**, quindi fare clic su **Avanti**.
 
@@ -469,7 +469,7 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
 
 14. Nella console di Visual Studio fare clic sul pulsante **Avvia** per avviare la compilazione dell'applicazione console e avviarla.
 
-15. L'applicazione avvia una finestra del prompt dei comandi. Quando viene richiesta la password, digitare **Pa55w.rd1234** per connettersi al database SQL di Azure. 
+15. L'applicazione avvia una finestra del prompt dei comandi. Quando viene richiesta la password, digitare la password specificata nella distribuzione nell'esercizio 1 per connettersi a database SQL di Azure. 
 
 16. Lasciare l'app console in esecuzione e passare alla console di **SQL Management Studio**. 
 
