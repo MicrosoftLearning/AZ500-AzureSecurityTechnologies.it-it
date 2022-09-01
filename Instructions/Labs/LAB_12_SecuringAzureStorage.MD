@@ -2,12 +2,12 @@
 lab:
   title: " Lab 12 - Endpoint servizio e protezione dell'archiviazione"
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: d47890d94d7f1a008024ebedf5154d487cb35792
-ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
+ms.openlocfilehash: 96c1073571e40558a102d2fd661b6b4e3b4f48d7
+ms.sourcegitcommit: 5eaa012a52e6f14e499393257855d314a720a668
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/31/2022
-ms.locfileid: "145955410"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "147717269"
 ---
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Lab 12: Endpoint servizio e protezione dell'archiviazione
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -43,10 +43,11 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 1:Creare una rete virtuale
 - Attività 2: Aggiungere una subnet alla rete virtuale e configurare un endpoint di archiviazione
 - Attività 3: Configurare un gruppo di sicurezza di rete per limitare l'accesso alla subnet
-- Attività 4: Creare un account di archiviazione con la condivisione file
-- Attività 5: Distribuire macchine virtuali nelle subnet designate
-- Attività 6: Testare la connessione di archiviazione dalla subnet privata per verificare che l'accesso sia consentito
-- Attività 7: Testare la connessione di archiviazione dalla subnet pubblica per verificare che l'accesso sia negato 
+- Attività 4: Configurare un gruppo di sicurezza di rete per consentire RDP nella subnet pubblica
+- Attività 5: Creare un account di archiviazione con una condivisione file
+- Attività 6: Distribuire macchine virtuali nelle subnet designate
+- Attività 7: Testare la connessione di archiviazione dalla subnet privata per verificare che l'accesso sia consentito
+- Attività 8: Testare la connessione di archiviazione dalla subnet pubblica per verificare che l'accesso sia negato 
 
 #### <a name="task-1-create-a-virtual-network"></a>Attività 1:Creare una rete virtuale
 
@@ -196,7 +197,57 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**Privata**|
 
-#### <a name="task-4-create-a-storage-account-with-a-file-share"></a>Attività 4: Creare un account di archiviazione con la condivisione file
+#### <a name="task-4-configure-a-network-security-group-to-allow-rdp-on-the-public-subnet"></a>Attività 4: Configurare un gruppo di sicurezza di rete per consentire RDP nella subnet pubblica
+
+In questa attività si creerà un gruppo di sicurezza di rete con una regola di sicurezza in ingresso (RDP). Il gruppo di sicurezza di rete verrà inoltre associato alla subnet Pubblica. In questo modo verrà consentito l'accesso RDP alla macchina virtuale pubblica.
+
+1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Gruppi di sicurezza di rete** e premere **INVIO**.
+
+2. Nel pannello **Gruppi di sicurezza di rete** fare clic su **+ Crea**.
+
+3. Nella scheda **Informazioni di base** del pannello **Crea gruppo di sicurezza di rete** specificare le impostazioni seguenti: 
+
+    |Impostazione|Valore|
+    |---|---|
+    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
+    |Resource group|**AZ500LAB12**|
+    |Nome|**myNsgPublic**|
+    |Region|**Stati Uniti orientali**|
+
+4. Fare clic su **Rivedi e crea** e quindi su **Crea**.
+
+    >**Nota**: nei passaggi successivi verrà creata una regola di sicurezza in uscita che consente la comunicazione con il servizio Archiviazione di Azure. 
+
+5. Nel portale di Azure tornare nel pannello **Gruppi di sicurezza di rete** e fare clic sulla voce **myNsgPublic**.
+
+6. Nella sezione **Impostazioni** del pannello **myNsgPublic** fare clic su **Regole di sicurezza in ingresso** e quindi fare clic su **+Aggiungi**.
+
+7. Nel pannello **Aggiungi regola di sicurezza in ingresso** specificare le impostazioni seguenti, lasciando i valori predefiniti per le altre voci: 
+
+    |Impostazione|Valore|
+    |---|---|
+    |Source (Sorgente)|**qualsiasi**|
+    |Intervalli di porte di origine|**\***|
+    |Destination|**Tag del servizio**|
+    |Tag del servizio di destinazione|**VirtualNetwork**|
+    |Intervalli di porte di destinazione|**3389**|
+    |Protocollo|**TCP**|
+    |Azione|**Consentito**|
+    |Priorità|**1200**|                                                    
+    |Nome|**Allow-RDP-All**|
+
+8. Nel pannello **Aggiungi regola di sicurezza in ingresso** fare clic su **Aggiungi** per creare la nuova regola in ingresso. 
+
+    >**Nota**: il gruppo di sicurezza di rete verrà ora associato alla subnet Pubblica.
+
+9. Nel pannello **Subnet** selezionare **+ Associa** e specificare le impostazioni seguenti nella sezione **Associa subnet**, quindi fare clic su **OK**:
+
+    |Impostazione|valore|
+    |---|---|
+    |Rete virtuale|**myVirtualNetwork**|
+    |Subnet|**Pubblica**|
+    
+#### <a name="task-5-create-a-storage-account-with-a-file-share"></a>Attività 5: Creare un account di archiviazione con una condivisione file
 
 In questa attività verrà creato un account di archiviazione con una condivisione file e si otterrà la chiave dell'account di archiviazione.  
 
@@ -263,7 +314,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
     >**Nota**: a questo punto del lab sono stati configurati una rete virtuale, un gruppo di sicurezza di rete e un account di archiviazione con una condivisione file. 
 
-#### <a name="task-5-deploy-virtual-machines-into-the-designated-subnets"></a>Attività 5: Distribuire macchine virtuali nelle subnet designate
+#### <a name="task-6-deploy-virtual-machines-into-the-designated-subnets"></a>Attività 6: Distribuire macchine virtuali nelle subnet designate
 
 In questa attività verranno create due macchine virtuali, una nella subnet Privata e una in quella Pubblica. 
 
@@ -341,7 +392,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
     >**Nota**: è possibile passare all'attività successiva una volta completata la distribuzione della macchina virtuale di Azure **myVMPrivate**.
 
-#### <a name="task-6-test-the-storage-connection-from-the-private-subnet-to-confirm-that-access-is-allowed"></a>Attività 6: Testare la connessione di archiviazione dalla subnet privata per verificare che l'accesso sia consentito
+#### <a name="task-7-test-the-storage-connection-from-the-private-subnet-to-confirm-that-access-is-allowed"></a>Attività 7: Testare la connessione di archiviazione dalla subnet privata per verificare che l'accesso sia consentito
 
 In questa attività si eseguirà la connessione alla macchina virtuale myVMPrivate tramite Desktop remoto, quindi si eseguirà il mapping di un'unità alla condivisione file. 
 
@@ -393,7 +444,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
 
     >**Nota**: a questo punto è stato confermato che la macchina virtuale nella subnet Privata può accedere all'account di archiviazione. 
 
-####  <a name="task-7-test-the-storage-connection-from-the-public-subnet-to-confirm-that-access-is-denied"></a>Attività 7: Testare la connessione di archiviazione dalla subnet pubblica per verificare che l'accesso sia negato 
+####  <a name="task-8-test-the-storage-connection-from-the-public-subnet-to-confirm-that-access-is-denied"></a>Attività 8: Testare la connessione di archiviazione dalla subnet pubblica per verificare che l'accesso sia negato 
 
 1. Passare al pannello **Macchine virtuali**. 
 
@@ -426,7 +477,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
     Test-NetConnection -ComputerName www.bing.com -Port 80
     ```
 
-    >**Nota**: il test avrà esito positivo perché alla subnet Pubblica non è associato alcun gruppo di sicurezza di rete.
+    >**Nota**: il test avrà esito positivo perché non esiste alcuna regola di sicurezza in uscita per negare Internet nella subnet Pubblica.
 
 8. Terminare la sessione Desktop remoto alla macchina virtuale di Azure **myVMPublic**.
 
@@ -448,4 +499,4 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
     ```
 
 4.  Chiudere il riquadro **Cloud Shell**. 
- 
+
