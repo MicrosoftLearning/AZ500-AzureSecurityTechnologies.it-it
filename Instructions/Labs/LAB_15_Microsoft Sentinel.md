@@ -2,12 +2,12 @@
 lab:
   title: 15 - Microsoft Sentinel
   module: Module 04 - Manage Security Operations
-ms.openlocfilehash: 63a24bbc17b846d3587cf3fb83ab46b7235d5fcd
-ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
+ms.openlocfilehash: 147bb0c8f6637393087c5a913f5c9bd8ca380866
+ms.sourcegitcommit: 3c178de473f4f986a3a7ea1d03c9f5ce699a05a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141368791"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "147871965"
 ---
 # <a name="lab-15-microsoft-sentinel"></a>Lab 15: Microsoft Sentinel
 # <a name="student-lab-manual"></a>Manuale del lab per studenti
@@ -217,7 +217,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
 9. Nella scheda **Impostazioni eventi imprevisti** del pannello **Procedura guidata per la regola di analisi - Crea una nuova regola** accettare le impostazioni predefinite e fare clic su **Avanti: Risposta automatica >** . 
 
-10. Nella scheda **Risposta automatica** del pannello **Procedura guidata per la regola di analisi - Crea una nuova regola**, nell'elenco a discesa **Automazione degli avvisi** selezionare la casella di controllo accanto alla voce **Change-Incident-Severity** e fare clic su **Avanti: Rivedi >** . 
+10. Nella scheda **Risposta automatica** del riquadro **Procedura guidata per la regola di analisi - Crea una nuova regola**, nell'elenco a discesa **Automazione degli avvisi (versione classica)** selezionare la casella di controllo accanto alla voce **Change-Incident-Severity** e fare clic su **Avanti: Rivedi >** . 
 
 11. Nella scheda **Rivedi e crea** del pannello **Procedura guidata per la regola di analisi - Crea una nuova regola** fare clic su **Crea**.
 
