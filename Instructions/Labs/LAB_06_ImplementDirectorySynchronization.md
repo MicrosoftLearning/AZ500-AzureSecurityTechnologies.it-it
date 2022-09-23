@@ -2,12 +2,12 @@
 lab:
   title: 06 - Implementare la sincronizzazione della directory
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 96871a9f1e59adde1489533ecbab8a1e85a89fbc
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 00c359e1875ab915ab697d8ed33e36d956540529
+ms.sourcegitcommit: 1da29a6d959a7f91dbbcbabf5ec06869c98fc1f1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703516"
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "141267258"
 ---
 # <a name="lab-06-implement-directory-synchronization"></a>Lab 06: Implementare la sincronizzazione della directory
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -77,8 +77,6 @@ In questa attività si identificherà un nome DNS per la distribuzione della mac
 
 In questa attività si distribuirà una macchina virtuale di Azure che ospiterà un controller di dominio di Active Directory
 
->**Nota**: è necessario creare una password univoca che verrà usata per la creazione delle macchine virtuali per il resto del corso. La password deve avere una lunghezza di almeno 12 caratteri e soddisfare i requisiti di complessità definiti (la password deve includere tre dei seguenti elementi: un carattere minuscolo, un carattere maiuscolo, un numero e un carattere speciale). [Requisiti delle password delle macchine virtuali](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-). Prendere nota della password.
-
 1. Aprire un'altra scheda del browser nella stessa finestra e passare a **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain**.
 
 2. Nella pagina **Create a new Windows VM and create a new AD Forest, Domain and DC** fare clic su **Distribuisci in Azure**. Il browser verrà reindirizzato automaticamente al pannello **Create an Azure VM with a new AD Forest** nel portale di Azure.
@@ -95,7 +93,7 @@ In questa attività si distribuirà una macchina virtuale di Azure che ospiterà
    |Resource group|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB06**|
    |Region|L'area di Azure identificata nell'attività precedente|
    |Nome utente amministratore|**Studente**|
-   |Password amministratore|**Usare la password creata nella nota precedente**|
+   |Password amministratore|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    |Nome dominio|**adatum.com**|
    |Prefisso DNS|Il nome host DNS identificato nell'attività precedente|
    |Dimensioni macchina virtuale|**Standard_D2s_v3**|
@@ -169,7 +167,7 @@ In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegn
 
 1. Nel pannello del tenant di Azure AD **AdatumSync** fare clic su **Utenti** nella sezione **Gestisci**.
 
-2. Nel pannello **Utenti \| Tutti gli utenti (anteprima)** fare clic su **+ Nuovo utente**. 
+2. Nel pannello **Utenti \| Tutti gli utenti** fare clic su **+ Nuovo utente**. 
 
 3. Nel pannello **Nuovo utente** assicurarsi che sia selezionata l'opzione **Crea utente** e specificare le impostazioni seguenti, lasciando i valori predefiniti per le altre impostazioni, quindi fare clic su **Crea**:
 
@@ -228,7 +226,7 @@ In questa attività ci si connetterà alla macchina virtuale di Azure che esegue
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**Studente**|
-   |Password|**Password univoca creata nell'Esercizio 1, Attività 2**|
+   |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**.  
 
@@ -257,7 +255,7 @@ In questa attività ci si connetterà alla macchina virtuale di Azure che esegue
    |Nome completo|**aduser1**|
    |Accesso utente UPN|**aduser1**|
    |Accesso utente SamAccountName|**aduser1**|
-   |Password e Conferma password|**Pa55w.rd1234**|
+   |Password e Conferma password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    |Altre opzioni password|**Nessuna scadenza password**|
 
 #### <a name="task-2-install-azure-ad-connect"></a>Attività 2: Installare Azure AD Connect
@@ -293,7 +291,7 @@ In questa attività si installerà AD Connect nella macchina virtuale.
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**ADATUM \\ Student**|
-   |Password|**Pa55w.rd1234**|
+   |Password|**Usare la password personale creata in Lab 06 > Esercizio 1 > Attività 2**|
 
 14. Nella pagina **Connessione delle directory** assicurarsi che la voce **adatum.com** sia visualizzata come directory configurata e fare clic su **Avanti**
 

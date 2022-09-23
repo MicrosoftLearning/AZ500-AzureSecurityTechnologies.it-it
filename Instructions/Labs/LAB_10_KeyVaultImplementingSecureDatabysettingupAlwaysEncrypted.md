@@ -2,12 +2,12 @@
 lab:
   title: 10 - Key Vault (implementazione di dati protetti con la configurazione di Always Encrypted)
   module: Module 03 - Secure Data and Applications
-ms.openlocfilehash: 5fe46941b0680e3c8581449c61f5989d10e073e1
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: c31dd6e930e0f1d1b82e7c6ea502bb6fa51a7dd7
+ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703582"
+ms.lasthandoff: 05/31/2022
+ms.locfileid: "145955383"
 ---
 # <a name="lab-10-key-vault-implementing-secure-data-by-setting-up-always-encrypted"></a>Lab 10 - Key Vault (implementazione di dati protetti con la configurazione di Always Encrypted)
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -76,7 +76,7 @@ In questa attività si distribuirà una macchina virtuale di Azure e come parte 
    |Resource group|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB10**|
    |Location|**(Stati Uniti) Stati Uniti orientali**|
    |Nome utente amministratore|**Studente**|
-   |Password amministratore|**Pa55w.rd1234**|
+   |Password amministratore|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    
     >**Nota**: anche se è possibile cambiare le credenziali amministrative usate per accedere alla macchina virtuale, non è necessario farlo.
 
@@ -133,7 +133,7 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
     |Impostazione|Valore|
     |----|----|
     |Configura dal modello (facoltativo)|**Gestione di chiavi, segreti e certificati**|
-    |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto** per selezionare **16 autorizzazioni** in totale. Assicurarsi che le autorizzazioni per **Rotation Policy Operations** (Operazioni criteri di rotazione) siano **deselezionate** |
+    |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto** per selezionare **17 autorizzazioni** in totale (assicurarsi che le autorizzazioni per **Operazioni criteri di rotazione** siano **deselezionate**) |
     |Autorizzazioni dei segreti|Fare clic su **Seleziona tutto** per selezionare **8 autorizzazioni** in totale|
     |Autorizzazioni per i certificati|Fare clic su **Seleziona tutto** per selezionare **16 autorizzazioni** in totale|
     |Selezionare un'entità|Fare clic su **Nessuna selezione**, selezionare il proprio account utente nel pannello **Entità** e fare clic su **Seleziona**|
@@ -315,7 +315,7 @@ Con la distribuzione del modello di ARM nell'Esercizio 1 è stato effettuato il 
    
 4. Prendere nota del valore di **Stringa di connessione ADO.NET**. Sarà necessario più avanti.
 
-    >**Nota**: quando si usa la stringa di connessione, assicurarsi di sostituire il segnaposto `{your_password}` con **Pa55w.rd1234**.
+    >**Nota**: quando si usa la stringa di connessione, assicurarsi di sostituire il `{your_password}` segnaposto con la password configurata con la distribuzione in Esercizio 1.
 
 #### <a name="task-4-log-on-to-the-azure-vm-running-visual-studio-2019-and-sql-management-studio-2018"></a>Attività 4: Accedere alla macchina virtuale di Azure che esegue Visual Studio 2019 e SQL Management Studio 2018
 
@@ -354,7 +354,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**Studente**|
-    |Password|**Pa55w.rd1234**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**. Chiudere Server Manager. 
 
@@ -370,7 +370,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
     |Nome server|Il nome del server identificato in precedenza in questa attività|
     |Autenticazione|**Autenticazione di SQL Server**|
     |Accedi|**Studente**|
-    |Password|**Pa55w.rd1234**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
 8. Nella finestra di dialogo **Connetti al server** fare clic su **Connetti**.
 
@@ -402,7 +402,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
 14. Nella pagina **Selezione colonna** selezionare le colonne **SSN** e **Birthdate**, impostare il valore di **Tipo di crittografia** della colonna **SSN** su **Deterministico** e quello della colonna **Birthdate** su **Casuale**, quindi fare clic su **Avanti**.
 
-    >**Nota**: se durante l'esecuzione della crittografia viene generato un errore come **Exception has been thrown by the target of an invocation** (È stata generata un'eccezione dalla destinazione di una chiamata) correlato a **Rotary(Microsoft.SQLServer.Management.ServiceManagement)** , assicurarsi che i valori di **Autorizzazioni delle chiavi** per **Rotation Policy Operations** (Operazioni criteri di rotazione) siano **deselezionati**. In caso contrario, nel portale di Azure passare a **Key Vault** >> **Criteri di accesso** >> **Autorizzazioni delle chiavi** >> deselezionare tutti i valori in **Rotation Policy Operations** (Operazioni criteri di rotazione). 
+    >**Nota**: se durante l'esecuzione della crittografia viene generato un errore come **È stata generata un'eccezione dalla destinazione di una chiamata** correlato a **Rotary(Microsoft.SQLServer.Management.ServiceManagement)** , assicurarsi che i valori di **Autorizzazioni delle chiavi** per **Operazioni criteri di rotazione** siano **deselezionati**. In caso contrario, nel portale di Azure passare a **Key Vault** >> **Criteri di accesso** >> **Autorizzazioni delle chiavi** >> deselezionare tutti i valori in **Operazioni criteri di rotazione** >> in **Operazioni relative alle chiavi con privilegi** >> deselezionare **Release**.
 
 15. Nella pagina **Configurazione della chiave master** selezionare **Azure Key Vault**, fare clic su **Accedi**, quando richiesto eseguire l'autenticazione usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza di Azure Key Vault in questo lab, assicurarsi che l'opzione Key Vault venga visualizzata nell'elenco a discesa **Selezionare un insieme di credenziali delle chiavi di Azure**, quindi fare clic su **Avanti**.
 
@@ -441,7 +441,7 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
     |---|---|
     |Project name (Nome progetto)|**OpsEncrypt**|
     |Nome soluzione|**OpsEncrypt**|
-    |Framework|**.NET Framework 4.7.2.**|
+    |Framework|**.NET Framework 4.7.2**|
 
 6. Nella console di Visual Studio fare clic sul menu **Strumenti**, fare clic su **Gestione pacchetti NuGet** nel menu a discesa, quindi fare clic su **Console di Gestione pacchetti** nel menu a cascata.
 
@@ -457,11 +457,11 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
     ```
     
-9. Passare al file **\\Allfiles\\Labs\\10\\program.cs**, aprirlo nel Blocco note, quindi copiare il contenuto negli Appunti.
+9. Ridurre a icona la sessione RDP verso la macchina virtuale di Azure, quindi passare a **\\Allfiles\\Labs\\10\\program.cs**, aprirlo nel Blocco note e copiarne il contenuto negli Appunti.
 
-10. Passare alla console di Visual Studio, quindi nella finestra **Esplora soluzioni** fare clic su **Program.cs** e sostituirne il contenuto con il codice copiato negli Appunti.
+10. Tornare alla sessione RDP e nella console di Visual Studio, nella finestra **Esplora soluzioni** fare clic su **Program.cs** e sostituirne il contenuto con il codice copiato negli Appunti.
 
-11. Nella finestra di Visual Studio, nella riga 15 del file **Program.cs** sostituire il segnaposto `<connection string noted earlier>` con la stringa di connessione **ADO.NET** del database SQL di Azure registrata in precedenza nel lab. Nella stringa di connessione sostituire il segnaposto `{your_password}` con `Pa55w.rd1234`.
+11. Nella finestra di Visual Studio, nella riga 15 del file **Program.cs** sostituire il segnaposto `<connection string noted earlier>` con la stringa di connessione **ADO.NET** del database SQL di Azure registrata in precedenza nel lab. Nella stringa di connessione sostituire il segnaposto `{your_password}` con `Pa55w.rd1234`. Se la stringa è stata salvata nel computer del lab, potrebbe essere necessario lasciare la sessione RDP per copiare la stringa ADO, quindi tornare alla macchina virtuale di Azure per incollarla.
 
 12. Nella finestra di Visual Studio, nella riga 16 del file **Program.cs** sostituire il segnaposto `<client id noted earlier>` con il valore di **ID applicazione (client)** dell'app registrata annotato in precedenza nel lab. 
 
@@ -469,7 +469,7 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
 
 14. Nella console di Visual Studio fare clic sul pulsante **Avvia** per avviare la compilazione dell'applicazione console e avviarla.
 
-15. L'applicazione avvia una finestra del prompt dei comandi. Quando viene richiesta la password, digitare **Pa55w.rd1234** per connettersi al database SQL di Azure. 
+15. L'applicazione avvia una finestra del prompt dei comandi. Quando viene richiesta la password, digitare la password specificata nella distribuzione nell'esercizio 1 per connettersi a database SQL di Azure. 
 
 16. Lasciare l'app console in esecuzione e passare alla console di **SQL Management Studio**. 
 

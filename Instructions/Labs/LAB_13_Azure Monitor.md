@@ -2,12 +2,12 @@
 lab:
   title: 13 - Monitoraggio di Azure
   module: Module 04 - Manage security operations
-ms.openlocfilehash: df6fbcf475fe0a5cefec130ab713f92997dcf206
-ms.sourcegitcommit: 022221e69467f2fdccf2e02bb54e6ec395570668
+ms.openlocfilehash: d7418287b895ccb5af66f01b499181b321e2bc36
+ms.sourcegitcommit: 3c178de473f4f986a3a7ea1d03c9f5ce699a05a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2022
-ms.locfileid: "143988958"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "147871974"
 ---
 # <a name="lab-13-azure-monitor"></a>Lab 13: Monitoraggio di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -145,7 +145,7 @@ In questa attività verrà configurata la raccolta del Registro di sistema di Wi
 
 1. Nel portale di Azure tornare all'area di lavoro Log Analytics creata in precedenza in questo esercizio.
 
-2. Nel pannello Area di lavoro Log Analytics, nella **sezione Impostazioni,** fare clic su **Configurazione agenti**.
+2. Nel riquadro Area di lavoro Log Analytics, nella sezione **Impostazioni** fare clic su **Gestione degli agenti legacy**.
 
 3. Nel pannello **Configurazione agenti** consultare le impostazioni configurabili, ad esempio Registri eventi di Windows, Contatori delle prestazioni di Windows, Contatori delle prestazioni di Linux, Log IIS e Syslog. 
 
@@ -158,7 +158,7 @@ In questa attività verrà configurata la raccolta del Registro di sistema di Wi
 6. Selezionare **Contatori delle prestazioni di Windows**, fare clic su **+ Aggiungi contatore delle prestazioni**, consultare l'elenco dei contatori delle prestazioni disponibili e aggiungere i contatori seguenti:
 
     - Memoria(\*)\MB disponibili memoria
-    - Processo(\*)\%tempo processore
+    - Processo(\*)\\% tempo processore
     - Event Tracing for Windows\Utilizzo memoria totale --- Pool non di paging
     - Event Tracing for Windows\Utilizzo memoria totale --- Pool di paging
 

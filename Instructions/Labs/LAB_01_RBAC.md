@@ -2,12 +2,12 @@
 lab:
   title: 01 - Controllo degli accessi in base al ruolo
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: da0086efa92f860f38d3bade2b18dfbcca84884c
-ms.sourcegitcommit: ff9f02863c270d4261acd5a77e8e29cf241679c5
+ms.openlocfilehash: 156b27cdbdd97656e8ccd85c4ed3656c0db91937
+ms.sourcegitcommit: 46495f1eba96da4be553aff5b7521e7ab62f50b8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/11/2022
-ms.locfileid: "139714074"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "146032710"
 ---
 # <a name="lab-01-role-based-access-control"></a>Lab 01: Controllo degli accessi in base al ruolo
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
@@ -247,7 +247,7 @@ In questa attività si creerà il gruppo Service Desk e si assegnerà Dylan al g
 4. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per ottenere la proprietà objectId dell'account utente di Dylan Williams: 
 
     ```cli
-    OBJECTID=$(echo $USER | jq '.[].objectId' | tr -d '"')
+    OBJECTID=$(echo $USER | jq '.[].id' | tr -d '"')
     ```
 
 5. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per aggiungere l'account utente di Dylan al gruppo Service Desk: 
@@ -311,7 +311,7 @@ In questo esercizio verranno eseguite le attività seguenti:
    |Assegna accesso a (nel riquadro Membri)|**Utente, gruppo o entità servizio**|
    |Seleziona (+Seleziona membri)|**Service Desk**|
 
-5. Fare clic su **Verifica e assegna** per creare l'assegnazione di ruolo.
+5. Fare clic su **Verifica e assegna** due volte per creare l'assegnazione di ruolo.
 
 6. Nel pannello **Controllo di accesso (IAM)** selezionare **Assegnazioni di ruolo**.
 
