@@ -2,13 +2,8 @@
 lab:
   title: 01 - Controllo degli accessi in base al ruolo
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 156b27cdbdd97656e8ccd85c4ed3656c0db91937
-ms.sourcegitcommit: 46495f1eba96da4be553aff5b7521e7ab62f50b8
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "146032710"
 ---
+
 # <a name="lab-01-role-based-access-control"></a>Lab 01: Controllo degli accessi in base al ruolo
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -25,7 +20,7 @@ ms.locfileid: "146032710"
 
 ## <a name="lab-objectives"></a>Obiettivi del lab
 
-In questo lab verranno completati gli esercizi seguenti
+In questo lab verranno completati gli esercizi seguenti:
 
 - Esercizio 1: Creare il gruppo Senior Admins con l'account utente Joseph Price come membro (portale di Azure). 
 - Esercizio 2: Creare il gruppo Junior Admins con l'account utente Isabel Garcia come membro (PowerShell).
