@@ -2,13 +2,8 @@
 lab:
   title: 09 - Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: 167dca080d65d97997b3a884015bfa2228c17a23
-ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 05/31/2022
-ms.locfileid: "145955419"
 ---
+
 # <a name="lab-09-configuring-and-securing-acr-and-aks"></a>Lab 09: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -112,7 +107,7 @@ In questa attività verrà creato un Dockerfile, da cui verrà creata un'immagin
     ```sh
     ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
 
-    az acr build --image sample/nginx:v1 --registry $ACRNAME --file Dockerfile .
+    az acr build --resource-group AZ500LAB09 --image sample/nginx:v1 --registry $ACRNAME --file Dockerfile .
     ```
 
     >**Nota**: attendere il completamento del comando. L'operazione potrebbe richiedere circa due minuti.

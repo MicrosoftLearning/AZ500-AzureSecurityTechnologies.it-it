@@ -2,13 +2,8 @@
 lab:
   title: 15 - Microsoft Sentinel
   module: Module 04 - Manage Security Operations
-ms.openlocfilehash: 147bb0c8f6637393087c5a913f5c9bd8ca380866
-ms.sourcegitcommit: 3c178de473f4f986a3a7ea1d03c9f5ce699a05a4
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "147871965"
 ---
+
 # <a name="lab-15-microsoft-sentinel"></a>Lab 15: Microsoft Sentinel
 # <a name="student-lab-manual"></a>Manuale del lab per studenti
 
@@ -105,7 +100,7 @@ In questa attività si configurerà Sentinel in modo da usare il connettore dati
 
 In questa attività si esaminerà e creerà una regola che usa il connettore dati Attività di Azure. 
 
-1. Nel pannello **Microsoft Sentinel \| Configurazione** fare clic su **Analisi**. 
+1. Nel pannello **Microsoft Sentinel \| Configurazione** fare clic su**Analisi**. 
 
 2. Nel pannello **Microsoft Sentinel \| Analisi** fare clic sulla scheda **Modelli di regola**. 
 
@@ -253,7 +248,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
     >**Nota**: la visualizzazione degli eventi imprevisti nel pannello **Microsoft Sentinel \| Eventi imprevisti** può richiedere fino a 5 minuti. 
 
-    >**Nota**: esaminare il pannello **Microsoft Sentinel \| Playbook**. è disponibile il numero di esecuzioni completate con esito positivo o negativo.
+    >**Nota**: esaminare il pannello**Microsoft Sentinel \| Playbook**. è disponibile il numero di esecuzioni completate con esito positivo o negativo.
 
     >**Nota**: è possibile assegnare a un evento imprevisto uno stato e un livello di gravità diversi.
 

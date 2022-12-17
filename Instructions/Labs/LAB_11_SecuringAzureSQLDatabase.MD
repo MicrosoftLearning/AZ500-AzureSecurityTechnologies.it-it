@@ -2,13 +2,8 @@
 lab:
   title: 11 - Protezione del database SQL di Azure
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 1112086c681d4d81e186ad87a8a01085f42f8490
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703480"
 ---
+
 # <a name="lab-11-securing-azure-sql-database"></a>Lab 11: Protezione del database SQL di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 

@@ -2,13 +2,8 @@
 lab:
   title: 05 - Azure AD Privileged Identity Management
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 6ef7c51d334587e5e4e7116194fa46f2eb5d1df0
-ms.sourcegitcommit: 1da29a6d959a7f91dbbcbabf5ec06869c98fc1f1
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 03/30/2022
-ms.locfileid: "141267270"
 ---
+
 # <a name="lab-05-azure-ad-privileged-identity-management"></a>Lab 05: Azure AD Privileged Identity Management
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -111,7 +106,7 @@ In questa attività si renderà un utente idoneo per un ruolo di Azure AD direct
 
 12. Nel pannello **Ruolo con autorizzazioni di lettura globali \| Assegnazioni** fare clic su **+ Aggiungi assegnazioni**.
 
-13. Nel pannello **Aggiungi assegnazioni** fare clic su **Nessun membro selezionato**, fare clic su **aaduser2** nel pannello **Selezionare un membro** e quindi fare clic su **Seleziona**.
+13. Nel pannello **Aggiungi assegnazioni** fare clic su **Nessun membro selezionato**, fare clic su **aaduser2** nel pannello**Selezionare un membro** e quindi fare clic su **Seleziona**.
 
 14. Fare clic su **Avanti**. 
 
@@ -131,7 +126,7 @@ In questa attività si renderà un utente idoneo per un ruolo di Azure AD direct
 
 4. Nel pannello **Aggiungi assegnazioni** selezionare **Amministratore della sicurezza** nell'elenco a discesa **Seleziona ruolo**.
 
-5. Nel pannello **Aggiungi assegnazioni** fare clic su **Nessun membro selezionato**, fare clic su **aaduser2** nel pannello **Selezionare un membro** e quindi fare clic su **Seleziona**.
+5. Nel pannello **Aggiungi assegnazioni** fare clic su **Nessun membro selezionato**, fare clic su **aaduser2** nel pannello**Selezionare un membro** e quindi fare clic su **Seleziona**.
 
 6. Fare clic su **Avanti**. 
 
@@ -302,7 +297,7 @@ In questa attività si ridurranno i rischi associati ad assegnazioni di ruoli "o
 
 10. Nel pannello **Verifica Ruolo con autorizzazioni di lettura globali** esaminare la pagina **Panoramica** e notare che i grafici **Stato** mostrano un singolo utente nella categoria **Verifica non effettuata**. 
 
-11. Nella sezione **Gestisci** del pannello **Verifica Ruolo con autorizzazioni di lettura globali** fare clic su **Risultati**. Si noti che è indicato che aaduser2 ha accesso a questo ruolo.
+11. Nella sezione**Gestisci** del pannello **Verifica Ruolo con autorizzazioni di lettura globali** fare clic su **Risultati**. Si noti che è indicato che aaduser2 ha accesso a questo ruolo.
 
 12. Fare clic su **Visualizza** nella riga **aaduser2** per visualizzare un log di controllo dettagliato con voci che rappresentano le attività di PIM che coinvolgono tale utente.
 
@@ -330,7 +325,7 @@ In questa attività si esamineranno gli avvisi di PIM, le informazioni di riepil
 
 3. Nel pannello **Impostazioni avviso** esaminare gli avvisi preconfigurati e i livelli di rischio. Fare clic su una delle voci per informazioni più dettagliate. 
 
-4. Tornare nel pannello **AdatumLab500-04 \| Avvio rapido** e fare clic su **Panoramica**. 
+4. Tornare nel pannello**AdatumLab500-04 \| Avvio rapido** e fare clic su **Panoramica**. 
 
 5. Nel pannello **AdatumLab500-04 \| Panoramica** esaminare le informazioni di riepilogo sulle attivazioni dei ruoli, le attività di PIM, gli avvisi e le assegnazioni di ruoli.
 
@@ -364,7 +359,7 @@ In questa attività si esamineranno gli avvisi di PIM, le informazioni di riepil
 
 6. Tornare nel portale di Azure e usare il filtro **Directory e sottoscrizione** per passare al tenant di Azure Active Directory **AdatumLab500-04**.
 
-7. Passare al pannello **AdatumLab500-04 Azure Active Directory** e fare clic su **Licenze** nella sezione **Gestisci**.
+7. Passare al pannello**AdatumLab500-04 Azure Active Directory** e fare clic su **Licenze** nella sezione **Gestisci**.
 
 8. Nel pannello **Licenze** | Panoramica fare clic su **Tutti i prodotti**, selezionare la casella di controllo **Azure Active Directory Premium P2** e fare clic su di essa per aprirla.
 

@@ -2,13 +2,8 @@
 lab:
   title: 08 - Firewall di Azure
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: 1657a251f1355150d6386f8793825369be955705
-ms.sourcegitcommit: e9389f8de66fec6d456a3f303bd350e380df7ff2
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141371916"
 ---
+
 # <a name="lab-08-azure-firewall"></a>Lab 08: Firewall di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -84,7 +79,7 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
    |Resource group|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB08**|
    |Location|**(Stati Uniti) Stati Uniti orientali**|
 
-    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [ **https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
 
 7. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
@@ -167,8 +162,8 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
    |Impostazione|valore|
    |---|---|
    |Nome route|**FW-DG**|
-   |Origine prefisso indirizzo|**Indirizzi IP**|
-   |Indirizzi IP/Intervalli CIDR di origine|**0.0.0.0/0**
+   |Destinazione prefisso indirizzo|**Indirizzo IP**|
+   |Indirizzi IP/Intervalli CIDR di destinazione|**0.0.0.0/0**
    |Tipo hop successivo|**Appliance virtuale**|
    |Indirizzo hop successivo|Indirizzo IP privato del firewall identificato nell'attività precedente|
 
