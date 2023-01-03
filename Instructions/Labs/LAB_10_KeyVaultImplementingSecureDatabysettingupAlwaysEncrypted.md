@@ -2,13 +2,8 @@
 lab:
   title: 10 - Key Vault (implementazione di dati protetti con la configurazione di Always Encrypted)
   module: Module 03 - Secure Data and Applications
-ms.openlocfilehash: c31dd6e930e0f1d1b82e7c6ea502bb6fa51a7dd7
-ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 05/31/2022
-ms.locfileid: "145955383"
 ---
+
 # <a name="lab-10-key-vault-implementing-secure-data-by-setting-up-always-encrypted"></a>Lab 10 - Key Vault (implementazione di dati protetti con la configurazione di Always Encrypted)
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -74,13 +69,13 @@ In questa attività si distribuirà una macchina virtuale di Azure e come parte 
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Resource group|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB10**|
-   |Location|**(Stati Uniti) Stati Uniti orientali**|
+   |Location|**Stati Uniti orientali**|
    |Nome utente amministratore|**Studente**|
    |Password amministratore|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    
     >**Nota**: anche se è possibile cambiare le credenziali amministrative usate per accedere alla macchina virtuale, non è necessario farlo.
 
-    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [ **https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
 
 7. Fare clic sul pulsante **Rivedi e crea** e confermare la distribuzione facendo clic sul pulsante **Crea**. 
 
@@ -126,20 +121,22 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
 
 7. Nel pannello Gruppo di risorse fare clic sulla voce che rappresenta l'istanza di Key Vault appena creata. 
 
-8. Nel pannello Key Vault, nella sezione **Impostazioni**, fare clic su **Criteri di accesso** e quindi su **+ Aggiungi criterio di accesso**.
+8. Nel pannello di Key Vault, nella sezione **Panoramica** fare clic su **Criteri di accesso** e quindi su **+ Crea**.
 
-9. Nel pannello **Aggiungi criterio di accesso** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre: 
+9. Nel pannello **Crea un criterio di accesso** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre: 
 
     |Impostazione|Valore|
     |----|----|
     |Configura dal modello (facoltativo)|**Gestione di chiavi, segreti e certificati**|
-    |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto** per selezionare **17 autorizzazioni** in totale (assicurarsi che le autorizzazioni per **Operazioni criteri di rotazione** siano **deselezionate**) |
-    |Autorizzazioni dei segreti|Fare clic su **Seleziona tutto** per selezionare **8 autorizzazioni** in totale|
-    |Autorizzazioni per i certificati|Fare clic su **Seleziona tutto** per selezionare **16 autorizzazioni** in totale|
-    |Selezionare un'entità|Fare clic su **Nessuna selezione**, selezionare il proprio account utente nel pannello **Entità** e fare clic su **Seleziona**|
-
-10. Nel pannello **Aggiungi criterio di accesso** fare clic su **Aggiungi** per aggiungere il criterio di accesso, tornare nel pannello Criteri di accesso di Key Vault e fare clic su **Salva** per salvare le modifiche. 
-
+    |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto** per selezionare **12 autorizzazioni** in totale (assicurarsi che le autorizzazioni per **Operazioni criteri di rotazione** siano **deselezionate**) |
+    |Autorizzazioni dei segreti|Fare clic su **Seleziona tutto** per selezionare **7 autorizzazioni** in totale|
+    |Autorizzazioni per i certificati|Fare clic su **Seleziona tutto** per selezionare **15 autorizzazioni** in totale|
+    |Selezionare un'entità|Fare clic su **Nessuna selezione**, nel pannello **Entità di sicurezza** selezionare il proprio account utente, quindi fare clic su **Avanti**|
+    |Applicazione (facoltativa)|Fare clic su **Avanti**|
+    |Rivedi e crea|Fare clic su **Crea**|
+    
+    >**Nota**: l'operazione Rivedi e crea precedente restituisce la pagina Criteri di accesso in cui sono elencati applicazione, indirizzo e-mail, autorizzazioni chiave, autorizzazioni del segreto e autorizzazione del certificato.
+      
 #### <a name="task-2-add-a-key-to-key-vault"></a>Attività 2: Aggiungere una chiave all'istanza di Key Vault
 
 In questa attività si aggiungerà una chiave all'istanza di Key Vault e si visualizzeranno le relative informazioni. 
@@ -172,7 +169,7 @@ In questa attività si aggiungerà una chiave all'istanza di Key Vault e si visu
 
 6. Ridurre a icona il riquadro Cloud Shell. 
 
-7. Nel pannello Key Vault del portale di Azure, nella sezione **Impostazioni**, fare clic su **Chiavi**.
+7. Nel pannello di Key Vault del portale di Azure, nella sezione **Oggetti** fare clic su **Chiavi**.
 
 8. Nell'elenco delle chiavi fare clic sulla voce **MyLabKey** e quindi, nel pannello **MyLabKey**, fare clic sulla voce che rappresenta la versione corrente della chiave.
 
@@ -207,7 +204,7 @@ In questa attività si aggiungerà una chiave all'istanza di Key Vault e si visu
 
 5. Ridurre a icona il riquadro Cloud Shell. 
 
-6. Nel portale di Azure tornare nel pannello Key Vault e quindi, nella sezione **Impostazioni**, fare clic su **Segreti**.
+6. Nel portale di Azure tornare nel pannello di Key Vault e quindi, nella sezione **Oggetti**, fare clic su **Segreti**.
 
 7. Nell'elenco dei segreti fare clic sulla voce **SQLPassword** e quindi, nel pannello **SQLPassword**, fare clic sulla voce che rappresenta la versione corrente del segreto.
 
@@ -229,7 +226,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 #### <a name="task-1-enable-a-client-application-to-access-the-azure-sql-database-service"></a>Attività 1: Consentire a un'applicazione client di accedere al servizio Database SQL di Azure. 
 
-In questa attività si consentirà a un'applicazione client di accedere al servizio Database SQL di Azure. A questo scopo, si configurerà l'autenticazione richiesta e si acquisiranno l'ID e il segreto dell'applicazione necessari per autenticarla. T
+In questa attività si consentirà a un'applicazione client di accedere al servizio Database SQL di Azure. A questo scopo, si configurerà l'autenticazione richiesta e si acquisiranno l'ID e il segreto dell'applicazione necessari per autenticarla.
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Registrazioni app** e premere **INVIO**.
 

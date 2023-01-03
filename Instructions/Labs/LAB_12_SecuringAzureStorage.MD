@@ -1,14 +1,9 @@
 ---
 lab:
-  title: " Lab 12 - Endpoint servizio e protezione dell'archiviazione"
+  title: ' Lab 12 - Endpoint servizio e protezione dell''archiviazione'
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 96c1073571e40558a102d2fd661b6b4e3b4f48d7
-ms.sourcegitcommit: 5eaa012a52e6f14e499393257855d314a720a668
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "147717269"
 ---
+
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Lab 12: Endpoint servizio e protezione dell'archiviazione
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -59,7 +54,7 @@ In questa attività verrà creata una rete virtuale.
 
 2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Reti virtuali** e premere **INVIO**.
 
-3. Nel pannello **Reti virtuali** fare clic su **+ Crea**.
+3. Nel pannello **Reti virtuali** fare clic su  **+ Crea**.
 
 4. Nella scheda **Informazioni di base** del pannello **Crea rete virtuale** specificare le impostazioni seguenti lasciando i valori predefiniti per le altre, quindi fare clic su **Avanti: Indirizzi IP**:
 
@@ -253,9 +248,9 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Account di archiviazione** e premere **INVIO**.
 
-2. Nel pannello **Account di archiviazione** fare clic su **+ Crea**.
+2. Nel pannello **Account di archiviazione** fare clic su  **+ Crea**.
 
-3. Nella scheda **Informazioni di base** del pannello **Crea account di archiviazione** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
+3. Nella scheda **Informazioni di base** del pannello **Crea account di archiviazione** specificare le impostazioni seguenti (lasciare i valori predefiniti per le altre impostazioni):
 
     |Impostazione|Valore|
     |---|---|
@@ -336,7 +331,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
     |Username|**localadmin**|
     |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
     |Porte in ingresso pubbliche|**Nessuno**|
-    |Si ha già una licenza di Windows Server|**No**|
+    |Si ha già una licenza di Windows Server|**Non selezionato**|
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
 
@@ -371,7 +366,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
     |Username|**localadmin**|
     |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
     |Porte in ingresso pubbliche|**Nessuno**|
-    |Si ha già una licenza di Windows Server|**No**|
+    |Si ha già una licenza di Windows Server|**Non selezionato**|
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
 
@@ -428,7 +423,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
        Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
     }
     ```
-    >**Nota**: il segnaposto `<storage-account-name>` rappresenta il nome dell'account di archiviazione che ospita la condivisione file `<storage_account_name>` e la relativa chiave primaria
+    >**Nota**: il segnaposto `<storage_account_name>` rappresenta il nome dell'account di archiviazione che ospita la condivisione file `<storage_account_key>` e la relativa chiave primaria
 
 7. Avviare Esplora file e verificare che il mapping dell'unità Z: sia stato creato correttamente.
 

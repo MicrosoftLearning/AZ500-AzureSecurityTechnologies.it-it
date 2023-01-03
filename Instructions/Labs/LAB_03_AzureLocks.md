@@ -2,13 +2,8 @@
 lab:
   title: 03 - Blocchi di Resource Manager
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 54375454646bdcf0586b249f65349691c3a3b9c3
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703534"
 ---
+
 # <a name="lab-03-resource-manager-locks"></a>Lab 03: Blocchi di Resource Manager
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -62,7 +57,12 @@ In questa attività si creeranno un gruppo di risorse e un account di archiviazi
 
     ```powershell
     New-AzResourceGroup -Name AZ500LAB03 -Location 'EastUS'
+    
+    Confirm
+    Provided resource group already exists. Are you sure you want to update it?
+    [Y] Yes [N] No [S] Suspend [?] Help (default is "Y"): Y
     ```
+1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell digitare **S** e premere il tasto INVIO.
 
 1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un account di archiviazione nel nuovo gruppo di risorse creato:
     
@@ -158,7 +158,7 @@ In questa attività si testerà il blocco di eliminazione. Sarà possibile modif
 
     > **Non è possibile eliminare l'account di archiviazione 'xxxxxx' a causa della presenza di un blocco di eliminazione nella risorsa o nel relativo elemento padre. Per poter eliminare la risorsa, è necessario rimuovere i blocchi."**
 
-   >**Nota**: si è ora verificato che un blocco di **eliminazione** consente modifiche di configurazione, ma impedisce l'eliminazione accidentale.
+   >**Nota**: si è ora verificato che un blocco di **eliminazione**consente modifiche di configurazione, ma impedisce l'eliminazione accidentale.
 
    >**Nota**: usando i blocchi delle risorse è possibile implementare una linea di difesa aggiuntiva contro modifiche accidentali o dannose e/o l'eliminazione delle risorse più importanti. I blocchi delle risorse possono essere rimossi da qualsiasi utente con il ruolo **Proprietario**, ma questa operazione richiede un'attenzione consapevole. I blocchi completano il controllo degli accessi in base al ruolo. 
 

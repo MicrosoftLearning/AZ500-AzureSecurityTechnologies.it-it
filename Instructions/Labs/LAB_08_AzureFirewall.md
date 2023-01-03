@@ -67,7 +67,7 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
 
 4. Nel pannello **Modifica modello** fare clic su **Carica file**, individuare il file **\\Allfiles\\Labs\\08\\template.json** e fare clic su **Apri**.
 
-    >**Nota**: esaminare il contenuto del modello e notare che distribuisce una macchina virtuale di Azure che ospita Windows Server 2019 Datacenter.
+    >**Nota**: esaminare il contenuto del modello e notare che distribuisce una macchina virtuale di Azure che ospita Windows Server 2016 Datacenter.
 
 5. Nel pannello **Modifica modello** fare clic su **Salva**.
 
