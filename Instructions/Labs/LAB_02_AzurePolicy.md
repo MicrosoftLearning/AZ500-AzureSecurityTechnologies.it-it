@@ -2,13 +2,8 @@
 lab:
   title: 02 - Criteri di Azure
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: d49ce05e4620310d45317fe582bddb3aa511430b
-ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 05/31/2022
-ms.locfileid: "145955391"
 ---
+
 # <a name="lab-02-azure-policy"></a>Lab 02 - Criteri di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -59,7 +54,12 @@ In questa attività si creerà un gruppo di risorse per il lab.
 
     ```powershell
     New-AzResourceGroup -Name AZ500LAB02 -Location 'East US'
+    
+    Confirm
+    Provided resource group already exists. Are you sure you want to update it?
+    [Y] Yes [N] No [S] Suspend [?] Help (default is "Y"): Y
     ```
+1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell digitare **S** e premere il tasto INVIO.
 
 1. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare i gruppi di risorse in modo da verificare che il nuovo gruppo di risorse sia stato creato:
 
@@ -75,7 +75,7 @@ In questa attività si creerà un'assegnazione del criterio Località consentite
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Criteri** e premere **INVIO**.
 
-1. Nella sezione **Creazione** nel pannello **Criteri** selezionare **Definizioni**.
+1. Nel pannello **Criteri**, nella sezione **Creazione** selezionare  **Definizioni**.
 
 1. Dedicare un minuto a esaminare le definizioni predefinite. Usare l'elenco a discesa **Categoria** per filtrare l'elenco dei criteri.
 
@@ -83,7 +83,7 @@ In questa attività si creerà un'assegnazione del criterio Località consentite
 
    >**Nota**: il criterio **Località consentite** consente di limitare le località delle risorse, non dei gruppi di risorse. Per limitare le località dei gruppi di risorse, è possibile usare il criterio **Località consentite per i gruppi di risorse**.
 
-1. Fare clic sulla definizione del criterio **Località consentite** per visualizzarne i dettagli. 
+1. Fare clic sulla definizione del criterio  **Località consentite** per visualizzarne i dettagli. 
 
    >**Nota**: la definizione di questo criterio accetta una gamma di località come parametri. Una regola dei criteri è un'istruzione "if-then". La clausola "if" controlla se la località della risorsa è inclusa nell'elenco di parametri e, in caso contrario, la clausola "then" nega la creazione della risorsa oppure, per le risorse esistenti, le contrassegna come non conformi.
 
@@ -106,13 +106,13 @@ In questa attività si creerà un'assegnazione del criterio Località consentite
    |Descrizione|**Consenti la creazione di risorse in Regno Unito meridionale solo per AZ500LAB02**|
    |Imposizione dei criteri|**Enabled**|
 
-1. Fare clic su **Avanti**.
+1. Fare clic su **Avanti**.
 
-1. Nella scheda **Parametri** del pannello **Località consentite** selezionare **Regno Unito meridionale** come unica località consentita nell'elenco a discesa **Località consentite**. 
+1. Nella scheda **Parametri** del pannello **Località consentite**, nell'elenco a discesa **Località consentite** selezionare **Regno Unito meridionale** come unica località consentita. 
 
    >**Nota**: è possibile selezionare più di una località. Se il criterio richiede un set diverso di parametri, questa scheda fornisce le opzioni necessarie. 
 
-1. Fare clic su **Rivedi e crea** e quindi su **Crea** per creare l'assegnazione di criteri. 
+1. Fare clic su  **Rivedi e crea** e quindi su  **Crea** per creare l'assegnazione di criteri. 
 
    >**Nota**: verrà visualizzata una notifica che indica che l'assegnazione è riuscita e che il completamento può richiedere circa 30 minuti.
 
@@ -124,29 +124,29 @@ In questa attività verrà testata l'assegnazione del criterio Località consent
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Reti virtuali** e premere **INVIO**.
 
-1. Nel pannello **Reti virtuali** fare clic su **+ Crea**.
+1. Nel pannello **Reti virtuali** fare clic su  **+ Crea**.
 
    >**Nota**: prima di tutto, si tenterà di creare una rete virtuale negli Stati Uniti orientali. Poiché questa non è una località consentita, la richiesta verrà bloccata. 
 
-1. Nella scheda **Informazioni di base** del pannello **Crea rete virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
+1. Nella scheda **Informazioni di base** del pannello **Crea rete virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
     |Impostazione|Valore|
     |---|---|
     |Resource group|**AZ500LAB02**|
     |Nome|**myVnet**|
-    |Region|**(Stati Uniti) Stati Uniti orientali**|
+    |Region|**Stati Uniti orientali**|
 
-1. Fare clic su **Rivedi e crea**. 
+1. Fare clic su **Rivedi e crea**. 
 
-1. Nella scheda **Rivedi e crea** del pannello **Crea rete virtuale** notare il messaggio **Convalida non riuscita**. 
+1. Nella scheda **Rivedi e crea** del pannello **Crea rete virtuale** notare il messaggio **Convalida non riuscita**. 
 
     > **Nota**: se l'avviso **Convalida non riuscita** non viene visualizzato, fare clic su **Indietro** e attendere ancora alcuni minuti.
 
 1. Nella scheda **Informazioni di base** fare clic sul collegamento del messaggio di errore per aprire il pannello **Assegnazione criteri**. Verrà visualizzata l'assegnazione dei criteri che limita la posizione.
 
-1. Chiudere il pannello **Assegnazione criteri**, nel pannello **Crea rete virtuale** fare clic sulla scheda **Informazioni di base** e nel menu a discesa **Area** selezionare **(Europa) Regno Unito meridionale**.
+1. Chiudere il pannello **Assegnazione criteri**. Nel pannello **Crea rete virtuale** fare clic sulla scheda **Informazioni di base** e nel menu a discesa **Area** selezionare **Regno Unito meridionale**.
 
-1. Fare clic su **Rivedi e crea**, verificare che la convalida sia riuscita, fare clic su **Crea** e verificare che la rete virtuale sia stata creata. 
+1. Fare clic su  **Rivedi e crea**, verificare che la convalida sia riuscita, fare clic su **Crea** e verificare che la rete virtuale sia stata creata. 
 
 > Risultati dell'esercizio: in questo esercizio si è appreso come applicare un criterio di Azure selezionando le definizioni di un criterio predefinito e assegnando il criterio a un gruppo di risorse.
 

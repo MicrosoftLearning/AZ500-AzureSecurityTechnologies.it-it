@@ -2,13 +2,8 @@
 lab:
   title: 07 - Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: d7cfed1e861215cf32c3b51c4a07aa6886575000
-ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141368702"
 ---
+
 # <a name="lab-07-network-security-groups-and-application-security-groups"></a>Lab 07: Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -146,7 +141,7 @@ In questa attività si creerà un gruppo di sicurezza di rete.
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**default**|
 
-#### <a name="task-4-create-inbound-nsg-security-rules-to-all-traffic-to-web-servers-and-rdp-to-the-management-servers"></a>Attività 4: Creare regole di sicurezza NSG in ingresso per tutto il traffico verso i server Web e le sessioni RDP verso i server di gestione. 
+#### <a name="task-4-create-inbound-nsg-security-rules-to-all-traffic-to-web-servers-and-rdp-to-the-servers"></a>Attività 4: Creare regole di sicurezza in ingresso per un NSG per tutto il traffico verso i server Web e RDP verso i server. 
 
 1. Nella sezione **Impostazioni** del pannello **myNsg** fare clic su **Regole di sicurezza in ingresso**.
 
@@ -223,7 +218,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 6. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-7. Fare clic su **Avanti: Gestione >** e quindi nella scheda **Gestione** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti:
+7. Fare clic su **Avanti: Gestione >** , quindi fare clic su **Avanti: Monitoraggio >** nella scheda **Monitoraggio** del pannello **Crea macchina virtuale** e verificare l'impostazione seguente:
 
    |Impostazione|Valore|
    |---|---|
@@ -260,7 +255,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
 5. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-6. Fare clic su **Avanti: Gestione >** e quindi nella scheda **Gestione** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti
+6. Fare clic su **Avanti: Gestione >** , quindi fare clic su **Avanti: Monitoraggio >** nella scheda **Monitoraggio** del pannello **Crea macchina virtuale** e verificare l'impostazione seguente:
 
    |Impostazione|Valore|
    |---|---|

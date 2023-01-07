@@ -2,13 +2,8 @@
 lab:
   title: 13 - Monitoraggio di Azure
   module: Module 04 - Manage security operations
-ms.openlocfilehash: d7418287b895ccb5af66f01b499181b321e2bc36
-ms.sourcegitcommit: 3c178de473f4f986a3a7ea1d03c9f5ce699a05a4
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "147871974"
 ---
+
 # <a name="lab-13-azure-monitor"></a>Lab 13: Monitoraggio di Azure
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -66,23 +61,10 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 5. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per creare una nuova macchina virtuale di Azure. 
 
-    >**Attenzione:** il comando New-AzVm non funziona nell'interfaccia della riga di comando di Azure versione 4.24 e Microsoft sta attualmente indagando per la risoluzione.  In questo lab è possibile installare e ripristinare Az.Compute versione 4.23.0, che non è interessato da questo problema.
-   
-    >**Istruzioni:** ripristino di Az.Compute versione 4.23.0 
-  
-   #### <a name="step-1-download-the-working-version-of-the-module-4230-into-your-cloud-shell-session"></a>Passaggio 1: Scaricare la versione funzionante del modulo (4.23.0) nella sessione di Cloud Shell 
-   **Tipo**: Install-Module -Name Az.Compute -Force -RequiredVersion 4.23.0
-
-   #### <a name="step-2-start-a-new-powershell-session-that-will-allow-the-azcompute-assembly-version-to-be-loaded"></a>Passaggio 2: Avviare una nuova sessione di PowerShell che consentirà il caricamento della versione dell'assembly Az.Compute 
-   **Digitare**: pwsh
-
-   #### <a name="step-3-verify-that-version-4230-is-loaded"></a>Passaggio 3: Verificare che venga caricata la versione 4.23.0
-   **Tipo**: Get-Module -Name Az.Compute
-   
     ```powershell
-    New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389
+    New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -PublicIpSku Standard -OpenPorts 80,3389 -Size Standard_DS1_v2 
     ```
-
+    
 6.  Verranno chieste le seguenti credenziali.
 
     |Impostazione|Valore|
@@ -106,7 +88,7 @@ In questa attività si creerà un'area di lavoro Log Analytics.
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **aree di lavoro Log Analytics** e premere **INVIO**.
 
-2. Nel pannello **Aree di lavoro Log Analytics** fare clic su **+ Crea**.
+2. Nel pannello **Aree di lavoro Log Analytics** fare clic su  **+ Crea**.
 
 3. Nella scheda **Dati principali** del pannello **Crea area di lavoro Log Analytics** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -115,7 +97,7 @@ In questa attività si creerà un'area di lavoro Log Analytics.
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Resource group|**AZ500LAB131415**|
     |Nome|Qualunque nome univoco a livello globale, valido|
-    |Region|**(Stati Uniti) Stati Uniti orientali**|
+    |Region|**Stati Uniti orientali**|
 
 4. Selezionare **Rivedi e crea**.
 
@@ -145,7 +127,7 @@ In questa attività verrà configurata la raccolta del Registro di sistema di Wi
 
 1. Nel portale di Azure tornare all'area di lavoro Log Analytics creata in precedenza in questo esercizio.
 
-2. Nel riquadro Area di lavoro Log Analytics, nella sezione **Impostazioni** fare clic su **Gestione degli agenti legacy**.
+2. Nel riquadro Area di lavoro Log Analytics, nella sezione**Impostazioni** fare clic su **Gestione degli agenti legacy**.
 
 3. Nel pannello **Configurazione agenti** consultare le impostazioni configurabili, ad esempio Registri eventi di Windows, Contatori delle prestazioni di Windows, Contatori delle prestazioni di Linux, Log IIS e Syslog. 
 

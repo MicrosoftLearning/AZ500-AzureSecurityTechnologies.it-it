@@ -2,13 +2,8 @@
 lab:
   title: 06 - Implementare la sincronizzazione della directory
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 00c359e1875ab915ab697d8ed33e36d956540529
-ms.sourcegitcommit: 1da29a6d959a7f91dbbcbabf5ec06869c98fc1f1
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 03/30/2022
-ms.locfileid: "141267258"
 ---
+
 # <a name="lab-06-implement-directory-synchronization"></a>Lab 06: Implementare la sincronizzazione della directory
 # <a name="student-lab-manual"></a>Manuale del lab per gli studenti
 
@@ -65,7 +60,7 @@ In questa attività si identificherà un nome DNS per la distribuzione della mac
 
     >**Nota**: sostituire il segnaposto `<custom-label>` con un nome DNS valido che sia univoco a livello globale. Sostituire il segnaposto `<location>` con il nome dell'area in cui si vuole distribuire la macchina virtuale di Azure che ospiterà il controller di dominio di Active Directory da usare in questo lab.
 
-    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [ **https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
 
 5. Verificare che il comando abbia restituito **True**. In caso contrario, eseguire di nuovo lo stesso comando con un valore diverso di `<custom-label>` finché non restituisce **True**.
 
@@ -79,11 +74,11 @@ In questa attività si distribuirà una macchina virtuale di Azure che ospiterà
 
 1. Aprire un'altra scheda del browser nella stessa finestra e passare a **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain**.
 
-2. Nella pagina **Create a new Windows VM and create a new AD Forest, Domain and DC** fare clic su **Distribuisci in Azure**. Il browser verrà reindirizzato automaticamente al pannello **Create an Azure VM with a new AD Forest** nel portale di Azure.
+2. Nella pagina **Create a new Windows VM and create a new AD Forest, Domain and DC** fare clic su **Distribuisci in Azure**. Il browser verrà reindirizzato automaticamente al pannello**Create an Azure VM with a new AD Forest** nel portale di Azure.
 
 3. Nel pannello **Create an Azure VM with a new AD Forest** fare clic su **Modifica parametri**.
 
-4. Nel pannello **Modifica parametri** fare clic su **Carica file**, nella finestra di dialogo **Apri** passare alla cartella **\\\\AllFiles\Labs\\06\\active-directory-new-domain\\azuredeploy.parameters.json**, fare clic su **Apri** e quindi fare clic su **Salva**.
+4. Nel pannello **Modifica parametri** fare clic su **Carica file**, nella finestra di dialogo **Apri**passare alla cartella **\\\\AllFiles\Labs\\06\\active-directory-new-domain\\azuredeploy.parameters.json**, fare clic su **Apri** e quindi fare clic su **Salva**.
 
 5. Nel pannello **Create an Azure VM with a new AD Forest** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -123,7 +118,7 @@ In questa attività si creerà un nuovo tenant di Azure AD da usare in questo la
 
 2. Nel pannello **Panoramica** del tenant di Azure AD corrente fare clic su **Manage tenants** (Gestisci tenant) e quindi nella schermata successiva fare clic su **+ Crea**.
 
-3. Nella scheda **Informazioni di base** del pannello **Crea una directory** assicurarsi che sia selezionata l'opzione **Azure Active Directory** e fare clic su **Avanti: Configurazione >** .
+3. Nella scheda **Informazioni di base** del pannello **Crea un tenant** assicurarsi che sia selezionata l'opzione **Azure Active Directory** e fare clic su **Avanti: Configurazione >** .
 
 4. Nella scheda **Configurazione** del pannello **Crea una directory** specificare le impostazioni seguenti:
 
@@ -147,7 +142,7 @@ In questa attività si aggiungerà il nome DNS personalizzato al nuovo tenant di
 
 1. Sulla barra degli strumenti del portale di Azure fare clic sull'icona **Directory e sottoscrizione** a destra dell'icona Cloud Shell. 
 
-2. Nel pannello **Directory e sottoscrizione** selezionare la riga del tenant appena creato **AdatumSync** e quindi fare clic sul pulsante **Cambia**.
+2. Nel pannello **Directory e sottoscrizione** selezionare la riga del tenant appena creato **AdatumSync** e quindi fare clic sul pulsante**Cambia**.
 
     >**Nota**: se la voce **AdatumSync** non viene visualizzata nell'elenco di filtro **Directory e sottoscrizione**, può essere necessario aggiornare la finestra del browser.
 
@@ -194,7 +189,7 @@ In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegn
 
 6. Disconnettersi come **syncadmin** e chiudere la finestra del browser InPrivate.
 
-> **Risultato**: completando questo esercizio, è stato creato un tenant di Azure AD, è stato aggiunto un nome DNS personalizzato al nuovo tenant di Azure AD ed è stato creato un utente di Azure AD con il ruolo di amministratore globale.
+> **Risultato**: con questo esercizio è stato creato un tenant di Azure AD, è stato visto come aggiungere un nome DNS personalizzato al nuovo tenant di Azure AD ed è stato creato un utente di Azure AD con il ruolo di amministratore globale.
 
 
 ### <a name="exercise-3-synchronize-active-directory-forest-with-an-azure-active-directory-tenant"></a>Esercizio 3: Sincronizzare la foresta di Active Directory con un tenant di Azure Active Directory
@@ -268,7 +263,7 @@ In questa attività si installerà AD Connect nella macchina virtuale.
 
 3. Nel pannello **AdatumSync \| Panoramica** del portale di Azure fare clic su **Azure AD Connect**.
 
-4. Nel pannello **AdatumSync \| Azure AD Connect** fare clic sul collegamento **Scarica Azure AD Connect**. Si verrà reindirizzati alla pagina di download di **Microsoft Azure Active Directory Connect**.
+4. Nel pannello **AdatumSync \| Azure AD Connect** fare clic sul collegamento**Scarica Azure AD Connect**. Si verrà reindirizzati alla pagina di download di **Microsoft Azure Active Directory Connect**.
 
 5. Nella pagina di download di **Microsoft Azure Active Directory Connect** fare clic su **Scarica**.
 
@@ -332,7 +327,7 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
 
 6. Nella sezione **Organizzazione** della finestra **aduser1** digitare **Sales** nella casella di testo **Reparto** e fare clic su **OK**.
 
-7. Nella sessione Desktop remoto per **adVM** avviare **Windows PowerShell**.
+7. Nella sessione Desktop remoto per **adVM**avviare **Windows PowerShell**.
 
 8. Nella console **Amministratore: Windows PowerShell** eseguire quanto segue per avviare la sincronizzazione differenziale di Azure AD Connect:
 
@@ -353,7 +348,7 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
 
 >**Nota**: per iniziare, disabilitare la sincronizzazione di Azure AD
 
-1. Nella sessione Desktop remoto per **adVM** avviare Windows PowerShell come amministratore.
+1. Nella sessione Desktop remoto per **adVM**avviare Windows PowerShell come amministratore.
 
 2. Nella console di Windows PowerShell installare il modulo MsOnline PowerShell eseguendo quanto segue (quando richiesto, nella finestra di dialogo Per continuare è necessario il provider NuGet digitare **Sì** e premere INVIO):
 
