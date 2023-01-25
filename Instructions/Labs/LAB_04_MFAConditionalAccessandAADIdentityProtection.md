@@ -424,45 +424,89 @@ In questa attività si visualizzeranno le opzioni di Azure AD Identity Protectio
 
     >**Nota**: assicurarsi di aver eseguito l'accesso al tenant di Azure AD **AdatumLab500-04**. È possibile usare il filtro **Directory e sottoscrizione** per passare da un tenant di Azure AD a un altro. Assicurarsi di aver eseguito l'accesso come utente con il ruolo di amministratore globale nel tenant di Azure AD.
 
-2. Nel pannello **AdatumLab500-04** fare clic su**Sicurezza** nella sezione **Gestisci**.
-
-3. Nella sezione **Sicurezza \| Attività iniziali** fare clic su **Identity Protection** nella sezione **Proteggi**.
-
-4. Nel pannello **Identity Protection \| Panoramica** esaminare i grafici **Nuovi utenti a rischio rilevati** e **Nuovi accessi a rischio rilevati** e le altre informazioni sugli utenti a rischio. 
-
 #### <a name="task-2-configure-a-user-risk-policy"></a>Attività 2: Configurare un criterio di rischio utente
 
 In questa attività si creerà un criterio di rischio utente. 
 
-1. Nel pannello **Identity Protection \| Panoramica** fare clic su **Criteri di rischio utente** nella sezione **Proteggi**
+2. Passare al tenant di Azure AD **AdatumLab500-04** > **Sicurezza** > **Accesso condizionale**.
 
-2. Configurare **Criteri di correzione del rischio utente** con le impostazioni seguenti: 
+3. Fare clic su **Nuovo criterio**.
 
-   - Fare clic su **Utenti**. Nella scheda **Includi** del pannello **Utenti** assicurarsi che sia selezionata l'opzione **Tutti gli utenti**.
+4. Nella casella di testo **Nome** digitare il nome del criterio **AZ500Policy2**.
 
-   - Nel pannello **Utenti** passare alla scheda **Escludi**, fare clic su **Selezionare gli utenti esclusi**, selezionare il proprio account utente e quindi fare clic su **Seleziona**. 
+5. In **Assegnazioni** selezionare **Utenti**.
 
-   - Fare clic su **Rischio utente**. Nel pannello **Rischio utente** selezionare **Basso e superiore** e quindi fare clic su **Fine**. 
+6. In **Includi** fare clic su **Seleziona utenti e gruppi** e quindi selezionare **aaduser2** e **aaduser3**.
 
-   - Fare clic su **Accesso**. Nel pannello **Accesso** assicurarsi che siano selezionate l'opzione **Consenti l'accesso** e la casella di controllo **Richiedi modifica password**, quindi fare clic su **Fine**.
+7. In **Escludi** fare clic su **Utenti e gruppi** e quindi selezionare **aaduser1**. 
 
-   - Impostare **Imponi criteri** su **Sì** e fare clic su **Salva**.
+8. In **Applicazioni cloud o azioni** > **Includi** selezionare **Tutte le app cloud**.
 
-#### <a name="task-3-configure-sign-in-risk-policy"></a>Attività 3: Configurare un criterio di rischio di accesso
+9. In **Condizioni** > **Rischio utente** impostare **Configura** su **Sì**.
 
-In questa attività si configurerà un criterio di rischio di accesso. 
+10. In **Consente di configurare i livelli di rischio utente necessari per l'applicazione dei criteri** selezionare **Alto**.
 
-1. Nel pannello **Identity Protection \| Criteri di rischio utente** fare clic su **Criteri di rischio di accesso** nella sezione **Proteggi**
+11. Fare clic su **Fine**.
 
-2. Configurare **Criteri di correzione del rischio di accesso** con le impostazioni seguenti: 
+12. In **Controlli di accesso** > assicurarsi che **Concedi** sia abilitato.    
 
-   - Fare clic su **Utenti**. Nella scheda **Includi** del pannello **Utenti** assicurarsi che sia selezionata l'opzione **Tutti gli utenti**.
+13. Selezionare **Richiedi autenticazione a più fattori** e **Richiedi la modifica della password**.
 
-   - Fare clic su **Rischio di accesso**. Nel pannello **Rischio di accesso** selezionare **Medio e superiore**, quindi fare clic su **Fine**. 
+14. Fare clic su **Seleziona**.
 
-   - Fare clic su **Accesso**. Nel pannello **Accesso** assicurarsi che siano selezionate l'opzione **Consenti l'accesso** e la casella di controllo **Richiedi autenticazione a più fattori**, quindi fare clic su **Fine**.
+15. In **Sessione** fare clic su **Frequenza di accesso** e verificare che sia abilitata l'opzione **Ogni volta**.
 
-   - Impostare **Imponi criteri** su **Sì** e fare clic su **Salva**.
+16. Fare clic su **Seleziona**.
+
+17. Confermare le impostazioni e impostare **Attiva criterio** su **Solo report**.
+
+    >**Nota**: verrà visualizzato il messaggio seguente nella parte inferiore della pagina: **"Si sta per gestire le configurazioni di sicurezza dell'organizzazione. È prima di tutto necessario disabilitare le impostazioni predefinite per la sicurezza prima di abilitare i criteri di accesso condizionale"** .
+
+18. Fare clic sulla parte del messaggio: **disabilitare le impostazioni predefinite per la sicurezza**.
+
+19. Modificare **Abilita le impostazioni predefinite per la sicurezza** da Sì a **No**.
+
+20. Fare clic su **Altro** e digitare quanto segue nel campo: **AZ500 lab use**.
+
+21. Fare clic su **Save** (Salva).
+
+22. Fare clic su **Crea** per abilitare il criterio.
+
+#### <a name="task-3-configure-a-sign-in-risk-policy"></a>Attività 3: Configurare un criterio di rischio di accesso
+
+1. Passare al tenant di Azure AD **AdatumLab500-04** > **Sicurezza** > **Accesso condizionale**.
+
+2. Selezionare **Nuovi criteri**.
+
+3. Nella casella di testo **Nome** digitare il nome del criterio **AZ500Policy3**.
+
+4. In **Assegnazioni** selezionare **Utenti**.
+
+5. In **Includi** fare clic su **Seleziona utenti e gruppi** e quindi selezionare **aaduser2** e **aaduser3**.
+
+6. In **Escludi** fare clic su **Utenti e gruppi** e quindi selezionare **aaduser1**. 
+
+7. In **Applicazioni cloud o azioni** > **Includi** selezionare **Tutte le app cloud**.
+
+8. In **Condizioni** > **Rischio di accesso** impostare **Configura** su **Sì**.
+
+9. In **Selezionare il livello di rischio di accesso a cui verranno applicati questi criteri** selezionare **Alto** e **Medio**.
+
+10. Fare clic su **Fine**.
+
+11. In **Controlli di accesso** > **Concedi**:  
+
+12. Selezionare **Concedi accesso**, **Richiedi autenticazione a più fattori**.
+
+13. Fare clic su **Seleziona**.
+
+13. In **Sessione** selezionare **Frequenza di accesso** e verificare che sia abilitata l'opzione **Ogni volta**.
+
+14. Fare clic su **Seleziona**.
+
+15. Confermare le impostazioni e impostare **Attiva criterio** su **Solo report**.
+
+16. Fare clic su **Crea** per abilitare il criterio.
 
 #### <a name="task-4-simulate-risk-events-against-the-azure-ad-identity-protection-policies"></a>Attività 4: Simulare eventi di rischio rispetto ai criteri di Azure AD Identity Protection 
 
