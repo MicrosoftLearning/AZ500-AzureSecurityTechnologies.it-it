@@ -4,10 +4,10 @@ lab:
   module: Module 04 - Manage security operations
 ---
 
-# <a name="lab-13-azure-monitor"></a>Lab 13: Monitoraggio di Azure
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 13: Monitoraggio di Azure
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato chiesto di creare un modello di verifica per il monitoraggio delle prestazioni delle macchine virtuali. In particolare, sarà necessario:
 
@@ -17,21 +17,21 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Raccogliere dati da una macchina virtuale di Azure con Monitoraggio di Azure
 
-## <a name="azure-monitor"></a>Monitoraggio di Azure
+## Monitoraggio di Azure
 
 ![image](https://user-images.githubusercontent.com/91347931/157536648-0a286514-a7e2-4058-9dea-e42da21eef76.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-### <a name="exercise-1-collect-data-from-an-azure-virtual-machine-with-azure-monitor"></a>Esercizio 1: Raccogliere dati da una macchina virtuale di Azure con Monitoraggio di Azure
+### Esercizio 1: Raccogliere dati da una macchina virtuale di Azure con Monitoraggio di Azure
 
-### <a name="exercise-timing-20-minutes"></a>Durata dell'esercizio: 20 minuti
+### Durata dell'esercizio: 20 minuti
 
 In questo esercizio verranno eseguite le attività seguenti: 
 
@@ -41,7 +41,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 4: Raccogliere dati relativi a eventi e prestazioni della macchina virtuale
 - Attività 5: Visualizzare ed eseguire query sui dati raccolti 
 
-#### <a name="task-1-deploy-an-azure-virtual-machine"></a>Attività 1: Distribuire una macchina virtuale di Azure
+#### Attività 1: Distribuire una macchina virtuale di Azure
 
 1. Accedere al portale di Azure **`https://portal.azure.com/`** .
 
@@ -82,7 +82,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 8. Chiudere il riquadro Cloud Shell. 
 
-#### <a name="task-2-create-a-log-analytics-workspace"></a>Attività 2: Creare un'area di lavoro Log Analytics
+#### Attività 2: Creare un'area di lavoro Log Analytics
 
 In questa attività si creerà un'area di lavoro Log Analytics. 
 
@@ -103,7 +103,7 @@ In questa attività si creerà un'area di lavoro Log Analytics.
 
 5. Nella scheda **Rivedi e crea** del pannello **Crea area di lavoro Log Analytics** selezionare **Crea**.
 
-#### <a name="task-3-enable-the-log-analytics-virtual-machine-extension"></a>Attività 3: Abilitare l'estensione macchina virtuale Log Analytics
+#### Attività 3: Abilitare l'estensione macchina virtuale Log Analytics
 
 In questa attività si abiliterà l'estensione macchina virtuale Log Analytics. Questa estensione installa l'agente di Log Analytics in macchine virtuali Windows e Linux. L'agente raccoglie i dati dalla macchina virtuale e li trasferisce all'area di lavoro Log Analytics designata. Al termine dell'installazione, l'agente viene automaticamente aggiornato per garantire la disponibilità delle funzionalità e delle correzioni più recenti. 
 
@@ -121,7 +121,7 @@ In questa attività si abiliterà l'estensione macchina virtuale Log Analytics. 
 
     >**Nota**: questa operazione potrebbe richiedere alcuni minuti. Lo **Stato** visualizzato nel pannello **myVM** passerà da **In fase di connessione** a **Questa area di lavoro**. 
 
-#### <a name="task-4-collect-virtual-machine-event-and-performance-data"></a>Attività 4: Raccogliere dati relativi a eventi e prestazioni della macchina virtuale
+#### Attività 4: Raccogliere dati relativi a eventi e prestazioni della macchina virtuale
 
 In questa attività verrà configurata la raccolta del Registro di sistema di Windows e vari contatori delle prestazioni comuni. Verranno esaminate anche altre origini disponibili.
 
@@ -148,7 +148,7 @@ In questa attività verrà configurata la raccolta del Registro di sistema di Wi
   
 7. Nel pannello **Configurazione agenti** fare clic su **Applica**.
 
-#### <a name="task-5-view-and-query-collected-data"></a>Attività 5: Visualizzare ed eseguire query sui dati raccolti
+#### Attività 5: Visualizzare ed eseguire query sui dati raccolti
 
 In questa attività si eseguirà una ricerca log nella raccolta dati. 
 
@@ -192,5 +192,5 @@ In questa attività si eseguirà una ricerca log nella raccolta dati.
 
 **Pulire le risorse**
 
->**Nota**: non rimuovere le risorse da questo lab poiché saranno necessarie per i lab sul Centro sicurezza di Azure e su Azure Sentinel.
+>**Nota**: non rimuovere le risorse da questo lab perché sono necessarie per il lab di Microsoft Defender per Cloud e il lab di Microsoft Sentinel.
  

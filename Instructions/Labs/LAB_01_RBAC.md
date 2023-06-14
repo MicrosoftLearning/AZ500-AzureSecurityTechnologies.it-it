@@ -4,10 +4,10 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-01-role-based-access-control"></a>Lab 01: Controllo degli accessi in base al ruolo
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 01: Controllo degli accessi in base al ruolo
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato chiesto di creare un modello di verifica che mostra come vengono creati utenti e gruppi di Azure e come viene usato il controllo degli accessi in base al ruolo per assegnare ruoli a gruppi. In particolare, è necessario:
 
@@ -18,7 +18,7 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verranno completati gli esercizi seguenti:
 
@@ -27,22 +27,22 @@ In questo lab verranno completati gli esercizi seguenti:
 - Esercizio 3: Creare il gruppo Service Desk con l'utente Dylan Williams come membro (interfaccia della riga di comando di Azure). 
 - Esercizio 4: Assegnare il ruolo Collaboratore macchina virtuale al gruppo Service Desk.
 
-## <a name="role-based-access-control-architecture-diagram"></a>Diagramma dell'architettura del controllo degli accessi in base al ruolo
+## Diagramma dell'architettura del controllo degli accessi in base al ruolo
 
 ![image](https://user-images.githubusercontent.com/91347931/157751243-5aa6e521-9bc1-40af-839b-4fd9927479d7.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-### <a name="exercise-1-create-the-senior-admins-group-with-the-user-account-joseph-price-as-its-member"></a>Esercizio 1: Creare il gruppo Senior Admins con l'account utente Joseph Price come membro. 
+### Esercizio 1: Creare il gruppo Senior Admins con l'account utente Joseph Price come membro. 
 
-#### <a name="estimated-timing-10-minutes"></a>Tempo stimato: 10 minuti
+#### Tempo stimato: 10 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
 - Attività 1: Usare il portale di Azure per creare un account utente per Joseph Price.
 - Attività 2: usare il portale di Azure per creare un gruppo Senior Admins e aggiungere l'account utente di Joseph Price al gruppo.
 
-#### <a name="task-1-use-the-azure-portal-to-create-a-user-account-for-joseph-price"></a>Attività 1: Usare il portale di Azure per creare un account utente per Joseph Price 
+#### Attività 1: Usare il portale di Azure per creare un account utente per Joseph Price 
 
 In questa attività si creerà un account utente per Joseph Price. 
 
@@ -69,7 +69,7 @@ In questa attività si creerà un account utente per Joseph Price.
 
 8. Aggiornare il pannello **Utenti \| Tutti gli utenti** per verificare che il nuovo utente sia stato creato nel tenant di Azure AD.
 
-#### <a name="task2-use-the-azure-portal-to-create-a-senior-admins-group-and-add-the-user-account-of-joseph-price-to-the-group"></a>Attività 2: Usare il portale di Azure per creare un gruppo Senior Admins e aggiungere l'account utente di Joseph Price al gruppo.
+#### Attività 2: Usare il portale di Azure per creare un gruppo Senior Admins e aggiungere l'account utente di Joseph Price al gruppo.
 
 In questa attività si creerà il gruppo *Senior Admins*, si aggiungerà l'account utente di Joseph Price al gruppo e si configurerà questo utente come proprietario del gruppo.
 
@@ -93,16 +93,16 @@ In questa attività si creerà il gruppo *Senior Admins*, si aggiungerà l'accou
 
 > Risultato: è stato usato il portale di Azure per creare un utente e un gruppo e assegnare l'utente al gruppo. 
 
-### <a name="exercise-2-create-a-junior-admins-group-containing-the-user-account-of-isabel-garcia-as-its-member"></a>Esercizio 2: Creare un gruppo Junior Admins contenente l'account utente di Isabel Garcia come membro.
+### Esercizio 2: Creare un gruppo Junior Admins contenente l'account utente di Isabel Garcia come membro.
 
-#### <a name="estimated-timing-10-minutes"></a>Tempo stimato: 10 minuti
+#### Tempo stimato: 10 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
 - Attività 1: Usare PowerShell per creare un account utente per Isabel Garcia.
 - Attività 2: Usare PowerShell per creare il gruppo Junior Admins e aggiungere l'account utente di Isabel Garcia al gruppo. 
 
-#### <a name="task-1-use-powershell-to-create-a-user-account-for-isabel-garcia"></a>Attività 1: Usare PowerShell per creare un account utente per Isabel Garcia.
+#### Attività 1: Usare PowerShell per creare un account utente per Isabel Garcia.
 
 In questa attività si creerà un account utente per Isabel Garcia usando PowerShell.
 
@@ -147,7 +147,7 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
     Get-AzureADUser 
     ```
 
-#### <a name="task2-use-powershell-to-create-the-junior-admins-group-and-add-the-user-account-of-isabel-garcia-to-the-group"></a>Attività 2: Usare PowerShell per creare il gruppo Junior Admins e aggiungere l'account utente di Isabel Garcia al gruppo.
+#### Attività 2: Usare PowerShell per creare il gruppo Junior Admins e aggiungere l'account utente di Isabel Garcia al gruppo.
 
 In questa attività si creerà il gruppo Junior Admins e si aggiungerà l'account utente di Isabel Garcia al gruppo usando PowerShell.
 
@@ -184,16 +184,16 @@ In questa attività si creerà il gruppo Junior Admins e si aggiungerà l'accoun
 > Risultato: è stato usato PowerShell per creare un account utente e un account di gruppo e aggiungere l'account utente all'account di gruppo. 
 
 
-### <a name="exercise-3-create-a-service-desk-group-containing-the-user-account-of-dylan-williams-as-its-member"></a>Esercizio 3: Creare un gruppo Service Desk contenente l'account utente di Dylan Williams come membro.
+### Esercizio 3: Creare un gruppo Service Desk contenente l'account utente di Dylan Williams come membro.
 
-#### <a name="estimated-timing-10-minutes"></a>Tempo stimato: 10 minuti
+#### Tempo stimato: 10 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
 - Attività 1: Usare l'interfaccia della riga di comando di Azure per creare un account utente per Dylan Williams.
 - Attività 2: Usare l'interfaccia della riga di comando di Azure per creare il gruppo Service Desk e aggiungere l'account utente di Dylan al gruppo. 
 
-#### <a name="task-1-use-azure-cli-to-create-a-user-account-for-dylan-williams"></a>Attività 1: Usare l'interfaccia della riga di comando di Azure per creare un account utente per Dylan Williams.
+#### Attività 1: Usare l'interfaccia della riga di comando di Azure per creare un account utente per Dylan Williams.
 
 In questa attività si creerà un account utente per Dylan Williams.
 
@@ -217,7 +217,7 @@ In questa attività si creerà un account utente per Dylan Williams.
     az ad user list --output table
     ```
 
-#### <a name="task-2-use-azure-cli-to-create-the-service-desk-group-and-add-the-user-account-of-dylan-to-the-group"></a>Attività 2: Usare l'interfaccia della riga di comando di Azure per creare il gruppo Service Desk e aggiungere l'account utente di Dylan al gruppo. 
+#### Attività 2: Usare l'interfaccia della riga di comando di Azure per creare il gruppo Service Desk e aggiungere l'account utente di Dylan al gruppo. 
 
 In questa attività si creerà il gruppo Service Desk e si assegnerà Dylan al gruppo. 
 
@@ -262,16 +262,16 @@ In questa attività si creerà il gruppo Service Desk e si assegnerà Dylan al g
 > Risultato: usando l'interfaccia della riga di comando di Azure sono stati creati un account utente e un account di gruppo e l'account utente è stato aggiunto al gruppo. 
 
 
-### <a name="exercise-4-assign-the-virtual-machine-contributor-role-to-the-service-desk-group"></a>Esercizio 4: Assegnare il ruolo Collaboratore macchina virtuale al gruppo Service Desk.
+### Esercizio 4: Assegnare il ruolo Collaboratore macchina virtuale al gruppo Service Desk.
 
-#### <a name="estimated-timing-10-minutes"></a>Tempo stimato: 10 minuti
+#### Tempo stimato: 10 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
 - Attività 1: Creare un gruppo di risorse. 
 - Attività 2: Assegnare le autorizzazioni Collaboratore macchina virtuale al gruppo di risorse Service Desk.  
 
-#### <a name="task-1-create-a-resource-group"></a>Attività 1: Creare un gruppo di risorse
+#### Attività 1: Creare un gruppo di risorse
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Gruppi di risorse** e premere **INVIO**.
 
@@ -290,7 +290,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 4. Tornare al pannello **Gruppi di risorse**, aggiornare la pagina e verificare che il nuovo gruppo di risorse venga visualizzato nell'elenco dei gruppi di risorse.
 
 
-#### <a name="task-2-assign-the-service-desk-virtual-machine-contributor-permissions"></a>Attività 2: Assegnare a Service Desk le autorizzazioni Collaboratore macchina virtuale. 
+#### Attività 2: Assegnare a Service Desk le autorizzazioni Collaboratore macchina virtuale. 
 
 1. Nel pannello **Gruppi di risorse** fare clic sulla voce del gruppo di risorse **AZ500LAB01**.
 

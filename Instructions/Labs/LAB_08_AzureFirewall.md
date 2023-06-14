@@ -4,10 +4,10 @@ lab:
   module: Module 02 - Implement Platform Protection
 ---
 
-# <a name="lab-08-azure-firewall"></a>Lab 08: Firewall di Azure
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 08: Firewall di Azure
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato chiesto di installare Firewall di Azure. In questo modo, l'organizzazione potrà controllare l'accesso alla rete in ingresso e in uscita, una parte importante del piano di sicurezza di rete complessivo. In particolare, si vogliono creare e testare i componenti dell'infrastruttura seguenti:
 
@@ -19,25 +19,25 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Distribuire e testare un firewall di Azure
 
-## <a name="azure-firewall-diagram"></a>Diagramma di firewall di Azure
+## Diagramma di firewall di Azure
 
 ![image](https://user-images.githubusercontent.com/91347931/157529954-a1bc434b-2eca-41c1-b875-1f0c977d5e20.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-## <a name="lab-files"></a>File del lab:
+## File del lab:
 
 - **\\Allfiles\\Labs\\08\\template.json**
 
-### <a name="exercise-1-deploy-and-test-an-azure-firewall"></a>Esercizio 1: Distribuire e testare un firewall di Azure
+### Esercizio 1: Distribuire e testare un firewall di Azure
 
-### <a name="estimated-timing-40-minutes"></a>Tempo stimato: 40 minuti
+### Tempo stimato: 40 minuti
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
@@ -51,7 +51,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 6: Configurare server DNS.
 - Attività 7: Testare il firewall. 
 
-#### <a name="task-1-use-a-template-to-deploy-the-lab-environment"></a>Attività 1: Usare un modello per distribuire l'ambiente lab. 
+#### Attività 1: Usare un modello per distribuire l'ambiente lab. 
 
 In questa attività si esaminerà e distribuirà l'ambiente lab. 
 
@@ -85,7 +85,7 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
 
     >**Nota**: attendere il completamento della distribuzione. L'operazione richiede circa 2 minuti. 
 
-#### <a name="task-2-deploy-the-azure-firewall"></a>Attività 2: Distribuire il firewall di Azure
+#### Attività 2: Distribuire il firewall di Azure
 
 In questa attività si distribuirà il firewall di Azure nella rete virtuale. 
 
@@ -100,7 +100,7 @@ In questa attività si distribuirà il firewall di Azure nella rete virtuale.
    |Resource group|**AZ500LAB08**|
    |Nome|**Test-FW01**|
    |Region|**(Stati Uniti) Stati Uniti orientali**|
-   |Livello firewall|**Standard**|
+   |Firewall SKU|**Standard**|
    |Gestione del firewall|**Usare Regole del firewall (versione classica) per gestire questo firewall**|
    |Scegliere una rete virtuale|Fare clic sull'opzione **Usa esistente** e selezionare **Test-FW-VN** nell'elenco a discesa|
    |Indirizzo IP pubblico|Fare clic su **Aggiungi nuovo**, digitare il nome **TEST-FW-PIP** e fare clic su **OK**|
@@ -122,7 +122,7 @@ In questa attività si distribuirà il firewall di Azure nella rete virtuale.
     >**Nota**: queste informazioni saranno necessarie nell'attività successiva.
 
 
-#### <a name="task-3-create-a-default-route"></a>Attività 3: Creare una route predefinita
+#### Attività 3: Creare una route predefinita
 
 In questa attività si creerà una route predefinita per la subnet **Workload-SN**. Questa route configurerà il traffico in uscita attraverso il firewall.
 
@@ -172,7 +172,7 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
 11.  Fare clic su **Aggiungi** per aggiungere la route. 
 
 
-#### <a name="task-4-configure-an-application-rule"></a>Attività 4: Configurare una regola dell'applicazione
+#### Attività 4: Configurare una regola dell'applicazione
 
 In questa attività si creerà una regola dell'applicazione che consente l'accesso in uscita verso `www.bing.com`.
 
@@ -204,7 +204,7 @@ In questa attività si creerà una regola dell'applicazione che consente l'acces
 
     >**Nota**: Firewall di Azure include una raccolta di regole predefinite per gli FQDN dell'infrastruttura consentiti per impostazione predefinita. Questi nomi di dominio completi sono specifici per la piattaforma e non possono essere usati per altri scopi. 
 
-#### <a name="task-5-configure-a-network-rule"></a>Attività 5: Configurare una regola di rete
+#### Attività 5: Configurare una regola di rete
 
 In questa attività si creerà una regola di rete che consente l'accesso in uscita a due indirizzi IP sulla porta 53 (DNS).
 
@@ -236,7 +236,7 @@ In questa attività si creerà una regola di rete che consente l'accesso in usci
 
     >**Nota**: gli indirizzi di destinazione usati in questo caso sono server DNS pubblici noti. 
 
-#### <a name="task-6-configure-the-virtual-machine-dns-servers"></a>Attività 6: Configurare i server DNS della macchina virtuale
+#### Attività 6: Configurare i server DNS della macchina virtuale
 
 In questa attività si configureranno gli indirizzi DNS primario e secondario per la macchina virtuale. Questo non è un requisito del firewall. 
 
@@ -256,7 +256,7 @@ In questa attività si configureranno gli indirizzi DNS primario e secondario pe
 
     >**Nota**: se si aggiornano i server DNS per un'interfaccia di rete, verrà automaticamente riavviata la macchina virtuale a cui è collegata e, se necessario, anche qualsiasi altra macchina virtuale nello stesso set di disponibilità.
 
-#### <a name="task-7-test-the-firewall"></a>Attività 7: Testare il firewall
+#### Attività 7: Testare il firewall
 
 In questa attività si testerà il firewall per verificare che funzioni come previsto.
 

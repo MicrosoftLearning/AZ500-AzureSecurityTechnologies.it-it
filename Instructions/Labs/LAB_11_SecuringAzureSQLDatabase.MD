@@ -4,10 +4,10 @@ lab:
   module: Module 03 - Secure data and applications
 ---
 
-# <a name="lab-11-securing-azure-sql-database"></a>Lab 11: Protezione del database SQL di Azure
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 11: Protezione del database SQL di Azure
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato chiesto di esaminare le funzionalità di sicurezza per il database SQL di Azure. In particolare, si è interessati a:
 
@@ -17,25 +17,25 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Implementare funzionalità di sicurezza per il database SQL
 
-## <a name="securing-azure-sql-database-diagram"></a>Diagramma della protezione del database SQL di Azure
+## Diagramma della protezione del database SQL di Azure
 
 ![image](https://user-images.githubusercontent.com/91347931/157533836-7250fa58-a109-4882-a55b-d3fa3baf34ab.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-## <a name="lab-files"></a>File del lab:
+## File del lab:
 
 - **\\Allfiles\\Labs\\11\\azuredeploy.json**
 
-### <a name="exercise-1-implement-sql-database-security-features"></a>Esercizio 1: Implementare funzionalità di sicurezza per il database SQL
+### Esercizio 1: Implementare funzionalità di sicurezza per il database SQL
 
-### <a name="estimated-timing-30-minutes"></a>Tempo stimato: 30 minuti
+### Tempo stimato: 30 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
@@ -44,7 +44,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 3: Configurare la classificazione dei dati
 - Attività 4: Configurare il controllo
 
-#### <a name="task-1-deploy-an-azure-sql-database"></a>Attività 1: Distribuire un database SQL di Azure
+#### Attività 1: Distribuire un database SQL di Azure
 
 In questa attività si userà un modello per distribuire l'infrastruttura del lab. 
 
@@ -74,7 +74,7 @@ In questa attività si userà un modello per distribuire l'infrastruttura del la
 
     >**Nota**: attendere il completamento della distribuzione. 
 
-#### <a name="task-2-configure-advanced-data-protection"></a>Attività 2: Configurare la protezione dei dati avanzata
+#### Attività 2: Configurare la protezione dei dati avanzata
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Gruppi di risorse** e premere **INVIO**.
 
@@ -82,24 +82,22 @@ In questa attività si userà un modello per distribuire l'infrastruttura del la
 
 3. Nel pannello **AZ500LAB11** fare clic sulla voce che rappresenta la nuova istanza di SQL Server creata.
 
-4. Nella sezione **Sicurezza** del pannello di SQL Server fare clic su **Microsoft Defender for Cloud**. Scorrere verso la parte inferiore della pagina **Introduzione** e selezionare **Aggiorna**. Nella scheda **Installa agenti** selezionare **Installa agenti**.
-
-5. Nella sezione **Sicurezza** del pannello di SQL Server fare clic su **Microsoft Defender for Cloud** e selezionare **Abilitare Microsoft Defender for SQL**.
+4. Nella sezione **Sicurezza** del pannello di SQL Server fare clic su **Microsoft Defender for Cloud** e selezionare **Abilitare Microsoft Defender for SQL**.
 
       >**Nota**: attendere fino a quando la notifica non indica che l'abilitazione di Azure Defender per SQL è avvenuta correttamente.
 
-6. Nella sezione **Sicurezza** del pannello di SQL Server, nella pagina **Microsoft Defender for Cloud** fare clic su **(configura)** per il parametro **Microsoft Defender for SQL: Abilitato a livello di server (Configura)** .   
+5. Nel pannello SQL Server, nella sezione **Sicurezza**, nella pagina **Microsoft Defender for Cloud**, nella **Microsoft Defender per SQL: Abilitato a livello di sottoscrizione (Configura),** fare clic su **(configura).**  
 
       >**Nota**: se l'opzione **(configura)** non è visualizzata, aggiornare il browser.
     
-7. Nel pannello **Impostazioni server** esaminare le informazioni sui prezzi e il periodo di valutazione, **IMPOSTAZIONI DI VALUTAZIONE DELLA VULNERABILITÀ** e **IMPOSTAZIONI DI ADVANCED THREAT PROTECTION**.
+6. Nel pannello **Impostazioni server** esaminare le informazioni sui prezzi e il periodo di valutazione, **IMPOSTAZIONI DI VALUTAZIONE DELLA VULNERABILITÀ** e **IMPOSTAZIONI DI ADVANCED THREAT PROTECTION**.
 
-8. Tornare al pannello **Microsoft Defender for Cloud** ed esaminare **Raccomandazioni** e **Avvisi sicurezza**.
+7. Tornare al pannello **Microsoft Defender for Cloud** ed esaminare **Raccomandazioni** e **Avvisi sicurezza**.
 
       >**Nota**: per la visualizzazione delle raccomandazioni nel pannello **Microsoft Defender for Cloud** possono essere necessari 10-15 minuti. Anziché attendere, passare all'attività successiva, ma provare a tornare a questo pannello al termine di tutte le attività rimanenti.
 
 
-#### <a name="task-3-configure-data-classification"></a>Attività 3: Configurare la classificazione dei dati
+#### Attività 3: Configurare la classificazione dei dati
 
 In questa attività si individueranno e classificheranno le informazioni nel database SQL per la conformità al GDPR e alla protezione dei dati.
 
@@ -129,7 +127,7 @@ In questa attività si individueranno e classificheranno le informazioni nel dat
 
 9. Tornare alla scheda **Panoramica** del pannello **Individuazione dati e classificazione** e osservare che i dati sono stati aggiornati in base alle informazioni di classificazione più recenti. 
 
-#### <a name="task-4--configure-auditing"></a>Attività 4: Configurare il controllo 
+#### Attività 4: Configurare il controllo 
 
 In questa attività si configurerà prima il controllo a livello di server e quindi il controllo a livello di database. 
 

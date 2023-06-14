@@ -4,10 +4,10 @@ lab:
   module: Module 02 - Implement Platform Protection
 ---
 
-# <a name="lab-07-network-security-groups-and-application-security-groups"></a>Lab 07: Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 07: Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato chiesto di implementare l'infrastruttura di rete virtuale dell'organizzazione e di testarla per assicurarsi che funzioni correttamente. In particolare:
 
@@ -19,22 +19,22 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verranno completati gli esercizi seguenti:
 
 - Esercizio 1: Creare l'infrastruttura di rete virtuale
 - Esercizio 2: Distribuire macchine virtuali e testare i filtri di rete
 
-## <a name="network-and-application-security-groups-diagram"></a>Diagramma dei gruppi di sicurezza delle applicazioni e di rete
+## Diagramma dei gruppi di sicurezza delle applicazioni e di rete
 
 ![image](https://user-images.githubusercontent.com/91347931/157526438-6da4f68b-db88-4931-a041-8474e66d3fe5.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-### <a name="exercise-1-create-the-virtual-networking-infrastructure"></a>Esercizio 1: Creare l'infrastruttura di rete virtuale
+### Esercizio 1: Creare l'infrastruttura di rete virtuale
 
-### <a name="estimated-timing-20-minutes"></a>Tempo stimato: 20 minuti
+### Tempo stimato: 20 minuti
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
@@ -45,7 +45,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 3: Creare un gruppo di sicurezza di rete e associarlo alla subnet della rete virtuale.
 - Attività 4: Creare regole di sicurezza NSG in ingresso per tutto il traffico verso i server Web e le sessioni RDP verso i server di gestione.
 
-#### <a name="task-1--create-a-virtual-network"></a>Attività 1:Creare una rete virtuale
+#### Attività 1:Creare una rete virtuale
 
 In questa attività si creerà una rete virtuale da usare con i gruppi di sicurezza di rete e delle applicazioni. 
 
@@ -77,7 +77,7 @@ In questa attività si creerà una rete virtuale da usare con i gruppi di sicure
 
 7. Nella scheda **Rivedi e crea** del pannello **Crea rete virtuale** fare clic su **Crea**.
 
-#### <a name="task-2--create-application-security-groups"></a>Attività 2: Creare gruppi di sicurezza delle applicazioni
+#### Attività 2: Creare gruppi di sicurezza delle applicazioni
 
 In questa attività si creerà un gruppo di sicurezza delle applicazioni.
 
@@ -111,7 +111,7 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
 
 7. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
-#### <a name="task-3--create-a-network-security-group-and-associate-the-nsg-to-the-subnet"></a>Attività 3: Creare un gruppo di sicurezza di rete e associarlo alla subnet
+#### Attività 3: Creare un gruppo di sicurezza di rete e associarlo alla subnet
 
 In questa attività si creerà un gruppo di sicurezza di rete. 
 
@@ -141,7 +141,7 @@ In questa attività si creerà un gruppo di sicurezza di rete.
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**default**|
 
-#### <a name="task-4-create-inbound-nsg-security-rules-to-all-traffic-to-web-servers-and-rdp-to-the-servers"></a>Attività 4: Creare regole di sicurezza in ingresso per un NSG per tutto il traffico verso i server Web e RDP verso i server. 
+#### Attività 4: Creare regole di sicurezza in ingresso per un NSG per tutto il traffico verso i server Web e RDP verso i server. 
 
 1. Nella sezione **Impostazioni** del pannello **myNsg** fare clic su **Regole di sicurezza in ingresso**.
 
@@ -175,9 +175,9 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 > Risultato: è stata completata la distribuzione di una rete virtuale, delle regole in ingresso per la sicurezza della rete e di due gruppi di sicurezza delle applicazioni. 
 
-### <a name="exercise-2-deploy-virtual-machines-and-test-network-filters"></a>Esercizio 2: Distribuire macchine virtuali e testare i filtri di rete
+### Esercizio 2: Distribuire macchine virtuali e testare i filtri di rete
 
-### <a name="estimated-timing-25-minutes"></a>Tempo stimato: 25 minuti
+### Tempo stimato: 25 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
@@ -186,7 +186,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 3: Associare l'interfaccia di rete di ogni macchina virtuale al gruppo di sicurezza delle applicazioni.
 - Attività 4: Testare il filtro del traffico di rete.
 
-#### <a name="task-1-create-a-virtual-machine-to-use-as-a-web-server"></a>Attività 1: Creare una macchina virtuale da usare come server Web.
+#### Attività 1: Creare una macchina virtuale da usare come server Web.
 
 In questa attività si creerà una macchina virtuale da usare come server Web.
 
@@ -202,7 +202,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
    |Resource group|**AZ500LAB07**|
    |Nome macchina virtuale|**myVmWeb**|
    |Region|**(Stati Uniti) Stati Uniti orientali**|
-   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
+   |Immagine|**Windows Server 2022 Datacenter: Azure Edition- x64 Gen2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
@@ -218,7 +218,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 6. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-7. Fare clic su **Avanti: Gestione >** , quindi fare clic su **Avanti: Monitoraggio >** nella scheda **Monitoraggio** del pannello **Crea macchina virtuale** e verificare l'impostazione seguente:
+7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio > nella scheda **Monitoraggio** del pannello **Crea una macchina virtuale** , verificare l'impostazione seguente:
 
    |Impostazione|Valore|
    |---|---|
@@ -226,7 +226,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 8. Fare clic su **Rivedi e crea**, nel pannello **Rivedi e crea** assicurarsi che la convalida sia riuscita e fare clic su **Crea**.
 
-#### <a name="task-2-create-a-virtual-machine-to-use-as-a-management-server"></a>Attività 2: Creare una macchina virtuale da usare come server di gestione. 
+#### Attività 2: Creare una macchina virtuale da usare come server di gestione. 
 
 In questa attività si creerà una macchina virtuale da usare come server di gestione.
 
@@ -240,7 +240,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
    |Resource group|**AZ500LAB07**|
    |Nome macchina virtuale|**myVMMgmt**|
    |Region|(Stati Uniti) Stati Uniti orientali|
-   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
+   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
@@ -255,7 +255,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
 5. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-6. Fare clic su **Avanti: Gestione >** , quindi fare clic su **Avanti: Monitoraggio >** nella scheda **Monitoraggio** del pannello **Crea macchina virtuale** e verificare l'impostazione seguente:
+6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio > nella scheda **Monitoraggio del pannello** **Crea una macchina virtuale** , verificare l'impostazione seguente:
 
    |Impostazione|Valore|
    |---|---|
@@ -265,7 +265,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
     >**Nota**: attendere che venga effettuato il provisioning di entrambe le macchine virtuali prima di continuare. 
 
-#### <a name="task-3-associate-each-virtual-machines-network-interface-to-its-application-security-group"></a>Attività 3: Associare l'interfaccia di rete di ogni macchina virtuale al gruppo di sicurezza delle applicazioni.
+#### Attività 3: Associare l'interfaccia di rete di ogni macchina virtuale al gruppo di sicurezza delle applicazioni.
 
 In questa attività l'interfaccia di rete di ogni macchina virtuale verrà associata al gruppo di sicurezza delle applicazioni corrispondente. L'interfaccia della macchina virtuale myVMWeb verrà associata al gruppo di sicurezza delle applicazioni myAsgWebServers. L'interfaccia della macchina virtuale myVMWeb verrà associata al gruppo di sicurezza delle applicazioni myAsgMgmtServers. 
 
@@ -283,7 +283,7 @@ In questa attività l'interfaccia di rete di ogni macchina virtuale verrà assoc
 
 7. Fare clic su **Configura i gruppi di sicurezza delle applicazioni**, selezionare **myAsgMgmtServers** nell'elenco a discesa **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **Salva**.
 
-#### <a name="task-4-test-the-network-traffic-filtering"></a>Attività 4: Testare il filtro del traffico di rete
+#### Attività 4: Testare il filtro del traffico di rete
 
 In questa attività si testeranno i filtri del traffico di rete. Si dovrà essere in grado di accedere tramite RDP alla macchina virtuale myVMMgmnt. Si dovrà essere in grado di connettersi da Internet alla macchina virtuale myVMWeb e visualizzare la pagina Web IIS predefinita.  
 
