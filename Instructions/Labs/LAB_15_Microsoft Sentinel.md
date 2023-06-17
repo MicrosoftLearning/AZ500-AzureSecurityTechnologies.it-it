@@ -4,10 +4,10 @@ lab:
   module: Module 04 - Manage Security Operations
 ---
 
-# <a name="lab-15-microsoft-sentinel"></a>Lab 15: Microsoft Sentinel
-# <a name="student-lab-manual"></a>Manuale del lab per studenti
+# Lab 15: Microsoft Sentinel
+# Manuale del lab per studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 **Nota:** **Azure Sentinel** è stato rinominato in **Microsoft Sentinel** 
 
@@ -19,25 +19,25 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Implementare Microsoft Sentinel
 
-## <a name="microsoft-sentinel-diagram"></a>Diagramma di Microsoft Sentinel
+## Diagramma di Microsoft Sentinel
 
 ![image](https://user-images.githubusercontent.com/91347931/157538440-4953be73-90be-4edd-bd23-b678326ba637.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-## <a name="lab-files"></a>File del lab:
+## File del lab:
 
 - **\\Allfiles\\Labs\\15\\changeincidentseverity.json**
 
-### <a name="exercise-1-implement-microsoft-sentinel"></a>Esercizio 1: Implementare Microsoft Sentinel
+### Esercizio 1: Implementare Microsoft Sentinel
 
-### <a name="estimated-timing-30-minutes"></a>Tempo stimato: 30 minuti
+### Tempo stimato: 30 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
@@ -48,7 +48,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 5: Creare un avviso personalizzato e configurare il playbook come risposta automatica
 - Attività 6: Richiamare un evento imprevisto ed esaminare le azioni associate
 
-#### <a name="task-1-on-board-azure-sentinel"></a>Attività 1: Eseguire l'onboarding di Azure Sentinel
+#### Attività 1: Eseguire l'onboarding di Azure Sentinel
 
 In questa attività si eseguirà l'onboarding di Microsoft Sentinel e si connetterà l'area di lavoro Log Analytics. 
 
@@ -66,7 +66,7 @@ In questa attività si eseguirà l'onboarding di Microsoft Sentinel e si connett
 
     >**Nota**: Microsoft Sentinel ha requisiti molto specifici per le aree di lavoro. Non è ad esempio possibile usare le aree di lavoro create da Microsoft Defender for Cloud. Per altre informazioni, vedere: [Avvio rapido: eseguire l'onboarding di Azure Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/quickstart-onboard)
     
-#### <a name="task-2-configure-microsoft-sentinel-to-use-the-azure-activity-data-connector"></a>Attività 2: Configurare Microsoft Sentinel per usare il connettore dati Attività di Azure. 
+#### Attività 2: Configurare Microsoft Sentinel per usare il connettore dati Attività di Azure. 
 
 In questa attività si configurerà Sentinel in modo da usare il connettore dati Attività di Azure.  
 
@@ -96,7 +96,7 @@ In questa attività si configurerà Sentinel in modo da usare il connettore dati
 
     >**Nota**: potrebbero essere necessari più di 15 minuti prima che lo Stato risulti impostato su "Connesso" e venga visualizzato il grafico Dati ricevuti.
 
-#### <a name="task-3-create-a-rule-that-uses-the-azure-activity-data-connector"></a>Attività 3: Creare una regola che usa il connettore dati Attività di Azure 
+#### Attività 3: Creare una regola che usa il connettore dati Attività di Azure 
 
 In questa attività si esaminerà e creerà una regola che usa il connettore dati Attività di Azure. 
 
@@ -124,7 +124,7 @@ In questa attività si esaminerà e creerà una regola che usa il connettore dat
 
     >**Nota**: è ora disponibile una regola attiva.
 
-#### <a name="task-4-create-a-playbook"></a>Attività 4: Creare un playbook
+#### Attività 4: Creare un playbook
 
 In questa attività verrà creato un playbook. Un playbook della sicurezza è una raccolta di attività che è possibile richiamare da Azure Sentinel in risposta a un avviso. 
 
@@ -176,7 +176,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
 16. Nel pannello **Progettazione app per la logica** fare clic su **Salva** per salvare le modifiche.
 
-#### <a name="task-5-create-a-custom-alert-and-configure-a-playbook-as-an-automated-response"></a>Attività 5: Creare un avviso personalizzato e configurare un playbook come risposta automatica
+#### Attività 5: Creare un avviso personalizzato e configurare un playbook come risposta automatica
 
 1. Nel portale di Azure tornare al pannello **Microsoft Sentinel \| Panoramica**.
 
@@ -218,7 +218,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
     >**Nota**: è ora disponibile una nuova regola attiva denominata **Playbook Demo**. Se si verifica un evento identificato dalla logica della regola, verrà generato un avviso di gravità media, da cui avrà origine un corrispondente evento imprevisto.
 
-#### <a name="task-6-invoke-an-incident-and-review-the-associated-actions"></a>Attività 6: Richiamare un evento imprevisto ed esaminare le azioni associate
+#### Attività 6: Richiamare un evento imprevisto ed esaminare le azioni associate
 
 1. Nel portale di Azure passare al pannello **Microsoft Defender for Cloud \| Panoramica**.
 

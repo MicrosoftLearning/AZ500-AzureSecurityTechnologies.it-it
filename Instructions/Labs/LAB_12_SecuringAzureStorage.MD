@@ -4,10 +4,10 @@ lab:
   module: Module 03 - Secure data and applications
 ---
 
-# <a name="lab-12-service-endpoints-and-securing-storage"></a>Lab 12: Endpoint servizio e protezione dell'archiviazione
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 12: Endpoint servizio e protezione dell'archiviazione
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato chiesto di creare un modello di verifica per illustrare la protezione delle condivisioni file di Azure. In particolare, sarà necessario:
     
@@ -17,21 +17,21 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Endpoint servizio e archiviazione di sicurezza
 
-## <a name="service-endpoints-and-securing-storage-diagram"></a>Diagramma di endpoint servizio e archiviazione di sicurezza
+## Diagramma di endpoint servizio e archiviazione di sicurezza
 
 ![image](https://user-images.githubusercontent.com/91347931/157534883-29664a05-85d1-4c70-99a7-f16d2360755d.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-### <a name="exercise-1-service-endpoints-and-security-storage"></a>Esercizio 1: Endpoint servizio e archiviazione di sicurezza
+### Esercizio 1: Endpoint servizio e archiviazione di sicurezza
 
-### <a name="estimated-timing-45-minutes"></a>Tempo stimato: 45 minuti
+### Tempo stimato: 45 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
@@ -44,7 +44,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 7: Testare la connessione di archiviazione dalla subnet privata per verificare che l'accesso sia consentito
 - Attività 8: Testare la connessione di archiviazione dalla subnet pubblica per verificare che l'accesso sia negato 
 
-#### <a name="task-1-create-a-virtual-network"></a>Attività 1:Creare una rete virtuale
+#### Attività 1:Creare una rete virtuale
 
 In questa attività verrà creata una rete virtuale.
 
@@ -76,7 +76,7 @@ In questa attività verrà creata una rete virtuale.
 
 7. Nella scheda **Rivedi e crea** del pannello **Crea rete virtuale** fare clic su **Crea**.
 
-#### <a name="task-2-add-a-subnet-to-the-virtual-network-and-configure-a-storage-endpoint"></a>Attività 2: Aggiungere una subnet alla rete virtuale e configurare un endpoint di archiviazione
+#### Attività 2: Aggiungere una subnet alla rete virtuale e configurare un endpoint di archiviazione
 
 In questa attività verrà creata un'altra subnet in cui verrà abilitato un endpoint di servizio. Gli endpoint di servizio sono abilitati per servizio e per subnet. 
 
@@ -100,7 +100,7 @@ In questa attività verrà creata un'altra subnet in cui verrà abilitato un end
 
     >**Nota**: la rete virtuale ha ora due subnet, Pubblica e Privata. 
     
-#### <a name="task-3-configure-a-network-security-group-to-restrict-access-to-the-subnet"></a>Attività 3: Configurare un gruppo di sicurezza di rete per limitare l'accesso alla subnet
+#### Attività 3: Configurare un gruppo di sicurezza di rete per limitare l'accesso alla subnet
 
 In questa attività verrà creato un gruppo di sicurezza di rete con due regole di sicurezza in uscita (Archiviazione e Internet) e una regola di sicurezza in ingresso (RDP). Il gruppo di sicurezza di rete verrà inoltre associato alla subnet Privata. In questo modo verrà limitato il traffico in uscita dalle macchine virtuali di Azure connesse a tale subnet.
 
@@ -192,7 +192,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**Privata**|
 
-#### <a name="task-4-configure-a-network-security-group-to-allow-rdp-on-the-public-subnet"></a>Attività 4: Configurare un gruppo di sicurezza di rete per consentire RDP nella subnet pubblica
+#### Attività 4: Configurare un gruppo di sicurezza di rete per consentire RDP nella subnet pubblica
 
 In questa attività si creerà un gruppo di sicurezza di rete con una regola di sicurezza in ingresso (RDP). Il gruppo di sicurezza di rete verrà inoltre associato alla subnet Pubblica. In questo modo verrà consentito l'accesso RDP alla macchina virtuale pubblica.
 
@@ -242,7 +242,7 @@ In questa attività si creerà un gruppo di sicurezza di rete con una regola di 
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**Pubblica**|
     
-#### <a name="task-5-create-a-storage-account-with-a-file-share"></a>Attività 5: Creare un account di archiviazione con una condivisione file
+#### Attività 5: Creare un account di archiviazione con una condivisione file
 
 In questa attività verrà creato un account di archiviazione con una condivisione file e si otterrà la chiave dell'account di archiviazione.  
 
@@ -309,7 +309,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
     >**Nota**: a questo punto del lab sono stati configurati una rete virtuale, un gruppo di sicurezza di rete e un account di archiviazione con una condivisione file. 
 
-#### <a name="task-6-deploy-virtual-machines-into-the-designated-subnets"></a>Attività 6: Distribuire macchine virtuali nelle subnet designate
+#### Attività 6: Distribuire macchine virtuali nelle subnet designate
 
 In questa attività verranno create due macchine virtuali, una nella subnet Privata e una in quella Pubblica. 
 
@@ -387,7 +387,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
     >**Nota**: è possibile passare all'attività successiva una volta completata la distribuzione della macchina virtuale di Azure **myVMPrivate**.
 
-#### <a name="task-7-test-the-storage-connection-from-the-private-subnet-to-confirm-that-access-is-allowed"></a>Attività 7: Testare la connessione di archiviazione dalla subnet privata per verificare che l'accesso sia consentito
+#### Attività 7: Testare la connessione di archiviazione dalla subnet privata per verificare che l'accesso sia consentito
 
 In questa attività si eseguirà la connessione alla macchina virtuale myVMPrivate tramite Desktop remoto, quindi si eseguirà il mapping di un'unità alla condivisione file. 
 
@@ -439,7 +439,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
 
     >**Nota**: a questo punto è stato confermato che la macchina virtuale nella subnet Privata può accedere all'account di archiviazione. 
 
-####  <a name="task-8-test-the-storage-connection-from-the-public-subnet-to-confirm-that-access-is-denied"></a>Attività 8: Testare la connessione di archiviazione dalla subnet pubblica per verificare che l'accesso sia negato 
+####  Attività 8: Testare la connessione di archiviazione dalla subnet pubblica per verificare che l'accesso sia negato 
 
 1. Passare al pannello **Macchine virtuali**. 
 

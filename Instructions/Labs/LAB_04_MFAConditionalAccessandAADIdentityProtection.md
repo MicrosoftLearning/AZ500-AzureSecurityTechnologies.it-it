@@ -1,23 +1,23 @@
 ---
 lab:
-  title: '04 - MFA, accesso condizionale e AAD Identity Protection'
+  title: 04 - MFA e accesso condizionale
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-04-mfa-conditional-access-and-aad-identity-protection"></a>Lab 04: MFA, accesso condizionale e AAD Identity Protection
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 04: MFA e accesso condizionale
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato chiesto di creare un modello di verifica delle funzionalità che ottimizzano l'autenticazione di Azure Active Directory (Azure AD). In particolare, sarà necessario valutare quanto segue:
 
 - Autenticazione a più fattori di Azure AD
 - Accesso condizionale di Azure AD
-- Azure AD Identity Protection
+- Criteri basati sui rischi per l'accesso condizionale di Azure AD
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verranno completati gli esercizi seguenti:
 
@@ -26,26 +26,26 @@ In questo lab verranno completati gli esercizi seguenti:
 - Esercizio 3: Implementare i criteri di accesso condizionale di Azure AD 
 - Esercizio 4: Implementare Azure AD Identity Protection
 
-## <a name="mfa---conditional-access---identity-protection-diagram"></a>Diagramma di MFA - Accesso condizionale - Identity Protection
+## Diagramma di MFA - Accesso condizionale - Identity Protection
 
 ![image](https://user-images.githubusercontent.com/91347931/157518628-8b4a9efe-0086-4ec0-825e-3d062748fa63.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-## <a name="lab-files"></a>File del lab:
+## File del lab:
 
 - **\\Allfiles\\Labs\\04\\az-500-04_azuredeploy.json**
 - **\\Allfiles\\Labs\\04\\az-500-04_azuredeploy.parameters.json** 
 
-### <a name="exercise-1-deploy-an-azure-vm-by-using-an-azure-resource-manager-template"></a>Esercizio 1: Distribuire una macchina virtuale di Azure usando un modello di Azure Resource Manager
+### Esercizio 1: Distribuire una macchina virtuale di Azure usando un modello di Azure Resource Manager
 
-### <a name="estimated-timing-10-minutes"></a>Tempo stimato: 10 minuti
+### Tempo stimato: 10 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
 - Attività 1: Distribuire una macchina virtuale di Azure usando un modello di Azure Resource Manager.
 
-#### <a name="task-1-deploy-an-azure-vm-by-using-an-azure-resource-manager-template"></a>Attività 1: Distribuire una macchina virtuale di Azure usando un modello di Azure Resource Manager
+#### Attività 1: Distribuire una macchina virtuale di Azure usando un modello di Azure Resource Manager
 
 In questa attività si creerà una macchina virtuale usando un modello di ARM. La macchina virtuale verrà usata nell'ultimo esercizio per questo lab. 
 
@@ -97,9 +97,9 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
 > Risultato: è stata avviata la distribuzione di un modello di una VM di Azure **az500-04-vm1** che verrà usata nell'ultimo esercizio di questo lab.
 
 
-### <a name="exercise-2-implement-azure-mfa"></a>Esercizio 2: Implementare Azure MFA
+### Esercizio 2: Implementare Azure MFA
 
-### <a name="estimated-timing-30-minutes"></a>Tempo stimato: 30 minuti
+### Tempo stimato: 30 minuti
 
 In questo esercizio verranno eseguite le attività seguenti
 
@@ -110,7 +110,7 @@ In questo esercizio verranno eseguite le attività seguenti
 - Attività 5: Configurare le impostazioni di Azure MFA.
 - Attività 6: Convalidare la configurazione di MFA
 
-#### <a name="task-1-create-a-new-azure-ad-tenant"></a>Attività 1: Creare un nuovo tenant di Azure AD
+#### Attività 1: Creare un nuovo tenant di Azure AD
 
 In questa attività si creerà un nuovo tenant di Azure AD. 
 
@@ -136,7 +136,7 @@ In questa attività si creerà un nuovo tenant di Azure AD.
     >**Nota**: attendere il completamento della creazione del tenant. Usare l'icona **Notifica** per monitorare lo stato della distribuzione. 
 
 
-#### <a name="task-2-activate-azure-ad-premium-p2-trial"></a>Attività 2: Attivare la versione di valutazione di Azure AD Premium P2
+#### Attività 2: Attivare la versione di valutazione di Azure AD Premium P2
 
 In questa attività ci si iscriverà per ricevere la versione di valutazione gratuita di Azure AD Premium P2. 
 
@@ -153,19 +153,19 @@ In questa attività ci si iscriverà per ricevere la versione di valutazione gra
 5. Nella sezione Azure AD Premium P2 del pannello **Attiva** fare clic su **Versione di valutazione gratuita** e quindi su **Attiva**.
 
 
-#### <a name="task-3-create-azure-ad-users-and-groups"></a>Attività 3: Creare utenti e gruppi di Azure AD.
+#### Attività 3: Creare utenti e gruppi di Azure AD.
 
 In questa attività si creeranno tre utenti: aaduser1 (amministratore globale), aaduser2 (utente) e aaduser3 (utente). Per le attività successive saranno necessari il nome entità e la password di ogni utente. 
 
 1. Tornare nel pannello di Azure Active Directory **AdatumLab500-04** e fare clic su **Utenti** nella sezione **Gestisci**.
 
-2. Nel pannello **Utenti \| Tutti gli utenti** fare clic su **+ Nuovo utente**. 
+2. In **Utenti | Nel pannello Tutti gli utenti** fare clic su **+ Nuovo utente** e quindi **su Crea nuovo utente**. 
 
 3. Nel pannello **Nuovo utente** assicurarsi che sia selezionata l'opzione **Crea utente** e specificare le impostazioni seguenti, lasciando i valori predefiniti per le altre, quindi fare clic su **Crea**:
 
    |Impostazione|Valore|
    |---|---|
-   |Nome utente|**aaduser1**|
+   |Nome dell'entità utente|**aaduser1**|
    |Nome|**aaduser1**|
    |Password|Assicurarsi che sia selezionata l'opzione **Password generata automaticamente** e fare clic su **Mostra password**|
    |Gruppi|**0 gruppi selezionati**|
@@ -178,37 +178,33 @@ In questa attività si creeranno tre utenti: aaduser1 (amministratore globale), 
 
 4. Nel pannello **Utenti \| Tutti gli utenti** fare clic su **+ Nuovo utente**. 
 
-5. Nel pannello **Nuovo utente** assicurarsi che sia selezionata l'opzione **Crea utente** e specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
+5. Nel pannello **Nuovo utente** verificare che sia selezionata l'opzione **Crea utente** e specificare le impostazioni seguenti (lasciare tutti gli altri con i valori predefiniti) e fare clic su **Crea**.
 
    |Impostazione|Valore|
    |---|---|
-   |Nome utente|**aaduser2**|
+   |Nome dell'entità utente|**aaduser2**|
    |Nome|**aaduser2**|
    |Password|Assicurarsi che sia selezionata l'opzione **Password generata automaticamente** e fare clic su **Mostra password**|
-   |Gruppi|**0 gruppi selezionati**|
-   |Ruoli|**Utente**|
    |Località di utilizzo|**Stati Uniti**|  
 
     >**Nota**: registrare il nome utente completo e la password.
 
 6. Nel pannello **Utenti \| Tutti gli utenti** fare clic su **+ Nuovo utente**. 
 
-7. Fare clic su **Nuovo utente**, completare impostazioni di configurazione del nuovo utente e quindi fare clic su **Crea**.
+7. Nel pannello **Nuovo utente** verificare che sia selezionata l'opzione **Crea utente** e specificare le impostazioni seguenti (lasciare tutti gli altri con i valori predefiniti) e fare clic su **Crea**. 
 
    |Impostazione|Valore|
    |---|---|
-   |Nome utente|**aaduser3**|
+   |Nome dell'entità utente|**aaduser3**|
    |Nome|**aaduser3**|
    |Password|Assicurarsi che sia selezionata l'opzione **Password generata automaticamente** e fare clic su **Mostra password**|
-   |Gruppi|**0 gruppi selezionati**|
-   |Ruoli|**Utente**|
    |Località di utilizzo|**Stati Uniti**|  
 
     >**Nota**: registrare il nome utente completo e la password.
 
     >**Nota**: a questo punto, nella pagina **Utenti** dovrebbero essere elencati i tre nuovi utenti. 
     
-#### <a name="task-4-assign-azure-ad-premium-p2-licenses-to-azure-ad-users"></a>Attività 4: Assegnare licenze di Azure AD Premium P2 agli utenti di Azure AD
+#### Attività 4: Assegnare licenze di Azure AD Premium P2 agli utenti di Azure AD
 
 In questa attività si assegnerà ogni utente alla licenza di Azure Active Directory Premium P2.
 
@@ -230,7 +226,7 @@ In questa attività si assegnerà ogni utente alla licenza di Azure Active Direc
 
     >**Nota**: a questo punto, sono state assegnate le licenze di Azure Active Directory Premium P2 a tutti gli account utente che verranno usati in questo lab. Assicurarsi di disconnettersi e quindi accedere di nuovo. 
 
-#### <a name="task-5-configure-azure-mfa-settings"></a>Attività 5: Configurare le impostazioni di Azure MFA.
+#### Attività 5: Configurare le impostazioni di Azure MFA.
 
 In questa attività si configurerà MFA, che verrà abilitata per aaduser1. 
 
@@ -284,7 +280,7 @@ In questa attività si configurerà MFA, che verrà abilitata per aaduser1.
 
     >**Nota**: assicurarsi di aver eseguito l'accesso al tenant di Azure AD **AdatumLab500-04**. È possibile usare il filtro **Directory e sottoscrizione** per passare da un tenant di Azure AD a un altro. Assicurarsi di aver eseguito l'accesso come utente con il ruolo di amministratore globale nel tenant di Azure AD.
 
-#### <a name="task-6-validate-mfa-configuration"></a>Attività 6: Convalidare la configurazione di MFA
+#### Attività 6: Convalidare la configurazione di MFA
 
 In questa attività si convaliderà la configurazione di MFA testando l'accesso dell'account utente aaduser1. 
 
@@ -317,16 +313,16 @@ In questa attività si convaliderà la configurazione di MFA testando l'accesso 
 > Risultato: è stato creato un nuovo tenant di AD, sono stati configurati gli utenti di AD, è stata configurata la funzionalità MFA ed è stata testata l'esperienza di MFA per un utente. 
 
 
-### <a name="exercise-3-implement-azure-ad-conditional-access-policies"></a>Esercizio 3: Implementare i criteri di accesso condizionale di Azure AD 
+### Esercizio 3: Implementare i criteri di accesso condizionale di Azure AD 
 
-### <a name="estimated-timing-15-minutes"></a>Tempo stimato: 15 minuti
+### Tempo stimato: 15 minuti
 
 In questo esercizio verranno eseguite le attività seguenti 
 
 - Attività 1: Configurare un criterio di accesso condizionale.
 - Attività 2: Testare il criterio di accesso condizionale.
 
-#### <a name="task-1---configure-a-conditional-access-policy"></a>Attività 1 - Configurare un criterio di accesso condizionale. 
+#### Attività 1 - Configurare un criterio di accesso condizionale. 
 
 In questa attività si esamineranno le impostazioni dei criteri di accesso condizionale e si creerà un criterio che richiede MFA per l'accesso al portale di Azure. 
 
@@ -362,7 +358,7 @@ In questa attività si esamineranno le impostazioni dei criteri di accesso condi
 
     >**Nota**: a questo punto sono presenti criteri di accesso condizionale che richiedono MFA per l'accesso al portale di Azure. 
 
-#### <a name="task-2---test-the-conditional-access-policy"></a>Attività 2: Testare il criterio di accesso condizionale.
+#### Attività 2: Testare il criterio di accesso condizionale.
 
 In questa attività si accederà al portale di Azure come **aaduser2** e si verificherà che sia necessaria l'autenticazione MFA. Si eliminerà anche il criterio prima di proseguire con l'esercizio successivo. 
 
@@ -404,9 +400,9 @@ In questa attività si accederà al portale di Azure come **aaduser2** e si veri
 
 >Risultato: è stato configurato e testato l'accesso condizionale di Azure AD.
 
-### <a name="exercise-4-implement-azure-ad-identity-protection"></a>Esercizio 4: Implementare Azure AD Identity Protection
+### Esercizio 4: Distribuire criteri basati sui rischi nell'accesso condizionale
 
-### <a name="estimated-timing-30-minutes"></a>Tempo stimato: 30 minuti
+### Tempo stimato: 30 minuti
 
 In questo esercizio verranno eseguite le attività seguenti 
 
@@ -416,7 +412,7 @@ In questo esercizio verranno eseguite le attività seguenti
 - Attività 4: Simulare eventi di rischio rispetto ai criteri di Azure AD Identity Protection 
 - Attività 5: Esaminare i report di Azure AD Identity Protection
 
-#### <a name="task-1-enable-azure-ad-identity-protection"></a>Attività1: Abilitare Azure AD Identity Protection
+#### Attività1: Abilitare Azure AD Identity Protection
 
 In questa attività si visualizzeranno le opzioni di Azure AD Identity Protection nel portale di Azure. 
 
@@ -424,7 +420,7 @@ In questa attività si visualizzeranno le opzioni di Azure AD Identity Protectio
 
     >**Nota**: assicurarsi di aver eseguito l'accesso al tenant di Azure AD **AdatumLab500-04**. È possibile usare il filtro **Directory e sottoscrizione** per passare da un tenant di Azure AD a un altro. Assicurarsi di aver eseguito l'accesso come utente con il ruolo di amministratore globale nel tenant di Azure AD.
 
-#### <a name="task-2-configure-a-user-risk-policy"></a>Attività 2: Configurare un criterio di rischio utente
+#### Attività 2: Configurare un criterio di rischio utente
 
 In questa attività si creerà un criterio di rischio utente. 
 
@@ -472,7 +468,7 @@ In questa attività si creerà un criterio di rischio utente.
 
 22. Fare clic su **Crea** per abilitare il criterio.
 
-#### <a name="task-3-configure-a-sign-in-risk-policy"></a>Attività 3: Configurare un criterio di rischio di accesso
+#### Attività 3: Configurare un criterio di rischio di accesso
 
 1. Passare al tenant di Azure AD **AdatumLab500-04** > **Sicurezza** > **Accesso condizionale**.
 
@@ -508,7 +504,7 @@ In questa attività si creerà un criterio di rischio utente.
 
 16. Fare clic su **Crea** per abilitare il criterio.
 
-#### <a name="task-4-simulate-risk-events-against-the-azure-ad-identity-protection-policies"></a>Attività 4: Simulare eventi di rischio rispetto ai criteri di Azure AD Identity Protection 
+#### Attività 4: Simulare eventi di rischio rispetto ai criteri di Azure AD Identity Protection 
 
 > Prima di iniziare questa attività, assicurarsi che la distribuzione del modello avviata nell'Esercizio 1 sia stata completata. La distribuzione include una macchina virtuale di Azure denominata **az500-04-vm1**. 
 
@@ -559,7 +555,7 @@ In questa attività si creerà un criterio di rischio utente.
 
     >**Nota**: a questo punto sono stati effettuati due diversi tentativi di accesso. Verranno quindi esaminati i report di Azure Identity Protection.
 
-#### <a name="task-5-review-the-azure-ad-identity-protection-reports"></a>Attività 5: Esaminare i report di Azure AD Identity Protection
+#### Attività 5: Esaminare i report di Azure AD Identity Protection
 
 In questa attività si esamineranno i report di Azure AD Identity Protection generati dagli accessi al browser ToR.
 
@@ -597,11 +593,11 @@ Usare la procedura seguente per disabilitare i criteri di Identity Protection ne
 
 4. Nel pannello **Identity Protection \| Panoramica** fare clic su **Criteri di rischio utente**.
 
-5. Nel pannello **Identity Protection \| Criteri di rischio utente** impostare **Applica criteri** su **No** e quindi fare clic su **Salva**.
+5. Nel pannello **Criteri di rischio utente di Identity Protection \|** impostare **Imposizione criteri** su **Disabilita** e quindi fare clic su **Salva**.
 
 6. Nel pannello **Identity Protection \| Criteri di rischio utente** fare clic su **Criteri di rischio di accesso**
 
-7. Nel pannello **Identity Protection \| Criteri di rischio di accesso** impostare **Applica criteri** su **No** e quindi fare clic su **Salva**.
+7. Nel pannello **Criteri di rischio di accesso di Identity Protection \|** impostare **Imposizione criteri** su **Disabilita** e quindi fare clic su **Salva**.
 
 Usare la procedura seguente per arrestare la macchina virtuale di Azure di cui è stato effettuato il provisioning in precedenza nel lab.
 

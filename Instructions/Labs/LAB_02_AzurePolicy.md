@@ -4,10 +4,10 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-02-azure-policy"></a>Lab 02 - Criteri di Azure
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 02 - Criteri di Azure
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato chiesto di creare un modello di verifica che mostra come è possibile usare Criteri di Azure. In particolare, è necessario:
 
@@ -16,21 +16,21 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Implementare Criteri di Azure. 
 
-## <a name="azure-policy-diagram"></a>Diagramma di Criteri di Azure
+## Diagramma di Criteri di Azure
 
 ![image](https://user-images.githubusercontent.com/91347931/157511920-19c1f06c-86bd-440d-80ac-d96aa27aefff.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-### <a name="exercise-1-implement-azure-policy"></a>Esercizio 1: Implementare Criteri di Azure
+### Esercizio 1: Implementare Criteri di Azure
 
-#### <a name="estimated-timing-20-minutes"></a>Tempo stimato: 20 minuti
+#### Tempo stimato: 20 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
@@ -38,7 +38,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 2: Creare un'assegnazione del criterio Località consentite.
 - Attività 3: Verificare che l'assegnazione del criterio Località consentite funzioni. 
 
-#### <a name="task-1-create-a-resource-group-for-the-lab"></a>Attività 1: Creare un gruppo di risorse per il lab. 
+#### Attività 1: Creare un gruppo di risorse per il lab. 
 
 In questa attività si creerà un gruppo di risorse per il lab. 
 
@@ -69,7 +69,7 @@ In questa attività si creerà un gruppo di risorse per il lab.
 
 1. Chiudere **Cloud Shell**.
 
-#### <a name="task-2-create-an-allowed-locations-policy-assignment"></a>Attività 2: Creare un'assegnazione del criterio Località consentite.
+#### Attività 2: Creare un'assegnazione del criterio Località consentite.
 
 In questa attività si creerà un'assegnazione del criterio Località consentite e si specificheranno le aree di Azure che possono essere usate dal criterio. 
 
@@ -118,7 +118,7 @@ In questa attività si creerà un'assegnazione del criterio Località consentite
 
    >**Nota**: il motivo per cui l'assegnazione di criteri di Azure può richiedere fino a 30 minuti è che deve essere replicata a livello globale. In genere questa operazione richiede solo pochi minuti.  Se l'attività successiva non riesce, attendere alcuni minuti e riprovare.
 
-#### <a name="task-3-test-the-allowed-locations-policy-assignment"></a>Attività 3: Testare l'assegnazione del criterio Località consentite
+#### Attività 3: Testare l'assegnazione del criterio Località consentite
 
 In questa attività verrà testata l'assegnazione del criterio Località consentite. 
 

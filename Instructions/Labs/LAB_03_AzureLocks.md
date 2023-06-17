@@ -4,10 +4,10 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-03-resource-manager-locks"></a>Lab 03: Blocchi di Resource Manager
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 03: Blocchi di Resource Manager
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab 
+## Scenario del lab 
 
 È stato chiesto di creare un modello di verifica che mostra come è possibile usare blocchi delle risorse per impedire eliminazioni o modifiche accidentali. In particolare, è necessario:
 
@@ -17,21 +17,21 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
  
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Blocchi di Resource Manager
 
-## <a name="resource-manager-locks-diagram"></a>Diagramma dei blocchi di Resource Manager
+## Diagramma dei blocchi di Resource Manager
 
 ![image](https://user-images.githubusercontent.com/91347931/157514986-1bf6a9ea-4c7f-4487-bcd7-542648f8dc95.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-### <a name="exercise-1-resource-manager-locks"></a>Esercizio 1: Blocchi di Resource Manager
+### Esercizio 1: Blocchi di Resource Manager
 
-#### <a name="estimated-timing-20-minutes"></a>Tempo stimato: 20 minuti
+#### Tempo stimato: 20 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
@@ -41,7 +41,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 4: Rimuovere il blocco ReadOnly e creare un blocco di eliminazione.
 - Attività 5: Testare il blocco di eliminazione.
 
-#### <a name="task-1-create-a-resource-group-with-a-storage-account"></a>Attività 1: Creare un gruppo di risorse con un account di archiviazione.
+#### Attività 1: Creare un gruppo di risorse con un account di archiviazione.
 
 In questa attività si creeranno un gruppo di risorse e un account di archiviazione per il lab. 
 
@@ -74,7 +74,7 @@ In questa attività si creeranno un gruppo di risorse e un account di archiviazi
 
 1. Chiudere il riquadro Cloud Shell.
 
-#### <a name="task-2-add-a-readonly-lock-on-the-storage-account"></a>Attività 2: Aggiungere un blocco ReadOnly nell'account di archiviazione. 
+#### Attività 2: Aggiungere un blocco ReadOnly nell'account di archiviazione. 
 
 In questa attività si aggiungerà un blocco di sola lettura all'account di archiviazione. In questo modo, è possibile proteggere la risorsa da eliminazioni o modifiche accidentali. 
 
@@ -97,7 +97,7 @@ In questa attività si aggiungerà un blocco di sola lettura all'account di arch
 
    >**Nota**: l'account di archiviazione è ora protetto da eliminazioni e modifiche accidentali.
 
-#### <a name="task-3-test-the-readonly-lock"></a>Attività 3: Testare il blocco ReadOnly 
+#### Attività 3: Testare il blocco ReadOnly 
 
 1. Nella sezione **Impostazioni** del pannello dell'account di archiviazione fare clic su **Configurazione**.
 
@@ -121,7 +121,7 @@ In questa attività si aggiungerà un blocco di sola lettura all'account di arch
 
    >**Nota**: si è ora verificato che un blocco ReadOnly impedisce eliminazioni e modifiche accidentali di una risorsa.
 
-#### <a name="task-4-remove-the-readonly-lock-and-create-a-delete-lock"></a>Attività 4: Rimuovere il blocco ReadOnly e creare un blocco di eliminazione.
+#### Attività 4: Rimuovere il blocco ReadOnly e creare un blocco di eliminazione.
 
 In questa attività viene rimosso il blocco ReadOnly dall'account di archiviazione e viene creato un blocco di eliminazione. 
 
@@ -140,7 +140,7 @@ In questa attività viene rimosso il blocco ReadOnly dall'account di archiviazio
 
 1. Fare clic su **OK**. 
 
-#### <a name="task-5-test-the-delete-lock"></a>Attività 5: Testare il blocco di eliminazione.
+#### Attività 5: Testare il blocco di eliminazione.
 
 In questa attività si testerà il blocco di eliminazione. Sarà possibile modificare l'account di archiviazione, ma non eliminarlo. 
 
@@ -151,8 +151,6 @@ In questa attività si testerà il blocco di eliminazione. Sarà possibile modif
    >**Nota**: questa volta la modifica riuscirà.
 
 1. Nel pannello dell'account di archiviazione selezionare **Panoramica** e nel pannello **Panoramica** fare clic su **Elimina**.
-
-1. Nel pannello **Elimina account di archiviazione** digitare il nome dell'account di archiviazione per confermare che si intende procedere e quindi fare clic su **Elimina**.
 
 1. Esaminare la notifica simile al testo seguente: 
 

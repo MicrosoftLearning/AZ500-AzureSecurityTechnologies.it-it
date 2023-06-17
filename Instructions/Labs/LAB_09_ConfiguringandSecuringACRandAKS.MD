@@ -4,10 +4,10 @@ lab:
   module: Module 02 - Implement Platform Protection
 ---
 
-# <a name="lab-09-configuring-and-securing-acr-and-aks"></a>Lab 09: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 09: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato richiesto di distribuire un modello di verifica con Registro Azure Container e il servizio Azure Kubernetes. In particolare, il modello di verifica deve dimostrare:
 
@@ -18,26 +18,26 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verrà completato l'esercizio seguente:
 
 - Esercizio 1: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
 
-## <a name="configuring-and-securing-acr-and-aks-diagram"></a>Diagramma di configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
+## Diagramma di configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
 
 ![image](https://user-images.githubusercontent.com/91347931/157532250-1104a829-792a-4b6d-beff-fe976e2d5d4b.png)
 
-## <a name="intructions"></a>Istruzioni
+## Istruzioni
 
-## <a name="lab-files"></a>File del lab:
+## File del lab:
 
 - **\\Allfiles\\Labs\\09\\nginxexternal.yaml**
 - **\\Allfiles\\Labs\\09\\nginxinternal.yaml**
 
-### <a name="exercise-1-configuring-and-securing-acr-and-aks"></a>Esercizio 1: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
+### Esercizio 1: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
 
-### <a name="estimated-timing-45-minutes"></a>Tempo stimato: 45 minuti
+### Tempo stimato: 45 minuti
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
@@ -52,7 +52,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 7: Distribuire un servizio interno nel servizio Azure Kubernetes
 - Attività 8: Verificare che sia possibile accedere a un servizio interno ospitato dal servizio Azure Kubernetes
 
-#### <a name="task-1-create-an-azure-container-registry"></a>Attività 1: Creare un Registro Azure Container
+#### Attività 1: Creare un Registro Azure Container
 
 In questa attività verrà creato un gruppo di risorse per il lab e un'istanza di Registro Azure Container.
 
@@ -90,7 +90,7 @@ In questa attività verrà creato un gruppo di risorse per il lab e un'istanza d
 
     >**Nota**: registrare il nome del Registro Azure Container. Sarà necessario nell'attività successiva.
 
-#### <a name="task-2-create-a-dockerfile-build-a-container-and-push-it-to-azure-container-registry"></a>Attività 2: Creare un Dockerfile, creare un contenitore ed eseguirne il push in Registro Azure Container
+#### Attività 2: Creare un Dockerfile, creare un contenitore ed eseguirne il push in Registro Azure Container
 
 In questa attività verrà creato un Dockerfile, da cui verrà creata un'immagine che verrà distribuita nel Registro Azure Container. 
 
@@ -126,7 +126,7 @@ In questa attività verrà creato un Dockerfile, da cui verrà creata un'immagin
 
     >**Nota**: il manifesto include il digest sha256, la data di creazione del manifesto e le voci della piattaforma. 
 
-#### <a name="task-3-create-an-azure-kubernetes-service-cluster"></a>Attività 3: Creare un cluster del servizio Azure Kubernetes
+#### Attività 3: Creare un cluster del servizio Azure Kubernetes
 
 In questa attività verrà creato un servizio Azure Kubernetes e verranno esaminate le risorse distribuite. 
 
@@ -197,7 +197,7 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
 
     >**Nota**: verificare che lo **Stato** del nodo del cluster sia elencato come **Pronto**.
 
-#### <a name="task-4-grant-the-aks-cluster-permissions-to-access-the-acr-and-manage-its-virtual-network"></a>Attività 4: Concedere al cluster del servizio Azure Kubernetes l'autorizzazione per accedere al Registro Azure Container e gestirne la rete virtuale
+#### Attività 4: Concedere al cluster del servizio Azure Kubernetes l'autorizzazione per accedere al Registro Azure Container e gestirne la rete virtuale
 
 In questa attività verrà concessa al cluster del servizio Azure Kubernetes l'autorizzazione per accedere al Registro Azure Container e gestirne la rete virtuale. 
 
@@ -229,7 +229,7 @@ In questa attività verrà concessa al cluster del servizio Azure Kubernetes l'a
     az role assignment create --assignee $AKS_MANAGED_ID --role "Contributor" --scope $AKS_VNET_ID
     ```
 
-#### <a name="task-5-deploy-an-external-service-to-aks"></a>Attività 5: Distribuire un servizio esterno nel servizio Azure Kubernetes
+#### Attività 5: Distribuire un servizio esterno nel servizio Azure Kubernetes
 
 In questa attività verrà eseguito il download dei file manifesto, verrà modificato il file YAML e verranno applicate le modifiche al cluster. 
 
@@ -268,7 +268,7 @@ In questa attività verrà eseguito il download dei file manifesto, verrà modif
     service/nginxexternal created
     ```
 
-#### <a name="task-6-verify-the-you-can-access-an-external-aks-hosted-service"></a>Attività 6: Verificare che sia possibile accedere a un servizio esterno ospitato dal servizio Azure Kubernetes
+#### Attività 6: Verificare che sia possibile accedere a un servizio esterno ospitato dal servizio Azure Kubernetes
 
 In questa attività verificare che il contenitore sia accessibile esternamente usando l'indirizzo IP pubblico.
 
@@ -284,7 +284,7 @@ In questa attività verificare che il contenitore sia accessibile esternamente u
 
 4. Assicurarsi che la pagina **Benvenuti in nginx!** sia visualizzata. 
 
-#### <a name="task-7-deploy-an-internal-service-to-aks"></a>Attività 7: Distribuire un servizio interno nel servizio Azure Kubernetes
+#### Attività 7: Distribuire un servizio interno nel servizio Azure Kubernetes
 
 In questa attività verrà distribuito il servizio interno nel servizio Azure Kubernetes. 
 
@@ -327,7 +327,7 @@ In questa attività verrà distribuito il servizio interno nel servizio Azure Ku
 
     >**Nota**: in alternativa è possibile usare l'indirizzo CLUSTER-IP.
 
-#### <a name="task-8-verify-the-you-can-access-an-internal-aks-hosted-service"></a>Attività 8: Verificare che sia possibile accedere a un servizio interno ospitato dal servizio Azure Kubernetes
+#### Attività 8: Verificare che sia possibile accedere a un servizio interno ospitato dal servizio Azure Kubernetes
 
 In questa attività si userà uno dei pod in esecuzione nel cluster del servizio Azure Kubernetes per accedere al servizio interno. 
 

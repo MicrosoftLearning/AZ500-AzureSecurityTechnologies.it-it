@@ -4,10 +4,10 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-06-implement-directory-synchronization"></a>Lab 06: Implementare la sincronizzazione della directory
-# <a name="student-lab-manual"></a>Manuale del lab per gli studenti
+# Lab 06: Implementare la sincronizzazione della directory
+# Manuale del lab per gli studenti
 
-## <a name="lab-scenario"></a>Scenario del lab
+## Scenario del lab
 
 È stato chiesto di creare un modello di verifica che illustra come integrare un ambiente di Active Directory Domain Services (AD DS) locale con un tenant di Azure Active Directory (Azure AD). In particolare, sarà necessario:
 
@@ -17,7 +17,7 @@ lab:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-## <a name="lab-objectives"></a>Obiettivi del lab
+## Obiettivi del lab
 
 In questo lab verranno completati gli esercizi seguenti:
 
@@ -25,22 +25,22 @@ In questo lab verranno completati gli esercizi seguenti:
 - Esercizio 2: Creare e configurare un tenant di Azure Active Directory
 - Esercizio 3: Sincronizzare la foresta di Active Directory con un tenant di Azure Active Directory
 
-## <a name="implement-directory-synchronization"></a>Implementare la sincronizzazione della directory
+## Implementare la sincronizzazione della directory
 
 ![image](https://user-images.githubusercontent.com/91347931/157525374-8f740f14-c2db-47b3-98f8-7feb9bc122b5.png)
 
-## <a name="instructions"></a>Istruzioni
+## Istruzioni
 
-### <a name="exercise-1-deploy-an-azure-vm-hosting-an-active-directory-domain-controller"></a>Esercizio 1: Distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
+### Esercizio 1: Distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
 
-### <a name="estimated-timing-10-minutes"></a>Tempo stimato: 10 minuti
+### Tempo stimato: 10 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
 - Attività 1: Identificare un nome DNS disponibile per la distribuzione di una macchina virtuale di Azure
 - Attività 2: Usare un modello di ARM per distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
 
-#### <a name="task-1-identify-an-available-dns-name-for-an-azure-vm-deployment"></a>Attività 1: Identificare un nome DNS disponibile per la distribuzione di una macchina virtuale di Azure
+#### Attività 1: Identificare un nome DNS disponibile per la distribuzione di una macchina virtuale di Azure
 
 In questa attività si identificherà un nome DNS per la distribuzione della macchina virtuale di Azure. 
 
@@ -68,13 +68,13 @@ In questa attività si identificherà un nome DNS per la distribuzione della mac
 
 7. Chiudere Cloud Shell.
 
-#### <a name="task-2-use-an-arm-template-to-deploy-an-azure-vm-hosting-an-active-directory-domain-controller"></a>Attività 2: Usare un modello di ARM per distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
+#### Attività 2: Usare un modello di ARM per distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
 
 In questa attività si distribuirà una macchina virtuale di Azure che ospiterà un controller di dominio di Active Directory
 
 1. Aprire un'altra scheda del browser nella stessa finestra e passare a **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain**.
 
-2. Nella pagina **Create a new Windows VM and create a new AD Forest, Domain and DC** fare clic su **Distribuisci in Azure**. Il browser verrà reindirizzato automaticamente al pannello**Create an Azure VM with a new AD Forest** nel portale di Azure.
+2. Nella pagina **Crea una macchina virtuale di Azure con una nuova foresta di Active** Directory fare clic su **Distribuisci in Azure**. Il browser verrà reindirizzato automaticamente al pannello**Create an Azure VM with a new AD Forest** nel portale di Azure. 
 
 3. Nel pannello **Create an Azure VM with a new AD Forest** fare clic su **Modifica parametri**.
 
@@ -100,9 +100,9 @@ In questa attività si distribuirà una macchina virtuale di Azure che ospiterà
 > Risultato: completando questo esercizio, è stata avviata la distribuzione di una macchina virtuale di Azure che ospiterà un controller di dominio di Active Directory usando un modello di Azure Resource Manager
 
 
-### <a name="exercise-2-create-and-configure-an-azure-active-directory-tenant"></a>Esercizio 2: Creare e configurare un tenant di Azure Active Directory 
+### Esercizio 2: Creare e configurare un tenant di Azure Active Directory 
 
-### <a name="estimated-timing-20-minutes"></a>Tempo stimato: 20 minuti
+### Tempo stimato: 20 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
@@ -110,7 +110,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 2: Aggiungere un nome DNS personalizzato al nuovo tenant di Azure AD
 - Attività 3: Creare un utente di Azure AD con il ruolo di amministratore globale
 
-#### <a name="task-1-create-an-azure-active-directory-ad-tenant"></a>Attività 1: Creare un tenant di Azure Active Directory (AD)
+#### Attività 1: Creare un tenant di Azure Active Directory (AD)
 
 In questa attività si creerà un nuovo tenant di Azure AD da usare in questo lab. 
 
@@ -136,7 +136,7 @@ In questa attività si creerà un nuovo tenant di Azure AD da usare in questo la
 
     >**Nota**: attendere il completamento della creazione del tenant. Usare l'icona **Notifica** per monitorare lo stato della distribuzione. 
 
-#### <a name="task-2-add-a-custom-dns-name-to-the-new-azure-ad-tenant"></a>Attività 2: Aggiungere un nome DNS personalizzato al nuovo tenant di Azure AD
+#### Attività 2: Aggiungere un nome DNS personalizzato al nuovo tenant di Azure AD
 
 In questa attività si aggiungerà il nome DNS personalizzato al nuovo tenant di Azure AD. 
 
@@ -156,13 +156,13 @@ In questa attività si aggiungerà il nome DNS personalizzato al nuovo tenant di
 
     >**Nota**: non sarà possibile completare il processo di convalida perché non si è proprietari del nome di dominio DNS **adatum.com**. Questo non impedisce di sincronizzare il dominio di AD DS **adatum.com** con il tenant di Azure AD. A questo scopo si userà il nome DNS iniziale del tenant di Azure AD (il nome che termina con il suffisso **onmicrosoft.com**), identificato nell'attività precedente. Tenere tuttavia presente che, di conseguenza, il nome di dominio DNS del dominio di AD DS sarà diverso dal nome DNS del tenant di Azure AD. Gli utenti di Adatum dovranno quindi usare nomi diversi per accedere al dominio di AD DS e al tenant di Azure AD.
 
-#### <a name="task-3-create-an-azure-ad-user-with-the-global-administrator-role"></a>Attività 3: Creare un utente di Azure AD con il ruolo di amministratore globale
+#### Attività 3: Creare un utente di Azure AD con il ruolo di amministratore globale
 
 In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegnato al ruolo di amministratore globale. 
 
 1. Nel pannello del tenant di Azure AD **AdatumSync** fare clic su **Utenti** nella sezione **Gestisci**.
 
-2. Nel pannello **Utenti \| Tutti gli utenti** fare clic su **+ Nuovo utente**. 
+2. In **Utenti | Nel pannello Tutti gli utenti** fare clic su **+ Nuovo utente** e quindi **su Crea nuovo utente**.
 
 3. Nel pannello **Nuovo utente** assicurarsi che sia selezionata l'opzione **Crea utente** e specificare le impostazioni seguenti, lasciando i valori predefiniti per le altre impostazioni, quindi fare clic su **Crea**:
 
@@ -192,9 +192,9 @@ In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegn
 > **Risultato**: con questo esercizio è stato creato un tenant di Azure AD, è stato visto come aggiungere un nome DNS personalizzato al nuovo tenant di Azure AD ed è stato creato un utente di Azure AD con il ruolo di amministratore globale.
 
 
-### <a name="exercise-3-synchronize-active-directory-forest-with-an-azure-active-directory-tenant"></a>Esercizio 3: Sincronizzare la foresta di Active Directory con un tenant di Azure Active Directory
+### Esercizio 3: Sincronizzare la foresta di Active Directory con un tenant di Azure Active Directory
 
-### <a name="estimated-timing-20-minutes"></a>Tempo stimato: 20 minuti
+### Tempo stimato: 20 minuti
 
 In questo esercizio verranno eseguite le attività seguenti:
 
@@ -202,7 +202,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 2: Installare Azure AD Connect
 - Attività 3: Verificare la sincronizzazione della directory
 
-#### <a name="task-1-prepare-ad-ds-for-directory-synchronization"></a>Attività 1: Preparare AD DS per la sincronizzazione della directory
+#### Attività 1: Preparare AD DS per la sincronizzazione della directory
 
 In questa attività ci si connetterà alla macchina virtuale di Azure che esegue il controller di dominio di AD DS e si creerà un account di sincronizzazione della directory. 
 
@@ -253,7 +253,7 @@ In questa attività ci si connetterà alla macchina virtuale di Azure che esegue
    |Password e Conferma password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    |Altre opzioni password|**Nessuna scadenza password**|
 
-#### <a name="task-2-install-azure-ad-connect"></a>Attività 2: Installare Azure AD Connect
+#### Attività 2: Installare Azure AD Connect
 
 In questa attività si installerà AD Connect nella macchina virtuale. 
 
@@ -309,7 +309,7 @@ In questa attività si installerà AD Connect nella macchina virtuale.
 21. Esaminare le informazioni nella pagina **Configurazione completata** e fare clic su **Esci** per chiudere la finestra **Microsoft Azure Active Directory Connect**.
 
 
-#### <a name="task-3-verify-directory-synchronization"></a>Attività 3: Verificare la sincronizzazione della directory
+#### Attività 3: Verificare la sincronizzazione della directory
 
 In questa attività si verificherà il funzionamento della sincronizzazione della directory. 
 
@@ -317,7 +317,7 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
 
 2. Nel pannello **Utenti \| Tutti gli utenti** si noti che l'elenco di oggetti utente include l'account **aduser1**. 
 
->**Nota**: potrebbe essere necessario attendere alcuni minuti e selezionare **Aggiorna** per visualizzare l'account utente **aduser1**.
+   >**Nota**: potrebbe essere necessario attendere alcuni minuti e selezionare **Aggiorna** per visualizzare l'account utente **aduser1**.
 
 3. Selezionare l'account **aduser1** e quindi, nella sezione **Profilo > Identità**, si noti che l'attributo **Origine** è impostato su **Windows Server AD**.
 
@@ -337,7 +337,7 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
     Start-ADSyncSyncCycle -PolicyType Delta
     ```
 
-9. Passare alla finestra di Microsoft Edge che visualizza il pannello **aduser1 \| Profilo**, aggiornare la pagina e notare che proprietà **Reparto** è impostata su **Sales**.
+9. Passare alla finestra di Microsoft Edge che visualizza il pannello **aduser1** , aggiornare la pagina e notare che la proprietà Department è impostata su Sales.
 
     >**Nota**: se l'attributo **Reparto** non è impostato, potrebbe essere necessario attendere un altro minuto e aggiornare di nuovo la pagina.
 
