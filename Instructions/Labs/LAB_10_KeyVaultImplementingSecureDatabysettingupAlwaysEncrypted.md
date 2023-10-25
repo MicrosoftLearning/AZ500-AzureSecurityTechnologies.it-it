@@ -16,7 +16,7 @@ lab:
 
 >**Nota**: per tutte le risorse di questo lab viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-Per concentrarsi sugli aspetti della sicurezza di Azure correlati alla creazione di questo modello di verifica, si inizierà con la distribuzione automatizzata di un modello di ARM, configurando una macchina virtuale con Visual Studio 2019 e SQL Server Management Studio 2018.
+Per concentrarsi sugli aspetti di sicurezza di Azure, correlati alla compilazione di questo modello di verifica, si inizierà da una distribuzione automatizzata del modello di Resource Manager, configurando una macchina virtuale con Visual Studio 2019 e SQL Server Management Studio 19.
 
 ## Obiettivi del lab
 
@@ -49,7 +49,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 #### Attività 1: Distribuire una macchina virtuale di Azure e un database SQL Azure
 
-In questa attività si distribuirà una macchina virtuale di Azure e come parte della distribuzione verranno installati automaticamente Visual Studio 2019 e SQL Server Management Studio 2018. 
+In questa attività si distribuirà una macchina virtuale di Azure che installerà automaticamente Visual Studio 2019 e SQL Server Management Studio 19 come parte della distribuzione. 
 
 1. Accedere al portale di Azure **`https://portal.azure.com/`** .
 
@@ -128,8 +128,8 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
     |Impostazione|Valore|
     |----|----|
     |Configura dal modello (facoltativo)|**Gestione di chiavi, segreti e certificati**|
-    |Autorizzazioni delle chiavi|fare clic su **Seleziona tutto** con un totale di **9 autorizzazioni selezionate**|
-    |Autorizzazioni chiave/Operazioni crittografiche|fare clic su **Accedi** con un totale di **1 autorizzazioni selezionate**|
+    |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto con un** totale di **9 autorizzazioni selezionate**|
+    |Autorizzazioni chiave/Operazioni crittografiche|Fare clic su **Accedi** con un totale di **1 autorizzazioni selezionate**|
     |Autorizzazioni dei segreti|Fare clic su **Seleziona tutto** per selezionare **7 autorizzazioni** in totale|
     |Autorizzazioni per i certificati|Fare clic su **Seleziona tutto** per selezionare **15 autorizzazioni** in totale|
     |Selezionare un'entità|Fare clic su **Nessuna selezione**, nel pannello **Entità di sicurezza** selezionare il proprio account utente, quindi fare clic su **Avanti**|
@@ -221,7 +221,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 - Attività 1: Consentire a un'applicazione client di accedere al servizio Database SQL di Azure.
 - Attività 2: Creare un criterio che consenta all'applicazione di accedere a Key Vault.
 - Attività 3: Recuperare la stringa di connessione ADO.NET del database SQL di Azure 
-- Attività 4: Accedere alla macchina virtuale di Azure che esegue Visual Studio 2019 e SQL Management Studio 2018
+- Attività 4: Accedere alla macchina virtuale di Azure che esegue Visual Studio 2019 e SQL Management Studio 19
 - Attività 5: Creare una tabella nel database SQL e selezionare le colonne di dati per la crittografia
 
 
@@ -311,13 +311,13 @@ Con la distribuzione del modello di ARM nell'Esercizio 1 è stato effettuato il 
 
     >**Nota**: l'interfaccia include le stringhe di connessione per ADO.NET, JDBC, ODBC, PHP e Go. 
    
-4. Registrare la stringa di connessione **ADO.NET (autenticazione SQL).** Sarà necessario più avanti.
+4. Registrare la **ADO.NET (autenticazione SQL) stringa di connessione**. Sarà necessario più avanti.
 
     >**Nota**: quando si usa la stringa di connessione, assicurarsi di sostituire il `{your_password}` segnaposto con la password configurata con la distribuzione in Esercizio 1.
 
-#### Attività 4: Accedere alla macchina virtuale di Azure che esegue Visual Studio 2019 e SQL Management Studio 2018
+#### Attività 4: Accedere alla macchina virtuale di Azure che esegue Visual Studio 2019 e SQL Management Studio 19
 
-In questa attività si accede alla macchina virtuale di Azure di cui è stata avviata la distribuzione nell'Esercizio 1. Questa macchina virtuale di Azure ospita Visual Studio 2019 e SQL Server Management Studio 2018.
+In questa attività si accede alla macchina virtuale di Azure di cui è stata avviata la distribuzione nell'Esercizio 1. Questa macchina virtuale di Azure ospita Visual Studio 2019 e SQL Server Management Studio 19.
 
     >**Note**: Before you proceed with this task, ensure that the deployment you initiated in the first exercise has completed successfully. You can validate this by navigating to the blade of the Azure resource group "Az500Lab10" (or other name you chose) and selecting **Deployments** from the Settings pane.  
 
@@ -358,7 +358,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
     >**Nota**: i passaggi rimanenti in questo lab vengono eseguiti all'interno della sessione Desktop remoto nella macchina virtuale di Azure **az500-10-vm1**. 
 
-6. Fare clic sul pulsante **Start**, nel menu **Start** espandere la cartella **Microsoft SQL Server Tools 18** e fare clic sulla voce di menu **SQL Server Management Studio Microsoft**.
+6. Fare clic su **Start**, nel menu **Start** espandere la cartella **Microsoft SQL Server Tools 19** e fare clic sulla voce di menu **Micosoft SQL Server Management Studio**.
 
 7. Nella finestra di dialogo **Connetti al server** specificare le impostazioni seguenti: 
 
@@ -459,7 +459,7 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
 
 10. Tornare alla sessione RDP e nella console di Visual Studio, nella finestra **Esplora soluzioni** fare clic su **Program.cs** e sostituirne il contenuto con il codice copiato negli Appunti.
 
-11. Nella finestra di Visual Studio, nella riga 15 del file **Program.cs** sostituire il segnaposto `<connection string noted earlier>` con la stringa di connessione **ADO.NET** del database SQL di Azure registrata in precedenza nel lab. Nella stringa di connessione sostituire il `{your_password}` placehodler con la password specificata nella distribuzione in Esercizio 1. Se la stringa è stata salvata nel computer del lab, potrebbe essere necessario lasciare la sessione RDP per copiare la stringa ADO, quindi tornare alla macchina virtuale di Azure per incollarla.
+11. Nella finestra di Visual Studio, nella riga 15 del file **Program.cs** sostituire il segnaposto `<connection string noted earlier>` con la stringa di connessione **ADO.NET** del database SQL di Azure registrata in precedenza nel lab. Nella stringa di connessione sostituire il `{your_password}` placehodler con la password specificata nella distribuzione nell'esercizio 1. Se la stringa è stata salvata nel computer del lab, potrebbe essere necessario lasciare la sessione RDP per copiare la stringa ADO, quindi tornare alla macchina virtuale di Azure per incollarla.
 
 12. Nella finestra di Visual Studio, nella riga 16 del file **Program.cs** sostituire il segnaposto `<client id noted earlier>` con il valore di **ID applicazione (client)** dell'app registrata annotato in precedenza nel lab. 
 
@@ -495,7 +495,7 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
 
 1. Nel portale di Azure aprire Cloud Shell facendo clic sulla prima icona nell'angolo in alto a destra. 
 
-2. Nel menu a discesa in alto a sinistra del riquadro Cloud Shell, se necessario selezionare **PowerShell** e, quando richiesto, fare clic su **Conferma**.
+2. Nel menu a discesa in alto a sinistra del riquadro Cloud Shell, se necessario, selezionare **PowerShell** e, quando richiesto, fare clic su **Conferma**.
 
 3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per rimuovere il gruppo di risorse creato in questo lab:
   

@@ -50,9 +50,9 @@ In questa attività si creerà un account utente per Joseph Price.
 
     >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per questo lab e il ruolo Amministratore globale nel tenant di Azure AD associato alla sottoscrizione.
 
-2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Azure Active Directory** e premere **INVIO**.
+2. Nella casella di testo **Cerca risorse, servizi e documenti** nella parte superiore della pagina portale di Azure digitare **Microsoft Entra ID** e premere **invio**.
 
-3. Nel pannello **Panoramica** del tenant di Azure Active Directory selezionare **Utenti** nella sezione **Gestisci** e quindi **+ Nuovo utente**.
+3. Nel pannello **Panoramica** del tenant Microsoft Entra ID selezionare **Utenti** e quindi **+ Nuovo utente**.****
 
 4. Nel pannello **Nuovo utente** verificare che l'opzione **Crea utente** sia selezionata e specificare le impostazioni seguenti:
 
@@ -73,7 +73,7 @@ In questa attività si creerà un account utente per Joseph Price.
 
 In questa attività si creerà il gruppo *Senior Admins*, si aggiungerà l'account utente di Joseph Price al gruppo e si configurerà questo utente come proprietario del gruppo.
 
-1. Nel portale di Azure tornare al pannello che mostra il tenant di Azure Active Directory. 
+1. Nella portale di Azure tornare al pannello che visualizza il tenant ID Microsoft Entra. 
 
 2. Nella sezione **Gestisci** fare clic su **Gruppi** e quindi selezionare **+ Nuovo gruppo**.
  
@@ -123,7 +123,7 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
     $passwordProfile.Password = "Pa55w.rd1234"
     ```
 
-5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per connettersi ad Azure Active Directory:
+5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire le operazioni seguenti per connettersi all'ID di Microsoft Entra:
 
     ```powershell
     Connect-AzureAD

@@ -166,12 +166,11 @@ In questa attività si configurerà prima il controllo a livello di server e qui
     >**Nota**: i controlli possono essere scritti in un account di archiviazione di Azure, in un'area di lavoro Log Analytics o nell'hub eventi. È possibile configurare qualsiasi combinazione di queste opzioni.
 
     >**Nota**: se nel server è abilitato il controllo a livello di archiviazione, questo verrà sempre applicato al database, indipendentemente dalle impostazioni del database.
+13. Nella pagina Panoramica del database SQL nella portale di Azure selezionare **Editor query (anteprima)** dal menu a sinistra. Provare ad accedere, è possibile che la password non sia riuscita, la regola del firewall per l'indirizzo IP, tutto ciò che viene controllato. Provare anche l'accesso riuscito, eseguire query e trovare altri detial nei log di controllo
 
-13. Fare clic su **Visualizza log di controllo**.
+14. tornare al database, controllo e fare clic su **Visualizza log di controllo**.
 
-14. Nel pannello **Record di controllo** è possibile passare tra il controllo del server e il controllo del database. 
-
-    >**Nota**: poiché il server e il database SQL sono stati creati di recente, è improbabile che a questo punto siano disponibili eventi. 
+15. Nel pannello **Record di controllo** è possibile passare tra il controllo del server e il controllo del database. 
 
 > Risultati: sono stati creati un server e un database SQL e sono stati configurati la classificazione dei dati e il controllo. 
 

@@ -273,29 +273,31 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 8. Nel pannello **Panoramica** dell'account di archiviazione fare clic su **Condivisioni file** nella scheda **Archiviazione dati** e quindi su **+ Condivisione file**.
 
-9. Nel pannello **Nuova condivisione file** specificare le impostazioni seguenti:
+9. Nel pannello **Nuova condivisione file** deselezionare l'opzione **Abilita backup** nella scheda backup. 
+
+10. Nel pannello **Nuova condivisione file** specificare le impostazioni seguenti:
 
     |Impostazione|Valore|
     |---|---|
     |Nome|**my-file-share**|
 
-10. Nel pannello **Nuova condivisione file** fare clic su **Crea**.
+11. Nel pannello **Nuova condivisione file** fare clic su **Crea**.
 
     >**Nota**: recuperare e registrare lo script di PowerShell che crea un mapping dell'unità alla condivisione file di Azure. 
 
-11. Nel pannello dell'account di archiviazione, nell'elenco delle condivisioni file fare clic su **my-file-share**.
+12. Nel pannello dell'account di archiviazione, nell'elenco delle condivisioni file fare clic su **my-file-share**.
 
-12. Nel pannello **my-file-share** fare clic su **Connetti**.
+13. Nel pannello **my-file-share** fare clic su **Connetti**.
 
-13. Nel pannello **Connetti**, nella scheda **Windows** copiare lo script di PowerShell che crea un mapping dell'unità Z alla condivisione file. 
+14. Nel pannello **Connetti**, nella scheda **Windows** copiare lo script di PowerShell che crea un mapping dell'unità Z alla condivisione file. 
 
     >**Nota**: registrare questo script. Sarà necessario in un secondo momento in questo lab per eseguire il mapping della condivisione file dalla macchina virtuale di Azure nella subnet **Privata**.
 
-14. Tornare al pannello dell'account di archiviazione, quindi nella sezione **Sicurezza e rete** fare clic su **Rete**.
+15. Tornare al pannello dell'account di archiviazione, quindi nella sezione **Sicurezza e rete** fare clic su **Rete**.
 
-15. Nel pannello **Firewall e reti virtuali** selezionare l'opzione **Abilitato da reti virtuali e indirizzi IP selezionati** e fare clic sul collegamento **+ Aggiungi rete virtuale esistente**. 
+16. Nel pannello **Firewall e reti virtuali** selezionare l'opzione **Abilitato da reti virtuali e indirizzi IP selezionati** e fare clic sul collegamento **+ Aggiungi rete virtuale esistente**. 
 
-16. Nel pannello **Aggiungi reti** specificare le impostazioni seguenti:
+17. Nel pannello **Aggiungi reti** specificare le impostazioni seguenti:
 
     |Impostazione|Valore|
     |---|---|
@@ -303,9 +305,9 @@ In questa attività verrà creato un account di archiviazione con una condivisio
     |Reti virtuali|**myVirtualNetwork**|
     |Subnet|**Privata**|
 
-17. Nel pannello **Aggiungi reti** fare clic su **Aggiungi**. 
+18. Nel pannello **Aggiungi reti** fare clic su **Aggiungi**. 
 
-18. Tornare al pannello dell'account di archiviazione e fare clic su **Salva**.
+19. Tornare al pannello dell'account di archiviazione e fare clic su **Salva**.
 
     >**Nota**: a questo punto del lab sono stati configurati una rete virtuale, un gruppo di sicurezza di rete e un account di archiviazione con una condivisione file. 
 

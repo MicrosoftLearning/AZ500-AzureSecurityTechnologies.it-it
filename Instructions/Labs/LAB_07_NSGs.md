@@ -218,7 +218,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 6. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio > nella scheda **Monitoraggio** del pannello **Crea una macchina virtuale** , verificare l'impostazione seguente:
+7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Monitoraggio del pannello** **Crea una macchina virtuale** verificare l'impostazione seguente:
 
    |Impostazione|Valore|
    |---|---|
@@ -255,7 +255,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
 5. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio > nella scheda **Monitoraggio del pannello** **Crea una macchina virtuale** , verificare l'impostazione seguente:
+6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Monitoraggio** del pannello **Crea una macchina virtuale** verificare l'impostazione seguente:
 
    |Impostazione|Valore|
    |---|---|
