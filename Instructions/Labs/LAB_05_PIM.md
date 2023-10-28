@@ -48,7 +48,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 In questa attività si renderà un utente idoneo per un ruolo di Azure AD directory.
 
-1. Accedere al portale di Azure **`https://portal.azure.com/`** .
+1. Accedere alla portale di Azure all'indirizzo **`https://portal.azure.com/`**.
 
     >**Nota**: assicurarsi di aver eseguito l'accesso al tenant di Azure AD **AdatumLab500-04**. È possibile usare il filtro **Directory e sottoscrizione** per passare da un tenant di Azure AD a un altro. Assicurarsi di aver eseguito l'accesso come utente con il ruolo di amministratore globale.
     
@@ -86,7 +86,7 @@ In questa attività si renderà un utente idoneo per un ruolo di Azure AD direct
 
 3. Nel pannello **AdatumLab500-04 \| Ruoli** fare clic sulla voce **Ruolo con autorizzazioni di lettura globali**. 
 
-4. Sulla barra degli strumenti del pannello **Ruolo con autorizzazioni di lettura globali \| Assegnazioni** fare clic su **Impostazioni** ed esaminare le impostazioni di configurazione del ruolo, inclusi i requisiti di Azure Multi-Factor Authentication.
+4. Nel pannello **Assegnazioni di lettura \| globale** fare clic sull'icona Impostazioni ruolo nella barra degli strumenti del pannello e esaminare le **impostazioni** di configurazione per il ruolo, inclusi i requisiti di Azure Multi-Factor Authentication.
 
 5. Fare clic su **Modifica**.
 
@@ -132,7 +132,7 @@ In questa attività si renderà un utente idoneo per un ruolo di Azure AD direct
 
 7. Esaminare le impostazioni di **Tipo di assegnazione** e fare clic su **Assegna**.
 
-8. Nella pagina **Assegnazioni** della scheda **Assegnazioni idonee** selezionare **Aggiorna** per l'assegnazione **aaduser2**. Selezionare **Idoneità permanente** e fare clic su **Salva**.
+8. Nel pannello di spostamento a sinistra fare clic su **Assegnazioni**. Nella scheda **Assegnazioni idonee** selezionare **Aggiorna** per l'assegnazione **aaduser2** in **Amministratore sicurezza**. Selezionare **Idoneità permanente** e fare clic su **Salva**.
 
     >**Nota**: l'utente aaduser2 è ora idoneo in modo permanente per il ruolo Amministratore della sicurezza.
     
@@ -151,7 +151,7 @@ In questa attività si attiverà un ruolo che non richiede l'approvazione.
 
 1. Aprire una finestra del browser InPrivate.
 
-2. Aprire una finestra del browser InPrivate, passare al portale di Azure e accedere con l'account utente **aaduser2**.
+2. Nella finestra del browser InPrivate passare alla portale di Azure in **`https://portal.azure.com/`** e accedere usando l'account utente **aaduser2**.
 
     >**Nota**: per accedere è necessario specificare un nome completo dell'account utente **aaduser2**, incluso il nome di dominio DNS del tenant di Azure AD registrato in precedenza in questo lab. Questo nome utente è nel formato aaduser2`<your_tenant_name>`.onmicrosoft.com, dove `<your_tenant_name>` è il segnaposto che rappresenta il nome univoco del tenant di Azure AD. 
 
@@ -202,49 +202,47 @@ In questa attività si attiverà un ruolo che richiede l'approvazione.
 
 6. Nel pannello **Ruoli personali \| Ruoli di Azure AD** individuare il ruolo **Amministratore della sicurezza** e fare clic su **Attiva**. 
 
-7. Fare clic sul messaggio di avviso **È necessaria una verifica aggiuntiva. Fare clic per continuare**. 
-
-8. Seguire le istruzioni per verificare la propria identità.
+7. Se necessario, fare clic sull'avviso **È necessaria una verifica aggiuntiva. Fare clic per continuare** e seguire le istruzioni per verificare la propria identità.
 
     >**Nota**: è necessario eseguire l'autenticazione una sola volta per sessione. 
 
-9. Tornare nell'interfaccia del portale di Azure, quindi nel pannello **Attiva - Amministratore della sicurezza** digitare un testo che giustifichi l'attivazione nella casella di testo **Motivo** e fare clic su **Attiva**.
+8. Tornare nell'interfaccia del portale di Azure, quindi nel pannello **Attiva - Amministratore della sicurezza** digitare un testo che giustifichi l'attivazione nella casella di testo **Motivo** e fare clic su **Attiva**.
 
     >**Nota**: verrà completato il processo di approvazione automatica.
 
-10. Nel pannello **Ruoli personali \| Ruoli di Azure AD** fare clic sulla scheda **Assegnazioni attive** e notare che l'elenco di **assegnazioni attive** include il ruolo **Amministratore della sicurezza** ma non **Ruolo con autorizzazioni di lettura globale**.
+9. Nel pannello **Ruoli personali \| Ruoli di Azure AD** fare clic sulla scheda **Assegnazioni attive** e notare che l'elenco di **assegnazioni attive** include il ruolo **Amministratore della sicurezza** ma non **Ruolo con autorizzazioni di lettura globale**.
 
     >**Nota**: ora si approverà il Ruolo con autorizzazioni di lettura globali.
 
-11. Disconnettersi dal portale di Azure come **aaduser2**.
+10. Disconnettersi dal portale di Azure come **aaduser2**.
 
-12. Accedere al portale di Azure come **aaduser3**.
+11. Nel browser InPrivate accedere al portale di Azure all'indirizzo **aaduser3****`https://portal.azure.com/`**.
 
     >**Nota**: se si verificano problemi con l'autenticazione usando uno degli account utente, è possibile accedere al tenant di Azure AD usando il proprio account utente per reimpostare le password o riconfigurare le opzioni di accesso.
 
-13. Nel portale di Azure passare a **Azure AD Privileged Identity Management** (nella casella di testo Cerca risorse, servizi e documentazione nella parte superiore della pagina del portale di Azure digitare Azure AD Privileged Identity Management e premere INVIO).
+12. Nel portale di Azure passare a **Azure AD Privileged Identity Management** (nella casella di testo Cerca risorse, servizi e documentazione nella parte superiore della pagina del portale di Azure digitare Azure AD Privileged Identity Management e premere INVIO).
 
-14. Nel pannello **Privileged Identity Management \| Avvio rapido** fare clic su **Approva richieste** nella sezione **Attività**.
+13. Nel pannello **Privileged Identity Management \| Avvio rapido** fare clic su **Approva richieste** nella sezione **Attività**.
 
-15. Nel pannello **Approva richieste \| Ruoli di Azure AD**, nella sezione **Richieste di attivazioni del ruolo**, selezionare alla casella di controllo della voce che rappresenta la richiesta di attivazione per **Ruolo con autorizzazioni di lettura globali** da parte di **aaduser2**.
+14. Nel pannello **Approva richieste \| Ruoli di Azure AD**, nella sezione **Richieste di attivazioni del ruolo**, selezionare alla casella di controllo della voce che rappresenta la richiesta di attivazione per **Ruolo con autorizzazioni di lettura globali** da parte di **aaduser2**.
 
-16. Scegliere **Approva**. Nella casella di testo **Giustificazione** del pannello **Approva richiesta** digitare un motivo per l'attivazione, prendere nota delle ore di inizio e di fine e quindi fare clic su **Conferma**. 
+15. Scegliere **Approva**. Nella casella di testo **Giustificazione** del pannello **Approva richiesta** digitare un motivo per l'attivazione, prendere nota delle ore di inizio e di fine e quindi fare clic su **Conferma**. 
 
     >**Nota**. è anche disponibile l'opzione per rifiutare le richieste.
 
-17. Disconnettersi dal portale di Azure come **aaduser3**.
+16. Disconnettersi dal portale di Azure come **aaduser3**.
 
-18. Accedere al portale di Azure come **aaduser2**
+17. Nel browser InPrivate accedere al portale di Azure come **`https://portal.azure.com/`** **aaduser2**
 
-19. Nel portale di Azure passare a **Azure AD Privileged Identity Management** (nella casella di testo Cerca risorse, servizi e documentazione nella parte superiore della pagina del portale di Azure digitare Azure AD Privileged Identity Management e premere INVIO).
+18. Nel portale di Azure passare a **Azure AD Privileged Identity Management** (nella casella di testo Cerca risorse, servizi e documentazione nella parte superiore della pagina del portale di Azure digitare Azure AD Privileged Identity Management e premere INVIO).
 
-20. Nel pannello **Privileged Identity Management \| Avvio rapido** fare clic su **Ruoli personali** nella sezione **Attività**.
+19. Nel pannello **Privileged Identity Management \| Avvio rapido** fare clic su **Ruoli personali** nella sezione **Attività**.
 
-21. Nel pannello **Ruoli personali \| Ruoli di Azure AD** fare clic sulla scheda **Assegnazioni attive** e verificare che il Ruolo con autorizzazioni di lettura globali è ora attivo.
+20. Nel pannello **Ruoli personali \| Ruoli di Azure AD** fare clic sulla scheda **Assegnazioni attive** e verificare che il Ruolo con autorizzazioni di lettura globali è ora attivo.
 
     >**Nota**: potrebbe essere necessario aggiornare la pagina per visualizzare l'elenco aggiornato delle assegnazioni attive.
 
-22. Disconnettersi e chiudere la finestra del browser InPrivate.
+21. Disconnettersi e chiudere la finestra del browser InPrivate.
 
 > Risultato: ci si è esercitati con l'attivazione dei ruoli di PIM con e senza approvazione. 
 

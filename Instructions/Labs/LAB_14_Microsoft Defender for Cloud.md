@@ -13,7 +13,7 @@ lab:
 
 - Configurare Microsoft Defender for Cloud per monitorare una macchina virtuale.
 - Esaminare le raccomandazioni di Microsoft Defender for Cloud per la macchina virtuale.
-- Implementare le raccomandazioni per la configurazione guest e l'accesso Just-In-Time alle macchine virtuali. 
+- Implementare raccomandazioni per la configurazione guest e l'accesso alle macchine virtuali just-in-time. 
 - Capire come poter usare il punteggio di sicurezza per determinare lo stato di avanzamento del processo di creazione di un'infrastruttura più sicura.
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
@@ -26,7 +26,7 @@ In questo lab verrà completato l'esercizio seguente:
 
 ## Diagramma di Microsoft Defender for Cloud
 
-![image](https://user-images.githubusercontent.com/91347931/157537800-94a64b6e-026c-41b2-970e-f8554ce1e0ab.png)
+![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/c31055cc-de95-41f6-adef-f09d756a68eb)
 
 ## Istruzioni
 
@@ -36,7 +36,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 - Attività 1: Configurare Microsoft Defender for Cloud
 - Attività 2: Esaminare le raccomandazioni di Microsoft Defender for Cloud
-- Attività 3: Implementare la raccomandazione di Microsoft Defender for Cloud per abilitare l'accesso JIT (Just-In-Time) alla macchina virtuale
+- Attività 3: Implementare la raccomandazione Microsoft Defender per cloud per abilitare l'accesso alle macchine virtuali just-in-time
 
 #### Attività 1: Configurare Microsoft Defender for Cloud
 
@@ -48,25 +48,25 @@ In questa attività si eseguiranno l'onboarding e la configurazione di Microsoft
 
 2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Microsoft Defender for Cloud** e premere **INVIO**.
 
-3. Nel pannello **Microsoft Defender per l'introduzione al cloud \|** fare clic su **Aggiorna**.
+3. Nel pannello di spostamento a sinistra fare clic su **Introduzione**. Nel pannello **Microsoft Defender per l'introduzione al cloud \|** fare clic su **Aggiorna**.
      
-4. Nel pannello **Microsoft Defender per l'introduzione al cloud\|**, nella scheda Installa agenti scorrere verso il basso e fare clic su Installa agenti. 
+4. Nel pannello **Microsoft Defender per l'introduzione al cloud\|**, nella scheda Installa agenti scorrere verso il basso e fare clic su **Installa agenti**. 
 
 5. Nel pannello **Microsoft Defender per l'introduzione al cloud\|**, nella scheda **Aggiorna** >> scorrere verso il basso fino a quando la sezione **Seleziona aree di lavoro con funzionalità di sicurezza avanzate** è visibile >> attivare il **piano di Microsoft Defender** selezionando l'area di lavoro Log Analytics, quindi fare clic sul pulsante Grande aggiornamento blu.  
 
     >**Nota**: esaminare tutte le funzionalità disponibili nell'ambito dei piani di Microsoft Defender. 
 
-6. Passare a **Microsoft Defender for Cloud**  e fare clic su **Impostazioni ambiente** nelle impostazioni di gestione nella barra dei menu verticale a sinistra.
+6. Passare a **Microsoft Defender per Cloud** e, nel pannello di spostamento a sinistra nella sezione Gestione fare clic su **Impostazioni ambiente**.
 
-7. Nel pannello **Microsoft Defender per il cloud \| Impostazioni ambiente** fare clic sulla sottoscrizione pertinente. 
+7. Nel pannello **Microsoft Defender per le impostazioni dell'ambiente cloud \|** scorrere verso il basso, espandere fino a quando non viene visualizzata la sottoscrizione e fare clic sulla sottoscrizione pertinente. 
 
-8. Nel pannello **Piani di Defender** selezionare **Abilitare tutti i piani di Microsoft Defender per il cloud**.
+8. Nel pannello **Impostazioni \| piani Defender** selezionare **Abilita tutti i piani** e, se necessario, fare clic su **Salva**.
 
-9. Tornare al **pannello Microsoft Defender per Impostazioni ambiente cloud\|**, espandere fino a quando non viene visualizzata la sottoscrizione e fare clic sulla voce che rappresenta l'area di lavoro Log Analytics creata nel lab precedente.
+9. Tornare al pannello **Microsoft Defender per le impostazioni dell'ambiente cloud\|**, espandere finché non viene visualizzata la sottoscrizione e fare clic sulla voce che rappresenta l'area di lavoro Log Analytics creata nel lab precedente.
 
-10. Nel pannello **Impostazioni \| Piani di Defender** verificare che l'opzione **Abilitare tutti i piani di Microsoft Defender per il cloud** sia selezionata.
+10. Nel pannello **Impostazioni \| piani Defender** verificare che tutte le opzioni siano "Attiva". Se necessario, fare clic su **Abilita tutti i piani** e quindi fare clic su **Salva**.
 
-11. Selezionare **Raccolta dati** nel riquadro **Microsoft Defender for Cloud \| Impostazioni**. Selezionare **Tutti gli eventi** e **Salva**.
+11. Selezionare **Raccolta dati** nel pannello **Impostazioni \| piani di Defender** . Fare clic su **Tutti gli eventi** e **salvare**.
 
 #### Attività 2: Esaminare la raccomandazione di Microsoft Defender for Cloud
 
@@ -78,27 +78,27 @@ In questa attività si esamineranno le raccomandazioni di Microsoft Defender for
 
     >**Nota**: registrare il punteggio corrente, se disponibile.
 
-3. Tornare al pannello **Microsoft Defender for Cloud \| Panoramica** e selezionare **Risorse valutate**.
+3. Tornare al **pannello Microsoft Defender per Panoramica cloud\|**, fare clic su **Risorse valutate**.
 
-4. Nel pannello **Inventario** selezionare la voce **myVM**.
+4. Nel **pannello Inventario** fare clic sulla voce **myVM** .
 
     >**Nota**: potrebbe essere necessario attendere alcuni minuti e aggiornare la pagina del browser per poter visualizzare la voce.
     
 5. Nel pannello **Integrità delle risorse**, nella scheda **Raccomandazioni**, esaminare l'elenco delle raccomandazioni per **myVM**.
 
-#### Attività 3: Implementare la raccomandazione di Microsoft Defender for Cloud per abilitare l'accesso JIT (Just-In-Time) alla macchina virtuale
+#### Attività 3: Implementare la raccomandazione Microsoft Defender per cloud per abilitare l'accesso alle macchine virtuali just-in-time
 
-In questa attività si implementerà la raccomandazione di Microsoft Defender for Cloud per abilitare l'accesso JIT (Just-In-Time) alla macchina virtuale. 
+In questa attività si implementerà la raccomandazione Microsoft Defender for Cloud per abilitare l'accesso alle macchine virtuali just-in-time nella macchina virtuale. 
 
-1. Nel portale di Azure tornare al pannello **Microsoft Defender for Cloud \| Panoramica** e selezionare **Protezioni carico di lavoro** nel riquadro **Sicurezza cloud**.
+1. Nella portale di Azure tornare al pannello **Microsoft Defender per Panoramica cloud \|** e fare clic su **Protezione dei carichi di lavoro** **nel** pannello di spostamento a sinistra.
 
-2. Nel pannello **Protezioni carico di lavoro**, nella sezione **Protezione avanzata** fare clic sul riquadro **Accesso Just-In-Time alla VM** e passare al pannello **Accesso Just-In-Time alla VM**.
+2. Nel pannello **Microsoft Defender per le protezioni del carico di lavoro cloud \|** scorrere verso il basso fino alla sezione **Protezione avanzata** e fare clic sul riquadro **Di accesso alle macchine virtuali just-in-time**.
 
-3. Nel pannello **Accesso Just-In-Time alla VM**, nella sezione **Macchine virtuali** selezionare **Non configurato**, quindi fare clic sulla voce **myVM**.
+3. Nel pannello **Accesso alle macchine virtuali just-in-time** selezionare **Non configurato** e quindi selezionare la casella di controllo per la voce **myVM**.****
+
+    >**Nota**: potrebbe essere necessario attendere alcuni minuti, aggiornare la pagina del browser e selezionare **Non configurato** di nuovo per visualizzare la voce.
 
 4. Fare clic sull'opzione **Abilita JIT in 1 VM** all'estrema destra della sezione **Macchine virtuali**.
-
-    >**Nota**: potrebbe essere necessario attendere alcuni minuti prima che la voce **myVM** diventi disponibile.
 
 5. Nel pannello **Configurazione dell'accesso JIT alla VM**, all'estrema destra della riga che fa riferimento alla porta **22**, fare clic sul pulsante con i puntini di sospensione e quindi su **Elimina**.
 
