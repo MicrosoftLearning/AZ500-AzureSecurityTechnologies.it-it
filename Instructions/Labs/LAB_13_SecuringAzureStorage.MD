@@ -1,10 +1,10 @@
 ---
 lab:
-  title: ' Lab 12 - Endpoint servizio e protezione dell''archiviazione'
+  title: ' 13 - Endpoint di servizio e protezione Archiviazione'
   module: Module 03 - Secure data and applications
 ---
 
-# Lab 12: Endpoint servizio e protezione dell'archiviazione
+# Lab 13: Endpoint di servizio e protezione Archiviazione
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio

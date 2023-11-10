@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 03 - Blocchi di Resource Manager
+  title: 04 - Blocchi di Resource Manager
   module: Module 01 - Manage Identity and Access
 ---
 
-# Lab 03: Blocchi di Resource Manager
+# Lab 04: Blocchi di Resource Manager
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio 

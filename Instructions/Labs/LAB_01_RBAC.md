@@ -7,7 +7,7 @@ lab:
 # Lab 01: Controllo degli accessi in base al ruolo
 # Manuale del lab per gli studenti
 
-## Scenario del lab
+## Scenario laboratorio
 
 È stato chiesto di creare un modello di verifica che mostra come vengono creati utenti e gruppi di Azure e come viene usato il controllo degli accessi in base al ruolo per assegnare ruoli a gruppi. In particolare, è necessario:
 
@@ -37,7 +37,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 #### Tempo stimato: 10 minuti
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Usare il portale di Azure per creare un account utente per Joseph Price.
 - Attività 2: usare il portale di Azure per creare un gruppo Senior Admins e aggiungere l'account utente di Joseph Price al gruppo.
@@ -46,13 +46,13 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 In questa attività si creerà un account utente per Joseph Price. 
 
-1. Avviare una sessione del browser e accedere al portale di Azure **`https://portal.azure.com/`** .
+1. Avviare una sessione del browser e accedere al portale di Azure **`https://portal.azure.com/`**.
 
     >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per questo lab e il ruolo Amministratore globale nel tenant di Azure AD associato alla sottoscrizione.
 
-2. Nella casella di testo **Cerca risorse, servizi e documenti** nella parte superiore della pagina portale di Azure digitare **Microsoft Entra ID** e premere **invio**.
+2. Nella **casella di testo Cerca risorse, servizi e documenti** nella parte superiore della pagina portale di Azure digitare **Microsoft Entra ID** e premere **INVIO**.
 
-3. Nel pannello **Panoramica** del tenant Microsoft Entra ID selezionare **Utenti** e quindi **+ Nuovo utente**.****
+3. Nel pannello **Panoramica** del tenant microsoft Entra ID selezionare **Utenti** nella **sezione Gestione** e quindi + **Nuovo utente**.
 
 4. Nel pannello **Nuovo utente** verificare che l'opzione **Crea utente** sia selezionata e specificare le impostazioni seguenti:
 
@@ -65,7 +65,7 @@ In questa attività si creerà un account utente per Joseph Price.
 
 6. Assicurarsi che sia selezionata l'opzione **Password generata automaticamente** e selezionare la casella di controllo **Mostra password** per identificare la password generata automaticamente. Sarà necessario fornire questa password, insieme al nome utente, a Joseph. 
 
-7. Fare clic su **Crea**.
+7. Fai clic su **Crea**.
 
 8. Aggiornare il pannello **Utenti \| Tutti gli utenti** per verificare che il nuovo utente sia stato creato nel tenant di Azure AD.
 
@@ -73,7 +73,7 @@ In questa attività si creerà un account utente per Joseph Price.
 
 In questa attività si creerà il gruppo *Senior Admins*, si aggiungerà l'account utente di Joseph Price al gruppo e si configurerà questo utente come proprietario del gruppo.
 
-1. Nella portale di Azure tornare al pannello che visualizza il tenant ID Microsoft Entra. 
+1. Nel portale di Azure tornare al pannello che visualizza il tenant di Microsoft Entra ID. 
 
 2. Nella sezione **Gestisci** fare clic su **Gruppi** e quindi selezionare **+ Nuovo gruppo**.
  
@@ -81,15 +81,15 @@ In questa attività si creerà il gruppo *Senior Admins*, si aggiungerà l'accou
 
    |Impostazione|Valore|
    |---|---|
-   |Tipo gruppo|**Sicurezza**|
-   |Nome gruppo|**Senior Admins**|
-   |Tipo di appartenenza|**Assegnato**|
+   |Tipo di gruppo|**Sicurezza**|
+   |Nome del gruppo|**Senior Admins**|
+   |Tipo di appartenenza|**Assegnate**|
     
 4. Fare clic sul collegamento **Non sono stati selezionati proprietari**, nel pannello **Aggiungi proprietari** selezionare **Joseph Price** e fare clic su **Seleziona**.
 
 5. Fare clic sul collegamento **Nessun membro selezionato**, nel pannello **Aggiungi membri** selezionare **Joseph Price** e fare clic su **Seleziona**.
 
-6. Tornare al pannello **Nuovo gruppo** e fare clic su **Crea**.
+6. Tornare nel pannello **Nuovo gruppo** e fare clic su **Crea**.
 
 > Risultato: è stato usato il portale di Azure per creare un utente e un gruppo e assegnare l'utente al gruppo. 
 
@@ -97,7 +97,7 @@ In questa attività si creerà il gruppo *Senior Admins*, si aggiungerà l'accou
 
 #### Tempo stimato: 10 minuti
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Usare PowerShell per creare un account utente per Isabel Garcia.
 - Attività 2: Usare PowerShell per creare il gruppo Junior Admins e aggiungere l'account utente di Isabel Garcia al gruppo. 
@@ -123,7 +123,7 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
     $passwordProfile.Password = "Pa55w.rd1234"
     ```
 
-5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire le operazioni seguenti per connettersi all'ID di Microsoft Entra:
+5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per connettersi all'ID Microsoft Entra:
 
     ```powershell
     Connect-AzureAD
@@ -188,7 +188,7 @@ In questa attività si creerà il gruppo Junior Admins e si aggiungerà l'accoun
 
 #### Tempo stimato: 10 minuti
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Usare l'interfaccia della riga di comando di Azure per creare un account utente per Dylan Williams.
 - Attività 2: Usare l'interfaccia della riga di comando di Azure per creare il gruppo Service Desk e aggiungere l'account utente di Dylan al gruppo. 
@@ -266,7 +266,7 @@ In questa attività si creerà il gruppo Service Desk e si assegnerà Dylan al g
 
 #### Tempo stimato: 10 minuti
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Creare un gruppo di risorse. 
 - Attività 2: Assegnare le autorizzazioni Collaboratore macchina virtuale al gruppo di risorse Service Desk.  
@@ -279,9 +279,9 @@ In questo esercizio verranno eseguite le attività seguenti:
 
    |Impostazione|Valore|
    |---|---|
-   |Nome sottoscrizione|Il nome della propria sottoscrizione di Azure|
-   |Nome del gruppo di risorse|**AZ500Lab01**|
-   |Location|**Stati Uniti orientali**|
+   |Nome della sottoscrizione|nome della sottoscrizione di Azure|
+   |Nome gruppo di risorse|**AZ500Lab01**|
+   |Titolo|**Stati Uniti orientali**|
 
 3. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 

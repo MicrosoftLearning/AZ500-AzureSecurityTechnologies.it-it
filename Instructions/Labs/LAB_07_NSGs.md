@@ -7,12 +7,12 @@ lab:
 # Lab 07: Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
 # Manuale del lab per gli studenti
 
-## Scenario del lab
+## Scenario laboratorio
 
 È stato chiesto di implementare l'infrastruttura di rete virtuale dell'organizzazione e di testarla per assicurarsi che funzioni correttamente. In particolare:
 
 - L'organizzazione ha due gruppi di server: server Web e server di gestione.
-- Ogni gruppo di server deve trovarsi in uno specifico gruppo di sicurezza delle applicazioni. 
+- Ogni gruppo di server deve trovarsi nel proprio gruppo di sicurezza delle applicazioni. 
 - È necessario essere in grado di connettersi tramite RDP ai server di gestione, ma non ai server Web.
 - I server Web devono visualizzare la pagina Web IIS quando vi si accede da Internet. 
 - Per controllare l'accesso alla rete, devono essere usate regole del gruppo di sicurezza di rete. 
@@ -38,7 +38,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Creare una rete virtuale con una subnet.
 - Attività 2: Creare due gruppi di sicurezza delle applicazioni.
@@ -49,7 +49,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 In questa attività si creerà una rete virtuale da usare con i gruppi di sicurezza di rete e delle applicazioni. 
 
-1. Accedere al portale di Azure **`https://portal.azure.com/`** .
+1. Accedere al portale di Azure **`https://portal.azure.com/`**.
 
     >**Nota**: accedere al portale di Azure con un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per il lab.
 
@@ -62,15 +62,15 @@ In questa attività si creerà una rete virtuale da usare con i gruppi di sicure
     |Impostazione|Valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
-    |Resource group|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB07**|
+    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB07**|
     |Nome|**myVirtualNetwork**|
-    |Region|**Stati Uniti orientali**|
+    |Area|**Stati Uniti orientali**|
 
 5. Nella scheda **Indirizzi IP** del pannello **Crea rete virtuale** impostare **Spazio indirizzi IPv4** su **10.0.0.0/16** e, se necessario, nella colonna **Nome della subnet** fare clic su **predefinito**, quindi nel pannello **Modifica subnet** specificare le impostazioni seguenti e fare clic su **Salva**:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |---|---|
-    |Nome della subnet|**default**|
+    |Nome subnet|**default**|
     |Intervallo di indirizzi subnet|**10.0.0.0/24**|
 
 6. Nella scheda **Indirizzi IP** del pannello **Crea rete virtuale** fare clic su **Rivedi e crea**.
@@ -89,9 +89,9 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
 
     |Impostazione|Valore|
     |---|---|
-    |Resource group|**AZ500LAB07**|
+    |Gruppo di risorse|**AZ500LAB07**|
     |Nome|**myAsgWebServers**|
-    |Region|**Stati Uniti orientali**|
+    |Area|**Stati Uniti orientali**|
 
     >**Nota**: questo gruppo sarà riservato ai server Web.
 
@@ -103,9 +103,9 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
 
     |Impostazione|Valore|
     |---|---|
-    |Resource group|**AZ500LAB07**|
+    |Gruppo di risorse|**AZ500LAB07**|
     |Nome|**myAsgMgmtServers**|
-    |Region|**Stati Uniti orientali**|
+    |Area|**Stati Uniti orientali**|
 
     >**Nota**: questo gruppo sarà riservato ai server di gestione.
 
@@ -124,9 +124,9 @@ In questa attività si creerà un gruppo di sicurezza di rete.
     |Impostazione|Valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
-    |Resource group|**AZ500LAB07**|
+    |Gruppo di risorse|**AZ500LAB07**|
     |Nome|**myNsg**|
-    |Region|**Stati Uniti orientali**|
+    |Area|**Stati Uniti orientali**|
 
 4. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
@@ -136,7 +136,7 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 7. Nel pannello **Associa subnet** specificare le impostazioni seguenti e fare clic su **OK**:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |---|---|
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**default**|
@@ -152,7 +152,7 @@ In questa attività si creerà un gruppo di sicurezza di rete.
     |Impostazione|Valore|
     |---|---|
     |Destination|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgWebServers**|
-    |Intervalli di porte di destinazione|**80,443**|
+    |Intervalli porte di destinazione|**80,443**|
     |Protocollo|**TCP**|
     |Priorità|**100**|                                                    
     |Nome|**Allow-Web-All**|
@@ -166,7 +166,7 @@ In questa attività si creerà un gruppo di sicurezza di rete.
     |Impostazione|Valore|
     |---|---|
     |Destination|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgMgmtServers**|
-    |Intervalli di porte di destinazione|**3389**|
+    |Intervalli porte di destinazione|**3389**|
     |Protocollo|**TCP**|
     |Priorità|**110**|                                                    
     |Nome|**Allow-RDP-All**|
@@ -179,7 +179,7 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 ### Tempo stimato: 25 minuti
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Creare una macchina virtuale da usare come server Web.
 - Attività 2: Creare una macchina virtuale da usare come server di gestione. 
@@ -199,9 +199,9 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
    |Impostazione|Valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
-   |Resource group|**AZ500LAB07**|
-   |Nome macchina virtuale|**myVmWeb**|
-   |Region|**(Stati Uniti) Stati Uniti orientali**|
+   |Gruppo di risorse|**AZ500LAB07**|
+   |Virtual machine name|**myVmWeb**|
+   |Area|**(Stati Uniti) Stati Uniti orientali**|
    |Immagine|**Windows Server 2022 Datacenter: Azure Edition- x64 Gen2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
@@ -212,13 +212,13 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
 
-4. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >** .
+4. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >**.
 
 5. Nella scheda **Rete** del pannello **Crea macchina virtuale** selezionare la rete **myVirtualNetwork** creata in precedenza.
 
 6. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Monitoraggio del pannello** **Crea una macchina virtuale** verificare l'impostazione seguente:
+7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella **scheda Monitoraggio del **pannello** Crea una macchina** virtuale verificare l'impostazione seguente:
 
    |Impostazione|Valore|
    |---|---|
@@ -237,9 +237,9 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
    |Impostazione|Valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
-   |Resource group|**AZ500LAB07**|
-   |Nome macchina virtuale|**myVMMgmt**|
-   |Region|(Stati Uniti) Stati Uniti orientali|
+   |Gruppo di risorse|**AZ500LAB07**|
+   |Virtual machine name|**myVMMgmt**|
+   |Area|(Stati Uniti) Stati Uniti orientali|
    |Immagine|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
@@ -249,13 +249,13 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
 
-3. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >** .
+3. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >**.
 
 4. Nella scheda **Rete** del pannello **Crea macchina virtuale** selezionare la rete **myVirtualNetwork** creata in precedenza.
 
 5. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Monitoraggio** del pannello **Crea una macchina virtuale** verificare l'impostazione seguente:
+6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella **scheda Monitoraggio del **pannello** Crea una macchina** virtuale verificare l'impostazione seguente:
 
    |Impostazione|Valore|
    |---|---|
