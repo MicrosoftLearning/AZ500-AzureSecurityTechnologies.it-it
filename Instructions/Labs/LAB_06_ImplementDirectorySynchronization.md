@@ -7,12 +7,12 @@ lab:
 # Lab 06: Implementare la sincronizzazione della directory
 # Manuale del lab per gli studenti
 
-## Scenario del lab
+## Scenario laboratorio
 
-È stato chiesto di creare un modello di verifica che illustra come integrare un ambiente di Active Directory Domain Services (AD DS) locale con un tenant di Azure Active Directory (Azure AD). In particolare, sarà necessario:
+È stato chiesto di creare un modello di verifica che illustri come integrare un ambiente di Active Directory Domain Services (AD DS) locale con un tenant di Azure Active Directory (Azure AD). In particolare, sarà necessario:
 
 - Implementare una foresta di AD DS a singolo dominio distribuendo una VM di Azure che ospita un controller di dominio di AD DS
-- Creare e configurare un tenant di Azure AD
+- Creare e configurare il tenant di Azure AD
 - Sincronizzare la foresta di AD DS con il tenant di Azure AD
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
@@ -35,7 +35,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 ### Tempo stimato: 10 minuti
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Identificare un nome DNS disponibile per la distribuzione di una macchina virtuale di Azure
 - Attività 2: Usare un modello di ARM per distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
@@ -44,7 +44,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 In questa attività si identificherà un nome DNS per la distribuzione della macchina virtuale di Azure. 
 
-1. Accedere al portale di Azure **`https://portal.azure.com/`** .
+1. Accedere al portale di Azure **`https://portal.azure.com/`**.
 
     >**Nota**: accedere al portale di Azure con un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per il lab.
 
@@ -60,7 +60,7 @@ In questa attività si identificherà un nome DNS per la distribuzione della mac
 
     >**Nota**: sostituire il segnaposto `<custom-label>` con un nome DNS valido che sia univoco a livello globale. Sostituire il segnaposto `<location>` con il nome dell'area in cui si vuole distribuire la macchina virtuale di Azure che ospiterà il controller di dominio di Active Directory da usare in questo lab.
 
-    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
 5. Verificare che il comando abbia restituito **True**. In caso contrario, eseguire di nuovo lo stesso comando con un valore diverso di `<custom-label>` finché non restituisce **True**.
 
@@ -74,7 +74,7 @@ In questa attività si distribuirà una macchina virtuale di Azure che ospiterà
 
 1. Aprire un'altra scheda del browser nella stessa finestra e passare a **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain**.
 
-2. Nella pagina **Crea una macchina virtuale di Azure con una nuova foresta di Active** Directory fare clic su **Distribuisci in Azure**. Il browser verrà reindirizzato automaticamente al pannello**Create an Azure VM with a new AD Forest** nel portale di Azure. 
+2. Nella **pagina Crea una macchina virtuale di Azure con una nuova foresta** di Active Directory fare clic su **Distribuisci in Azure**. Il browser verrà reindirizzato automaticamente al pannello**Create an Azure VM with a new AD Forest** nel portale di Azure. 
 
 3. Nel pannello **Create an Azure VM with a new AD Forest** fare clic su **Modifica parametri**.
 
@@ -85,8 +85,8 @@ In questa attività si distribuirà una macchina virtuale di Azure che ospiterà
    |Impostazione|Valore|
    |---|---|
    |Subscription|Nome della propria sottoscrizione di Azure|
-   |Resource group|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB06**|
-   |Region|L'area di Azure identificata nell'attività precedente|
+   |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB06**|
+   |Area|L'area di Azure identificata nell'attività precedente|
    |Nome utente amministratore|**Studente**|
    |Password amministratore|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    |Nome dominio|**adatum.com**|
@@ -104,7 +104,7 @@ In questa attività si distribuirà una macchina virtuale di Azure che ospiterà
 
 ### Tempo stimato: 20 minuti
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Creare un tenant di Azure Active Directory (AD)
 - Attività 2: Aggiungere un nome DNS personalizzato al nuovo tenant di Azure AD
@@ -118,7 +118,7 @@ In questa attività si creerà un nuovo tenant di Azure AD da usare in questo la
 
 2. Nel pannello **Panoramica** del tenant di Azure AD corrente fare clic su **Manage tenants** (Gestisci tenant) e quindi nella schermata successiva fare clic su **+ Crea**.
 
-3. Nella scheda **Informazioni di base** del pannello **Crea un tenant** assicurarsi che sia selezionata l'opzione **Azure Active Directory** e fare clic su **Avanti: Configurazione >** .
+3. Nella scheda **Informazioni di base** del pannello **Crea un tenant** assicurarsi che sia selezionata l'opzione **Azure Active Directory** e fare clic su **Avanti: Configurazione >**.
 
 4. Nella scheda **Configurazione** del pannello **Crea una directory** specificare le impostazioni seguenti:
 
@@ -162,9 +162,9 @@ In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegn
 
 1. Nel pannello del tenant di Azure AD **AdatumSync** fare clic su **Utenti** nella sezione **Gestisci**.
 
-2. In **Utenti | Nel pannello Tutti gli utenti** fare clic su **+ Nuovo utente** e quindi **su Crea nuovo utente**.
+2. **In Utenti | Pannello Tutti gli utenti**, fare clic su **+ Nuovo utente** e quindi su **Crea nuovo utente**.
 
-3. Nel pannello **Nuovo utente** verificare che sia selezionata l'opzione **Crea utente** , specificare le impostazioni seguenti nella scheda Informazioni di base (lasciare tutti gli altri con i valori predefiniti) e fare clic su **Avanti: Proprietà >**:
+3. **Nel pannello Nuovo utente verificare che l'opzione **Crea utente**** sia selezionata, specificare le impostazioni seguenti nella scheda Informazioni di base (lasciare tutti gli altri con i valori predefiniti) e fare clic su **Avanti: Proprietà >**:
 
    |Impostazione|Valore|
    |---|---|
@@ -172,19 +172,19 @@ In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegn
    |Nome|**syncadmin**|
    |Password|Assicurarsi che sia selezionata l'opzione **Password generata automaticamente** e fare clic su **Mostra password**|
 
-    >**Nota**: registrare il nome utente completo. È possibile copiarne il valore facendo clic sul pulsante **Copia negli Appunti** sul lato destro dell'elenco a discesa che visualizza il nome di dominio e incollandolo in un documento del Blocco note. Sarà necessaria più avanti in questo lab.
+    >**Nota**: registrare il nome utente completo. È possibile copiarne il valore facendo clic sul **pulsante Copia negli Appunti** sul lato destro dell'elenco a discesa che visualizza il nome di dominio e incollandolo in un documento del Blocco note. Sarà necessaria più avanti in questo lab.
 
-    >**Nota**: registrare la password dell'utente facendo clic sul pulsante **Copia negli Appunti** sul lato destro della casella di testo Password e incollandolo in un documento del Blocco note. Sarà necessaria più avanti in questo lab.
+    >**Nota**: registrare la password dell'utente facendo clic sul **pulsante Copia negli Appunti** sul lato destro della casella di testo Password e incollandolo in un documento del Blocco note. Sarà necessaria più avanti in questo lab.
 
-4. Nella scheda **Proprietà** scorrere fino alla fine e specificare il percorso di utilizzo: **Stati Uniti** (lasciare tutti gli altri con i valori predefiniti) e fare clic su **Avanti: Assegnazioni >**.
+4. Nella **scheda Proprietà** scorrere fino alla fine e specificare La posizione di utilizzo: **Stati Uniti** (lasciare tutti gli altri con i valori predefiniti) e fare clic su **Avanti: Assegnazioni >**.
 
-5. Nella scheda **Assegnazioni** fare clic su **+ Aggiungi ruolo**, cercare e selezionare **Amministratore globale**, quindi fare clic su **Seleziona**. Fare clic su **Rivedi e crea** e quindi su **Crea**.
+5. Nella **scheda Assegnazioni** fare clic su **+ Aggiungi ruolo**, cercare e selezionare **Global Amministrazione istrator** e quindi fare clic su **Seleziona**. Fare clic su **Rivedi e crea** e quindi su **Crea**.
    
     >**Nota**: per implementare Azure AD Connect, è necessario un utente con il ruolo di amministratore globale.
 
 6. Aprire una finestra del browser InPrivate.
 
-7. Passare alla portale di Azure all'indirizzo **`https://portal.azure.com/`** e accedere usando l'account utente **syncadmin**. Quando richiesto, modificare la password registrata in precedenza in questa attività con una password personalizzata che soddisfi i requisiti di complessità e registrarla per riferimento futuro. Questa password verrà richiesta nelle attività successive.
+7. Passare al portale di Azure all'indirizzo **`https://portal.azure.com/`** e accedere usando l'account **utente syncadmin**. Quando richiesto, modificare la password registrata in precedenza in questa attività con la propria password che soddisfi i requisiti di complessità e registrarla per riferimento futuro. Questa password verrà richiesta nelle attività successive.
 
     >**Nota**: per accedere è necessario specificare un nome completo dell'account utente **syncadmin**, incluso il nome di dominio DNS del tenant di Azure AD registrato in precedenza in questa attività. Questo nome utente è nel formato syncadmin@`<your_tenant_name>`.onmicrosoft.com, dove `<your_tenant_name>` è il segnaposto che rappresenta il nome univoco del tenant di Azure AD. 
 
@@ -197,7 +197,7 @@ In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegn
 
 ### Tempo stimato: 20 minuti
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Preparare AD DS per la sincronizzazione della directory
 - Attività 2: Installare Azure AD Connect
@@ -217,7 +217,7 @@ In questa attività ci si connetterà alla macchina virtuale di Azure che esegue
 
 4. Nel pannello **adVM** fare clic su **Connetti** e quindi su **RDP** nel menu a discesa. 
 
-5. Nell'elenco a discesa **Indirizzo IP** selezionare **Indirizzo IP pubblico del servizio di bilanciamento del carico**, quindi fare clic su **Scarica file RDP** e usarlo per connettersi alla macchina virtuale di Azure **adVM** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
+5. Nell'elenco a discesa Indirizzo** IP selezionare **Load Balancer public IP address (Indirizzo** IP pubblico del servizio di bilanciamento del **carico), quindi fare clic su **Download RDP File (Scarica file** RDP) e usarlo per connettersi alla **macchina virtuale di Azure adVM** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
    |Impostazione|Valore|
    |---|---|
@@ -228,15 +228,15 @@ In questa attività ci si connetterà alla macchina virtuale di Azure che esegue
 
     >**Nota**: i passaggi seguenti vengono eseguiti nella sessione Desktop remoto nella macchina virtuale di Azure **adVM**.
 
-    >**Nota**: se **l'indirizzo IP pubblico** del servizio di bilanciamento del carico non è disponibile nell'elenco a discesa **Indirizzo IP** del pannello RDP, nel portale di Azure cercare **Indirizzi IP** pubblici selezionare **adPublicIP** e prendere nota del relativo indirizzo IP. Fare clic sul pulsante Start, digitare **MSTSC** e premere **INVIO** per avviare il client desktop remoto. Digitare l'indirizzo IP pubblico del servizio di bilanciamento del carico nella casella di testo **Computer:** e fare clic su **Connetti**.
+    >**Nota**: se l'indirizzo** IP pubblico del **servizio di bilanciamento del carico non è disponibile nell'elenco **a discesa Indirizzo** IP del pannello RDP, nel portale di Azure cercare **Indirizzi** IP pubblici selezionare **adPublicIP** e prendere nota del relativo indirizzo IP. Fare clic sul pulsante Start, digitare **MSTSC** e premere **INVIO** per avviare il client desktop remoto. Digitare l'indirizzo IP pubblico del servizio di bilanciamento del carico nella **casella di testo Computer:** e fare clic su **Connessione**.
 
 6. In **Server Manager** fare clic su **Strumenti** e quindi su **Centro di amministrazione di Active Directory**.
 
-7. In **Centro di amministrazione di Active Directory** fare clic su **adatum (locale)** , nel riquadro **Attività** sotto il nome di dominio **adatum (locale)** fare clic su **Nuovo** e quindi nel menu a cascata fare clic su **Unità organizzativa**.
+7. In **Centro di amministrazione di Active Directory** fare clic su **adatum (locale)**, nel riquadro **Attività** sotto il nome di dominio **adatum (locale)** fare clic su **Nuovo** e quindi nel menu a cascata fare clic su **Unità organizzativa**.
 
 8. Nella casella di testo **Nome** della finestra **Crea unità organizzativa** digitare **ToSync** e fare clic su **OK**.
 
-9. Fare doppio clic sull'unità organizzativa **ToSync** appena creata in modo che il relativo contenuto venga visualizzato nel riquadro dei dettagli della console del Centro di amministrazione di Active Directory. 
+9. Fare doppio clic sull'unità organizzativa ToSync** appena creata **in modo che il relativo contenuto venga visualizzato nel riquadro dei dettagli della console di Active Directory Amministrazione istrative Center. 
 
 10. Nella sezione **ToSync** del riquadro **Attività** fare clic su **Nuovo** e scegliere **Utente** dal menu a cascata.
 
@@ -245,7 +245,7 @@ In questa attività ci si connetterà alla macchina virtuale di Azure che esegue
     |Impostazione|Valore|
     |---|---|
     |Nome completo|**aduser1**|
-    |Accesso utente UPN|**aduser1**|
+    |Accesso UPN utente|**aduser1**|
     |Accesso utente SamAccountName|**aduser1**|
     |Password e Conferma password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
     |Altre opzioni password|**Nessuna scadenza password**|
@@ -259,11 +259,11 @@ In questa attività si installerà AD Connect nella macchina virtuale.
 
 2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Azure Active Directory** e premere **INVIO**.
 
-3. Nel pannello Panoramica di **AdatumSync \|** del portale di Azure fare clic su **Azure AD Connect** nel pannello di spostamento a sinistra in **Gestisci**.
+3. Nel pannello Panoramica di AdatumSync del portale di Azure **fare clic su **Azure AD Connessione** nel pannello di spostamento a sinistra in **Gestisci**.\|**
 
-4. Nel pannello **Attività iniziali di AAD Connect \|** fare clic su **Connetti sincronizzazione** nel pannello di spostamento a sinistra e quindi fare clic sul collegamento **Scarica Azure AD Connect**. Si verrà reindirizzati alla pagina di download di **Azure AD Connect** .
+4. **Nel pannello Attività iniziali** di AAD Connessione \| fare clic su **Connessione Sincronizzazione** nel pannello di spostamento sinistro e quindi sul collegamento Scarica azure **AD Connessione**. Si verrà reindirizzati alla **pagina di download di Azure AD Connessione**.
 
-5. Nella pagina di download di **Azure AD Connect** fare clic su **Scarica**.
+5. Nella **pagina di download di Azure AD Connessione** fare clic su **Scarica**.
 
 6. Quando richiesto, fare clic su **Esegui** per avviare procedura guidata **Microsoft Azure Active Directory Connect**.
 
@@ -292,7 +292,7 @@ In questa attività si installerà AD Connect nella macchina virtuale.
 
     >**Nota**: come indicato prima, questo comportamento è previsto, perché non è stato possibile verificare il dominio DNS personalizzato di Azure AD **adatum.com**.
 
-16. Nella pagina **Filtro dominio e unità organizzative** fare clic sull'opzione **Sincronizza domini e unità organizzative selezionate** e deselezionare la casella di controllo accanto al nome di dominio **adatum.com**. Fare clic per espandere **adatum.com**, selezionare solo la casella di controllo accanto all'unità organizzativa **ToSync** e quindi fare clic su **Avanti**.
+16. **Nella pagina Filtro dominio e unità organizzative** fare clic sull'opzione **Sincronizza domini e unità organizzative** selezionate e deselezionare la casella di controllo accanto al nome **di dominio adatum.com**. Fare clic per espandere **adatum.com**, selezionare solo la casella di controllo accanto all'unità **organizzativa ToSync** e quindi fare clic su **Avanti**.
 
 17. Nella pagina **Identificazione univoca per gli utenti** accettare le impostazioni predefinite e fare clic su **Avanti**.
 
@@ -317,11 +317,11 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
 
    >**Nota**: potrebbe essere necessario attendere alcuni minuti e selezionare **Aggiorna** per visualizzare l'account utente **aduser1**.
 
-3. Fare clic sull'account **aduser1** e selezionare la scheda **Proprietà** . Scorrere verso il basso fino alla sezione **Locale** , si noti che l'attributo **abilitato per la sincronizzazione locale** è impostato su **Sì**.
+3. Fare clic sull'account **aduser1** e selezionare la **scheda Proprietà** . Scorrere verso il basso fino alla **sezione Locale** , notare che l'attributo abilitato per la **sincronizzazione** locale è impostato su **Sì**.
 
-4. Nel pannello **aduser1** , nella sezione **Informazioni processo** , si noti che l'attributo **Department** non è impostato.
+4. **Nel pannello aduser1**, nella **sezione Informazioni** processo, si noti che l'attributo **Department** non è impostato.
 
-5. All'interno della sessione desktop remoto **adVM** passare al Centro di amministrazione di **Active Directory**, selezionare la voce **aduser1** nell'elenco di oggetti nell'unità organizzativa **ToSync** e, nel riquadro **Attività** , nella sezione **aduser1** selezionare **Proprietà**.
+5. All'interno della sessione di Desktop remoto in **adVM** passare ad **Active Directory Amministrazione istrative Center**, selezionare la **voce aduser1** nell'elenco di oggetti nell'unità **organizzativa ToSync** e, nel **riquadro Attività**, nella **sezione aduser1** selezionare **Proprietà**.
 
 6. Nella sezione **Organizzazione** della finestra **aduser1** digitare **Sales** nella casella di testo **Reparto** e fare clic su **OK**.
 
@@ -335,9 +335,9 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
     Start-ADSyncSyncCycle -PolicyType Delta
     ```
 
-9. Passare alla finestra di Microsoft Edge che visualizza il pannello **aduser1** , aggiornare la pagina e notare che la proprietà Department è impostata su Sales.
+9. Passare alla finestra di Microsoft Edge che visualizza il **pannello aduser1** , aggiornare la pagina e notare che la proprietà Department è impostata su Sales.
 
-    >**Nota**: potrebbe essere necessario attendere fino a tre minuti e aggiornare di nuovo la pagina se l'attributo **Department** rimane non impostato.
+    >**Nota**: potrebbe essere necessario attendere fino a tre minuti e aggiornare di nuovo la pagina se l'attributo **Department** non è impostato.
 
 > **Risultato**: completando questo esercizio, è stato preparato AD DS per la sincronizzazione della directory, è stato installato Azure AD Connect ed è stata verificata la sincronizzazione della directory.
 
@@ -401,7 +401,7 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
 
 14. Ripetere la stessa sequenza di passaggi per eliminare l'account utente **aduser1** e l'**account del servizio di sincronizzazione directory locale**.
 
-15. Passare al pannello **AdatumSync - Panoramica** del tenant di Azure AD, fare clic su **Manage tenants** (Gestisci tenant) e selezionare la casella di controllo della directory **AdatumSync**, fare clic su **Elimina** nel pannello **Elimina tenant "AdatumSync"** , fare clic sul collegamento **Ottieni l'autorizzazione per eliminare le risorse di Azure**, nel pannello **Proprietà** di Azure Active Directory impostare **Gestione degli accessi per le risorse di Azure** su **Sì** e fare clic su **Salva**.
+15. Passare al pannello **AdatumSync - Panoramica** del tenant di Azure AD, fare clic su **Manage tenants** (Gestisci tenant) e selezionare la casella di controllo della directory **AdatumSync**, fare clic su **Elimina** nel pannello **Elimina tenant "AdatumSync"**, fare clic sul collegamento **Ottieni l'autorizzazione per eliminare le risorse di Azure**, nel pannello **Proprietà** di Azure Active Directory impostare **Gestione degli accessi per le risorse di Azure** su **Sì** e fare clic su **Salva**.
 
     >**Nota**: se durante l'eliminazione viene visualizzato un avviso simile a **Elimina tutti gli utenti**, procedere con l'eliminazione degli utenti creati oppure se l'avviso indica **Elimina applicazione LinkedIn**, fare clic sul messaggio e confermare l'eliminazione dell'applicazione LinkedIn. Per completare l'eliminazione del tenant è necessario rispondere a tutti gli avvisi.
 

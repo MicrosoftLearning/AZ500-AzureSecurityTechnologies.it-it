@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 13 - Monitoraggio di Azure
+  title: 14 - Monitoraggio di Azure
   module: Module 04 - Manage security operations
 ---
 
-# Lab 13: Monitoraggio di Azure
+# Lab 14: Monitoraggio di Azure
 
 # Manuale del lab per gli studenti
 
@@ -154,8 +154,7 @@ In questa attività si creerà una regola di raccolta dati.
 
 2. Nel pannello **Monitoraggio Impostazioni** fare clic su **Regole di raccolta dati.**
 
-  ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d43e8f94-efb2-4255-9320-210c976fd45e)
-
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/2184da69-12c2-476b-b2b2-b80620e822a6)
 
 3. Nella **scheda Informazioni di base** del pannello **Crea regola** di raccolta dati specificare le impostazioni seguenti:
   

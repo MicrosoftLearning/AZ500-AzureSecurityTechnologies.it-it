@@ -4,7 +4,7 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# Lab 04: autenticazione a più fattori e accesso condizionale
+# Lab 05: autenticazione a più fattori e accesso condizionale
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio

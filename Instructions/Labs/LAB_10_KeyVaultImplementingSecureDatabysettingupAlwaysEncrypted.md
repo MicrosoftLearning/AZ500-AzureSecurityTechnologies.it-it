@@ -7,16 +7,16 @@ lab:
 # Lab 10 - Key Vault (implementazione di dati protetti con la configurazione di Always Encrypted)
 # Manuale del lab per gli studenti
 
-## Scenario del lab
+## Scenario laboratorio
 
-È stato chiesto di creare un'applicazione modello di verifica che usi il supporto di Database SQL di Azure per la funzionalità Always Encrypted. Tutti i segreti e le chiavi usati in questo scenario devono essere archiviati in Key Vault. L'applicazione deve essere registrata in Azure Active Directory (Azure AD) per migliorarne la postura di sicurezza. Per raggiungere questi obiettivi, il modello di verifica deve includere queste attività:
+Viene chiesto di creare un'applicazione modello di verifica che usi il supporto di Database SQL di Azure per la funzionalità Always Encrypted. Tutti i segreti e le chiavi usati in questo scenario devono essere archiviati in Key Vault. L'applicazione deve essere registrata in Azure Active Directory (Azure AD) per migliorarne la postura di sicurezza. Per raggiungere questi obiettivi, il modello di verifica deve includere queste attività:
 
 - Creare un'istanza di Azure Key Vault e archiviare chiavi e segreti nell'insieme di credenziali.
 - Creare un database SQL e crittografare il contenuto delle colonne nelle tabelle di database usando Always Encrypted.
 
 >**Nota**: per tutte le risorse di questo lab viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-Per concentrarsi sugli aspetti di sicurezza di Azure, correlati alla compilazione di questo modello di verifica, si inizierà da una distribuzione automatizzata del modello di Resource Manager, configurando una macchina virtuale con Visual Studio 2019 e SQL Server Management Studio 19.
+Per mantenere l'attenzione sugli aspetti di sicurezza di Azure, correlati alla creazione di questo modello di verifica, si inizierà da una distribuzione automatizzata dei modelli di Resource Manager, configurando una macchina virtuale con Visual Studio 2019 e SQL Server Management Studio 19.
 
 ## Obiettivi del lab
 
@@ -43,7 +43,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 ### Esercizio 1: Distribuire l'infrastruttura di base da un modello di ARM
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Distribuire una macchina virtuale di Azure e un database SQL Azure
 
@@ -51,7 +51,7 @@ In questo esercizio verranno eseguite le attività seguenti:
 
 In questa attività si distribuirà una macchina virtuale di Azure che installerà automaticamente Visual Studio 2019 e SQL Server Management Studio 19 come parte della distribuzione. 
 
-1. Accedere al portale di Azure **`https://portal.azure.com/`** .
+1. Accedere al portale di Azure **`https://portal.azure.com/`**.
 
     >**Nota**: accedere al portale di Azure con un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per il lab.
 
@@ -68,14 +68,14 @@ In questa attività si distribuirà una macchina virtuale di Azure che installer
    |Impostazione|Valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
-   |Resource group|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB10**|
-   |Location|**Stati Uniti orientali**|
+   |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB10**|
+   |Titolo|**Stati Uniti orientali**|
    |Nome utente amministratore|**Studente**|
    |Password amministratore|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    
     >**Nota**: anche se è possibile cambiare le credenziali amministrative usate per accedere alla macchina virtuale, non è necessario farlo.
 
-    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
 7. Fare clic sul pulsante **Rivedi e crea** e confermare la distribuzione facendo clic sul pulsante **Crea**. 
 
@@ -87,7 +87,7 @@ In questa attività si distribuirà una macchina virtuale di Azure che installer
 
 >**Nota**: per tutte le risorse di questo lab viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Creare e configurare un'istanza di Key Vault
 - Attività 2: Aggiungere una chiave all'istanza di Key Vault
@@ -128,7 +128,7 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
     |Impostazione|Valore|
     |----|----|
     |Configura dal modello (facoltativo)|**Gestione di chiavi, segreti e certificati**|
-    |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto con un** totale di **9 autorizzazioni selezionate**|
+    |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto** con un totale di **9 autorizzazioni selezionate**|
     |Autorizzazioni chiave/Operazioni crittografiche|Fare clic su **Accedi** con un totale di **1 autorizzazioni selezionate**|
     |Autorizzazioni dei segreti|Fare clic su **Seleziona tutto** per selezionare **7 autorizzazioni** in totale|
     |Autorizzazioni per i certificati|Fare clic su **Seleziona tutto** per selezionare **15 autorizzazioni** in totale|
@@ -216,7 +216,7 @@ In questa attività si aggiungerà una chiave all'istanza di Key Vault e si visu
 
 ### Esercizio 3: Configurare un database SQL Azure e un'applicazione basata sui dati
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Consentire a un'applicazione client di accedere al servizio Database SQL di Azure.
 - Attività 2: Creare un criterio che consenta all'applicazione di accedere a Key Vault.
@@ -235,7 +235,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
 3. Nel pannello **Registra un'applicazione** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |----|----|
     |Nome|**sqlApp**|
     |URI di reindirizzamento (facoltativo)|**Web** e **https://sqlapp**|
@@ -244,7 +244,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
     >**Nota**: al termine della registrazione, si verrà reindirizzati automaticamente al pannello **sqlApp**. 
 
-5. Nel pannello **sqlApp** identificare il valore di **ID applicazione (client)** . 
+5. Nel pannello **sqlApp** identificare il valore di **ID applicazione (client)**. 
 
     >**Nota**: prendere nota di questo valore. Sarà necessario nell'attività successiva.
 
@@ -254,10 +254,10 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
 8. Nel riquadro **Aggiungi un segreto client** specificare le impostazioni seguenti:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |----|----|
-    |Descrizione|**Chiave1**|
-    |Scadenza|**12 mesi**|
+    |Descrizione|**Key1**|
+    |Scade il|**12 mesi**|
     
 9. Fare clic su **Aggiungi** per aggiornare le credenziali dell'applicazione.
 
@@ -276,7 +276,7 @@ In questa attività si concederanno all'app appena registrata le autorizzazioni 
 
 2. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **PowerShell**.
 
-3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per creare una variabile in cui archiviare il valore di **ID applicazione (client)** registrato nell'attività precedente. Sostituire il segnaposto `<Azure_AD_Application_ID>` con il valore di **ID applicazione (client)** :
+3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per creare una variabile in cui archiviare il valore di **ID applicazione (client)** registrato nell'attività precedente. Sostituire il segnaposto `<Azure_AD_Application_ID>` con il valore di **ID applicazione (client)**:
    
     ```powershell
     $applicationId = '<Azure_AD_Application_ID>'
@@ -303,7 +303,7 @@ Con la distribuzione del modello di ARM nell'Esercizio 1 è stato effettuato il 
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Database SQL** e premere **INVIO**.
 
-2. Nell'elenco di database SQL fare clic sulla voce **medical(<randomsqlservername>)** .
+2. Nell'elenco di database SQL fare clic sulla voce **medical(<randomsqlservername>)**.
 
     >**Nota**: se non è possibile trovare il database, è probabile che la distribuzione avviata nell'Esercizio 1 non sia stata ancora completata. Per verificarlo, passare al gruppo di risorse di Azure "AZ500LAB10" (o il nome scelto) e selezionare **Distribuzioni** nel riquadro Impostazioni.  
 
@@ -311,9 +311,9 @@ Con la distribuzione del modello di ARM nell'Esercizio 1 è stato effettuato il 
 
     >**Nota**: l'interfaccia include le stringhe di connessione per ADO.NET, JDBC, ODBC, PHP e Go. 
    
-4. Registrare la **ADO.NET (autenticazione SQL) stringa di connessione**. Sarà necessario più avanti.
+4. Registrare il **stringa di connessione di ADO.NET (autenticazione SQL).** Sarà necessario più avanti.
 
-    >**Nota**: quando si usa la stringa di connessione, assicurarsi di sostituire il `{your_password}` segnaposto con la password configurata con la distribuzione in Esercizio 1.
+    >**Nota**: quando si usa il stringa di connessione, assicurarsi di sostituire il `{your_password}` segnaposto con la password configurata con la distribuzione nell'esercizio 1.
 
 #### Attività 4: Accedere alla macchina virtuale di Azure che esegue Visual Studio 2019 e SQL Management Studio 19
 
@@ -333,11 +333,11 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
     >**Nota**: prendere nota del nome del server. Sarà necessario più avanti in questa attività.
 
-2. Nel pannello **Impostazioni firewall** scorrere verso il basso fino a Nome regola, fare clic su **+ Aggiungi una regola del firewall** e specificare le impostazioni seguenti: 
+2. Nel pannello Impostazioni** firewall scorrere verso il **basso fino a Nome regola, fare clic su **+ Aggiungi una regola** del firewall e specificare le impostazioni seguenti: 
 
     |Impostazione|Valore|
     |---|---|
-    |Nome regola|**Allow Mgmt VM**|
+    |Nome della regola|**Allow Mgmt VM**|
     |Indirizzo IP iniziale|L'indirizzo IP pubblico della macchina virtuale az500-10-vm1|
     |Indirizzo IP finale|L'indirizzo IP pubblico della macchina virtuale az500-10-vm1|
 
@@ -358,16 +358,16 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
     >**Nota**: i passaggi rimanenti in questo lab vengono eseguiti all'interno della sessione Desktop remoto nella macchina virtuale di Azure **az500-10-vm1**. 
 
-6. Fare clic su **Start**, nel menu **Start** espandere la cartella **Microsoft SQL Server Tools 19** e fare clic sulla voce di menu **Micosoft SQL Server Management Studio**.
+6. Fare clic su **Start, nel **menu Start**** espandere la **cartella Microsoft SQL Server Tools 19** e fare clic sulla **voce di menu Micosoft SQL Server Management Studio**.
 
 7. Nella finestra di dialogo **Connetti al server** specificare le impostazioni seguenti: 
 
     |Impostazione|Valore|
     |---|---|
-    |Tipo di Server|**Motore di database**|
+    |Tipo di server|**Motore di database**|
     |Nome server|Il nome del server identificato in precedenza in questa attività|
-    |Autenticazione|**Autenticazione di SQL Server**|
-    |Accedi|**Studente**|
+    |Authentication|**Autenticazione di SQL Server**|
+    |Account di accesso|**Studente**|
     |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
 8. Nella finestra di dialogo **Connetti al server** fare clic su **Connetti**.
@@ -400,7 +400,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
 14. Nella pagina **Selezione colonna** selezionare le colonne **SSN** e **Birthdate**, impostare il valore di **Tipo di crittografia** della colonna **SSN** su **Deterministico** e quello della colonna **Birthdate** su **Casuale**, quindi fare clic su **Avanti**.
 
-    >**Nota**: se durante l'esecuzione della crittografia viene generato un errore come **È stata generata un'eccezione dalla destinazione di una chiamata** correlato a **Rotary(Microsoft.SQLServer.Management.ServiceManagement)** , assicurarsi che i valori di **Autorizzazioni delle chiavi** per **Operazioni criteri di rotazione** siano **deselezionati**. In caso contrario, nel portale di Azure passare a **Key Vault** >> **Criteri di accesso** >> **Autorizzazioni delle chiavi** >> deselezionare tutti i valori in **Operazioni criteri di rotazione** >> in **Operazioni relative alle chiavi con privilegi** >> deselezionare **Release**.
+    >**Nota**: durante l'esecuzione della crittografia se viene generato un errore simile **a Exception è stato generato dalla destinazione di una chiamata** correlata a **Rotary(Microsoft.SQLServer.Management.ServiceManagement),** assicurarsi che i **valori delle** operazioni** dei criteri di rotazione dell'autorizzazione **della chiave siano **deselezionati**, se non nel portale di Azure passare ai criteri >> **** di accesso dell'insieme**** >> ** di credenziali delle chiaviAutorizzazioni** chiave >> Deselezionare tutti i valori in **Operazioni** criteri di rotazione >> In **Operazioni** chiave con privilegi >> Deselezionare **Rilascio**.
 
 15. Nella pagina **Configurazione della chiave master** selezionare **Azure Key Vault**, fare clic su **Accedi**, quando richiesto eseguire l'autenticazione usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza di Azure Key Vault in questo lab, assicurarsi che l'opzione Key Vault venga visualizzata nell'elenco a discesa **Selezionare un insieme di credenziali delle chiavi di Azure**, quindi fare clic su **Avanti**.
 
@@ -417,7 +417,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
 ### Esercizio 4: Illustrare l'uso di Azure Key Vault crittografando il database SQL di Azure
 
-In questo esercizio verranno eseguite le attività seguenti:
+In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Eseguire un'applicazione basata sui dati per illustrare l'uso di Azure Key Vault per la crittografia del database SQL di Azure
 
@@ -431,13 +431,13 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
 
 3. Nella pagina **Attività iniziali** fare clic su **Crea un nuovo progetto**. 
 
-4. Nell'elenco dei modelli di progetto cercare **App console (.NET Framework)** , fare clic su **App console (.NET Framework)** per **C#** nell'elenco dei risultati, quindi fare clic su **Avanti**.
+4. Nell'elenco dei modelli di progetto cercare **App console (.NET Framework)**, fare clic su **App console (.NET Framework)** per **C#** nell'elenco dei risultati, quindi fare clic su **Avanti**.
 
 5. Nella pagina **Configura il nuovo progetto** specificare le impostazioni seguenti, lasciando i valori predefiniti per le altre, e fare clic su **Crea**:
 
     |Impostazione|Valore|
     |---|---|
-    |Project name (Nome progetto)|**OpsEncrypt**|
+    |Nome progetto|**OpsEncrypt**|
     |Nome soluzione|**OpsEncrypt**|
     |Framework|**.NET Framework 4.7.2**|
 
@@ -495,7 +495,7 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
 
 1. Nel portale di Azure aprire Cloud Shell facendo clic sulla prima icona nell'angolo in alto a destra. 
 
-2. Nel menu a discesa in alto a sinistra del riquadro Cloud Shell, se necessario, selezionare **PowerShell** e, quando richiesto, fare clic su **Conferma**.
+2. Nel menu a discesa in alto a sinistra del riquadro Cloud Shell, se necessario selezionare **PowerShell** e, quando richiesto, fare clic su **Conferma**.
 
 3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per rimuovere il gruppo di risorse creato in questo lab:
   
