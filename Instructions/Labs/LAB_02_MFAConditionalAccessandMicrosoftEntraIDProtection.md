@@ -514,7 +514,7 @@ In questa attività si creerà un criterio di rischio utente.
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**Studente**|
-    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**.  
 
