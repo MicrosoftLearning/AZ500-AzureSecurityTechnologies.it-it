@@ -1,19 +1,19 @@
 ---
 lab:
-  title: 06 - Implementare la sincronizzazione della directory
+  title: 04 - Implementare la sincronizzazione della directory
   module: Module 01 - Manage Identity and Access
 ---
 
-# Lab 06: Implementare la sincronizzazione della directory
+# Lab 04: Implementare la sincronizzazione della directory
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
 
-È stato chiesto di creare un modello di verifica che illustri come integrare un ambiente di Active Directory Domain Services (AD DS) locale con un tenant di Azure Active Directory (Azure AD). In particolare, sarà necessario:
+È stato chiesto di creare un modello di verifica che illustra come integrare l'ambiente di Servizi di dominio Microsoft Entra locale con un tenant di Microsoft Entra. In particolare, sarà necessario:
 
-- Implementare una foresta di AD DS a singolo dominio distribuendo una VM di Azure che ospita un controller di dominio di AD DS
-- Creare e configurare il tenant di Azure AD
-- Sincronizzare la foresta di AD DS con il tenant di Azure AD
+- Implementare una foresta di Servizi di dominio Microsoft Entra a dominio singolo distribuendo una macchina virtuale di Azure che ospita un controller di dominio di Microsoft Entra Domain Services
+- Creare e configurare un tenant di Microsoft Entra
+- Sincronizzare la foresta di Microsoft Entra Domain Services con il tenant di Microsoft Entra
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
@@ -21,24 +21,24 @@ lab:
 
 In questo lab verranno completati gli esercizi seguenti:
 
-- Esercizio 1: Distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
-- Esercizio 2: Creare e configurare un tenant di Azure Active Directory
-- Esercizio 3: Sincronizzare la foresta di Active Directory con un tenant di Azure Active Directory
+- Esercizio 1: Distribuire una macchina virtuale di Azure che ospita un controller di dominio Microsoft Entra ID
+- Esercizio 2: Creare e configurare un tenant di Microsoft Entra
+- Esercizio 3: Sincronizzare la foresta MICROSOFT Entra ID con un tenant di Microsoft Entra
 
 ## Implementare la sincronizzazione della directory
 
-![image](https://user-images.githubusercontent.com/91347931/157525374-8f740f14-c2db-47b3-98f8-7feb9bc122b5.png)
+![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/5d9cc4c7-7dcd-4d88-920d-9c97d5a482a2)
 
 ## Istruzioni
 
-### Esercizio 1: Distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
+### Esercizio 1: Distribuire una macchina virtuale di Azure che ospita un controller di dominio Microsoft Entra ID
 
 ### Tempo stimato: 10 minuti
 
 In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Identificare un nome DNS disponibile per la distribuzione di una macchina virtuale di Azure
-- Attività 2: Usare un modello di ARM per distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
+- Attività 2: Usare un modello di Resource Manager per distribuire una macchina virtuale di Azure che ospita un controller di dominio Microsoft Entra ID
 
 #### Attività 1: Identificare un nome DNS disponibile per la distribuzione di una macchina virtuale di Azure
 
@@ -68,9 +68,9 @@ In questa attività si identificherà un nome DNS per la distribuzione della mac
 
 7. Chiudere Cloud Shell.
 
-#### Attività 2: Usare un modello di ARM per distribuire una macchina virtuale di Azure che ospita un controller di dominio di Active Directory
+#### Attività 2: Usare un modello di Resource Manager per distribuire una macchina virtuale di Azure che ospita un controller di dominio Microsoft Entra ID
 
-In questa attività si distribuirà una macchina virtuale di Azure che ospiterà un controller di dominio di Active Directory
+In questa attività si distribuirà una macchina virtuale di Azure che ospiterà un controller di dominio microsoft Entra ID
 
 1. Aprire un'altra scheda del browser nella stessa finestra e passare a **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain**.
 
@@ -84,11 +84,11 @@ In questa attività si distribuirà una macchina virtuale di Azure che ospiterà
 
    |Impostazione|Valore|
    |---|---|
-   |Subscription|Nome della propria sottoscrizione di Azure|
+   |Abbonamento|Nome della propria sottoscrizione di Azure|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB06**|
-   |Area|L'area di Azure identificata nell'attività precedente|
+   |Region|L'area di Azure identificata nell'attività precedente|
    |Nome utente amministratore|**Studente**|
-   |Password amministratore|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+   |Password amministratore|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    |Nome dominio|**adatum.com**|
    |Prefisso DNS|Il nome host DNS identificato nell'attività precedente|
    |Dimensioni macchina virtuale|**Standard_D2s_v3**|
@@ -97,28 +97,28 @@ In questa attività si distribuirà una macchina virtuale di Azure che ospiterà
 
     >**Nota**: non attendere il completamento della distribuzione, ma procedere con l'esercizio successivo. La distribuzione può richiedere 15 minuti circa. La macchina virtuale distribuita in questa attività verrà usata nel terzo esercizio di questo lab.
 
-> Risultato: completando questo esercizio, è stata avviata la distribuzione di una macchina virtuale di Azure che ospiterà un controller di dominio di Active Directory usando un modello di Azure Resource Manager
+> Risultato: dopo aver completato questo esercizio, è stata avviata la distribuzione di una macchina virtuale di Azure che ospiterà un controller di dominio microsoft Entra ID usando un modello di Azure Resource Manager
 
 
-### Esercizio 2: Creare e configurare un tenant di Azure Active Directory 
+### Esercizio 2: Creare e configurare un tenant di Microsoft Entra 
 
 ### Tempo stimato: 20 minuti
 
 In questo esercizio si completeranno le seguenti attività:
 
-- Attività 1: Creare un tenant di Azure Active Directory (AD)
-- Attività 2: Aggiungere un nome DNS personalizzato al nuovo tenant di Azure AD
-- Attività 3: Creare un utente di Azure AD con il ruolo di amministratore globale
+- Attività 1: Creare un tenant di Microsoft Entra
+- Attività 2: Aggiungere un nome DNS personalizzato al nuovo tenant di Microsoft Entra
+- Attività 3: Creare un utente di Microsoft Entra ID con il ruolo Global Amministrazione istrator
 
-#### Attività 1: Creare un tenant di Azure Active Directory (AD)
+#### Attività 1: Creare un tenant di Microsoft Entra
 
-In questa attività si creerà un nuovo tenant di Azure AD da usare in questo lab. 
+In questa attività verrà creato un nuovo tenant di Microsoft Entra da usare in questo lab. 
 
-1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Azure Active Directory** e premere **INVIO**.
+1. Nella casella di testo Cerca risorse, servizi e documenti della portale di Azure **nella parte superiore della pagina portale di Azure digitare **Microsoft Entra ID** e premere **INVIO**.**
 
-2. Nel pannello **Panoramica** del tenant di Azure AD corrente fare clic su **Manage tenants** (Gestisci tenant) e quindi nella schermata successiva fare clic su **+ Crea**.
+2. Nel pannello che visualizza Panoramica** del tenant Microsoft Entra corrente, fare clic su **Gestisci tenant** e quindi nella schermata successiva fare clic su **+ Crea**.**
 
-3. Nella scheda **Informazioni di base** del pannello **Crea un tenant** assicurarsi che sia selezionata l'opzione **Azure Active Directory** e fare clic su **Avanti: Configurazione >**.
+3. **Nella scheda Informazioni di base** del **pannello Crea un tenant** verificare che l'opzione **Microsoft Entra ID** sia selezionata e fare clic su **Avanti: Configurazione >**.
 
 4. Nella scheda **Configurazione** del pannello **Crea una directory** specificare le impostazioni seguenti:
 
@@ -146,21 +146,21 @@ In questa attività si aggiungerà il nome DNS personalizzato al nuovo tenant di
 
     >**Nota**: se la voce **AdatumSync** non viene visualizzata nell'elenco di filtro **Directory e sottoscrizione**, può essere necessario aggiornare la finestra del browser.
 
-3. Nel pannello **AdatumSync \| Azure Active Directory** fare clic su **Nomi di dominio personalizzati** nella sezione **Gestisci**.
+3. Nella sezione Gestione del **pannello **AdatumSync \| Microsoft Entra ID** fare clic su **Nomi** di dominio** personalizzati.
 
 4. Nel pannello **AdatumSync \| Nomi di dominio personalizzati** fare clic su **+ Aggiungi dominio personalizzato**.
 
 5. Nella casella di testo **Nome di dominio personalizzato** del pannello **Nome dominio personalizzato** digitare **adatum.com** e fare clic su **Aggiungi dominio**.
 
-6. Nel pannello **adatum.com** esaminare le informazioni necessarie per eseguire la verifica del nome di dominio di Azure AD e quindi selezionare **Elimina** due volte. 
+6. Nel pannello **adatum.com** esaminare le informazioni necessarie per eseguire la verifica del nome di dominio Microsoft Entra e quindi selezionare **Elimina** due volte. 
 
-    >**Nota**: non sarà possibile completare il processo di convalida perché non si è proprietari del nome di dominio DNS **adatum.com**. Questo non impedisce di sincronizzare il dominio di AD DS **adatum.com** con il tenant di Azure AD. A questo scopo si userà il nome DNS iniziale del tenant di Azure AD (il nome che termina con il suffisso **onmicrosoft.com**), identificato nell'attività precedente. Tenere tuttavia presente che, di conseguenza, il nome di dominio DNS del dominio di AD DS sarà diverso dal nome DNS del tenant di Azure AD. Gli utenti di Adatum dovranno quindi usare nomi diversi per accedere al dominio di AD DS e al tenant di Azure AD.
+    >**Nota**: non sarà possibile completare il processo di convalida perché non si è proprietari del nome di dominio DNS **adatum.com**. Ciò non impedisce di sincronizzare il **dominio di Microsoft Entra Domain Services adatum.com** con il tenant di Microsoft Entra. A questo scopo verrà usato il nome DNS iniziale del tenant di Microsoft Entra (il nome che termina con il **suffisso onmicrosoft.com** ), identificato nell'attività precedente. Tenere tuttavia presente che, di conseguenza, il nome di dominio DNS del dominio Microsoft Entra Domain Services e il nome DNS del tenant di Microsoft Entra saranno diversi. Ciò significa che gli utenti di Adatum dovranno usare nomi diversi quando si accede al dominio di Microsoft Entra Domain Services e quando si accede al tenant di Microsoft Entra.
 
-#### Attività 3: Creare un utente di Azure AD con il ruolo di amministratore globale
+#### Attività 3: Creare un utente di Microsoft Entra ID con il ruolo Global Amministrazione istrator
 
-In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegnato al ruolo di amministratore globale. 
+In questa attività si aggiungerà un nuovo utente microsoft Entra ID e li si assegnerà al ruolo Global Amministrazione istrator. 
 
-1. Nel pannello del tenant di Azure AD **AdatumSync** fare clic su **Utenti** nella sezione **Gestisci**.
+1. **Nel pannello Tenant di AdatumSync** Microsoft Entra fare clic su **Utenti** nella **sezione Gestione**.
 
 2. **In Utenti | Pannello Tutti gli utenti**, fare clic su **+ Nuovo utente** e quindi su **Crea nuovo utente**.
 
@@ -169,7 +169,7 @@ In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegn
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**syncadmin**|
-   |Nome|**syncadmin**|
+   |Name|**syncadmin**|
    |Password|Assicurarsi che sia selezionata l'opzione **Password generata automaticamente** e fare clic su **Mostra password**|
 
     >**Nota**: registrare il nome utente completo. È possibile copiarne il valore facendo clic sul **pulsante Copia negli Appunti** sul lato destro dell'elenco a discesa che visualizza il nome di dominio e incollandolo in un documento del Blocco note. Sarà necessaria più avanti in questo lab.
@@ -180,36 +180,36 @@ In questa attività si aggiungerà un nuovo utente di Azure AD che verrà assegn
 
 5. Nella **scheda Assegnazioni** fare clic su **+ Aggiungi ruolo**, cercare e selezionare **Global Amministrazione istrator** e quindi fare clic su **Seleziona**. Fare clic su **Rivedi e crea** e quindi su **Crea**.
    
-    >**Nota**: per implementare Azure AD Connect, è necessario un utente con il ruolo di amministratore globale.
+    >**Nota**: è necessario un utente di Azure AD con il ruolo Global Amministrazione istrator per implementare Microsoft Entra Connessione.
 
 6. Aprire una finestra del browser InPrivate.
 
 7. Passare al portale di Azure all'indirizzo **`https://portal.azure.com/`** e accedere usando l'account **utente syncadmin**. Quando richiesto, modificare la password registrata in precedenza in questa attività con la propria password che soddisfi i requisiti di complessità e registrarla per riferimento futuro. Questa password verrà richiesta nelle attività successive.
 
-    >**Nota**: per accedere è necessario specificare un nome completo dell'account utente **syncadmin**, incluso il nome di dominio DNS del tenant di Azure AD registrato in precedenza in questa attività. Questo nome utente è nel formato syncadmin@`<your_tenant_name>`.onmicrosoft.com, dove `<your_tenant_name>` è il segnaposto che rappresenta il nome univoco del tenant di Azure AD. 
+    >**Nota**: per accedere è necessario specificare un nome completo dell'account **utente syncadmin** , incluso il nome di dominio DNS del tenant di Microsoft Entra registrato in precedenza in questa attività. Questo nome utente è nel formato syncadmin@`<your_tenant_name>`.onmicrosoft.com, dove `<your_tenant_name>` è il segnaposto che rappresenta il nome univoco del tenant di Microsoft Entra. 
 
 8. Disconnettersi come **syncadmin** e chiudere la finestra del browser InPrivate.
 
-> **Risultato**: con questo esercizio è stato creato un tenant di Azure AD, è stato visto come aggiungere un nome DNS personalizzato al nuovo tenant di Azure AD ed è stato creato un utente di Azure AD con il ruolo di amministratore globale.
+> **Risultato**: dopo aver completato questo esercizio, è stato creato un tenant AMicrosoft Entra, si è visto come aggiungere un nome DNS personalizzato al nuovo tenant di Microsoft Entra e creare un utente di Azure AD con il ruolo Global Amministrazione istrator.
 
 
-### Esercizio 3: Sincronizzare la foresta di Active Directory con un tenant di Azure Active Directory
+### Esercizio 3: Sincronizzare la foresta MICROSOFT Entra ID con un tenant di Microsoft Entra
 
 ### Tempo stimato: 20 minuti
 
 In questo esercizio si completeranno le seguenti attività:
 
-- Attività 1: Preparare AD DS per la sincronizzazione della directory
-- Attività 2: Installare Azure AD Connect
+- Attività 1: Preparare Microsoft Entra Domain Services per la sincronizzazione della directory
+- Attività 2: Installare Microsoft Entra Connessione
 - Attività 3: Verificare la sincronizzazione della directory
 
-#### Attività 1: Preparare AD DS per la sincronizzazione della directory
+#### Attività 1: Preparare Microsoft Entra Domain Services per la sincronizzazione della directory
 
-In questa attività ci si connetterà alla macchina virtuale di Azure che esegue il controller di dominio di AD DS e si creerà un account di sincronizzazione della directory. 
+In questa attività si connetterà alla macchina virtuale di Azure che esegue il controller di dominio Microsoft Entra Domain Services e si creerà un account di sincronizzazione della directory. 
 
    > Prima di iniziare questa attività, assicurarsi che la distribuzione del modello avviata nel primo esercizio di questo lab sia stata completata.
 
-1. Nel portale di Azure impostare il filtro **Directory e sottoscrizione** sul tenant di Azure AD associato alla sottoscrizione di Azure in cui è stata distribuita la macchina virtuale di Azure nel primo esercizio di questo lab.
+1. Nella portale di Azure impostare il **filtro Directory + sottoscrizione** sul tenant di Microsoft Entra associato alla sottoscrizione di Azure in cui è stata distribuita la macchina virtuale di Azure nel primo esercizio di questo lab.
 
 2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Macchine virtuali** e premere **INVIO**.
 
@@ -222,7 +222,7 @@ In questa attività ci si connetterà alla macchina virtuale di Azure che esegue
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**Studente**|
-   |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+   |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**.  
 
@@ -230,67 +230,67 @@ In questa attività ci si connetterà alla macchina virtuale di Azure che esegue
 
     >**Nota**: se l'indirizzo** IP pubblico del **servizio di bilanciamento del carico non è disponibile nell'elenco **a discesa Indirizzo** IP del pannello RDP, nel portale di Azure cercare **Indirizzi** IP pubblici selezionare **adPublicIP** e prendere nota del relativo indirizzo IP. Fare clic sul pulsante Start, digitare **MSTSC** e premere **INVIO** per avviare il client desktop remoto. Digitare l'indirizzo IP pubblico del servizio di bilanciamento del carico nella **casella di testo Computer:** e fare clic su **Connessione**.
 
-6. In **Server Manager** fare clic su **Strumenti** e quindi su **Centro di amministrazione di Active Directory**.
+6. In **Server Manager** fare clic su Strumenti** e, nel menu a discesa, fare clic **su **MICROSOFT Entra ID Amministrazione istrative Center**.
 
-7. In **Centro di amministrazione di Active Directory** fare clic su **adatum (locale)**, nel riquadro **Attività** sotto il nome di dominio **adatum (locale)** fare clic su **Nuovo** e quindi nel menu a cascata fare clic su **Unità organizzativa**.
+7. Nell'interfaccia **** di amministrazione di Microsoft Entra fare clic su adatum (locale)** nel **riquadro Attività**, sotto il nome **di dominio adatum (locale)** fare clic **su **Nuovo** e, nel menu a cascata, fare clic su **Unità** organizzativa.
 
 8. Nella casella di testo **Nome** della finestra **Crea unità organizzativa** digitare **ToSync** e fare clic su **OK**.
 
-9. Fare doppio clic sull'unità organizzativa ToSync** appena creata **in modo che il relativo contenuto venga visualizzato nel riquadro dei dettagli della console di Active Directory Amministrazione istrative Center. 
+9. Fare doppio clic sull'unità organizzativa ToSync** appena creata **in modo che il relativo contenuto venga visualizzato nel riquadro dei dettagli della console microsoft Entra ID Amministrazione istrative Center. 
 
 10. Nella sezione **ToSync** del riquadro **Attività** fare clic su **Nuovo** e scegliere **Utente** dal menu a cascata.
 
 11. Nella finestra **Crea utente** creare un nuovo account utente con le impostazioni seguenti, lasciando i valori predefiniti per le altre, e fare clic su **OK**:
     
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Nome completo|**aduser1**|
     |Accesso UPN utente|**aduser1**|
     |Accesso utente SamAccountName|**aduser1**|
-    |Password e Conferma password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password e Conferma password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
     |Altre opzioni password|**Nessuna scadenza password**|
 
 
-#### Attività 2: Installare Azure AD Connect
+#### Attività 2: Installare Microsoft Entra Connessione
 
-In questa attività si installerà AD Connect nella macchina virtuale. 
+In questa attività si installerà Microsoft Entra Connessione nella macchina virtuale. 
 
 1. Nella sessione Desktop remoto per **adVM** usare Microsoft Edge per passare al portale di Azure all'indirizzo **https://portal.azure.com** e accedere usando l'account utente **syncadmin** creato nell'esercizio precedente. Quando richiesto, specificare il nome completo dell'entità utente e la password registrati nell'esercizio precedente.
 
-2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Azure Active Directory** e premere **INVIO**.
+2. Nella casella di testo Cerca risorse, servizi e documenti della portale di Azure **nella parte superiore della pagina portale di Azure digitare **Microsoft Entra ID** e premere **INVIO**.**
 
-3. Nel pannello Panoramica di AdatumSync del portale di Azure **fare clic su **Azure AD Connessione** nel pannello di spostamento a sinistra in **Gestisci**.\|**
+3. Nel pannello Panoramica di AdatumSync del portale di Azure **fare clic su **Microsoft Entra Connessione** nel pannello di spostamento a sinistra in **Gestisci**.\|**
 
-4. **Nel pannello Attività iniziali** di AAD Connessione \| fare clic su **Connessione Sincronizzazione** nel pannello di spostamento sinistro e quindi sul collegamento Scarica azure **AD Connessione**. Si verrà reindirizzati alla **pagina di download di Azure AD Connessione**.
+4. **Nel pannello Attività iniziali** di Microsoft Entra Connessione \| fare clic su **Sincronizzazione** Connessione nel pannello di spostamento sinistro e quindi sul **collegamento Scarica Microsoft Entra Connessione**. Si verrà reindirizzati alla **pagina di download di Microsoft Entra Connessione**.
 
-5. Nella **pagina di download di Azure AD Connessione** fare clic su **Scarica**.
+5. **Nella pagina di download di Microsoft Entra Connessione** fare clic su **Scarica**.
 
-6. Quando richiesto, fare clic su **Esegui** per avviare procedura guidata **Microsoft Azure Active Directory Connect**.
+6. Quando richiesto, fare clic su **Esegui** per avviare la **procedura guidata di Microsoft Entra Connessione**.
 
-7. Nella pagina **Azure AD Connect** della procedura guidata **Microsoft Azure Active Directory Connect** fare clic sulla casella di controllo **Accetto le condizioni di licenza e l'informativa sulla privacy** e quindi su **Continua**.
+7. **Nella pagina Welcome to Microsoft Entra Connessione della **procedura guidata microsoft Entra Connessione**** fare clic sulla casella **di controllo Accetto le condizioni di licenza e l'informativa** sulla privacy e fare clic su **Continua**.
 
-8. Nella pagina **Impostazioni rapide** della procedura guidata **Microsoft Azure Active Directory Connect** fare clic sull'opzione **Personalizza**.
+8. **Nella pagina Express Impostazioni** della **procedura guidata di Microsoft Entra Connessione** fare clic sull'opzione **Personalizza**.
 
 9. Nella pagina **Installazione dei componenti necessari** lasciare deselezionate tutte le opzioni di configurazione facoltative e fare clic su **Installa**.
 
 10. Nella pagina **Accesso utente** assicurarsi che sia abilitata solo l'opzione **Sincronizzazione dell'hash delle password** e fare clic su **Avanti**.
 
-11. Nella pagina **Connessione da Azure AD** eseguire l'autenticazione usando le credenziali dell'account utente **syncadmin** creato nell'esercizio precedente e fare clic su **Avanti**. 
+11. **Nella pagina Connessione a Microsoft Entra ID** eseguire l'autenticazione usando le credenziali dell'account **utente syncadmin** creato nell'esercizio precedente e fare clic su **Avanti**. 
 
 12. Nella pagina **Connessione delle directory** fare clic sul pulsante **Aggiungi directory** a destra della voce relativa alla foresta **adatum.com**.
 
-13. Nella finestra **Account della foresta Active** assicurarsi che sia selezionata l'opzione **Crea un nuovo account AD**, specificare le credenziali seguenti e fare clic su **OK**:
+13. **Nella finestra account** della foresta di Active Directory verificare che sia selezionata l'opzione **Crea nuovo account** MICROSOFT Entra ID, specificare le credenziali seguenti e fare clic su **OK**:
 
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**ADATUM \\ Student**|
-    |Password|**Usare la password personale creata in Lab 06 > Esercizio 1 > Attività 2**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 2**|
 
 14. Nella pagina **Connessione delle directory** assicurarsi che la voce **adatum.com** sia visualizzata come directory configurata e fare clic su **Avanti**
 
-15. Nella pagina **Configurazione dell'accesso ad Azure AD**, nel messaggio di avviso **Gli utenti non potranno accedere ad Azure AD con le credenziali locali se il suffisso UPN non corrisponde a un dominio verificato**, abilitare la casella di controllo **Continua senza corrispondenza di tutti i suffissi UPN con domini verificati**, quindi fare clic su **Avanti**.
+15. **Nella pagina di configurazione** dell'accesso a Microsoft Entra ID prendere nota dell'avviso Che indica che **gli utenti non potranno accedere all'ID Microsoft Entra con credenziali locali se il suffisso UPN non corrisponde a un nome** di dominio verificato, abilitare la casella **di controllo Continua senza associare tutti i suffissi UPN al dominio** verificato e fare clic su **Avanti**.
 
-    >**Nota**: come indicato prima, questo comportamento è previsto, perché non è stato possibile verificare il dominio DNS personalizzato di Azure AD **adatum.com**.
+    >**Nota**: come illustrato in precedenza, è previsto, poiché non è stato possibile verificare il dominio **DNS dell'ID Microsoft Entra personalizzato adatum.com**.
 
 16. **Nella pagina Filtro dominio e unità organizzative** fare clic sull'opzione **Sincronizza domini e unità organizzative** selezionate e deselezionare la casella di controllo accanto al nome **di dominio adatum.com**. Fare clic per espandere **adatum.com**, selezionare solo la casella di controllo accanto all'unità **organizzativa ToSync** e quindi fare clic su **Avanti**.
 
@@ -304,14 +304,14 @@ In questa attività si installerà AD Connect nella macchina virtuale.
 
     >**Nota**: l'installazione dovrebbe richiedere circa 2 minuti.
 
-21. Esaminare le informazioni nella pagina **Configurazione completata** e fare clic su **Esci** per chiudere la finestra **Microsoft Azure Active Directory Connect**.
+21. Esaminare le informazioni nella **pagina Configurazione completa** e fare clic su **Esci** per chiudere la **finestra Connessione** Microsoft Entra.
 
 
 #### Attività 3: Verificare la sincronizzazione della directory
 
 In questa attività si verificherà il funzionamento della sincronizzazione della directory. 
 
-1. Nella sessione Desktop remoto per **adVM**, nella finestra di Microsoft Edge che visualizza il portale di Azure passare al pannello **Utenti - Tutti gli utenti (anteprima)** del tenant di Azure AD Adatum Lab.
+1. All'interno della sessione desktop remoto adVM****, nella finestra di Microsoft Edge in cui è visualizzato il portale di Azure passare al **pannello Utenti - Tutti gli utenti (anteprima)** del tenant AMicrosoft Entra ID di Adatum Lab.
 
 2. Nel pannello **Utenti \| Tutti gli utenti** si noti che l'elenco di oggetti utente include l'account **aduser1**. 
 
@@ -321,13 +321,13 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
 
 4. **Nel pannello aduser1**, nella **sezione Informazioni** processo, si noti che l'attributo **Department** non è impostato.
 
-5. All'interno della sessione di Desktop remoto in **adVM** passare ad **Active Directory Amministrazione istrative Center**, selezionare la **voce aduser1** nell'elenco di oggetti nell'unità **organizzativa ToSync** e, nel **riquadro Attività**, nella **sezione aduser1** selezionare **Proprietà**.
+5. Nella sessione desktop remoto adVM **** passare all'interfaccia**** di amministrazione di Microsoft Entra, selezionare la **voce aduser1 nell'elenco di oggetti nell'unità **organizzativa ToSync** e, nel **riquadro Attività**, nella **sezione aduser1**** selezionare **Proprietà**.
 
 6. Nella sezione **Organizzazione** della finestra **aduser1** digitare **Sales** nella casella di testo **Reparto** e fare clic su **OK**.
 
 7. Nella sessione Desktop remoto per **adVM**avviare **Windows PowerShell**.
 
-8. Nella console **Amministratore: Windows PowerShell** eseguire quanto segue per avviare la sincronizzazione differenziale di Azure AD Connect:
+8. **Dalla console di Amministrazione istrator: Windows PowerShell** eseguire quanto segue per avviare la sincronizzazione differenziale di Microsoft Entra Connessione:
 
     ```powershell
     Import-Module -Name 'C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1'
@@ -339,12 +339,12 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
 
     >**Nota**: potrebbe essere necessario attendere fino a tre minuti e aggiornare di nuovo la pagina se l'attributo **Department** non è impostato.
 
-> **Risultato**: completando questo esercizio, è stato preparato AD DS per la sincronizzazione della directory, è stato installato Azure AD Connect ed è stata verificata la sincronizzazione della directory.
+> **Risultato**: dopo aver completato questo esercizio, è stato preparato Microsoft Entra Domain Services per la sincronizzazione della directory, installato Microsoft Entra Connessione e la sincronizzazione della directory verificata.
 
 
 **Pulire le risorse**
 
->**Nota**: per iniziare, disabilitare la sincronizzazione di Azure AD
+>**Nota**: iniziare disabilitando la sincronizzazione dell'ID Entra di Microsoft
 
 1. Nella sessione Desktop remoto per **adVM**avviare Windows PowerShell come amministratore.
 
@@ -356,13 +356,13 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
     Install-Module MsOnline -Force
     ```
 
-3. Nella console di Windows PowerShell connettersi al tenant di Azure AD AdatumSync eseguendo quanto segue (quando richiesto, accedere con le credenziali **syncadmin**):
+3. Dalla console di Windows PowerShell connettersi al tenant di AdatumSync Microsoft Entra eseguendo quanto segue (quando richiesto, accedere con le **credenziali syncadmin** ):
 
     ```powershell
     Connect-MsolService
     ```
 
-4. Nella console di Windows PowerShell, disabilitare la sincronizzazione di Azure AD Connect eseguendo quanto segue:
+4. Dalla console di Windows PowerShell disabilitare la sincronizzazione di Microsoft Entra Connessione eseguendo quanto segue:
 
     ```powershell
     Set-MsolDirSyncEnabled -EnableDirSync $false -Force
@@ -378,7 +378,7 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
     >**Nota**: successivamente, rimuovere le risorse di Azure
 6. Chiudere la sessione Desktop remoto.
 
-7. Nel portale di Azure impostare il filtro **Directory e sottoscrizione** sul tenant di Azure AD associato alla sottoscrizione di Azure in cui è stata distribuita la macchina virtuale di Azure **adVM**.
+7. Nella portale di Azure impostare il **filtro Directory + sottoscrizione** sul tenant di Microsoft Entra associato alla sottoscrizione di Azure in cui è stata distribuita la **macchina virtuale di Azure adVM**.
 
 8. Nel portale di Azure aprire Cloud Shell facendo clic sulla prima icona nell'angolo in alto a destra. 
 
@@ -391,17 +391,17 @@ In questa attività si verificherà il funzionamento della sincronizzazione dell
     ```
 11. Chiudere il riquadro **Cloud Shell**.
 
-    >**Nota**: rimuovere infine il tenant di Azure AD
+    >**Nota**: rimuovere infine il tenant di Microsoft Entra
     
     >**Nota 2**: l'eliminazione di un tenant è un processo molto difficile, quindi non può mai essere eseguito in modo accidentale o doloso.  Questo significa che la rimozione del tenant come parte di questo lab non sempre funziona.  Anche se sono disponibili i passaggi per eliminare il tenant, questa operazione non è necessaria per considerare completato questo lab. Se è necessario rimuovere un tenant nella realtà operativa, su DOCS.Microsoft sono disponibili articoli che possono risultare utili.
 
-12. Tornare nel portale di Azure e usare il filtro **Directory e sottoscrizione** per passare al tenant di Azure Active Directory **AdatumSync**.
+12. Tornare al portale di Azure, usare il **filtro Directory + sottoscrizione** per passare al **tenant Di AdatumSync** di Microsoft Entra.
 
 13. Nel portale di Azure passare al pannello **Utenti - Tutti gli utenti**, fare clic sulla voce che rappresenta l'account utente **syncadmin**, quindi nel pannello **syncadmin - Profilo** fare clic su **Elimina** e, quando richiesto, fare clic su **Sì** per confermare.
 
 14. Ripetere la stessa sequenza di passaggi per eliminare l'account utente **aduser1** e l'**account del servizio di sincronizzazione directory locale**.
 
-15. Passare al pannello **AdatumSync - Panoramica** del tenant di Azure AD, fare clic su **Manage tenants** (Gestisci tenant) e selezionare la casella di controllo della directory **AdatumSync**, fare clic su **Elimina** nel pannello **Elimina tenant "AdatumSync"**, fare clic sul collegamento **Ottieni l'autorizzazione per eliminare le risorse di Azure**, nel pannello **Proprietà** di Azure Active Directory impostare **Gestione degli accessi per le risorse di Azure** su **Sì** e fare clic su **Salva**.
+15. Passare al **pannello AdatumSync - Panoramica** del tenant di Microsoft Entra, fare clic su **Gestisci tenant** e selezionare la casella di controllo della **directory AdatumSync**, fare clic su **Elimina**, nel **pannello Elimina tenant 'AdatumSync'**, fare clic sul **collegamento Ottieni autorizzazione per eliminare le risorse** di Azure, nel **pannello Proprietà** di AMicrosoft Entra, impostare **Gestione degli accessi per le risorse **** di Azure su Sì** e fare clic su **Salva**.
 
     >**Nota**: se durante l'eliminazione viene visualizzato un avviso simile a **Elimina tutti gli utenti**, procedere con l'eliminazione degli utenti creati oppure se l'avviso indica **Elimina applicazione LinkedIn**, fare clic sul messaggio e confermare l'eliminazione dell'applicazione LinkedIn. Per completare l'eliminazione del tenant è necessario rispondere a tutti gli avvisi.
 

@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 07 - Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
+  title: 05 - Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
   module: Module 02 - Implement Platform Protection
 ---
 
-# Lab 07: Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
+# Lab 05: Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -61,10 +61,10 @@ In questa attività si creerà una rete virtuale da usare con i gruppi di sicure
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
+    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB07**|
-    |Nome|**myVirtualNetwork**|
-    |Area|**Stati Uniti orientali**|
+    |Name|**myVirtualNetwork**|
+    |Region|**Stati Uniti orientali**|
 
 5. Nella scheda **Indirizzi IP** del pannello **Crea rete virtuale** impostare **Spazio indirizzi IPv4** su **10.0.0.0/16** e, se necessario, nella colonna **Nome della subnet** fare clic su **predefinito**, quindi nel pannello **Modifica subnet** specificare le impostazioni seguenti e fare clic su **Salva**:
 
@@ -90,8 +90,8 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
     |Impostazione|Valore|
     |---|---|
     |Gruppo di risorse|**AZ500LAB07**|
-    |Nome|**myAsgWebServers**|
-    |Area|**Stati Uniti orientali**|
+    |Name|**myAsgWebServers**|
+    |Region|**Stati Uniti orientali**|
 
     >**Nota**: questo gruppo sarà riservato ai server Web.
 
@@ -104,8 +104,8 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
     |Impostazione|Valore|
     |---|---|
     |Gruppo di risorse|**AZ500LAB07**|
-    |Nome|**myAsgMgmtServers**|
-    |Area|**Stati Uniti orientali**|
+    |Name|**myAsgMgmtServers**|
+    |Region|**Stati Uniti orientali**|
 
     >**Nota**: questo gruppo sarà riservato ai server di gestione.
 
@@ -123,10 +123,10 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
+    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB07**|
-    |Nome|**myNsg**|
-    |Area|**Stati Uniti orientali**|
+    |Name|**myNsg**|
+    |Region|**Stati Uniti orientali**|
 
 4. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
@@ -149,13 +149,13 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 3. Nel pannello **Aggiungi regola di sicurezza in ingresso** specificare le impostazioni seguenti per autorizzare le porte TCP 80 e 443 per il gruppo di sicurezza delle applicazioni **myAsgWebServers**, lasciando i valori predefiniti per tutte le altre impostazioni: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
-    |Destination|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgWebServers**|
+    |Destinazione|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgWebServers**|
     |Intervalli porte di destinazione|**80,443**|
     |Protocollo|**TCP**|
     |Priorità|**100**|                                                    
-    |Nome|**Allow-Web-All**|
+    |Name|**Allow-Web-All**|
 
 4. Nel pannello **Aggiungi regola di sicurezza in ingresso** fare clic su **Aggiungi** per creare la nuova regola in ingresso. 
 
@@ -163,13 +163,13 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 6. Nel pannello **Aggiungi regola di sicurezza in ingresso** specificare le impostazioni seguenti per autorizzare la porta RDP (TCP 3389) per il gruppo di sicurezza delle applicazioni **myAsgMgmtServers**, lasciando i valori predefiniti per tutte le altre impostazioni: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
-    |Destination|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgMgmtServers**|
+    |Destinazione|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgMgmtServers**|
     |Intervalli porte di destinazione|**3389**|
     |Protocollo|**TCP**|
     |Priorità|**110**|                                                    
-    |Nome|**Allow-RDP-All**|
+    |Name|**Allow-RDP-All**|
 
 7. Nel pannello **Aggiungi regola di sicurezza in ingresso** fare clic su **Aggiungi** per creare la nuova regola in ingresso. 
 
@@ -198,16 +198,16 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
    |Impostazione|Valore|
    |---|---|
-   |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
+   |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|**AZ500LAB07**|
    |Virtual machine name|**myVmWeb**|
-   |Area|**(Stati Uniti) Stati Uniti orientali**|
+   |Region|**(Stati Uniti) Stati Uniti orientali**|
    |Immagine|**Windows Server 2022 Datacenter: Azure Edition- x64 Gen2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
-   |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+   |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    |Conferma password|**Digitare nuovamente la password**|
-   |Porte in ingresso pubbliche|**Nessuno**|
+   |Porte in ingresso pubbliche|**Nessuna**|
    |Usare una licenza esistente di Windows Server |**No**|
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
@@ -220,7 +220,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella **scheda Monitoraggio del **pannello** Crea una macchina** virtuale verificare l'impostazione seguente:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Diagnostica di avvio|**Abilita con account di archiviazione gestito (scelta consigliata)**|
 
@@ -236,15 +236,15 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
    |Impostazione|Valore|
    |---|---|
-   |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
+   |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|**AZ500LAB07**|
    |Virtual machine name|**myVMMgmt**|
-   |Area|(Stati Uniti) Stati Uniti orientali|
+   |Region|(Stati Uniti) Stati Uniti orientali|
    |Immagine|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
-   |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
-   |Porte in ingresso pubbliche|**Nessuno**|
+   |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+   |Porte in ingresso pubbliche|**Nessuna**|
    |Si ha già una licenza di Windows Server|**No**|
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
@@ -257,7 +257,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
 6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella **scheda Monitoraggio del **pannello** Crea una macchina** virtuale verificare l'impostazione seguente:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Diagnostica di avvio|**Abilita con account di archiviazione gestito (scelta consigliata)**|
 
@@ -273,15 +273,15 @@ In questa attività l'interfaccia di rete di ogni macchina virtuale verrà assoc
 
 2. Nell'elenco di macchine virtuali fare clic sulla voce **myVMWeb**.
 
-3. Nel pannello **myVMWeb**, nella sezione **Impostazioni**, fare clic su **Rete** e quindi nel pannello **myVMWeb \| Rete** fare clic sulla scheda **Gruppi di sicurezza delle applicazioni**.
+3. Nella sezione Rete** del ****pannello myVMWeb** fare clic su **Impostazioni** di rete e quindi nel **pannello Impostazioni** rete myVMWeb \| fare clic sulla **scheda Gruppi** di sicurezza delle applicazioni.
 
-4. Fare clic su **Configura i gruppi di sicurezza delle applicazioni**, selezionare **myAsgWebServers** nell'elenco a discesa **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **Salva**.
+4. Fare clic su + **Aggiungi gruppi** di sicurezza delle applicazioni, nell'elenco **Gruppo** di sicurezza delle applicazioni selezionare **myAsgWebServers** e quindi fare clic su **Salva**.
 
 5. Tornare nel pannello **Macchine virtuali** e fare clic sulla voce **myVMMgmt** nell'elenco di macchine virtuali.
 
-6. Nel pannello **myVMMgmt**, nella sezione **Impostazioni**, fare clic su **Rete** e quindi nel pannello **myVMMgmt \| Rete** fare clic sulla scheda **Gruppi di sicurezza delle applicazioni**.
+6. Nella sezione Rete** del ****pannello myVMMgmt** fare clic su **Impostazioni** di rete e quindi **nel pannello Impostazioni di** rete myVMMgmt \| fare clic sulla **scheda Gruppi** di sicurezza delle applicazioni.
 
-7. Fare clic su **Configura i gruppi di sicurezza delle applicazioni**, selezionare **myAsgMgmtServers** nell'elenco a discesa **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **Salva**.
+7. Fare clic su + **Aggiungi gruppi** di sicurezza delle applicazioni, nell'elenco Gruppo** di sicurezza dell'applicazione **selezionare **myAsgMgmtServers** e quindi fare clic su **Salva**.
 
 #### Attività 4: Testare il filtro del traffico di rete
 
@@ -296,13 +296,13 @@ In questa attività si testeranno i filtri del traffico di rete. Si dovrà esser
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**Studente**|
-   |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+   |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: verificare che la connessione Desktop remoto sia riuscita. A questo punto è stato confermato che è possibile connettersi tramite Desktop remoto a myVMMgmt.
 
 4. Nel portale di Azure passare al pannello della macchina virtuale **myVMWeb**.
 
-5. Nel pannello **myVMWeb** fare clic su **Esegui comando** nella sezione **Operazioni** e nell'elenco dei comandi fare clic su **RunPowerShellScript**.
+5. Nella sezione Payload del **pannello myVMWeb** fare clic su **Esegui comando** e quindi su **EseguiPowerShellScript**.****
 
 6. Nel riquadro **Esegui script di comandi** eseguire il comando seguente per installare il ruolo del server Web in **myVmWeb**:
 

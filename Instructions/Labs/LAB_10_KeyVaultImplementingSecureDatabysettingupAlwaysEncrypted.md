@@ -9,7 +9,7 @@ lab:
 
 ## Scenario laboratorio
 
-Viene chiesto di creare un'applicazione modello di verifica che usi il supporto di Database SQL di Azure per la funzionalità Always Encrypted. Tutti i segreti e le chiavi usati in questo scenario devono essere archiviati in Key Vault. L'applicazione deve essere registrata in Azure Active Directory (Azure AD) per migliorarne la postura di sicurezza. Per raggiungere questi obiettivi, il modello di verifica deve includere queste attività:
+Viene chiesto di creare un'applicazione modello di verifica che usi il supporto di Database SQL di Azure per la funzionalità Always Encrypted. Tutti i segreti e le chiavi usati in questo scenario devono essere archiviati in Key Vault. L'applicazione deve essere registrata in Microsoft Entra ID per migliorare il comportamento di sicurezza. Per raggiungere questi obiettivi, il modello di verifica deve includere queste attività:
 
 - Creare un'istanza di Azure Key Vault e archiviare chiavi e segreti nell'insieme di credenziali.
 - Creare un database SQL e crittografare il contenuto delle colonne nelle tabelle di database usando Always Encrypted.
@@ -29,7 +29,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 ## Diagramma di Key Vault
 
-![image](https://user-images.githubusercontent.com/91347931/157532938-c724cc40-f64f-4d69-9e91-d75344c5e0a2.png)
+![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/38c4ba6d-2fc7-45e5-b9a2-d5dbb4fbbcbc)
 
 ## Istruzioni
 
@@ -67,11 +67,11 @@ In questa attività si distribuirà una macchina virtuale di Azure che installer
 
    |Impostazione|Valore|
    |---|---|
-   |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
+   |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB10**|
-   |Titolo|**Stati Uniti orientali**|
+   |Ubicazione|**Stati Uniti orientali**|
    |Nome utente amministratore|**Studente**|
-   |Password amministratore|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+   |Password amministratore|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
    
     >**Nota**: anche se è possibile cambiare le credenziali amministrative usate per accedere alla macchina virtuale, non è necessario farlo.
 
@@ -125,7 +125,7 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
 
 9. Nel pannello **Crea un criterio di accesso** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |----|----|
     |Configura dal modello (facoltativo)|**Gestione di chiavi, segreti e certificati**|
     |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto** con un totale di **9 autorizzazioni selezionate**|
@@ -237,7 +237,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
     |Impostazione|valore|
     |----|----|
-    |Nome|**sqlApp**|
+    |Name|**sqlApp**|
     |URI di reindirizzamento (facoltativo)|**Web** e **https://sqlapp**|
 
 4. Nel pannello **Registra un'applicazione** fare clic su **Registra**. 
@@ -352,7 +352,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**Studente**|
-    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**. Chiudere Server Manager. 
 
@@ -368,7 +368,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
     |Nome server|Il nome del server identificato in precedenza in questa attività|
     |Authentication|**Autenticazione di SQL Server**|
     |Account di accesso|**Studente**|
-    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
 8. Nella finestra di dialogo **Connetti al server** fare clic su **Connetti**.
 

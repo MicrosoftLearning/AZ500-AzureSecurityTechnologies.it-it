@@ -1,10 +1,10 @@
 ---
 lab:
-  title: ' 13 - Endpoint di servizio e protezione Archiviazione'
+  title: ' 09 - Endpoint di servizio e protezione Archiviazione'
   module: Module 03 - Secure data and applications
 ---
 
-# Lab 13: Endpoint di servizio e protezione Archiviazione
+# Lab 09: Endpoint di servizio e protezione Archiviazione
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -60,10 +60,10 @@ In questa attività verrà creata una rete virtuale.
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
+    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB12**|
-    |Nome|**myVirtualNetwork**|
-    |Area|**(Stati Uniti) Stati Uniti orientali**|
+    |Name|**myVirtualNetwork**|
+    |Region|**(Stati Uniti) Stati Uniti orientali**|
 
 5. Nella scheda **Indirizzi IP** del pannello **Crea rete virtuale** impostare lo **Spazio indirizzi IPv4** su **10.0.0.0/16**, nella colonna **Nome della subnet** fare clic su **default** e nel pannello **Modifica subnet** specificare le impostazioni seguenti e fare clic su **Salva**:
 
@@ -112,10 +112,10 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
+    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB12**|
-    |Nome|**myNsgPrivate**|
-    |Area|**Stati Uniti orientali**|
+    |Name|**myNsgPrivate**|
+    |Region|**Stati Uniti orientali**|
 
 4. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
@@ -140,7 +140,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
     |Protocollo|**Any**|
     |Azione|**Consenti**|
     |Priorità|**1000**|
-    |Nome|**Allow-Archiviazione-All**|
+    |Name|**Allow-Archiviazione-All**|
 
 9. Nel pannello **Aggiungi regola di sicurezza in uscita** fare clic su **Aggiungi** per creare la nuova regola in uscita. 
 
@@ -159,7 +159,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
     |Protocollo|**Any**|
     |Azione|**Nega**|
     |Priorità|**1100**|
-    |Nome|**Deny-Internet-All**|
+    |Name|**Deny-Internet-All**|
 
     >**Nota**: questa regola sostituisce una regola predefinita in tutti i gruppi di sicurezza di rete che consente la comunicazione Internet in uscita. 
 
@@ -179,7 +179,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
     |Protocollo|**TCP**|
     |Azione|**Consenti**|
     |Priorità|**1200**|                                                    
-    |Nome|**Allow-RDP-All**|
+    |Name|**Allow-RDP-All**|
 
 14. Nel pannello **Aggiungi regola di sicurezza in ingresso** fare clic su **Aggiungi** per creare la nuova regola in ingresso. 
 
@@ -204,10 +204,10 @@ In questa attività si creerà un gruppo di sicurezza di rete con una regola di 
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
+    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB12**|
-    |Nome|**myNsgPublic**|
-    |Area|**Stati Uniti orientali**|
+    |Name|**myNsgPublic**|
+    |Region|**Stati Uniti orientali**|
 
 4. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
@@ -229,7 +229,7 @@ In questa attività si creerà un gruppo di sicurezza di rete con una regola di 
     |Protocollo|**TCP**|
     |Azione|**Consenti**|
     |Priorità|**1200**|                                                    
-    |Nome|**Allow-RDP-All**|
+    |Name|**Allow-RDP-All**|
 
 8. Nel pannello **Aggiungi regola di sicurezza in ingresso** fare clic su **Aggiungi** per creare la nuova regola in ingresso. 
 
@@ -254,10 +254,10 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
+    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB12**|
     |Nome account di archiviazione|Qualsiasi nome univoco globale composto da 3-24 lettere e numeri|
-    |Titolo|**(Stati Uniti) Stati Uniti orientali**|
+    |Ubicazione|**(Stati Uniti) Stati Uniti orientali**|
     |Prestazioni|**Standard (account v2 per utilizzo generico)**|
     |Ridondanza|**Archiviazione con ridondanza locale**|
 
@@ -279,7 +279,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
     |Impostazione|valore|
     |---|---|
-    |Nome|**my-file-share**|
+    |Name|**my-file-share**|
 
 11. Nel pannello **Nuova condivisione file** fare clic su **Crea**.
 
@@ -301,7 +301,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
+    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
     |Reti virtuali|**myVirtualNetwork**|
     |Subnet|**Privata**|
 
@@ -325,14 +325,14 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
+    |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
     |Gruppo di risorse|**AZ500LAB12**|
     |Virtual machine name|**myVmPrivate**|
-    |Area|**(Stati Uniti) Stati Uniti orientali**|
+    |Region|**(Stati Uniti) Stati Uniti orientali**|
     |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
     |Username|**localadmin**|
-    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
-    |Porte in ingresso pubbliche|**Nessuno**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Porte in ingresso pubbliche|**Nessuna**|
     |Si ha già una licenza di Windows Server|**Non selezionato**|
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
@@ -346,7 +346,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**Privata (10.0.1.0/24)**|
     |IP pubblico|**(new)myVmPrivate-ip**|
-    |Gruppo di sicurezza di rete della scheda di interfaccia di rete|**Nessuno**|
+    |Gruppo di sicurezza di rete della scheda di interfaccia di rete|**Nessuna**|
 
 6. Fare clic su **Avanti: Gestione >** e, nella scheda **Gestione** del pannello **Crea macchina virtuale** accettare le impostazioni predefinite e fare clic su **Rivedi e crea**.
 
@@ -360,14 +360,14 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
+    |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
     |Gruppo di risorse|**AZ500LAB12**|
     |Virtual machine name|**myVmPublic**|
-    |Area|**(Stati Uniti) Stati Uniti orientali**|
+    |Region|**(Stati Uniti) Stati Uniti orientali**|
     |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
     |Username|**localadmin**|
-    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
-    |Porte in ingresso pubbliche|**Nessuno**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Porte in ingresso pubbliche|**Nessuna**|
     |Si ha già una licenza di Windows Server|**Non selezionato**|
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
@@ -381,7 +381,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**Pubblica (10.0.0.0/24)**|
     |IP pubblico|**(new)myVmPublic-ip**|
-    |Gruppo di sicurezza di rete della scheda di interfaccia di rete|**Nessuno**|
+    |Gruppo di sicurezza di rete della scheda di interfaccia di rete|**Nessuna**|
 
 12. Fare clic su **Avanti: Gestione >** e, nella scheda **Gestione** del pannello **Crea macchina virtuale** accettare le impostazioni predefinite e fare clic su **Rivedi e crea**.
 
@@ -404,7 +404,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**localadmin**|
-    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di Server Manager.
 
@@ -454,7 +454,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**localadmin**|
-    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di Server Manager.
 
@@ -484,16 +484,3 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
 **Pulire le risorse**
 
 > Ricordarsi di rimuovere tutte le risorse di Azure appena create che non vengono più usate. La rimozione delle risorse inutilizzate evita l'addebito di costi imprevisti. 
-
-1. Aprire Cloud Shell facendo clic sulla prima icona in alto a destra nel portale di Azure. Se richiesto, selezionare **PowerShell** e **Crea risorsa di archiviazione**.
-
-2. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **PowerShell**.
-
-3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per rimuovere il gruppo di risorse creato in questo lab:
-  
-    ```powershell
-    Remove-AzResourceGroup -Name "AZ500LAB12" -Force -AsJob
-    ```
-
-4.  Chiudere il riquadro **Cloud Shell**. 
-
