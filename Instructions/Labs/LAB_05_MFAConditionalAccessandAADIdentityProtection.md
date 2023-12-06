@@ -1,19 +1,19 @@
 ---
 lab:
-  title: 02 - Autenticazione a più fattori e accesso condizionale
+  title: 04 - MFA e accesso condizionale
   module: Module 01 - Manage Identity and Access
 ---
 
-# Lab 02: autenticazione a più fattori e accesso condizionale
+# Lab 05: autenticazione a più fattori e accesso condizionale
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
 
-È stato chiesto di creare un modello di verifica delle funzionalità che migliorano l'autenticazione dell'ID di Microsoft Entra. In particolare, sarà necessario valutare quanto segue:
+È stato chiesto di creare un modello di verifica delle funzionalità che ottimizzi l'autenticazione di Azure Active Directory (Azure AD). In particolare, sarà necessario valutare quanto segue:
 
-- Autenticazione a più fattori di Microsoft Entra ID
-- Accesso condizionale di Microsoft Entra ID
-- Criteri basati sui rischi per l'accesso condizionale di Microsoft Entra ID
+- Autenticazione a più fattori di Azure AD
+- Accesso condizionale di Azure AD
+- Criteri basati sui rischi per l'accesso condizionale di Azure AD
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
@@ -23,12 +23,12 @@ In questo lab verranno completati gli esercizi seguenti:
 
 - Esercizio 1: Distribuire una macchina virtuale di Azure usando un modello di Azure Resource Manager
 - Esercizio 2: Implementare Azure MFA
-- Esercizio 3: Implementare i criteri di accesso condizionale di Microsoft Entra ID 
-- Esercizio 4: Implementare Microsoft Entra ID Identity Protection
+- Esercizio 3: Implementare i criteri di accesso condizionale di Azure AD 
+- Esercizio 4: Implementare Azure AD Identity Protection
 
 ## Diagramma di MFA - Accesso condizionale - Identity Protection
 
-![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/246a3798-6f50-4a41-99c2-71e9ab6a4c8f)
+![image](https://user-images.githubusercontent.com/91347931/157518628-8b4a9efe-0086-4ec0-825e-3d062748fa63.png)
 
 ## Istruzioni
 
@@ -51,7 +51,7 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
 
 1. Accedere al portale di Azure **`https://portal.azure.com/`**.
 
-    >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure in uso per questo lab e il ruolo Global Amministrazione istrator nel tenant di Microsoft Entra ID associato a tale sottoscrizione.
+    >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per questo lab e il ruolo Amministratore globale nel tenant di Azure AD associato alla sottoscrizione.
 
 2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Distribuire un modello personalizzato**.
 
@@ -103,22 +103,22 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
 
 In questo esercizio si completeranno le seguenti attività:
 
-- Attività 1: Creare un nuovo tenant di Microsoft Entra ID.
-- Attività 2: Attivare la versione di valutazione di Microsoft Entra ID P2.
-- Attività 3: Creare utenti e gruppi di Microsoft Entra ID.
-- Attività 4: Assegnare licenze microsoft Entra ID P2 agli utenti di Microsoft Entra ID.
+- Attività 1: Creare un nuovo tenant di Azure AD.
+- Attività 2: Attivare la versione di valutazione di Azure AD Premium P2.
+- Attività 3: Creare utenti e gruppi di Azure AD.
+- Attività 4: Assegnare licenze di Azure AD Premium P2 agli utenti di Azure AD.
 - Attività 5: Configurare le impostazioni di Azure MFA.
 - Attività 6: Convalidare la configurazione di MFA
 
-#### Attività 1: Creare un nuovo tenant di Microsoft Entra ID
+#### Attività 1: Creare un nuovo tenant di Azure AD
 
-In questa attività verrà creato un nuovo tenant di Microsoft Entra ID. 
+In questa attività si creerà un nuovo tenant di Azure AD. 
 
-1. Nella casella di testo Cerca risorse, servizi e documenti della portale di Azure **nella parte superiore della pagina portale di Azure digitare **Microsoft Entra ID** e premere **INVIO**.**
+1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Azure Active Directory** e premere **INVIO**.
 
-2. Nel pannello che **visualizza Panoramica** del tenant corrente di Microsoft Entra ID fare clic su Gestisci tenant** e quindi nella schermata successiva fare clic **su **+ Crea**.
+2. Nel pannello **Panoramica** del tenant di Azure AD corrente fare clic su **Manage tenants** (Gestisci tenant) e quindi nella schermata successiva fare clic su **+ Crea**.
 
-3. **Nella scheda Informazioni di base** del **pannello Crea un tenant** verificare che l'opzione **Microsoft Entra ID** sia selezionata e fare clic su **Avanti: Configurazione >**.
+3. Nella scheda **Informazioni di base** del pannello **Crea un tenant** assicurarsi che sia selezionata l'opzione **Azure Active Directory** e fare clic su **Avanti: Configurazione >**.
 
 4. Nella scheda **Configurazione** del pannello **Crea un tenant** specificare le impostazioni seguenti:
 
@@ -136,9 +136,9 @@ In questa attività verrà creato un nuovo tenant di Microsoft Entra ID.
     >**Nota**: attendere il completamento della creazione del tenant. Usare l'icona **Notifica** per monitorare lo stato della distribuzione. 
 
 
-#### Attività 2: Attivare la versione di valutazione di Microsoft Entra ID P2
+#### Attività 2: Attivare la versione di valutazione di Azure AD Premium P2
 
-In questa attività si eseguirà l'iscrizione per la versione di valutazione gratuita di Microsoft Entra ID P2. 
+In questa attività ci si iscriverà per ricevere la versione di valutazione gratuita di Azure AD Premium P2. 
 
 1. Sulla barra degli strumenti del portale di Azure fare clic sull'icona **Directory e sottoscrizione** a destra dell'icona Cloud Shell. 
 
@@ -146,18 +146,18 @@ In questa attività si eseguirà l'iscrizione per la versione di valutazione gra
 
     >**Nota**: se la voce **AdatumLab500-04** non viene visualizzata nell'elenco di filtro **Directory e sottoscrizione**, può essere necessario aggiornare la finestra del browser.
 
-3. Nella casella di testo Cerca risorse, servizi e documenti della portale di Azure **nella parte superiore della pagina portale di Azure digitare **Microsoft Entra ID** e premere **INVIO**.** Nel pannello **AdatumLab500-04** fare clic su**Licenze** nella sezione **Gestisci**.
+3. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Azure Active Directory** e premere **INVIO**. Nel pannello **AdatumLab500-04** fare clic su**Licenze** nella sezione **Gestisci**.
 
-4. Nel pannello Panoramica licenze\|, in **Attività** rapide, fare clic su **Ottieni una versione di valutazione** gratuita.** **
+4. Nel pannello **License \| Panoramica** fare clic su **Tutti i prodotti** nella sezione **Gestisci** e quindi su **+ Prova/Acquista**.
 
-5. Espandere MICROSFT ENTRA ID P2, quindi fare clic su **Attiva.**
+5. Nella sezione Azure AD Premium P2 del pannello **Attiva** fare clic su **Versione di valutazione gratuita** e quindi su **Attiva**.
 
 
-#### Attività 3: Creare utenti e gruppi di Microsoft Entra ID.
+#### Attività 3: Creare utenti e gruppi di Azure AD.
 
 In questa attività si creeranno tre utenti: aaduser1 (amministratore globale), aaduser2 (utente) e aaduser3 (utente). Per le attività successive sarà necessario il nome e la password dell'entità utente di ogni utente. 
 
-1. Tornare al **pannello AdatumLab500-04** Microsoft Entra ID e, nella **sezione Gestisci** , fare clic su **Utenti**.
+1. Tornare nel pannello di Azure Active Directory **AdatumLab500-04** e fare clic su **Utenti** nella sezione **Gestisci**.
 
 2. Nel pannello **Utenti tutti gli \| utenti** fare clic su **+ Nuovo utente** e quindi su **Crea nuovo utente**. 
 
@@ -207,17 +207,17 @@ In questa attività si creeranno tre utenti: aaduser1 (amministratore globale), 
 
     >**Nota**: a questo punto, nella pagina **Utenti** dovrebbero essere elencati i tre nuovi utenti. 
     
-#### Attività 4: Assegnare licenze Microsoft Entra ID Premium P2 agli utenti di Microsoft Entra ID
+#### Attività 4: Assegnare licenze di Azure AD Premium P2 agli utenti di Azure AD
 
-In questa attività si assegnerà ogni utente alla licenza Microsoft Entra ID Premium P2.
+In questa attività si assegnerà ogni utente alla licenza di Azure Active Directory Premium P2.
 
 1. Nel pannello **Utenti \| Tutti gli utenti** fare clic sulla voce che rappresenta l'account utente. 
 
 2. Nel pannello che visualizza le proprietà degli account utente fare clic su **Modifica proprietà**.  Verificare che la posizione di utilizzo sia impostata su **Stati Uniti**. In caso contrario, impostare il percorso di utilizzo e fare clic su **Salva**.
 
-3. Tornare al **pannello AdatumLab500-04** Microsoft Entra ID e, nella **sezione Gestisci** , fare clic su **Licenze**.
+3. Tornare nel pannello di Azure Active Directory **AdatumLab500-04** e fare clic su **Licenze** nella sezione **Gestisci**.
 
-4. Nel pannello Panoramica licenze \| fare clic su **Tutti i prodotti**, selezionare la **casella di controllo Microsoft Entra ID Premium P2** e fare clic su **+ Assegna**.** **
+4. Nel pannello **Licenze \| Panoramica** fare clic su **Tutti i prodotti**, selezionare la casella di controllo **Azure Active Directory Premium P2** e fare clic su **+ Assegna**.
 
 5. Nel pannello **Assegna licenza** fare clic su **+ Aggiungi utenti e gruppi**.
 
@@ -227,17 +227,17 @@ In questa attività si assegnerà ogni utente alla licenza Microsoft Entra ID Pr
 
 8. Disconnettersi dal portale di Azure accedere di nuovo usando lo stesso account. Questo passaggio è necessario per rendere effettiva l'assegnazione di licenza.
 
-    >**Nota**: a questo punto, sono state assegnate licenze Microsoft Entra ID Premium P2 a tutti gli account utente che verranno usati in questo lab. Assicurarsi di disconnettersi e quindi accedere di nuovo. 
+    >**Nota**: a questo punto, sono state assegnate le licenze di Azure Active Directory Premium P2 a tutti gli account utente che verranno usati in questo lab. Assicurarsi di disconnettersi e quindi accedere di nuovo. 
 
 #### Attività 5: Configurare le impostazioni di Azure MFA.
 
 In questa attività si configurerà MFA, che verrà abilitata per aaduser1. 
 
-1. Nella portale di Azure tornare al **pannello tenant AdatumLab500-04** Microsoft Entra ID.
+1. Nel portale di Azure tornare nel pannello del tenant di Azure Active Directory **AdatumLab500-04**.
 
-    >**Nota**: assicurarsi di usare il tenant AdatumLab500-04 Microsoft Entra ID.
+    >**Nota**: assicurarsi di usare il tenant di Azure AD AdatumLab500-04.
 
-2. Nel **pannello tenant AdatumLab500-04** Microsoft Entra ID fare clic su **Sicurezza** nella **sezione Gestione**.
+2. Tornare nel pannello di Azure Active Directory **AdatumLab500-04** e fare clic su **Sicurezza** nella sezione **Gestisci**.
 
 3. Nel pannello **Sicurezza \| Attività iniziali**, nella sezione **Gestisci** fare clic su **Autenticazione a più fattori**.
 
@@ -253,7 +253,7 @@ In questa attività si configurerà MFA, che verrà abilitata per aaduser1.
 
 8. Fare clic su **aaduser1** e notare che a questo punto è disponibile anche l'opzione **Applica**. 
 
-    >**Nota**: la modifica dello stato utente da Abilitato a Imponi influisce solo sulle app integrate di Microsoft Entra ID legacy che non supportano Azure MFA e, dopo che lo stato cambia in Applicato, richiedono l'uso delle password dell'app.
+    >**Nota**: la modifica dello stato utente da Abilitato a Applicato influisce solo sulle app Azure AD integrate legacy che non supportano Azure MFA e, quando lo stato cambia in Applicato, è necessario l'uso delle password dell'app.
 
 9. Con la voce **aaduser1** selezionata, fare clic su **Gestisci impostazioni utente** ed esaminare le opzioni disponibili: 
 
@@ -279,9 +279,9 @@ In questa attività si configurerà MFA, che verrà abilitata per aaduser1.
 
     >**Nota**: a questo punto è stata abilitata la funzionalità MFA per aaduser1 e sono state configurate le impostazioni di avviso per gli illeciti. 
 
-14. Tornare al **pannello tenant AdatumLab500-04** Microsoft Entra ID, nella **sezione Gestione** fare clic su **Proprietà**, quindi fare clic sul **collegamento Gestisci impostazioni predefinite** di sicurezza nella parte inferiore del pannello, nel pannello **Abilita impostazioni predefinite** di sicurezza fare clic su **Disabilitato**. Selezionare **My Organization is using Conditional Access (L'organizzazione usa l'accesso *** condizionale) come motivo per la disabilitazione*, fare clic su **Salva**, leggere l'avviso e quindi fare clic su **Disabilita**.
+14. Tornare al **pannello Tenant di Azure Active Directory AdatumLab500-04**, nella **sezione Gestisci** fare clic su **Proprietà**, quindi fare clic sul **collegamento Gestisci impostazioni predefinite di sicurezza nella parte inferiore del pannello, nel pannello **Abilita impostazioni predefinite**** di sicurezza fare clic su **Disabilitato**. Selezionare **My Organization is using Conditional Access (L'organizzazione usa l'accesso *** condizionale) come motivo per la disabilitazione*, fare clic su **Salva**, leggere l'avviso e quindi fare clic su **Disabilita**.
 
-    >**Nota**: assicurarsi di aver eseguito l'accesso al **tenant di AdatumLab500-04** Microsoft Entra ID. È possibile usare il **filtro directory e sottoscrizione** per passare dai tenant di Microsoft Entra ID. Assicurarsi di aver eseguito l'accesso come utente con il ruolo Global Amministrazione istrator nel tenant di Microsoft Entra ID.
+    >**Nota**: assicurarsi di aver eseguito l'accesso al tenant di Azure AD **AdatumLab500-04**. È possibile usare il filtro **Directory e sottoscrizione** per passare da un tenant di Azure AD a un altro. Assicurarsi di aver eseguito l'accesso come utente con il ruolo di amministratore globale nel tenant di Azure AD.
 
 #### Attività 6: Convalidare la configurazione di MFA
 
@@ -291,7 +291,7 @@ In questa attività si convaliderà la configurazione di MFA testando l'accesso 
 
 2. Passare alla portale di Azure, **`https://portal.azure.com/`** e accedere usando l'account **utente aaduser1.** 
 
-    >**Nota**: per accedere è necessario specificare un nome completo dell'account **utente aaduser1** , incluso il nome di dominio DNS del tenant di Microsoft Entra ID registrato in precedenza in questo lab. Questo nome utente è nel formato aaduser1@`<your_tenant_name>`.onmicrosoft.com, dove `<your_tenant_name>` è il segnaposto che rappresenta il nome univoco del tenant dell'ID Microsoft Entra. 
+    >**Nota**: per accedere è necessario specificare un nome completo dell'account utente **aaduser1**, incluso il nome di dominio DNS del tenant di Azure AD registrato in precedenza in questo lab. Questo nome utente è nel formato aaduser1@`<your_tenant_name>`.onmicrosoft.com, dove `<your_tenant_name>` è il segnaposto che rappresenta il nome univoco del tenant di Azure AD. 
 
 3. Quando richiesto, nella finestra di dialogo **Sono necessarie altre informazioni** selezionare **Avanti**.
 
@@ -316,7 +316,7 @@ In questa attività si convaliderà la configurazione di MFA testando l'accesso 
 > Risultato: è stato creato un nuovo tenant di AD, sono stati configurati gli utenti di AD, è stata configurata la funzionalità MFA ed è stata testata l'esperienza di MFA per un utente. 
 
 
-### Esercizio 3: Implementare i criteri di accesso condizionale di Microsoft Entra ID 
+### Esercizio 3: Implementare i criteri di accesso condizionale di Azure AD 
 
 ### Tempo stimato: 15 minuti
 
@@ -329,7 +329,7 @@ In questo esercizio si completeranno le seguenti attività:
 
 In questa attività si esamineranno le impostazioni dei criteri di accesso condizionale e si creerà un criterio che richiede MFA per l'accesso al portale di Azure. 
 
-1. Nella portale di Azure tornare al **pannello tenant AdatumLab500-04** Microsoft Entra ID.
+1. Nel portale di Azure tornare nel pannello del tenant di Azure Active Directory **AdatumLab500-04**.
 
 2. Nel pannello **AdatumLab500-04** fare clic su**Sicurezza** nella sezione **Gestisci**.
 
@@ -343,7 +343,7 @@ In questa attività si esamineranno le impostazioni dei criteri di accesso condi
     
    - In **Utenti** fare clic su **0 Utenti e gruppi selezionati**. Sul lato destro in Includi, Abilita **Seleziona utenti e gruppi** >> selezionare la **casella di controllo Utenti e gruppi** , nel **pannello Seleziona utenti e gruppi** selezionare la **casella di controllo aaduser2** e fare clic su **Seleziona**.
     
-   - In **Risorse di** destinazione fare clic su **Nessuna risorsa di destinazione selezionata**, fare clic su **Seleziona app**, in Seleziona fare clic su **Nessuno**. Nel pannello **Seleziona** selezionare la casella di controllo relativa all'API **** gestione dei servizi di Windows Azure e fare clic su **Seleziona**. 
+   - In **Risorse di** destinazione fare clic su **Nessuna risorsa di destinazione selezionata**, fare clic su **Seleziona app**, in Seleziona fare clic su **Nessuno**. Nel pannello **Seleziona** selezionare la casella **di controllo gestione di** Microsoft Azure e fare clic su **Seleziona**. 
 
      >**Nota**: leggere l'avviso che indica che questo criterio influisce sull'accesso al portale di Azure.
     
@@ -391,7 +391,7 @@ In questa attività si accederà al portale di Azure come **aaduser2** e si veri
 
     >**Nota**:è stato verificato che il criterio di accesso condizionale appena creato impone MFA quando l'utente aaduser2 accede al portale di Azure.
 
-12. Tornare alla finestra del browser che visualizza il portale di Azure, tornare al **pannello Tenant AdatumLab500-04** Microsoft Entra ID.
+12. Nella finestra del browser che visualizza il portale di Azure tornare nel pannello del tenant di Azure Active Directory **AdatumLab500-04**.
 
 13. Nel pannello **AdatumLab500-04** fare clic su**Sicurezza** nella sezione **Gestisci**.
 
@@ -401,7 +401,7 @@ In questa attività si accederà al portale di Azure come **aaduser2** e si veri
 
     >**Nota**: in questo esercizio si implementa un criterio di accesso condizionale per richiedere l'autenticazione MFA quando un utente accede al portale di Azure. 
 
->Risultato: è stato configurato e testato l'accesso condizionale di Microsoft Entra ID.
+>Risultato: è stato configurato e testato l'accesso condizionale di Azure AD.
 
 ### Esercizio 4: Distribuire criteri basati sui rischi nell'accesso condizionale
 
@@ -409,25 +409,25 @@ In questa attività si accederà al portale di Azure come **aaduser2** e si veri
 
 In questo esercizio si completeranno le seguenti attività:
 
-- Attività 1: Visualizzare le opzioni di Microsoft Entra ID Identity Protection nel portale di Azure
+- Attività 1: Visualizzare le opzioni di Azure AD Identity Protection nel portale di Azure
 - Attività 2: Configurare un criterio di rischio utente
 - Attività 3: Configurare un criterio di rischio di accesso
-- Attività 4: Simulare eventi di rischio rispetto ai criteri di Microsoft Entra ID Identity Protection 
-- Attività 5: Esaminare i report di Microsoft Entra ID Identity Protection
+- Attività 4: Simulare eventi di rischio rispetto ai criteri di Azure AD Identity Protection 
+- Attività 5: Esaminare i report di Azure AD Identity Protection
 
-#### Attività 1: Abilitare Microsoft Entra ID Identity Protection
+#### Attività1: Abilitare Azure AD Identity Protection
 
-In questa attività verranno visualizzate le opzioni di Microsoft Entra ID Identity Protection nel portale di Azure. 
+In questa attività si visualizzeranno le opzioni di Azure AD Identity Protection nel portale di Azure. 
 
 1. Se necessario, accedere al portale di Azure **`https://portal.azure.com/`**.
 
-    >**Nota**: assicurarsi di aver eseguito l'accesso al **tenant di AdatumLab500-04** Microsoft Entra ID. È possibile usare il **filtro directory e sottoscrizione** per passare dai tenant di Microsoft Entra ID. Assicurarsi di aver eseguito l'accesso come utente con il ruolo Global Amministrazione istrator nel tenant di Microsoft Entra ID.
+    >**Nota**: assicurarsi di aver eseguito l'accesso al tenant di Azure AD **AdatumLab500-04**. È possibile usare il filtro **Directory e sottoscrizione** per passare da un tenant di Azure AD a un altro. Assicurarsi di aver eseguito l'accesso come utente con il ruolo di amministratore globale nel tenant di Azure AD.
 
 #### Attività 2: Configurare un criterio di rischio utente
 
 In questa attività si creerà un criterio di rischio utente. 
 
-1. Passare al **tenant AdatumLab500-04** Microsoft Entra ID > **Criteri** di accesso > ****condizionale per la sicurezza.** > **
+1. Passare a AdatumLab500-04 tenant di Azure AD > **Criteri** di accesso > **** condizionale per la sicurezza** > **.** **
 
 2. Fare clic su **+ Nuovo criterio**.
 
@@ -463,7 +463,7 @@ In questa attività si creerà un criterio di rischio utente.
 
 #### Attività 3: Configurare un criterio di rischio di accesso
 
-1. Passare al **tenant AdatumLab500-04** Microsoft Entra ID > **Criteri** di accesso> ****condizionale per la sicurezza.** > **
+1. Passare a AdatumLab500-04 tenant di Azure AD > **Criteri** di accesso> **** condizionale per la sicurezza** > **.** **
 
 2. Selezionare **+ Nuovi criteri**.
 
@@ -497,11 +497,11 @@ In questa attività si creerà un criterio di rischio utente.
 
 17. Fare clic su **Crea** per abilitare il criterio.
 
-#### Attività 4: Simulare eventi di rischio rispetto ai criteri di Microsoft Entra ID Identity Protection 
+#### Attività 4: Simulare eventi di rischio rispetto ai criteri di Azure AD Identity Protection 
 
 > Prima di iniziare questa attività, assicurarsi che la distribuzione del modello avviata nell'Esercizio 1 sia stata completata. La distribuzione include una macchina virtuale di Azure denominata **az500-04-vm1**. 
 
-1. Nella portale di Azure impostare il **filtro Directory + sottoscrizione** sul tenant di Microsoft Entra ID associato alla sottoscrizione di Azure in cui è stata distribuita la **macchina virtuale di Azure az500-04-vm1**.
+1. Nella portale di Azure impostare il **filtro Directory e sottoscrizione** sul tenant di Azure AD associato alla sottoscrizione di Azure in cui è stata distribuita la **macchina virtuale di Azure az500-04-vm1**.
 
 2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Macchine virtuali** e premere **INVIO**.
 
@@ -514,7 +514,7 @@ In questa attività si creerà un criterio di rischio utente.
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**Studente**|
-    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**.  
 
@@ -548,11 +548,11 @@ In questa attività si creerà un criterio di rischio utente.
 
     >**Nota**: a questo punto si è tentato di eseguire due accessi diversi. Verranno quindi esaminati i report di Azure Identity Protection.
 
-#### Attività 5: Esaminare i report di Microsoft Entra ID Identity Protection
+#### Attività 5: Esaminare i report di Azure AD Identity Protection
 
-In questa attività verranno esaminati i report di Microsoft Entra ID Identity Protection generati dagli account di accesso del browser ToR.
+In questa attività si esamineranno i report di Azure AD Identity Protection generati dagli accessi al browser ToR.
 
-1. Tornare alla portale di Azure, usare il **filtro Directory e sottoscrizione** per passare al **tenant AdatumLab500-04** Microsoft Entra ID.
+1. Tornare nel portale di Azure e usare il filtro **Directory e sottoscrizione** per passare al tenant di Azure Active Directory **AdatumLab500-04**.
 
 2. Nel pannello **AdatumLab500-04** fare clic su**Sicurezza** nella sezione **Gestisci**.
 
@@ -570,15 +570,15 @@ In questa attività verranno esaminati i report di Microsoft Entra ID Identity P
 
     >**Nota**: potrebbero essere necessari 10-15 minuti prima che i rischi vengano visualizzati nei report.
 
-> **Risultato**: è stato abilitato Microsoft Entra ID Identity Protection, sono stati configurati i criteri di rischio utente e i criteri di rischio di accesso, nonché la configurazione convalidata di Microsoft Entra ID Identity Protection simulando gli eventi di rischio.
+> **Risultato**: è stata abilitata la funzionalità Azure AD Identity Protection, sono stati configurati i criteri di rischio utente e i criteri di rischio di accesso, quindi è stata convalidata la configurazione di Azure AD Identity Protection simulando eventi di rischio.
 
 **Pulire le risorse**
 
 > È necessario rimuovere le risorse di Identity Protection che non vengono più usate. 
 
-Seguire questa procedura per disabilitare i criteri di protezione delle identità nel **tenant AdatumLab500-04** Microsoft Entra ID.
+Usare la procedura seguente per disabilitare i criteri di Identity Protection nel tenant di Azure AD **AdatumLab500-04**.
 
-1. Nella portale di Azure tornare al **pannello tenant AdatumLab500-04** Microsoft Entra ID.
+1. Nel portale di Azure tornare nel pannello del tenant di Azure Active Directory **AdatumLab500-04**.
 
 2. Nel pannello **AdatumLab500-04** fare clic su**Sicurezza** nella sezione **Gestisci**.
 
@@ -594,7 +594,7 @@ Seguire questa procedura per disabilitare i criteri di protezione delle identit�
 
 Usare la procedura seguente per arrestare la macchina virtuale di Azure di cui è stato effettuato il provisioning in precedenza nel lab.
 
-1. Nella portale di Azure impostare il **filtro Directory + sottoscrizione** sul tenant di Microsoft Entra ID associato alla sottoscrizione di Azure in cui è stata distribuita la **macchina virtuale di Azure az500-04-vm1**.
+1. Nella portale di Azure impostare il **filtro Directory e sottoscrizione** sul tenant di Azure AD associato alla sottoscrizione di Azure in cui è stata distribuita la **macchina virtuale di Azure az500-04-vm1**.
 
 2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Macchine virtuali** e premere **INVIO**.
 
