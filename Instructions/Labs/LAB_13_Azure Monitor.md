@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 11 - Monitoraggio di Azure
+  title: 13 - Monitoraggio di Azure
   module: Module 04 - Manage security operations
 ---
 
-# Lab 11: Monitoraggio di Azure
+# Lab 13: Monitoraggio di Azure
 
 # Manuale del lab per gli studenti
 
@@ -49,13 +49,7 @@ In questo esercizio si completeranno le seguenti attività:
     New-AzResourceGroup -Name AZ500LAB131415 -Location 'EastUS'
     ```
 
-    >**Nota**: questo gruppo di risorse verrà usato per i lab 13, 14 e 15.
-
-5. Nella sessione di PowerShell nel riquadro Cloud Shell eseguire quanto segue per abilitare la crittografia nell'host (EAH)
-   
-   ```powershell
-    Register-AzProviderFeature -FeatureName "EncryptionAtHost" -ProviderNamespace Microsoft.Compute 
-    ```
+    >**Nota**: questo gruppo di risorse verrà usato per i lab 13, 14 e 15. 
 
 5. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per creare una nuova macchina virtuale di Azure. 
 
@@ -68,7 +62,7 @@ In questo esercizio si completeranno le seguenti attività:
     |Impostazione|valore|
     |---|---|
     |User |**localadmin**|
-    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere il completamento della distribuzione. 
 
@@ -179,16 +173,14 @@ In questa attività si creerà una regola di raccolta dati.
 
 
 4. Fare clic sul pulsante con etichetta **Avanti: Risorse >** per continuare.
-   
-6. Nella scheda Risorse selezionare + Aggiungi risorse,** selezionare **** Abilita endpoint raccolta dati.** Nel selezionare un modello di ambito selezionare **AZ500LAB131415** e fare clic su **Applica.**
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d4191115-11bc-43ec-9bee-e84b9b95a821)
+5. Nella **scheda Risorse** selezionare + Aggiungi risorse** e quindi selezionare **** Abilita endpoint raccolta dati.**
 
-10. Fare clic sul pulsante con etichetta **Avanti: Raccogliere e recapitare >** per continuare.
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/c8388619-c254-4c80-a1ff-dde2f35ed350)
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/8294d300-f910-4757-ad52-43c7594ac822)
+6. Fare clic sul pulsante con etichetta **Avanti: Raccogliere e recapitare >** per continuare.
 
-11. Fare clic su **+ Aggiungi origine** dati, quindi nella **pagina Aggiungi origine** dati modificare il **menu a discesa Tipo di** origine dati per visualizzare **i contatori delle prestazioni.** Lasciare le impostazioni predefinite seguenti:
+7. Fare clic su **+ Aggiungi origine** dati, quindi nella **pagina Aggiungi origine** dati modificare il **menu a discesa Tipo di** origine dati per visualizzare **i contatori delle prestazioni.** Lasciare le impostazioni predefinite seguenti:
 
     |Impostazione|valore|
     |---|---|
@@ -200,13 +192,13 @@ In questa attività si creerà una regola di raccolta dati.
 
    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/a24e44ad-1d10-4533-80e2-bae1b3f6564d)
 
-11. Fare clic sul pulsante **Avanti: Destinazione >** per continuare.
+8. Fare clic sul pulsante **Avanti: Destinazione >** per continuare.
   
-12. Modificare il **menu a discesa Tipo di** destinazione per visualizzare **i log di Monitoraggio di Azure.** **Nella finestra Sottoscrizione** verificare che venga visualizzata la *sottoscrizione*, quindi modificare il menu a discesa Account o spazio dei nomi** in modo da riflettere l'area **di lavoro Log Analytics creata in precedenza.
+9. Modificare il **menu a discesa Tipo di** destinazione per visualizzare **i log di Monitoraggio di Azure.** **Nella finestra Sottoscrizione** verificare che venga visualizzata la *sottoscrizione*, quindi modificare il menu a discesa Account o spazio dei nomi** in modo da riflettere l'area **di lavoro Log Analytics creata in precedenza.
 
    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/481843f5-94c4-4a8f-bf51-a10d49130bf8)
 
-11. Fare clic su **Aggiungi origine** dati nella parte inferiore della pagina.
+10. Fare clic su **Aggiungi origine** dati nella parte inferiore della pagina.
     
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/964091e7-bbbc-4ca8-8383-bb2871a1e7f0)
 

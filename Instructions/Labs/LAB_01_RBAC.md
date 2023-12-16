@@ -29,7 +29,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 ## Diagramma dell'architettura del controllo degli accessi in base al ruolo
 
-![image](https://user-images.githubusercontent.com/91347931/157751243-5aa6e521-9bc1-40af-839b-4fd9927479d7.png)
+![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/506cde9c-5242-4438-a793-f88a5434a2b2)
 
 ## Istruzioni
 
@@ -48,7 +48,7 @@ In questa attività si creerà un account utente per Joseph Price.
 
 1. Avviare una sessione del browser e accedere al portale di Azure **`https://portal.azure.com/`**.
 
-    >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per questo lab e il ruolo Amministratore globale nel tenant di Azure AD associato alla sottoscrizione.
+    >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure in uso per questo lab e il ruolo Global Amministrazione istrator nel tenant di Microsoft Entra associato a tale sottoscrizione.
 
 2. Nella **casella di testo Cerca risorse, servizi e documenti** nella parte superiore della pagina portale di Azure digitare **Microsoft Entra ID** e premere **INVIO**.
 
@@ -59,7 +59,7 @@ In questa attività si creerà un account utente per Joseph Price.
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**Joseph**|
-   |Nome|**Joseph Price**|
+   |Name|**Joseph Price**|
 
 5. Fare clic sull'icona di copia accanto a **Nome utente** per copiare l'utente completo.
 
@@ -67,7 +67,7 @@ In questa attività si creerà un account utente per Joseph Price.
 
 7. Fai clic su **Crea**.
 
-8. Aggiornare il pannello **Utenti \| Tutti gli utenti** per verificare che il nuovo utente sia stato creato nel tenant di Azure AD.
+8. Aggiornare il pannello **Utenti \| tutti gli utenti** per verificare che il nuovo utente sia stato creato nel tenant di Microsoft Entra.
 
 #### Attività 2: Usare il portale di Azure per creare un gruppo Senior Admins e aggiungere l'account utente di Joseph Price al gruppo.
 
@@ -129,7 +129,7 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
     Connect-AzureAD
     ```
       
-6. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Azure AD: 
+6. Nella sessione di PowerShell nel riquadro Cloud Shell eseguire quanto segue per identificare il nome del tenant di Microsoft Entra: 
 
     ```powershell
     $domainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
@@ -141,7 +141,7 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
     New-AzureADUser -DisplayName 'Isabel Garcia' -PasswordProfile $passwordProfile -UserPrincipalName "Isabel@$domainName" -AccountEnabled $true -MailNickName 'Isabel'
     ```
 
-8. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli utenti di Azure AD (gli account di Joseph e Isabel saranno inclusi tra quelli elencati): 
+8. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per elencare gli utenti di Microsoft Entra ID (gli account di Joseph e Isabel dovrebbero essere visualizzati nell'elenco): 
 
     ```powershell
     Get-AzureADUser 
@@ -157,7 +157,7 @@ In questa attività si creerà il gruppo Junior Admins e si aggiungerà l'accoun
     New-AzureADGroup -DisplayName 'Junior Admins' -MailEnabled $false -SecurityEnabled $true -MailNickName JuniorAdmins
     ```
 
-2. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare i gruppi nel tenant di Azure AD (l'elenco includerà i gruppi Senior Admins e Junior Admins):
+2. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per elencare i gruppi nel tenant di Microsoft Entra(l'elenco deve includere i gruppi senior Amministrazione e Junior Amministrazione s):
 
     ```powershell
     Get-AzureADGroup
@@ -199,7 +199,7 @@ In questa attività si creerà un account utente per Dylan Williams.
 
 1. Nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell selezionare **Bash** e, quando richiesto, fare clic su **Conferma**. 
 
-2. Nella sessione di Bash all'interno del riquadro di Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Azure AD:
+2. Nella sessione Bash nel riquadro Cloud Shell eseguire quanto segue per identificare il nome del tenant di Microsoft Entra:
 
     ```cli
     DOMAINNAME=$(az ad signed-in-user show --query 'userPrincipalName' | cut -d '@' -f 2 | sed 's/\"//')
@@ -211,7 +211,7 @@ In questa attività si creerà un account utente per Dylan Williams.
     az ad user create --display-name "Dylan Williams" --password "Pa55w.rd1234" --user-principal-name Dylan@$DOMAINNAME
     ```
       
-4. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli account utente Azure AD (l'elenco includerà gli account utente di Joseph, Isabel e Dylan).
+4. Nella sessione Bash all'interno del riquadro Cloud Shell eseguire quanto segue per elencare gli account utente microsoft Entra ID (l'elenco deve includere account utente di Joseph, Isabel e Dylan)
     
     ```cli
     az ad user list --output table
@@ -227,7 +227,7 @@ In questa attività si creerà il gruppo Service Desk e si assegnerà Dylan al g
     az ad group create --display-name "Service Desk" --mail-nickname "ServiceDesk"
     ```
  
-2. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare i gruppi di Azure AD (l'elenco includerà i gruppi Service Desk, Senior Admins e Junior Admins):
+2. Nella sessione Bash all'interno del riquadro Cloud Shell eseguire quanto segue per elencare i gruppi di ID di Microsoft Entra (l'elenco deve includere Service Desk, Senior Amministrazione s e Gruppi di Amministrazione Junior):
 
     ```cli
     az ad group list -o table
@@ -277,11 +277,11 @@ In questo esercizio si completeranno le seguenti attività:
 
 2. Nel pannello **Gruppi di risorse** fare clic su **+ Crea** e specificare le impostazioni seguenti:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Nome della sottoscrizione|nome della sottoscrizione di Azure|
    |Nome gruppo di risorse|**AZ500Lab01**|
-   |Titolo|**Stati Uniti orientali**|
+   |Ubicazione|**Stati Uniti orientali**|
 
 3. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
@@ -300,7 +300,7 @@ In questo esercizio si completeranno le seguenti attività:
 
 4. Nel pannello **Aggiungi assegnazione di ruolo** specificare le impostazioni seguenti e fare clic su **Avanti** dopo ogni passaggio:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Ruolo nella scheda di ricerca|**Collaboratore macchine virtuali**|
    |Assegna accesso a (nel riquadro Membri)|**Utente, gruppo o entità servizio**|

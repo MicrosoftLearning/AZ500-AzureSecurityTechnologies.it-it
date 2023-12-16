@@ -343,7 +343,7 @@ In questa attività si esamineranno le impostazioni dei criteri di accesso condi
     
    - In **Utenti** fare clic su **0 Utenti e gruppi selezionati**. Sul lato destro in Includi, Abilita **Seleziona utenti e gruppi** >> selezionare la **casella di controllo Utenti e gruppi** , nel **pannello Seleziona utenti e gruppi** selezionare la **casella di controllo aaduser2** e fare clic su **Seleziona**.
     
-   - In **Risorse di** destinazione fare clic su **Nessuna risorsa di destinazione selezionata**, fare clic su **Seleziona app**, in Seleziona fare clic su **Nessuno**. Nel pannello **Seleziona** selezionare la casella di controllo relativa all'API **** gestione dei servizi di Windows Azure e fare clic su **Seleziona**. 
+   - In **Risorse di** destinazione fare clic su **Nessuna risorsa di destinazione selezionata**, fare clic su **Seleziona app**, in Seleziona fare clic su **Nessuno**. Nel pannello **Seleziona** selezionare la casella **di controllo gestione di** Microsoft Azure e fare clic su **Seleziona**. 
 
      >**Nota**: leggere l'avviso che indica che questo criterio influisce sull'accesso al portale di Azure.
     
@@ -514,7 +514,7 @@ In questa attività si creerà un criterio di rischio utente.
     |Impostazione|Valore|
     |---|---|
     |Nome utente|**Studente**|
-    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**.  
 
