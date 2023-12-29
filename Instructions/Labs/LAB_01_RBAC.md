@@ -56,10 +56,10 @@ In questa attività si creerà un account utente per Joseph Price.
 
 4. Nel pannello **Nuovo utente** verificare che l'opzione **Crea utente** sia selezionata e specificare le impostazioni seguenti:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Nome utente|**Joseph**|
-   |Name|**Joseph Price**|
+   |Nome|**Joseph Price**|
 
 5. Fare clic sull'icona di copia accanto a **Nome utente** per copiare l'utente completo.
 
@@ -277,11 +277,11 @@ In questo esercizio si completeranno le seguenti attività:
 
 2. Nel pannello **Gruppi di risorse** fare clic su **+ Crea** e specificare le impostazioni seguenti:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
    |Nome della sottoscrizione|nome della sottoscrizione di Azure|
    |Nome gruppo di risorse|**AZ500Lab01**|
-   |Ubicazione|**Stati Uniti orientali**|
+   |Ufficio|**Stati Uniti orientali**|
 
 3. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
@@ -300,7 +300,7 @@ In questo esercizio si completeranno le seguenti attività:
 
 4. Nel pannello **Aggiungi assegnazione di ruolo** specificare le impostazioni seguenti e fare clic su **Avanti** dopo ogni passaggio:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
    |Ruolo nella scheda di ricerca|**Collaboratore macchine virtuali**|
    |Assegna accesso a (nel riquadro Membri)|**Utente, gruppo o entità servizio**|
