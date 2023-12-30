@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 14 - Microsoft Defender for Cloud
-  module: Module 04 - Microsoft Defender for Cloud
+  title: 09 - Microsoft Defender per il cloud
+  module: Module 03 - Manage security posture by using Microsoft Defender for Cloud
 ---
 
-# Lab 14: Microsoft Defender for Cloud
+# Lab 09: Microsoft Defender per il cloud
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio

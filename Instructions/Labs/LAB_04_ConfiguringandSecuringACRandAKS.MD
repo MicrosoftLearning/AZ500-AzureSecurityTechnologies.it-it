@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 07 - Configurazione e protezione di Registro Azure Container e servizio Azure Kubernetes
-  module: Module 02 - Implement Platform Protection
+  title: 04 - Configurazione e protezione di Registro Azure Container e servizio Azure Kubernetes
+  module: 'Module 01 - Secure compute, storage, and databases'
 ---
 
-# Lab 07: Configurazione e protezione di Registro Azure Container e servizio Azure Kubernetes
+# Lab 04: Configurazione e protezione di Registro Azure Container e servizio Azure Kubernetes
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -138,17 +138,17 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
 
     |Impostazione|Valore|
     |----|----|
-    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
+    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB09**|
     |Nome del cluster Kubernetes|**MyKubernetesCluster**|
-    |Region|**(Stati Uniti) Stati Uniti orientali**|
-    |Zone di disponibilità |**Nessuna**|
-    |Metodo di scalabilità|**Manuale**|
+    |Area|**(Stati Uniti) Stati Uniti orientali**|
+    |Zone di disponibilità |**Nessuno**|
+    |Metodo di scalabilità|**Manualee**|
     |Numero di nodi|**1**|
 
 4. Fare clic su **Avanti: Pool di nodi >** e, nella scheda **Pool di nodi** del pannello **Crea cluster Kubernetes**, specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |----|----|
     |Abilitare i nodi virtuali|Casella di controllo deselezionata|
     
@@ -156,7 +156,7 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
 
 6. Nella scheda **Rete** del pannello **Crea cluster Kubernetes** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |----|----|
     |Configurazione di rete|**Azure CNI**|
     |Prefisso nome DNS|**Lasciare il valore predefinito**|
@@ -217,12 +217,14 @@ In questa attività verrà concessa al cluster del servizio Azure Kubernetes l'a
 
     ```sh
     RG_AKS=AZ500LAB09
-    
-    AKS_VNET_NAME=AZ500LAB09-vnet
+
+    RG_VNET=MC_AZ500LAB09_MyKubernetesCluster_eastus    
+
+    AKS_VNET_NAME=aks-vnet-30198516
     
     AKS_CLUSTER_NAME=MyKubernetesCluster
     
-    AKS_VNET_ID=$(az network vnet show --name $AKS_VNET_NAME --resource-group $RG_AKS --query id -o tsv)
+    AKS_VNET_ID=$(az network vnet show --name $AKS_VNET_NAME --resource-group $RG_VNET --query id -o tsv)
     
     AKS_MANAGED_ID=$(az aks show --name $AKS_CLUSTER_NAME --resource-group $RG_AKS --query identity.principalId -o tsv)
     

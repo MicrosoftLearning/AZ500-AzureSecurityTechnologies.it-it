@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 10 - Key Vault (implementazione di dati protetti con la configurazione di Always Encrypted)
-  module: Module 03 - Secure Data and Applications
+  title: 07 - Insieme di credenziali delle chiavi (implementazione di dati sicuri configurando Always Encrypted)
+  module: Module 01 - Manage security operations
 ---
 
-# Lab 10 - Key Vault (implementazione di dati protetti con la configurazione di Always Encrypted)
+# Lab 07: Key Vault (implementazione di dati sicuri configurando Always Encrypted)
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -67,17 +67,18 @@ In questa attività si distribuirà una macchina virtuale di Azure che installer
 
    |Impostazione|Valore|
    |---|---|
-   |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
+   |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB10**|
-   |Ubicazione|**Stati Uniti orientali**|
-   |Nome utente amministratore|**Studente**|
-   |Password amministratore|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+   |Ufficio|**Stati Uniti orientali**|
+   |Username|**Studente**|
+   |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
+   
    
     >**Nota**: anche se è possibile cambiare le credenziali amministrative usate per accedere alla macchina virtuale, non è necessario farlo.
 
     >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
-7. Fare clic sul pulsante **Rivedi e crea** e confermare la distribuzione facendo clic sul pulsante **Crea**. 
+8. Fare clic sul pulsante **Rivedi e crea** e confermare la distribuzione facendo clic sul pulsante **Crea**. 
 
     >**Nota**: viene avviata la distribuzione della macchina virtuale di Azure e del database SQL di Azure necessari per questo lab. 
 
@@ -125,7 +126,7 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
 
 9. Nel pannello **Crea un criterio di accesso** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre: 
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |----|----|
     |Configura dal modello (facoltativo)|**Gestione di chiavi, segreti e certificati**|
     |Autorizzazioni delle chiavi|Fare clic su **Seleziona tutto** con un totale di **9 autorizzazioni selezionate**|
@@ -237,7 +238,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
     |Impostazione|valore|
     |----|----|
-    |Name|**sqlApp**|
+    |Nome|**sqlApp**|
     |URI di reindirizzamento (facoltativo)|**Web** e **https://sqlapp**|
 
 4. Nel pannello **Registra un'applicazione** fare clic su **Registra**. 
@@ -351,32 +352,34 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
     |Impostazione|Valore|
     |---|---|
-    |Nome utente|**Studente**|
+    |Username|**Studente**|
     |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**. Chiudere Server Manager. 
 
     >**Nota**: i passaggi rimanenti in questo lab vengono eseguiti all'interno della sessione Desktop remoto nella macchina virtuale di Azure **az500-10-vm1**. 
 
-6. Fare clic su **Start, nel **menu Start**** espandere la **cartella Microsoft SQL Server Tools 19** e fare clic sulla **voce di menu Micosoft SQL Server Management Studio**.
+7. Fare clic su **Start, nel **menu Start**** espandere la **cartella Microsoft SQL Server Tools 19** e fare clic sulla **voce di menu Micosoft SQL Server Management Studio**.
 
-7. Nella finestra di dialogo **Connetti al server** specificare le impostazioni seguenti: 
+8. Nella finestra di dialogo **Connetti al server** specificare le impostazioni seguenti: 
 
     |Impostazione|Valore|
     |---|---|
     |Tipo di server|**Motore di database**|
     |Nome server|Il nome del server identificato in precedenza in questa attività|
     |Authentication|**Autenticazione di SQL Server**|
-    |Account di accesso|**Studente**|
-    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Username|**Studente**|
+    |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
 
-8. Nella finestra di dialogo **Connetti al server** fare clic su **Connetti**.
 
-9. Nel riquadro **Esplora oggetti** della console di **SQL Server Management Studio** espandere la cartella **Database**.
+10. Nella finestra di dialogo **Connetti al server** fare clic su **Connetti**.
 
-10. Nel riquadro **Esplora oggetti** fare clic con il pulsante destro del mouse sul database **medical** e scegliere **Nuova query**.
+11. Nel riquadro **Esplora oggetti** della console di **SQL Server Management Studio** espandere la cartella **Database**.
 
-11. Incollare il codice seguente nella finestra della query e fare clic su **Esegui**. Verrà creata una tabella **Patients**.
+12. Nel riquadro **Esplora oggetti** fare clic con il pulsante destro del mouse sul database **medical** e scegliere **Nuova query**.
+
+13. Incollare il codice seguente nella finestra della query e fare clic su **Esegui**. Verrà creata una tabella **Patients**.
 
      ```sql
      CREATE TABLE [dbo].[Patients](
@@ -392,25 +395,25 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
         [BirthDate] [date] NOT NULL 
      PRIMARY KEY CLUSTERED ([PatientId] ASC) ON [PRIMARY] );
      ```
-12. Dopo aver creato correttamente la tabella, nel riquadro **Esplora oggetti** espandere il nodo di database **medical** e il nodo **tables**, fare clic con il pulsante destro del mouse sul nodo **dbo.Patients** e scegliere **Crittografa colonne**. 
+14. Dopo aver creato correttamente la tabella, nel riquadro **Esplora oggetti** espandere il nodo di database **medical** e il nodo **tables**, fare clic con il pulsante destro del mouse sul nodo **dbo.Patients** e scegliere **Crittografa colonne**. 
 
     >**Nota**: verrà avviata la procedura guidata **Always Encrypted**.
 
-13. Nella pagina **Introduzione** fare clic su **Avanti**.
+15. Nella pagina **Introduzione** fare clic su **Avanti**.
 
-14. Nella pagina **Selezione colonna** selezionare le colonne **SSN** e **Birthdate**, impostare il valore di **Tipo di crittografia** della colonna **SSN** su **Deterministico** e quello della colonna **Birthdate** su **Casuale**, quindi fare clic su **Avanti**.
+16. Nella pagina **Selezione colonna** selezionare le colonne **SSN** e **Birthdate**, impostare il valore di **Tipo di crittografia** della colonna **SSN** su **Deterministico** e quello della colonna **Birthdate** su **Casuale**, quindi fare clic su **Avanti**.
 
     >**Nota**: durante l'esecuzione della crittografia se viene generato un errore simile **a Exception è stato generato dalla destinazione di una chiamata** correlata a **Rotary(Microsoft.SQLServer.Management.ServiceManagement),** assicurarsi che i **valori delle** operazioni** dei criteri di rotazione dell'autorizzazione **della chiave siano **deselezionati**, se non nel portale di Azure passare ai criteri >> **** di accesso dell'insieme**** >> ** di credenziali delle chiaviAutorizzazioni** chiave >> Deselezionare tutti i valori in **Operazioni** criteri di rotazione >> In **Operazioni** chiave con privilegi >> Deselezionare **Rilascio**.
 
-15. Nella pagina **Configurazione della chiave master** selezionare **Azure Key Vault**, fare clic su **Accedi**, quando richiesto eseguire l'autenticazione usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza di Azure Key Vault in questo lab, assicurarsi che l'opzione Key Vault venga visualizzata nell'elenco a discesa **Selezionare un insieme di credenziali delle chiavi di Azure**, quindi fare clic su **Avanti**.
+17. Nella pagina **Configurazione della chiave master** selezionare **Azure Key Vault**, fare clic su **Accedi**, quando richiesto eseguire l'autenticazione usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza di Azure Key Vault in questo lab, assicurarsi che l'opzione Key Vault venga visualizzata nell'elenco a discesa **Selezionare un insieme di credenziali delle chiavi di Azure**, quindi fare clic su **Avanti**.
 
-16. Nella pagina **Impostazioni di esecuzione** fare clic su **Avanti**.
+18. Nella pagina **Impostazioni di esecuzione** fare clic su **Avanti**.
     
-17. Nella pagina **Riepilogo** fare clic su **Fine** per procedere con la crittografia. Quando richiesto, accedere di nuovo usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza Azure Key Vault in questo lab.
+19. Nella pagina **Riepilogo** fare clic su **Fine** per procedere con la crittografia. Quando richiesto, accedere di nuovo usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza Azure Key Vault in questo lab.
 
-18. Al termine del processo di crittografia, nella pagina **Risultati** fare clic su **Chiudi**.
+20. Al termine del processo di crittografia, nella pagina **Risultati** fare clic su **Chiudi**.
 
-19. Nel riquadro **Esplora oggetti** della console di **SQL Server Management Studio**, nel nodo **medical**, espandere i sottonodi **Sicurezza** e **Chiavi Always Encrypted**. 
+21. Nel riquadro **Esplora oggetti** della console di **SQL Server Management Studio**, nel nodo **medical**, espandere i sottonodi **Sicurezza** e **Chiavi Always Encrypted**. 
 
     >**Nota**: il sottonodo **Chiavi Always Encrypted** contiene le sottocartelle **Chiavi master della colonna** e **Chiavi di crittografia della colonna**.
 

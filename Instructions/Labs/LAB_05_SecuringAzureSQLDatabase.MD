@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 11 - Protezione del database SQL di Azure
-  module: Module 03 - Secure data and applications
+  title: 05 - Protezione delle database SQL di Azure
+  module: Module 02 - Plan and implement security for Azure SQL Database and Azure SQL Managed Instance
 ---
 
-# Lab 11: Protezione del database SQL di Azure
+# Lab 05: Protezione dei database SQL di Azure
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -66,9 +66,9 @@ In questa attività si userà un modello per distribuire l'infrastruttura del la
 
    |Impostazione|Valore|
    |---|---|
-   |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
+   |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB11**|
-   |Ubicazione|**(Stati Uniti) Stati Uniti orientali**|
+   |Ufficio|**(Stati Uniti) Stati Uniti orientali**|
 
 7. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 

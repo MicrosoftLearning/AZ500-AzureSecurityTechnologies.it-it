@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 06 - Firewall di Azure
-  module: Module 02 - Implement Platform Protection
+  title: 03 - Firewall di Azure
+  module: Module 02 - Plan and implement security for public access to Azure resources
 ---
 
-# Lab 06: Firewall di Azure
+# Lab 03: Firewall di Azure
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -75,9 +75,9 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
 
    |Impostazione|Valore|
    |---|---|
-   |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
+   |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB08**|
-   |Ubicazione|**(Stati Uniti) Stati Uniti orientali**|
+   |Ufficio|**(Stati Uniti) Stati Uniti orientali**|
 
     >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
@@ -98,8 +98,8 @@ In questa attività si distribuirà il firewall di Azure nella rete virtuale.
    |Impostazione|Valore|
    |---|---|
    |Gruppo di risorse|**AZ500LAB08**|
-   |Name|**Test-FW01**|
-   |Region|**(Stati Uniti) Stati Uniti orientali**|
+   |Nome|**Test-FW01**|
+   |Area|**(Stati Uniti) Stati Uniti orientali**|
    |Firewall SKU|**Standard**|
    |Gestione del firewall|**Usare le regole del firewall (versione classica) per gestire questo firewall**|
    |Scegliere una rete virtuale|Fare clic sull'opzione **Usa esistente** e selezionare **Test-FW-VN** nell'elenco a discesa|
@@ -135,8 +135,8 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
    |Impostazione|Valore|
    |---|---|
    |Gruppo di risorse|**AZ500LAB08**|
-   |Region| **Stati Uniti orientali**|
-   |Name|**Firewall-route**|
+   |Area geografica| **Stati Uniti orientali**|
+   |Nome|**Firewall-route**|
 
 4. Fare clic su **Rivedi e crea** e quindi su **Crea** e attendere il completamento del provisioning. 
 
@@ -159,7 +159,7 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
 
 10. Nel pannello **Aggiungi route** specificare le impostazioni seguenti:  
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
    |Nome route|**FW-DG**|
    |Destinazione prefisso indirizzo|**Indirizzo IP**|
@@ -224,7 +224,7 @@ In questa attività si creerà una regola di rete che consente l'accesso in usci
 
    |Impostazione|valore|
    |---|---|
-   |Name|**AllowDNS**|
+   |Nome|**AllowDNS**|
    |Protocollo|**UDP**|
    |Source type|**Indirizzo IP**|
    |Indirizzi di origine|**10.0.2.0/24**|
@@ -268,7 +268,7 @@ In questa attività si testerà il firewall per verificare che funzioni come pre
 
 4. Fare clic su **Scarica file RDP** e usare il file per connettersi alla macchina virtuale di Azure **Srv-Jump** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Nome utente|**localadmin**|
    |Password|**Pa55w.rd1234**|
@@ -285,7 +285,7 @@ In questa attività si testerà il firewall per verificare che funzioni come pre
 
 6. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Nome utente|**localadmin**|
    |Password|**Pa55w.rd1234**|

@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 05 - Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
-  module: Module 02 - Implement Platform Protection
+  title: 02 - Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
+  module: Module 01 - Plan and implement security for virtual networks
 ---
 
-# Lab 05: Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
+# Lab 02: Gruppi di sicurezza di rete e gruppi di sicurezza delle applicazioni
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -61,10 +61,10 @@ In questa attività si creerà una rete virtuale da usare con i gruppi di sicure
 
     |Impostazione|Valore|
     |---|---|
-    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
+    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB07**|
-    |Name|**myVirtualNetwork**|
-    |Region|**Stati Uniti orientali**|
+    |Nome|**myVirtualNetwork**|
+    |Area geografica|**Stati Uniti orientali**|
 
 5. Nella scheda **Indirizzi IP** del pannello **Crea rete virtuale** impostare **Spazio indirizzi IPv4** su **10.0.0.0/16** e, se necessario, nella colonna **Nome della subnet** fare clic su **predefinito**, quindi nel pannello **Modifica subnet** specificare le impostazioni seguenti e fare clic su **Salva**:
 
@@ -90,8 +90,8 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
     |Impostazione|Valore|
     |---|---|
     |Gruppo di risorse|**AZ500LAB07**|
-    |Name|**myAsgWebServers**|
-    |Region|**Stati Uniti orientali**|
+    |Nome|**myAsgWebServers**|
+    |Area geografica|**Stati Uniti orientali**|
 
     >**Nota**: questo gruppo sarà riservato ai server Web.
 
@@ -104,8 +104,8 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
     |Impostazione|Valore|
     |---|---|
     |Gruppo di risorse|**AZ500LAB07**|
-    |Name|**myAsgMgmtServers**|
-    |Region|**Stati Uniti orientali**|
+    |Nome|**myAsgMgmtServers**|
+    |Area geografica|**Stati Uniti orientali**|
 
     >**Nota**: questo gruppo sarà riservato ai server di gestione.
 
@@ -123,10 +123,10 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
     |Impostazione|Valore|
     |---|---|
-    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
+    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB07**|
-    |Name|**myNsg**|
-    |Region|**Stati Uniti orientali**|
+    |Nome|**myNsg**|
+    |Area geografica|**Stati Uniti orientali**|
 
 4. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
@@ -149,13 +149,13 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 3. Nel pannello **Aggiungi regola di sicurezza in ingresso** specificare le impostazioni seguenti per autorizzare le porte TCP 80 e 443 per il gruppo di sicurezza delle applicazioni **myAsgWebServers**, lasciando i valori predefiniti per tutte le altre impostazioni: 
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |---|---|
     |Destinazione|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgWebServers**|
     |Intervalli porte di destinazione|**80,443**|
     |Protocollo|**TCP**|
     |Priorità|**100**|                                                    
-    |Name|**Allow-Web-All**|
+    |Nome|**Allow-Web-All**|
 
 4. Nel pannello **Aggiungi regola di sicurezza in ingresso** fare clic su **Aggiungi** per creare la nuova regola in ingresso. 
 
@@ -163,13 +163,13 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 6. Nel pannello **Aggiungi regola di sicurezza in ingresso** specificare le impostazioni seguenti per autorizzare la porta RDP (TCP 3389) per il gruppo di sicurezza delle applicazioni **myAsgMgmtServers**, lasciando i valori predefiniti per tutte le altre impostazioni: 
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |---|---|
     |Destinazione|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgMgmtServers**|
     |Intervalli porte di destinazione|**3389**|
     |Protocollo|**TCP**|
     |Priorità|**110**|                                                    
-    |Name|**Allow-RDP-All**|
+    |Nome|**Allow-RDP-All**|
 
 7. Nel pannello **Aggiungi regola di sicurezza in ingresso** fare clic su **Aggiungi** per creare la nuova regola in ingresso. 
 
@@ -198,16 +198,16 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
    |Impostazione|Valore|
    |---|---|
-   |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
+   |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|**AZ500LAB07**|
    |Virtual machine name|**myVmWeb**|
-   |Region|**(Stati Uniti) Stati Uniti orientali**|
-   |Immagine|**Windows Server 2022 Datacenter: Azure Edition- x64 Gen2**|
+   |Area|**(Stati Uniti) Stati Uniti orientali**|
+   |Image|**Windows Server 2022 Datacenter: Azure Edition- x64 Gen2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
-   |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+   |Password|**Creare una password personalizzata e registrarla per riferimento futuro nei lab successivi**|
    |Conferma password|**Digitare nuovamente la password**|
-   |Porte in ingresso pubbliche|**Nessuna**|
+   |Porte in ingresso pubbliche|**Nessuno**|
    |Usare una licenza esistente di Windows Server |**No**|
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
@@ -220,7 +220,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella **scheda Monitoraggio del **pannello** Crea una macchina** virtuale verificare l'impostazione seguente:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
    |Diagnostica di avvio|**Abilita con account di archiviazione gestito (scelta consigliata)**|
 
@@ -236,15 +236,15 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
    |Impostazione|Valore|
    |---|---|
-   |Abbonamento|Nome della sottoscrizione di Azure che verrà usata nel lab|
+   |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|**AZ500LAB07**|
    |Virtual machine name|**myVMMgmt**|
-   |Region|(Stati Uniti) Stati Uniti orientali|
-   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen2**|
+   |Area|(Stati Uniti) Stati Uniti orientali|
+   |Image|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Studente**|
-   |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
-   |Porte in ingresso pubbliche|**Nessuna**|
+   |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
+   |Porte in ingresso pubbliche|**Nessuno**|
    |Si ha già una licenza di Windows Server|**No**|
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
@@ -257,7 +257,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
 6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella **scheda Monitoraggio del **pannello** Crea una macchina** virtuale verificare l'impostazione seguente:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
    |Diagnostica di avvio|**Abilita con account di archiviazione gestito (scelta consigliata)**|
 
@@ -293,7 +293,7 @@ In questa attività si testeranno i filtri del traffico di rete. Si dovrà esser
 
 3. Fare clic su **Scarica file RDP** e usare il file per connettersi alla macchina virtuale di Azure **myVMMgmt** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Nome utente|**Studente**|
    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|

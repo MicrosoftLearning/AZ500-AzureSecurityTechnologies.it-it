@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 16 - Microsoft Sentinel
-  module: Module 04 - Manage Security Operations
+  title: 10 - Microsoft Sentinel
+  module: Module 05 - Configure and manage security monitoring and automation solutions
 ---
 
-# Lab 16: Microsoft Sentinel
+# Lab 10: Microsoft Sentinel
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -27,7 +27,7 @@ In questo lab verrà completato l'esercizio seguente:
 
 ## Diagramma di Microsoft Sentinel
 
-![image](https://user-images.githubusercontent.com/91347931/157538440-4953be73-90be-4edd-bd23-b678326ba637.png)
+![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/509aa70d-de11-4470-a289-877fbfecbc00)
 
 ## Istruzioni
 
@@ -148,9 +148,9 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
     |Impostazione|Valore|
     |---|---|
-    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
+    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
-    |Ubicazione|**(Stati Uniti) Stati Uniti orientali**|
+    |Ufficio|**(Stati Uniti) Stati Uniti orientali**|
     |Nome del playbook|**Change-Incident-Severity**|
     |Nome utente|Indirizzo di posta elettronica|
 
@@ -194,7 +194,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
     |Impostazione|valore|
     |---|---|
-    |Name|**Playbook Demo**|
+    |Nome|**Playbook Demo**|
     |Tattiche|**Accesso iniziale**|
 
 5. Fare clic su **Avanti: Imposta la logica della regola >**.

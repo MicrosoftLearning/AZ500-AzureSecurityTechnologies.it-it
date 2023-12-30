@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 14 - Monitoraggio di Azure
-  module: Module 04 - Manage security operations
+  title: 08 - Monitoraggio di Azure
+  module: Module 02 - Configure data collection in Azure Monitor
 ---
 
-# Lab 14: Monitoraggio di Azure
+# Lab 08: Monitoraggio di Azure
 
 # Manuale del lab per gli studenti
 
@@ -49,7 +49,13 @@ In questo esercizio si completeranno le seguenti attività:
     New-AzResourceGroup -Name AZ500LAB131415 -Location 'EastUS'
     ```
 
-    >**Nota**: questo gruppo di risorse verrà usato per i lab 13, 14 e 15. 
+    >**Nota**: questo gruppo di risorse verrà usato per i lab 13, 14 e 15.
+
+5. Nella sessione di PowerShell nel riquadro Cloud Shell eseguire quanto segue per abilitare la crittografia nell'host (EAH)
+   
+   ```powershell
+    Register-AzProviderFeature -FeatureName "EncryptionAtHost" -ProviderNamespace Microsoft.Compute 
+    ```
 
 5. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per creare una nuova macchina virtuale di Azure. 
 
@@ -59,10 +65,10 @@ In questo esercizio si completeranno le seguenti attività:
     
 6.  Verranno chieste le seguenti credenziali.
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |---|---|
     |User |**localadmin**|
-    |Password|**Usare la password personale creata in Lab 04 > Esercizio 1 > Attività 1 > Passaggio 9.**|
+    |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
 
     >**Nota**: attendere il completamento della distribuzione. 
 
@@ -94,10 +100,10 @@ In questa attività si creerà un'area di lavoro Log Analytics.
 
     |Impostazione|Valore|
     |---|---|
-    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
+    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
-    |Name|Qualunque nome univoco a livello globale, valido|
-    |Region|**Stati Uniti orientali**|
+    |Nome|Qualunque nome univoco a livello globale, valido|
+    |Area geografica|**Stati Uniti orientali**|
 
 4. Selezionare **Rivedi e crea**.
 
@@ -125,10 +131,10 @@ In questa attività si creerà un account di archiviazione.
 
     |Impostazione|Valore|
     |---|---|
-    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
+    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
     |Nome account di archiviazione|Qualsiasi nome univoco globale composto da 3-24 lettere e numeri|
-    |Ubicazione|**(Stati Uniti) Stati Uniti orientali**|
+    |Ufficio|**(Stati Uniti) Stati Uniti orientali**|
     |Prestazioni|**Standard (account v2 per utilizzo generico)**|
     |Ridondanza|**Archiviazione con ridondanza locale**|
 
@@ -154,17 +160,18 @@ In questa attività si creerà una regola di raccolta dati.
 
 2. Nel pannello **Monitoraggio Impostazioni** fare clic su **Regole di raccolta dati.**
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/2184da69-12c2-476b-b2b2-b80620e822a6)
+  ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d43e8f94-efb2-4255-9320-210c976fd45e)
+
 
 3. Nella **scheda Informazioni di base** del pannello **Crea regola** di raccolta dati specificare le impostazioni seguenti:
   
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |---|---|
     |**Dettagli regola**|
     |Nome della regola|**DCR1**|
     |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
-    |Region|**Stati Uniti orientali**|
+    |Area geografica|**Stati Uniti orientali**|
     |Tipo di piattaforma|**Windows**|
     |Endpoint di raccolta dati|*Lasciare vuoto*|
 
@@ -172,16 +179,18 @@ In questa attività si creerà una regola di raccolta dati.
 
 
 4. Fare clic sul pulsante con etichetta **Avanti: Risorse >** per continuare.
+   
+6. Nella scheda Risorse selezionare + Aggiungi risorse,** selezionare **** Abilita endpoint raccolta dati.** Nel selezionare un modello di ambito selezionare **AZ500LAB131415** e fare clic su **Applica.**
 
-5. Nella **scheda Risorse** selezionare + Aggiungi risorse** e quindi selezionare **** Abilita endpoint raccolta dati.**
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d4191115-11bc-43ec-9bee-e84b9b95a821)
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/c8388619-c254-4c80-a1ff-dde2f35ed350)
+10. Fare clic sul pulsante con etichetta **Avanti: Raccogliere e recapitare >** per continuare.
 
-6. Fare clic sul pulsante con etichetta **Avanti: Raccogliere e recapitare >** per continuare.
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/8294d300-f910-4757-ad52-43c7594ac822)
 
-7. Fare clic su **+ Aggiungi origine** dati, quindi nella **pagina Aggiungi origine** dati modificare il **menu a discesa Tipo di** origine dati per visualizzare **i contatori delle prestazioni.** Lasciare le impostazioni predefinite seguenti:
+11. Fare clic su **+ Aggiungi origine** dati, quindi nella **pagina Aggiungi origine** dati modificare il **menu a discesa Tipo di** origine dati per visualizzare **i contatori delle prestazioni.** Lasciare le impostazioni predefinite seguenti:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |---|---|
     |**Contatore delle prestazioni**|**Frequenza di campionamento (secondi)**|
     |CPU|60|
@@ -191,13 +200,13 @@ In questa attività si creerà una regola di raccolta dati.
 
    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/a24e44ad-1d10-4533-80e2-bae1b3f6564d)
 
-8. Fare clic sul pulsante **Avanti: Destinazione >** per continuare.
+11. Fare clic sul pulsante **Avanti: Destinazione >** per continuare.
   
-9. Modificare il **menu a discesa Tipo di** destinazione per visualizzare **i log di Monitoraggio di Azure.** **Nella finestra Sottoscrizione** verificare che venga visualizzata la *sottoscrizione*, quindi modificare il menu a discesa Account o spazio dei nomi** in modo da riflettere l'area **di lavoro Log Analytics creata in precedenza.
+12. Modificare il **menu a discesa Tipo di** destinazione per visualizzare **i log di Monitoraggio di Azure.** **Nella finestra Sottoscrizione** verificare che venga visualizzata la *sottoscrizione*, quindi modificare il menu a discesa Account o spazio dei nomi** in modo da riflettere l'area **di lavoro Log Analytics creata in precedenza.
 
    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/481843f5-94c4-4a8f-bf51-a10d49130bf8)
 
-10. Fare clic su **Aggiungi origine** dati nella parte inferiore della pagina.
+11. Fare clic su **Aggiungi origine** dati nella parte inferiore della pagina.
     
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/964091e7-bbbc-4ca8-8383-bb2871a1e7f0)
 
