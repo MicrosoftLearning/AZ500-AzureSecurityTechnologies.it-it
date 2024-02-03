@@ -355,12 +355,13 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
     |Username|**Studente**|
     |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
     
-
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**. Chiudere Server Manager. 
 
-    >**Nota**: i passaggi rimanenti in questo lab vengono eseguiti all'interno della sessione Desktop remoto nella macchina virtuale di Azure **az500-10-vm1**. 
+    >**Nota**: i passaggi rimanenti in questo lab vengono eseguiti all'interno della sessione Desktop remoto nella macchina virtuale di Azure **az500-10-vm1**.
 
-7. Fare clic su **Start, nel **menu Start**** espandere la **cartella Microsoft SQL Server Tools 19** e fare clic sulla **voce di menu Micosoft SQL Server Management Studio**.
+6. Installare [SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?preserve-view=true&view=sql-server-2017) in **az500-10-vm1.** Macchina virtuale di Azure.
+ 
+7. Aprire **SQL Server Management Studio**.
 
 8. Nella finestra di dialogo **Connetti al server** specificare le impostazioni seguenti: 
 
@@ -372,14 +373,13 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
     |Username|**Studente**|
     |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
 
+9. Nella finestra di dialogo **Connetti al server** fare clic su **Connetti**.
 
-10. Nella finestra di dialogo **Connetti al server** fare clic su **Connetti**.
+10. Nel riquadro **Esplora oggetti** della console di **SQL Server Management Studio** espandere la cartella **Database**.
 
-11. Nel riquadro **Esplora oggetti** della console di **SQL Server Management Studio** espandere la cartella **Database**.
+11. Nel riquadro **Esplora oggetti** fare clic con il pulsante destro del mouse sul database **medical** e scegliere **Nuova query**.
 
-12. Nel riquadro **Esplora oggetti** fare clic con il pulsante destro del mouse sul database **medical** e scegliere **Nuova query**.
-
-13. Incollare il codice seguente nella finestra della query e fare clic su **Esegui**. Verrà creata una tabella **Patients**.
+12. Incollare il codice seguente nella finestra della query e fare clic su **Esegui**. Verrà creata una tabella **Patients**.
 
      ```sql
      CREATE TABLE [dbo].[Patients](
@@ -395,25 +395,25 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
         [BirthDate] [date] NOT NULL 
      PRIMARY KEY CLUSTERED ([PatientId] ASC) ON [PRIMARY] );
      ```
-14. Dopo aver creato correttamente la tabella, nel riquadro **Esplora oggetti** espandere il nodo di database **medical** e il nodo **tables**, fare clic con il pulsante destro del mouse sul nodo **dbo.Patients** e scegliere **Crittografa colonne**. 
+13. Dopo aver creato correttamente la tabella, nel riquadro **Esplora oggetti** espandere il nodo di database **medical** e il nodo **tables**, fare clic con il pulsante destro del mouse sul nodo **dbo.Patients** e scegliere **Crittografa colonne**. 
 
     >**Nota**: verrà avviata la procedura guidata **Always Encrypted**.
 
-15. Nella pagina **Introduzione** fare clic su **Avanti**.
+14. Nella pagina **Introduzione** fare clic su **Avanti**.
 
-16. Nella pagina **Selezione colonna** selezionare le colonne **SSN** e **Birthdate**, impostare il valore di **Tipo di crittografia** della colonna **SSN** su **Deterministico** e quello della colonna **Birthdate** su **Casuale**, quindi fare clic su **Avanti**.
+15. Nella pagina **Selezione colonna** selezionare le colonne **SSN** e **Birthdate**, impostare il valore di **Tipo di crittografia** della colonna **SSN** su **Deterministico** e quello della colonna **Birthdate** su **Casuale**, quindi fare clic su **Avanti**.
 
     >**Nota**: durante l'esecuzione della crittografia se viene generato un errore simile **a Exception è stato generato dalla destinazione di una chiamata** correlata a **Rotary(Microsoft.SQLServer.Management.ServiceManagement),** assicurarsi che i **valori delle** operazioni** dei criteri di rotazione dell'autorizzazione **della chiave siano **deselezionati**, se non nel portale di Azure passare ai criteri >> **** di accesso dell'insieme**** >> ** di credenziali delle chiaviAutorizzazioni** chiave >> Deselezionare tutti i valori in **Operazioni** criteri di rotazione >> In **Operazioni** chiave con privilegi >> Deselezionare **Rilascio**.
 
-17. Nella pagina **Configurazione della chiave master** selezionare **Azure Key Vault**, fare clic su **Accedi**, quando richiesto eseguire l'autenticazione usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza di Azure Key Vault in questo lab, assicurarsi che l'opzione Key Vault venga visualizzata nell'elenco a discesa **Selezionare un insieme di credenziali delle chiavi di Azure**, quindi fare clic su **Avanti**.
+16. Nella pagina **Configurazione della chiave master** selezionare **Azure Key Vault**, fare clic su **Accedi**, quando richiesto eseguire l'autenticazione usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza di Azure Key Vault in questo lab, assicurarsi che l'opzione Key Vault venga visualizzata nell'elenco a discesa **Selezionare un insieme di credenziali delle chiavi di Azure**, quindi fare clic su **Avanti**.
 
-18. Nella pagina **Impostazioni di esecuzione** fare clic su **Avanti**.
+17. Nella pagina **Impostazioni di esecuzione** fare clic su **Avanti**.
     
-19. Nella pagina **Riepilogo** fare clic su **Fine** per procedere con la crittografia. Quando richiesto, accedere di nuovo usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza Azure Key Vault in questo lab.
+18. Nella pagina **Riepilogo** fare clic su **Fine** per procedere con la crittografia. Quando richiesto, accedere di nuovo usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza Azure Key Vault in questo lab.
 
-20. Al termine del processo di crittografia, nella pagina **Risultati** fare clic su **Chiudi**.
+19. Al termine del processo di crittografia, nella pagina **Risultati** fare clic su **Chiudi**.
 
-21. Nel riquadro **Esplora oggetti** della console di **SQL Server Management Studio**, nel nodo **medical**, espandere i sottonodi **Sicurezza** e **Chiavi Always Encrypted**. 
+20. Nel riquadro **Esplora oggetti** della console di **SQL Server Management Studio**, nel nodo **medical**, espandere i sottonodi **Sicurezza** e **Chiavi Always Encrypted**. 
 
     >**Nota**: il sottonodo **Chiavi Always Encrypted** contiene le sottocartelle **Chiavi master della colonna** e **Chiavi di crittografia della colonna**.
 
