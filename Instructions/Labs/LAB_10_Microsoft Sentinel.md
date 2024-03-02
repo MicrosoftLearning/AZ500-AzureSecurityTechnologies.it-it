@@ -240,7 +240,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
 3. Nel pannello Microsoft Defender per il cloud Protezioni del carico di lavoro scorrere verso il **basso e fare clic sul **riquadro Accesso** JUST-in-time alle macchine virtuali in **Protezione avanzata**.** \|
 
-4. **Nel pannello Accesso JIT alla macchina** virtuale fare clic sul pulsante con i puntini di sospensione (...) sul lato destro della riga che fa riferimento alla **macchina virtuale myVM**, fare clic sul pulsante con i puntini di sospensione (...)** , fare clic **su **Rimuovi** e quindi su **Sì**.
+4. **Nel pannello Accesso JUST-in-time alla macchina** virtuale fare clic sul pulsante con i puntini di sospensione (...) sul lato destro della riga che fa riferimento alla **macchina virtuale myVM**, fare clic sul pulsante con i **puntini di sospensione (...)** , scegliere **Rimuovi** e quindi fare clic su **Sì**.
 
     >**Nota:** se la macchina virtuale non è elencata in **Just-in-time VMs** (VM Just-In-Time), passare al pannello **Macchina virtuale**, fare clic su **Configurazione** e quindi fare clic sull'opzione **Enable the Just-in-time VMs** (Abilita VM Just-In-Time) in **Accesso Just-In-Time alla VM**. Ripetere il passaggio precedente per tornare a **Microsoft Defender for Cloud** e aggiornare la pagina. Verrà visualizzata la macchina virtuale.
 
