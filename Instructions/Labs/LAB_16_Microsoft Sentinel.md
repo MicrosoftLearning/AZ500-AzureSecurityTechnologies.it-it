@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 10 - Microsoft Sentinel
-  module: Module 05 - Configure and manage security monitoring and automation solutions
+  title: 16 - Microsoft Sentinel
+  module: Module 04 - Manage Security Operations
 ---
 
-# Lab 10: Microsoft Sentinel
+# Lab 16: Microsoft Sentinel
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -27,7 +27,7 @@ In questo lab verrà completato l'esercizio seguente:
 
 ## Diagramma di Microsoft Sentinel
 
-![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/509aa70d-de11-4470-a289-877fbfecbc00)
+![image](https://user-images.githubusercontent.com/91347931/157538440-4953be73-90be-4edd-bd23-b678326ba637.png)
 
 ## Istruzioni
 
@@ -148,9 +148,9 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
+    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
-    |Ufficio|**(Stati Uniti) Stati Uniti orientali**|
+    |Ubicazione|**(Stati Uniti) Stati Uniti orientali**|
     |Nome del playbook|**Change-Incident-Severity**|
     |Nome utente|Indirizzo di posta elettronica|
 
@@ -194,7 +194,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
     |Impostazione|valore|
     |---|---|
-    |Nome|**Playbook Demo**|
+    |Name|**Playbook Demo**|
     |Tattiche|**Accesso iniziale**|
 
 5. Fare clic su **Avanti: Imposta la logica della regola >**.
@@ -240,7 +240,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
 3. Nel pannello Microsoft Defender per il cloud Protezioni del carico di lavoro scorrere verso il **basso e fare clic sul **riquadro Accesso** JUST-in-time alle macchine virtuali in **Protezione avanzata**.** \|
 
-4. **Nel pannello Accesso JUST-in-time alla macchina** virtuale fare clic sul pulsante con i puntini di sospensione (...) sul lato destro della riga che fa riferimento alla **macchina virtuale myVM**, fare clic sul pulsante con i **puntini di sospensione (...)** , scegliere **Rimuovi** e quindi fare clic su **Sì**.
+4. **Nel pannello Accesso JIT alla macchina** virtuale fare clic sul pulsante con i puntini di sospensione (...) sul lato destro della riga che fa riferimento alla **macchina virtuale myVM**, fare clic sul pulsante con i puntini di sospensione (...)** , fare clic **su **Rimuovi** e quindi su **Sì**.
 
     >**Nota:** se la macchina virtuale non è elencata in **Just-in-time VMs** (VM Just-In-Time), passare al pannello **Macchina virtuale**, fare clic su **Configurazione** e quindi fare clic sull'opzione **Enable the Just-in-time VMs** (Abilita VM Just-In-Time) in **Accesso Just-In-Time alla VM**. Ripetere il passaggio precedente per tornare a **Microsoft Defender for Cloud** e aggiornare la pagina. Verrà visualizzata la macchina virtuale.
 
