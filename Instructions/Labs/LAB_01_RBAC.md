@@ -130,7 +130,7 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
 5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per connettersi all'ID Microsoft Entra:
 
     ```powershell
-    Connect-MgGraph -Scopes "User.ReadWrite.All", "AuditLog.Read.All", "RoleManagement.Read.Directory"
+    Connect-MgGraph -Scopes "User.ReadWrite.All", "Group.ReadWrite.All", "AuditLog.Read.All", "RoleManagement.Read.Directory"
     ```
       
 6. Nella sessione di PowerShell nel riquadro Cloud Shell eseguire quanto segue per identificare il nome del tenant di Microsoft Entra: 
@@ -155,46 +155,42 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
 
 In questa attività si creerà il gruppo Junior Admins e si aggiungerà l'account utente di Isabel Garcia al gruppo usando PowerShell.
 
-1. Nella stessa sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un nuovo gruppo di sicurezza denominato Junior Admins:
-   ```powershell
-   $group = Get-MgGroup -Filter "DisplayName eq 'Junior Admins'"
-   ```
+1. Nella stessa sessione di PowerShell nel riquadro Cloud Shell eseguire le operazioni seguenti per **creare un nuovo gruppo** di sicurezza denominato Junior Amministrazione s:
    
    ```powershell
-   $group = Get-MgGroup -Filter "DisplayName eq 'Junior Admins'"
-    New-MgGroupMemeber -GroupId $group.Id -DirectoryObjectId $user.Id  
+   New-MgGroup -DisplayName "Junior Admins" -MailEnabled:$false -SecurityEnabled:$true -MailNickName JuniorAdmins
+   ```
+   
+2. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare **i gruppi nel tenant di Microsoft Entra (l'elenco deve includere i gruppi** senior Amministrazione e junior Amministrazione s)
+   
+   ```powershell
+   Get-MgGroup
    ```
 
+3. Nella sessione di PowerShell nel riquadro Cloud Shell eseguire quanto segue per **ottenere un riferimento** all'account utente di Isabel Garcia:
+
    ```powershell
-    New-MgGroup -DisplayName 'Junior Admins' -MailEnabled $false -SecurityEnabled $true -MailNickName JuniorAdmins
+   $user =Get-MgUser -Filter "MailNickName eq 'Isabel'"
+   ```
+
+4. Nella sessione di PowerShell nel riquadro Cloud Shell eseguire quanto segue per **ottenere un riferimento** al gruppo Junior Amministrazione s:
+   ```powershell
+   $targetGroup = Get-MgGroup -ConsistencyLevel eventual -Search '"DisplayName:Junior Admins"'
+   ```
+
+5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per **aggiungere l'account utente di Isabel** al gruppo Junior Amministrazione s:
+   
+   ```powershell
+    New-MgGroupMember -DirectoryObjectId $user.id -GroupId $targetGroup.id
     ```
-
-3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per elencare i gruppi nel tenant di Microsoft Entra(l'elenco deve includere i gruppi senior Amministrazione e Junior Amministrazione s):
-
+   
+5. Nella sessione di PowerShell nel riquadro Cloud Shell eseguire quanto segue per **verificare** che il gruppo Junior Amministrazione s contenga l'account utente di Isabel:
+   
     ```powershell
-    Get-MgGroup
+    Get-MgGroupMember -GroupId $targetGroup.id
     ```
-
-4. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per ottenere un riferimento all'account utente di Isabel Garcia:
-
-    ```powershell
-    $user = Get-MgUser -Filter "MailNickName eq 'Isabel'"
-    ```
-
-5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per aggiungere l'account utente di Isabel al gruppo Junior Admins:
-    
-    ```powershell
-    New-MgGroupMember -MemberUserPrincipalName $user.userPrincipalName -TargetGroupDisplayName "Junior Admins" 
-    ```
-
-6. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per verificare che il gruppo Junior Admins contenga l'account utente di Isabel:
-
-    ```powershell
-    Get-MgGroupMember -GroupDisplayName "Junior Admins"
-    ```
-
+ 
 > Risultato: è stato usato PowerShell per creare un account utente e un account di gruppo e aggiungere l'account utente all'account di gruppo. 
-
 
 ### Esercizio 3: Creare un gruppo Service Desk contenente l'account utente di Dylan Williams come membro.
 
