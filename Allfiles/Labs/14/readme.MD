@@ -1,6 +1,6 @@
-Contiene il file bicep per distribuire le risorse configurate nel lab
+This contains the bicep file to deploy the resources configured in the lab
 
-Per distribuire questo modello: 
+To deploy this template: 
 
 ```
 $date = Get-Date -Format "MM-dd-yyyy"
