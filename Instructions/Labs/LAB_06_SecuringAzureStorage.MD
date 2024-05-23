@@ -63,7 +63,7 @@ In questa attività verrà creata una rete virtuale.
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB12**|
     |Nome|**myVirtualNetwork**|
-    |Area|**(Stati Uniti) Stati Uniti orientali**|
+    |Paese|**(Stati Uniti) Stati Uniti orientali**|
 
 5. Nella scheda **Indirizzi IP** del pannello **Crea rete virtuale** impostare lo **Spazio indirizzi IPv4** su **10.0.0.0/16**, nella colonna **Nome della subnet** fare clic su **default** e nel pannello **Modifica subnet** specificare le impostazioni seguenti e fare clic su **Salva**:
 
@@ -94,7 +94,7 @@ In questa attività verrà creata un'altra subnet in cui verrà abilitato un end
     |---|---|
     |Nome subnet|**Privata**|
     |Intervallo di indirizzi subnet|**10.0.1.0/24**|
-    |Endpoint di servizio|**Microsoft.Storage**|
+    |Endpoint di servizio|**Lasciare l'impostazione predefinita Nessuno**|
 
 6. Nel pannello **Aggiungi subnet** fare clic su **Salva** per aggiungere la nuova subnet.
 
@@ -328,9 +328,9 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
     |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
     |Gruppo di risorse|**AZ500LAB12**|
     |Virtual machine name|**myVmPrivate**|
-    |Area|**(Stati Uniti) Stati Uniti orientali**|
-    |Image|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
-    |Username|**Studente**|
+    |Paese|**(Stati Uniti) Stati Uniti orientali**|
+    |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
+    |Username|**Student**|
     |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
     |Porte in ingresso pubbliche|**Nessuno**|
     |Si ha già una licenza di Windows Server|**Non selezionato**|
@@ -363,9 +363,9 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
     |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
     |Gruppo di risorse|**AZ500LAB12**|
     |Virtual machine name|**myVmPublic**|
-    |Area|**(Stati Uniti) Stati Uniti orientali**|
-    |Image|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
-    |Username|**Studente**|
+    |Paese|**(Stati Uniti) Stati Uniti orientali**|
+    |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
+    |Username|**Student**|
     |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
     |Porte in ingresso pubbliche|**Nessuno**|
     |Si ha già una licenza di Windows Server|**Non selezionato**|
@@ -403,7 +403,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
 
     |Impostazione|Valore|
     |---|---|
-    |Username|**Studente**|
+    |Username|**Student**|
     |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
      
 
@@ -454,7 +454,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
 
     |Impostazione|Valore|
     |---|---|
-    |Username|**Studente**|
+    |Username|**Student**|
     |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
 
 
