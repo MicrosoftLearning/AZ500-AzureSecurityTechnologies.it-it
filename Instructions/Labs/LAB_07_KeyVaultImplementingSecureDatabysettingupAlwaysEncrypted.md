@@ -70,7 +70,7 @@ In questa attività si distribuirà una macchina virtuale di Azure che installer
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB10**|
    |Ufficio|**Stati Uniti orientali**|
-   |Username|**Studente**|
+   |Username|**Student**|
    |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
    
    
@@ -105,11 +105,7 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
 3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per creare un'istanza di Azure Key Vault nel gruppo di risorse **AZ500LAB10**. Se si è scelto un altro nome per il gruppo di risorse di questo lab nell'Attività 1, usare tale nome anche per questa attività. Il nome dell'istanza di Key Vault deve essere univoco. Ricordare il nome scelto. Sarà necessario in tutto il lab.  
 
     ```powershell
-    $kvName = 'az500kv' + $(Get-Random)
-
-    $location = (Get-AzResourceGroup -ResourceGroupName 'AZ500LAB10').Location
-
-    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500LAB10' -Location $location
+    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500LAB10-lod41132372' -Location $location -DisableRbacAuthorization
     ```
 
     >**Nota**: l'output dell'ultimo comando visualizza il nome e l'URL dell'insieme di credenziali. L'URI dell'insieme di credenziali è nel formato `https://<vault_name>.vault.azure.net/`
@@ -352,7 +348,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
     |Impostazione|Valore|
     |---|---|
-    |Username|**Studente**|
+    |Username|**Student**|
     |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
     
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di **Server Manager**. Chiudere Server Manager. 
@@ -369,8 +365,8 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
     |---|---|
     |Tipo di server|**Motore di database**|
     |Nome server|Il nome del server identificato in precedenza in questa attività|
-    |Authentication|**Autenticazione di SQL Server**|
-    |Username|**Studente**|
+    |Autenticazione|**Autenticazione di SQL Server**|
+    |Username|**Student**|
     |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
 
 9. Nella finestra di dialogo **Connetti al server** fare clic su **Connetti**.
