@@ -78,7 +78,7 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB08**|
    |Ufficio|**(Stati Uniti) Stati Uniti orientali**|
-   |adminPassword|Password sicura di propria scelta per le macchine virtuali. Ricordare la password. Sarà necessario in un secondo momento per connettersi alle macchine virtuali.|
+   |adminPassword|Una password sicura a propria scelta per le macchine virtuali. Ricordare la password. Sarà necessaria in un secondo momento per connettersi alle macchine virtuali.|
 
     >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
@@ -101,8 +101,8 @@ In questa attività si distribuirà il firewall di Azure nella rete virtuale.
    |Gruppo di risorse|**AZ500LAB08**|
    |Nome|**Test-FW01**|
    |Paese|**(Stati Uniti) Stati Uniti orientali**|
-   |Firewall SKU|**Standard**|
-   |Gestione del firewall|**Usare le regole del firewall (versione classica) per gestire questo firewall**|
+   |SKU firewall|**Standard**|
+   |Gestione del firewall|**Usare Regole del firewall (versione classica) per gestire questo firewall**|
    |Scegliere una rete virtuale|Fare clic sull'opzione **Usa esistente** e selezionare **Test-FW-VN** nell'elenco a discesa|
    |Indirizzo IP pubblico|Fare clic su **Aggiungi nuovo**, digitare il nome **TEST-FW-PIP** e fare clic su **OK**|
 
@@ -272,7 +272,7 @@ In questa attività si testerà il firewall per verificare che funzioni come pre
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**localadmin**|
-   |Password|Password sicura scelta durante la distribuzione del modello personalizzato nell'attività 1 passaggio 6.|
+   |Password|La password sicura scelta durante la distribuzione del modello personalizzato nell'attività 1 passaggio 6.|
 
     >**Nota**: i passaggi seguenti vengono eseguiti nella sessione di Desktop remoto nella macchina virtuale di Azure **Srv-Jump**. 
 
@@ -289,7 +289,7 @@ In questa attività si testerà il firewall per verificare che funzioni come pre
    |Impostazione|Valore|
    |---|---|
    |Nome utente|**localadmin**|
-   |Password|Password sicura scelta durante la distribuzione del modello personalizzato nell'attività 1 passaggio 6.|
+   |Password|La password sicura scelta durante la distribuzione del modello personalizzato nell'attività 1 passaggio 6.|
 
     >**Nota**: attendere che venga stabilita la sessione di Desktop remoto e che venga caricata l'interfaccia Server Manager.
 

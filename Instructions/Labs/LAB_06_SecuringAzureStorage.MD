@@ -1,10 +1,10 @@
 ---
 lab:
-  title: ' 06 - Endpoint di servizio e protezione Archiviazione'
+  title: ' 06 - Endpoint di servizio e protezione dell''archiviazione'
   module: Module 03 - Plan and implement security for Azure SQL Database and Azure SQL Managed Instance
 ---
 
-# Lab 06: Endpoint di servizio e protezione Archiviazione
+# Lab 06: Endpoint di servizio e protezione dell'archiviazione
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -94,7 +94,7 @@ In questa attività verrà creata un'altra subnet in cui verrà abilitato un end
     |---|---|
     |Nome subnet|**Privata**|
     |Intervallo di indirizzi subnet|**10.0.1.0/24**|
-    |Endpoint di servizio|**Lasciare l'impostazione predefinita Nessuno**|
+    |Endpoint di servizio|**Lasciare il valore predefinito Nessuno**|
 
 6. Nel pannello **Aggiungi subnet** fare clic su **Salva** per aggiungere la nuova subnet.
 
@@ -140,7 +140,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
     |Protocollo|**Any**|
     |Azione|**Consenti**|
     |Priorità|**1000**|
-    |Nome|**Allow-Archiviazione-All**|
+    |Nome|**Allow-Storage-All**|
 
 9. Nel pannello **Aggiungi regola di sicurezza in uscita** fare clic su **Aggiungi** per creare la nuova regola in uscita. 
 
@@ -273,7 +273,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 8. Nel pannello **Panoramica** dell'account di archiviazione fare clic su **Condivisioni file** nella scheda **Archiviazione dati** e quindi su **+ Condivisione file**.
 
-9. Nel pannello **Nuova condivisione** file rimuovere l'opzione **Abilita backup** nella scheda Backup. 
+9. Nel pannello **Nuova condivisione file**, deselezionare l'opzione **Abilita backup** nella scheda Backup. 
 
 10. Nel pannello **Nuova condivisione file** specificare le impostazioni seguenti:
 
@@ -331,7 +331,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
     |Paese|**(Stati Uniti) Stati Uniti orientali**|
     |Immagine|**Windows Server 2022 Datacenter: Azure Edition - Gen 2**|
     |Username|**Student**|
-    |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 2 > Attività 1 > Passaggio 3.**|
     |Porte in ingresso pubbliche|**Nessuno**|
     |Si ha già una licenza di Windows Server|**Non selezionato**|
 
@@ -404,7 +404,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
     |Impostazione|Valore|
     |---|---|
     |Username|**Student**|
-    |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 2 > Attività 1 > Passaggio 3.**|
      
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di Server Manager.
@@ -455,7 +455,7 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
     |Impostazione|Valore|
     |---|---|
     |Username|**Student**|
-    |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 2 > Attività 1 > Passaggio 3.**|
 
 
     >**Nota**: attendere l'apertura della sessione Desktop remoto e il caricamento di Server Manager.

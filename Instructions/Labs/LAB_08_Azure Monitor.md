@@ -10,7 +10,7 @@ lab:
 
 ## Scenario laboratorio
 
-È stato chiesto di raccogliere eventi e contatori delle prestazioni dalle macchine virtuali con l'agente di Monitoraggio di Azure.
+È stato richiesto di raccogliere eventi e contatori delle prestazioni dalle macchine virtuali con l'agente di Monitoraggio di Azure.
 
 > Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
 
@@ -21,13 +21,13 @@ In questo lab verranno completati gli esercizi seguenti:
 - Esercizio 1: Distribuire una macchina virtuale di Azure
 - Esercizio 2: Creare un'area di lavoro Log Analytics
 - Esercizio 3: Creare un account di archiviazione di Azure
-- Esercizio 4: Creare una regola di confronto dei dati.
+- Esercizio 4: Creare una regola di raccolta dati.
   
 ## Istruzioni
 
 ### Esercizio 1: Distribuire una macchina virtuale di Azure
 
-### Tempo esercizio: 10 minuti
+### Intervallo esercizio: 10 minuti
 
 In questo esercizio si completeranno le seguenti attività: 
 
@@ -51,7 +51,7 @@ In questo esercizio si completeranno le seguenti attività:
 
     >**Nota**: questo gruppo di risorse verrà usato per i lab 13, 14 e 15.
 
-5. Nella sessione di PowerShell nel riquadro Cloud Shell eseguire quanto segue per abilitare la crittografia nell'host (EAH)
+5. Nella sessione di PowerShell nel riquadro Cloud Shell, eseguire quanto segue per abilitare la crittografia nell'host (EAH)
    
    ```powershell
     Register-AzProviderFeature -FeatureName "EncryptionAtHost" -ProviderNamespace Microsoft.Compute 
@@ -68,7 +68,7 @@ In questo esercizio si completeranno le seguenti attività:
     |Impostazione|Valore|
     |---|---|
     |User |**localadmin**|
-    |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
+    |Password|**Usare la password personale creata in Lab 02 > Esercizio 2 > Attività 1 > Passaggio 3.**|
 
     >**Nota**: attendere il completamento della distribuzione. 
 
@@ -82,7 +82,7 @@ In questo esercizio si completeranno le seguenti attività:
 
 ### Esercizio 2: Creare un'area di lavoro Log Analytics
 
-### Tempo esercizio: 10 minuti
+### Intervallo esercizio: 10 minuti
 
 In questo esercizio si completeranno le seguenti attività: 
 
@@ -123,7 +123,7 @@ In questa attività si creerà un account di archiviazione.
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Account di archiviazione** e premere **INVIO**.
 
-2. Nel pannello **Archiviazione account** nel portale di Azure fare clic sul **pulsante + Crea** per creare un nuovo account di archiviazione.
+2. Nel pannello **Account di archiviazione** nel portale di Azure, fare clic sul pulsante **+ Crea** per creare un nuovo account di archiviazione.
 
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/73eb9241-d642-455a-a1ff-b504670395c0)
 
@@ -138,7 +138,7 @@ In questa attività si creerà un account di archiviazione.
     |Prestazioni|**Standard (account v2 per utilizzo generico)**|
     |Ridondanza|**Archiviazione con ridondanza locale**|
 
-4. Nella **scheda Informazioni di base** del **pannello Crea account** di archiviazione fare clic su **Rivedi**, attendere il completamento del processo di convalida e fare clic su **Crea**.
+4. Nella scheda **Generale** del pannello **Crea account di archiviazione**, fare clic su **Rivedi**, attendere il completamento del processo di convalida e poi fare clic su **Crea**.
 
      ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d443821c-2ddf-4794-87fa-bfc092980eba)
 
@@ -156,20 +156,20 @@ In questo esercizio si completeranno le seguenti attività:
 
 In questa attività si creerà una regola di raccolta dati.
 
-1. Nella portale di Azure casella **di testo Cerca risorse, servizi e documenti** nella parte superiore della pagina **portale di Azure digitare Monitoraggio** e premere **INVIO**.
+1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure, digitare **Monitora** e premere **Invio**.
 
-2. Nel pannello **Monitoraggio Impostazioni** fare clic su **Regole di raccolta dati.**
+2. Nel pannello **Impostazioni monitoraggio**, fare clic su  **Regole di raccolta dati.**
 
   ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d43e8f94-efb2-4255-9320-210c976fd45e)
 
 
-3. Nella **scheda Informazioni di base** del pannello **Crea regola** di raccolta dati specificare le impostazioni seguenti:
+3. Nella scheda **Generale** del pannello **Crea regola di raccolta dati**, specificare le impostazioni seguenti:
   
     |Impostazione|Valore|
     |---|---|
     |**Dettagli regola**|
     |Nome della regola|**DCR1**|
-    |Abbonamento|Nome della sottoscrizione di Azure usata in questo lab|
+    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
     |Area geografica|**Stati Uniti orientali**|
     |Tipo di piattaforma|**Windows**|
@@ -180,7 +180,7 @@ In questa attività si creerà una regola di raccolta dati.
 
 4. Fare clic sul pulsante con etichetta **Avanti: Risorse >** per continuare.
    
-6. Nella scheda Risorse selezionare + Aggiungi risorse,** selezionare **** Abilita endpoint raccolta dati.** Nel selezionare un modello di ambito selezionare **AZ500LAB131415** e fare clic su **Applica.**
+6. Nella scheda Risorse, selezionare **+ Aggiungi risorse,** selezionare **Abilita endpoint raccolta dati.** Nel selezionare un modello di ambito, selezionare **AZ500LAB131415,** e fare clic su **Applica.**
 
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d4191115-11bc-43ec-9bee-e84b9b95a821)
 
@@ -188,7 +188,7 @@ In questa attività si creerà una regola di raccolta dati.
 
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/8294d300-f910-4757-ad52-43c7594ac822)
 
-11. Fare clic su **+ Aggiungi origine** dati, quindi nella **pagina Aggiungi origine** dati modificare il **menu a discesa Tipo di** origine dati per visualizzare **i contatori delle prestazioni.** Lasciare le impostazioni predefinite seguenti:
+11. Fare clic su **+ Aggiungi origine dati**, quindi nella pagina **Aggiungi origine dati**, modificare il menu a discesa **Tipo di origine dati** per visualizzare i **Contatori delle prestazioni.** Lasciare le impostazioni predefinite seguenti:
 
     |Impostazione|Valore|
     |---|---|
@@ -200,13 +200,13 @@ In questa attività si creerà una regola di raccolta dati.
 
    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/a24e44ad-1d10-4533-80e2-bae1b3f6564d)
 
-11. Fare clic sul pulsante **Avanti: Destinazione >** per continuare.
+11. Fare clic sul pulsante con etichetta **Avanti: Destinazione >** per continuare.
   
-12. Modificare il **menu a discesa Tipo di** destinazione per visualizzare **i log di Monitoraggio di Azure.** **Nella finestra Sottoscrizione** verificare che venga visualizzata la *sottoscrizione*, quindi modificare il menu a discesa Account o spazio dei nomi** in modo da riflettere l'area **di lavoro Log Analytics creata in precedenza.
+12. Modificare il menu a discesa **Tipo di destinazione** per visualizzare i **Log di Monitoraggio di Azure.** Nella finestra **Abbonamento**, verificare che compaia l’*Abbonamento*, quindi modificare il menu a discesa **Account o spazio dei nomi** in modo da riflettere l'area di lavoro Log Analytics creata in precedenza.
 
    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/481843f5-94c4-4a8f-bf51-a10d49130bf8)
 
-11. Fare clic su **Aggiungi origine** dati nella parte inferiore della pagina.
+11. Fare clic su **Aggiungi origine dati** nella parte inferiore della pagina.
     
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/964091e7-bbbc-4ca8-8383-bb2871a1e7f0)
 
@@ -214,9 +214,9 @@ In questa attività si creerà una regola di raccolta dati.
 
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/50dd8407-a106-4540-9e14-ae40a3c04830)
 
-14. Fai clic su **Crea**.
+14. Cliccare su **Crea**.
 
-> Risultati: è stata distribuita una macchina virtuale di Azure, un'area di lavoro Log Analytics, un account di archiviazione di Azure e una regola di raccolta dati per raccogliere gli eventi e i contatori delle prestazioni dalle macchine virtuali con l'agente di Monitoraggio di Azure.
+> Risultati: È stata distribuita una macchina virtuale di Azure, un'area di lavoro Log Analytics, un account di archiviazione di Azure e una regola di raccolta dati per raccogliere eventi e contatori delle prestazioni dalle macchine virtuali con l'agente di Monitoraggio di Azure.
 
->**Nota**: non rimuovere le risorse da questo lab perché sono necessarie per il lab Microsoft Defender per il cloud e il lab di Microsoft Sentinel.
+>**Nota**: Non rimuovere le risorse da questo lab perché sono necessarie per il lab di Microsoft Defender for Cloud e il lab di Microsoft Sentinel.
  

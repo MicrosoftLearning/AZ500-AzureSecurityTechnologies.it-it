@@ -201,11 +201,11 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|**AZ500LAB07**|
    |Virtual machine name|**myVmWeb**|
-   |Area|**(Stati Uniti) Stati Uniti orientali**|
-   |Image|**Windows Server 2022 Datacenter: Azure Edition- x64 Gen2**|
+   |Paese|**(Stati Uniti) Stati Uniti orientali**|
+   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen 2**|
    |Dimensione|**Standard D2s v3**|
-   |Username|**Studente**|
-   |Password|**Creare una password personalizzata e registrarla per riferimento futuro nei lab successivi**|
+   |Username|**Student**|
+   |Password|**Creare la password e prenderne nota per riferimento futuro nei lab successivi**|
    |Conferma password|**Digitare nuovamente la password**|
    |Porte in ingresso pubbliche|**Nessuno**|
    |Usare una licenza esistente di Windows Server |**No**|
@@ -218,7 +218,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 6. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella **scheda Monitoraggio del **pannello** Crea una macchina** virtuale verificare l'impostazione seguente:
+7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Gestione** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti:
 
    |Impostazione|Valore|
    |---|---|
@@ -239,11 +239,11 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|**AZ500LAB07**|
    |Virtual machine name|**myVMMgmt**|
-   |Area|(Stati Uniti) Stati Uniti orientali|
-   |Image|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen2**|
+   |Paese|(Stati Uniti) Stati Uniti orientali|
+   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen 2**|
    |Dimensione|**Standard D2s v3**|
-   |Username|**Studente**|
-   |Password|**Usare la password personale creata in Lab 02 > Exercise 2 > Task 1 > Passaggio 3.**|
+   |Username|**Student**|
+   |Password|**Usare la password personale creata in Lab 02 > Esercizio 2 > Attività 1 > Passaggio 3.**|
    |Porte in ingresso pubbliche|**Nessuno**|
    |Si ha già una licenza di Windows Server|**No**|
 
@@ -255,7 +255,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
 5. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella **scheda Monitoraggio del **pannello** Crea una macchina** virtuale verificare l'impostazione seguente:
+6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Gestione** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti:
 
    |Impostazione|Valore|
    |---|---|
@@ -273,15 +273,15 @@ In questa attività l'interfaccia di rete di ogni macchina virtuale verrà assoc
 
 2. Nell'elenco di macchine virtuali fare clic sulla voce **myVMWeb**.
 
-3. Nella sezione Rete** del ****pannello myVMWeb** fare clic su **Impostazioni** di rete e quindi nel **pannello Impostazioni** rete myVMWeb \| fare clic sulla **scheda Gruppi** di sicurezza delle applicazioni.
+3. Nel pannello **myVMWeb**, nella sezione **Networking**, fare clic su **Impostazioni di rete** e quindi, nel pannello **myVMWeb \| Impostazioni di rete**, fare clic sulla scheda **Gruppi di sicurezza delle applicazioni**.
 
-4. Fare clic su + **Aggiungi gruppi** di sicurezza delle applicazioni, nell'elenco **Gruppo** di sicurezza delle applicazioni selezionare **myAsgWebServers** e quindi fare clic su **Salva**.
+4. Fare clic su + **Aggiungi i gruppi di sicurezza delle applicazioni**, selezionare **myAsgWebServers** nell'elenco **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **Salva**.
 
 5. Tornare nel pannello **Macchine virtuali** e fare clic sulla voce **myVMMgmt** nell'elenco di macchine virtuali.
 
-6. Nella sezione Rete** del ****pannello myVMMgmt** fare clic su **Impostazioni** di rete e quindi **nel pannello Impostazioni di** rete myVMMgmt \| fare clic sulla **scheda Gruppi** di sicurezza delle applicazioni.
+6. Nel pannello **myVMMgmt**, nella sezione **Networking**, fare clic su **Impostazioni di networking** e quindi, nel pannello **myVMMgmt \| Impostazioni di rete**, fare clic sulla scheda **Gruppi di sicurezza delle applicazioni**.
 
-7. Fare clic su + **Aggiungi gruppi** di sicurezza delle applicazioni, nell'elenco Gruppo** di sicurezza dell'applicazione **selezionare **myAsgMgmtServers** e quindi fare clic su **Salva**.
+7. Fare clic su + **Aggiungi i gruppi di sicurezza delle applicazioni**, selezionare **myAsgMgmtServers** nell'elenco **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **Salva**.
 
 #### Attività 4: Testare il filtro del traffico di rete
 
@@ -293,16 +293,16 @@ In questa attività si testeranno i filtri del traffico di rete. Si dovrà esser
 
 3. Fare clic su **Scarica file RDP** e usare il file per connettersi alla macchina virtuale di Azure **myVMMgmt** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
-   |Nome utente|**Studente**|
+   |Nome utente|**Student**|
    |Password|**Usare la password personale creata in Lab 02 > Esercizio 1 > Attività 1 > Passaggio 9.**|
 
     >**Nota**: verificare che la connessione Desktop remoto sia riuscita. A questo punto è stato confermato che è possibile connettersi tramite Desktop remoto a myVMMgmt.
 
 4. Nel portale di Azure passare al pannello della macchina virtuale **myVMWeb**.
 
-5. Nella sezione Payload del **pannello myVMWeb** fare clic su **Esegui comando** e quindi su **EseguiPowerShellScript**.****
+5. Nel pannello **myVMWeb** fare clic su **Esegui comando** nella sezione **Payload** e nell'elenco dei comandi fare clic su **RunPowerShellScript**.
 
 6. Nel riquadro **Esegui script di comandi** eseguire il comando seguente per installare il ruolo del server Web in **myVmWeb**:
 

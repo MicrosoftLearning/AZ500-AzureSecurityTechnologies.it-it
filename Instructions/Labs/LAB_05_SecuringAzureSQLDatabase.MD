@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 05 - Protezione delle database SQL di Azure
+  title: 05 - Protezione del database SQL di Azure
   module: Module 02 - Plan and implement security for Azure SQL Database and Azure SQL Managed Instance
 ---
 
-# Lab 05: Protezione dei database SQL di Azure
+# Lab 05: Protezione del database SQL di Azure
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -86,7 +86,7 @@ In questa attività si userà un modello per distribuire l'infrastruttura del la
 
       >**Nota**: attendere fino a quando la notifica non indica che l'abilitazione di Azure Defender per SQL è avvenuta correttamente.
 
-5. Nel pannello SQL Server, nella **sezione Sicurezza** della **pagina Microsoft Defender per il cloud**, nel **parametro Microsoft Defender for SQL: Abilitato a livello di sottoscrizione (Configura)** fare clic su **(configura)**.  
+5. Nella sezione **Sicurezza** del pannello di SQL Server, nella pagina **Microsoft Defender per il cloud** nel parametro **Microsoft Defender for SQL: Abilitato a livello di sottoscrizione (Configura)**, fare clic su **(configura)**.  
 
       >**Nota**: se l'opzione **(configura)** non è visualizzata, aggiornare il browser.
     
@@ -166,9 +166,9 @@ In questa attività si configurerà prima il controllo a livello di server e qui
     >**Nota**: i controlli possono essere scritti in un account di archiviazione di Azure, in un'area di lavoro Log Analytics o nell'hub eventi. È possibile configurare qualsiasi combinazione di queste opzioni.
 
     >**Nota**: se nel server è abilitato il controllo a livello di archiviazione, questo verrà sempre applicato al database, indipendentemente dalle impostazioni del database.
-13. Nella pagina Panoramica del database SQL nella portale di Azure selezionare **Editor di query (anteprima)** dal menu a sinistra. Provare ad accedere, è possibile che si verifichi un errore nella password, nella regola del firewall per l'indirizzo IP, tutto viene controllato. Provare anche l'accesso riuscito, eseguire una query e si potrebbero trovare altri detial nei log di controllo
+13. Nella pagina Panoramica del database SQL nel portale di Azure selezionare **Editor di query (anteprima)** nel menu a sinistra. Provare ad accedere, è possibile che si verifichi un errore nella password, nella regola del firewall per l'indirizzo IP, tutto viene controllato. Provare a completare l'accesso, eseguire una query e vedere altri dettagli nei log di controllo
 
-14. tornare a database, controllo e fare clic su **Visualizza log** di controllo.
+14. Tornare al database, controllare e fare clic su **Visualizzare log di controllo**.
 
 15. Nel pannello **Record di controllo** è possibile passare tra il controllo del server e il controllo del database. 
 
