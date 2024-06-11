@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 04 - Configurazione e protezione di Registro Azure Container e servizio Azure Kubernetes
+  title: 04 - Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
   module: 'Module 01 - Secure compute, storage, and databases'
 ---
 
-# Lab 04: Configurazione e protezione di Registro Azure Container e servizio Azure Kubernetes
+# Lab 04: Configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
 # Manuale del lab per gli studenti
 
 ## Scenario laboratorio
@@ -58,7 +58,7 @@ In questa attività verrà creato un gruppo di risorse per il lab e un'istanza d
 
 1. Accedere al portale di Azure **`https://portal.azure.com/`**.
 
-    >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure in uso per questo lab e il ruolo Global Amministrazione istrator nel tenant di Microsoft Entra associato a tale sottoscrizione.
+    >**Nota**: Accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per questo lab e il ruolo Amministratore globale nel tenant di Microsoft Entra associato alla sottoscrizione.
 
 2. Nel portale di Azure aprire Cloud Shell facendo clic sulla prima icona nell'angolo in alto a destra. Se richiesto, fare clic su **Bash** e su **Crea archivio**.
 
@@ -141,7 +141,7 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB09**|
     |Nome del cluster Kubernetes|**MyKubernetesCluster**|
-    |Area|**(Stati Uniti) Stati Uniti orientali**|
+    |Paese|**(Stati Uniti) Stati Uniti orientali**|
     |Zone di disponibilità |**Nessuno**|
     |Metodo di scalabilità|**Manualee**|
     |Numero di nodi|**1**|
@@ -152,7 +152,7 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
     |----|----|
     |Abilitare i nodi virtuali|Casella di controllo deselezionata|
     
-5. Fare clic su **Avanti: Accedere >**, nella **scheda Accesso** del **pannello Crea cluster** Kubernetes accettare le impostazioni predefinite e fare clic su **Avanti: Rete >**. 
+5. Fare clic su **Avanti: Accesso >**, nella scheda **Accesso** del pannello **Crea cluster Kubernetes** accettare le impostazioni predefinite e fare clic su **Avanti: Rete >**. 
 
 6. Nella scheda **Rete** del pannello **Crea cluster Kubernetes** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
