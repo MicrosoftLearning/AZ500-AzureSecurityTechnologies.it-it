@@ -302,7 +302,7 @@ In questa attività si testeranno i filtri del traffico di rete. Si dovrà esser
 
 4. Nel portale di Azure passare al pannello della macchina virtuale **myVMWeb**.
 
-5. Nel pannello **myVMWeb** fare clic su **Esegui comando** nella sezione **Payload** e nell'elenco dei comandi fare clic su **RunPowerShellScript**.
+5. Nel pannello **myVMWeb** fare clic su **Esegui comando** nella sezione **Operazioni** e nell'elenco dei comandi fare clic su **RunPowerShellScript**.
 
 6. Nel riquadro **Esegui script di comandi** eseguire il comando seguente per installare il ruolo del server Web in **myVmWeb**:
 
