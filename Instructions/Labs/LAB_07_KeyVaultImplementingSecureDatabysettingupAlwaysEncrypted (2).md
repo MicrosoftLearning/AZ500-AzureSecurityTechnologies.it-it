@@ -109,7 +109,7 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
 
     $location = (Get-AzResourceGroup -ResourceGroupName 'AZ500LAB10').Location
 
-    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500LAB10' -Location $location
+    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500LAB10' -Location $location -DisableRbacAuthorization
     ```
 
     >**Nota**: l'output dell'ultimo comando visualizza il nome e l'URL dell'insieme di credenziali. L'URI dell'insieme di credenziali è nel formato `https://<vault_name>.vault.azure.net/`
