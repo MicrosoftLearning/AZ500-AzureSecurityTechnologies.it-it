@@ -273,7 +273,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 8. Nel pannello **Panoramica** dell'account di archiviazione fare clic su **Condivisioni file** nella scheda **Archiviazione dati** e quindi su **+ Condivisione file**.
 
-9. Nel pannello **Nuova condivisione file**, deselezionare l'opzione **Abilita backup** nella scheda Backup. 
+9. Nel pannello **Nuova condivisione file**, rimuovere l'opzione **Abilitare backup** nella scheda backup. 
 
 10. Nel pannello **Nuova condivisione file** specificare le impostazioni seguenti:
 

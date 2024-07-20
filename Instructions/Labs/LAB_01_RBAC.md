@@ -48,11 +48,11 @@ In questa attività si creerà un account utente per Joseph Price.
 
 1. Avviare una sessione del browser e accedere al portale di Azure **`https://portal.azure.com/`**.
 
-    >**Nota**: accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per questo lab e il ruolo Amministratore globale nel tenant di Microsoft Entra associato a tale sottoscrizione.
+    >**Nota**: Accedere al portale di Azure usando un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per questo lab e il ruolo Amministratore globale nel tenant di Microsoft Entra associato alla sottoscrizione.
 
 2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Microsoft Entra ID** e premere **Invio**.
 
-3. Nel pannello **Panoramica** del tenant di Microsoft Entra nella sezione **Gestione**, selezionare **Utenti** e quindi **+ Nuovo utente**.
+3. Nel pannello **Panoramica** del tenant di Microsoft Entra nella sezione **Gestione**, selezionare **Utenti**, quindi selezionare **+ Nuovo utente**.
 
 4. Nel pannello **Nuovo utente** verificare che l'opzione **Crea utente** sia selezionata e specificare le impostazioni seguenti:
 
@@ -145,7 +145,7 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
     New-MgUser -DisplayName 'Isabel Garcia' -PasswordProfile $passwordProfile -UserPrincipalName "Isabel@$domainName" -MailNickName 'Isabel' -AccountEnabled
     ```
 
-8. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli utenti di Microsoft Entra ID (gli account di Joseph e Isabel saranno tra quelli elencati): 
+8. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli utenti di Microsoft Entra ID (gli account di Joseph e Isabel saranno inclusi tra quelli elencati): 
 
     ```powershell
     Get-MgUser 
@@ -161,7 +161,7 @@ In questa attività si creerà il gruppo Junior Admins e si aggiungerà l'accoun
    New-MgGroup -DisplayName "Junior Admins" -MailEnabled:$false -SecurityEnabled:$true -MailNickName JuniorAdmins
    ```
    
-2. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per **elencare i gruppi** del tenant di Microsoft Entra (l'elenco includerà i gruppi Senior Admins e Junior Admins)
+2. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per **elencare i gruppi** nel tenant di Microsoft Entra (l'elenco includerà i gruppi Senior Admins e Junior Admins)
    
    ```powershell
    Get-MgGroup
@@ -207,7 +207,7 @@ In questa attività si creerà un account utente per Dylan Williams.
 
 1. Nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell selezionare **Bash** e, quando richiesto, fare clic su **Conferma**. 
 
-2. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Microsoft Entra:
+2. Nella sessione Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Microsoft Entra:
 
     ```cli
     DOMAINNAME=$(az ad signed-in-user show --query 'userPrincipalName' | cut -d '@' -f 2 | sed 's/\"//')
@@ -219,7 +219,7 @@ In questa attività si creerà un account utente per Dylan Williams.
     az ad user create --display-name "Dylan Williams" --password "Pa55w.rd1234" --user-principal-name Dylan@$DOMAINNAME
     ```
       
-4. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli account utente di Microsoft Entra ID (l'elenco includerà gli account utente di Joseph, Isabel e Dylan)
+4. Nella sessione Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli account utente Microsoft Entra ID (l'elenco includerà gli account utente di Joseph, Isabel e Dylan)
     
     ```cli
     az ad user list --output table
