@@ -245,7 +245,7 @@ In questa attività si configureranno gli indirizzi DNS primario e secondario pe
 
 2. Nel pannello **AZ500LAB08** fare clic sulla macchina virtuale **Srv-Work** nell'elenco delle risorse.
 
-3. Nella sezione **Impostazioni** nel pannello **Srv-Work** fare clic su **Rete**.
+3. Nel pannello **Srv-Work** fare clic su **Rete**.
 
 4. Nel pannello **Srv-Work \| Rete** fare clic sul collegamento accanto alla voce **Interfaccia di rete**.
 
