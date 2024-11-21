@@ -9,7 +9,7 @@ lab:
 
 ## Scenario laboratorio
 
-**Nota:** **Azure Sentinel** è stato rinominato in **Microsoft Sentinel** 
+**Nota:** **Microsoft Sentinel** viene rinominato **in Microsoft Sentinel** 
 
 È stata ricevuta la richiesta di creare un modello di verifica delle funzionalità di rilevamento e risposta alle minacce basate su Microsoft Sentinel. In particolare, sarà necessario:
 
@@ -48,7 +48,7 @@ In questo esercizio si completeranno le seguenti attività:
 - Attività 5: Creare un avviso personalizzato e configurare il playbook come risposta automatica
 - Attività 6: Richiamare un evento imprevisto ed esaminare le azioni associate
 
-#### Attività 1: Eseguire l'onboarding di Azure Sentinel
+#### Attività 1: Eseguire l'onboarding di Microsoft Sentinel
 
 In questa attività si eseguirà l'onboarding di Microsoft Sentinel e si connetterà l'area di lavoro Log Analytics. 
 
@@ -64,7 +64,7 @@ In questa attività si eseguirà l'onboarding di Microsoft Sentinel e si connett
 
 4. Nel pannello **Add Microsoft Sentinel to a workspace** (Aggiungi Microsoft Sentinel a un'area di lavoro) selezionare l'area di lavoro Log Analytics creata nel lab su Monitoraggio di Azure e fare clic su **Aggiungi**.
 
-    >**Nota**: Microsoft Sentinel ha requisiti molto specifici per le aree di lavoro. Non è ad esempio possibile usare le aree di lavoro create da Microsoft Defender for Cloud. Per altre informazioni, vedere: [Avvio rapido: eseguire l'onboarding di Azure Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/quickstart-onboard)
+    >**Nota**: Microsoft Sentinel ha requisiti molto specifici per le aree di lavoro. Non è ad esempio possibile usare le aree di lavoro create da Microsoft Defender for Cloud. Per altre informazioni, vedere [Avvio rapido: Microsoft Sentinel a bordo](https://docs.microsoft.com/en-us/microsoft/sentinel/quickstart-onboard)
     
 #### Attività 2: Configurare Microsoft Sentinel per usare il connettore dati Attività di Azure. 
 
