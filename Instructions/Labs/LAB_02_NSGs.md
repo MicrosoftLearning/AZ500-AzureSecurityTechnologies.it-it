@@ -202,6 +202,8 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
    |Gruppo di risorse|**AZ500LAB07**|
    |Virtual machine name|**myVmWeb**|
    |Paese|**(Stati Uniti) Stati Uniti orientali**|
+   |Opzioni di disponibilità|**La ridondanza dell'infrastruttura non è richiesta**
+   |Tipo di sicurezza|**Standard**
    |Immagine|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen 2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Student**|
@@ -212,19 +214,19 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
 
-4. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >**.
+5. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >**.
 
-5. Nella scheda **Rete** del pannello **Crea macchina virtuale** selezionare la rete **myVirtualNetwork** creata in precedenza.
+6. Nella scheda **Rete** del pannello **Crea macchina virtuale** selezionare la rete **myVirtualNetwork** creata in precedenza.
 
-6. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
+7. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Gestione** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti:
+8. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Gestione** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti:
 
    |Impostazione|Valore|
    |---|---|
    |Diagnostica di avvio|**Abilita con account di archiviazione gestito (scelta consigliata)**|
 
-8. Fare clic su **Rivedi e crea**, nel pannello **Rivedi e crea** assicurarsi che la convalida sia riuscita e fare clic su **Crea**.
+9. Fare clic su **Rivedi e crea**, nel pannello **Rivedi e crea** assicurarsi che la convalida sia riuscita e fare clic su **Crea**.
 
 #### Attività 2: Creare una macchina virtuale da usare come server di gestione. 
 
