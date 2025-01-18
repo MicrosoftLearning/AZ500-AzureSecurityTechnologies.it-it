@@ -158,7 +158,7 @@ In questa attività verrà creato un servizio Azure Kubernetes e verranno esamin
 
     |Impostazione|Valore|
     |----|----|
-    |Configurazione di rete|**Azure CNI**|
+    |Configurazione di rete|**Sovrimpressione di Azure CNI**|
     |Prefisso nome DNS|**Lasciare il valore predefinito**|
 
     >**Nota**: il servizio Azure Kubernetes può essere configurato come cluster privato. In questo modo viene assegnato un indirizzo IP privato al server API per garantire che il traffico di rete tra il server API e i pool di nodi rimanga solo nella rete privata. Per altre informazioni, visitare la pagina [Creare un cluster privato del servizio Azure Kubernetes](https://docs.microsoft.com/en-us/azure/aks/private-clusters).
