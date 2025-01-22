@@ -23,7 +23,7 @@ In questo lab verranno completati gli esercizi seguenti:
 - Esercizio 1: Distribuire una macchina virtuale di Azure
 - Esercizio 2: Creare un'area di lavoro Log Analytics
 - Esercizio 3: Creare un account di archiviazione di Azure
-- Esercizio 4: Creare una regola di raccolta dati.
+- Esercizio 4: Creare una regola di confronto dei dati
   
 ## Istruzioni
 

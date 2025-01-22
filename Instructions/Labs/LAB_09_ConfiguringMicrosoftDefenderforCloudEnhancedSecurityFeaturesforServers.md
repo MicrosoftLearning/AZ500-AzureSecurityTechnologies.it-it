@@ -14,13 +14,13 @@ In qualità di tecnico della sicurezza di Azure per una società globale di e-co
 
 ## Obiettivi del lab
 
-- Configurazione di Microsoft Defender per il cloud funzionalità di sicurezza avanzata per i server
+- Configurare Microsoft Defender per il cloud funzionalità di sicurezza avanzata per i server
   
 - Esaminare le funzionalità di sicurezza di ehanced per Microsoft Defender for Servers Piano 2
 
 ## Istruzioni per l'esercizio
 
-### Configurazione di Microsoft Defender per il cloud funzionalità di sicurezza avanzata per i server
+### Configurare Microsoft Defender per il cloud funzionalità di sicurezza avanzata per i server
 
 1. portale di Azure Nella casella di testo Cerca risorse, servizi e documenti nella parte superiore della pagina **portale di Azure digitare Microsoft Defender per il cloud** e premere **INVIO**.
 
