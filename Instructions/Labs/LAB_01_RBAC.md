@@ -106,42 +106,44 @@ In questo esercizio si completeranno le seguenti attività:
 
 In questa attività si creerà un account utente per Isabel Garcia usando PowerShell.
 
-1. Aprire Cloud Shell facendo clic sulla prima icona in alto a destra nel portale di Azure. Se richiesto, selezionare **PowerShell** e **Crea risorsa di archiviazione**.
+1. **Aprire Cloud Shell facendo clic sull'icona **** di Cloud Shell** nell'angolo superiore destro del portale di Azure.
 
-2. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **PowerShell**.
+2. **Se richiesto, configurare Cloud Shell creando un account** di archiviazione. Questa operazione è necessaria **solo la prima volta** che si avvia Cloud Shell.
+
+3. Nel riquadro **Cloud Shell verificare che PowerShell sia selezionato** dal menu a discesa nell'angolo superiore sinistro.
 
    >**Nota**: per incollare il testo copiato in Cloud Shell, fare clic con il pulsante destro del mouse nella finestra del riquadro e scegliere **Incolla**. In alternativa, è possibile usare la combinazione di tasti **MAIUSC+INS**.
 
-3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un oggetto profilo password:
+4. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un oggetto profilo password:
 
     ```powershell
     $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
     ```
 
-4. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per impostare il valore della password all'interno dell'oggetto profilo:
+5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per impostare il valore della password all'interno dell'oggetto profilo:
     ```powershell
     $passwordProfile.Password = "Pa55w.rd1234"
     ```
 
-5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per connettersi a Microsoft Entra ID:
+6. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per connettersi a Microsoft Entra ID:
 
     ```powershell
     Connect-AzureAD
     ```
       
-6. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Microsoft Entra: 
+7. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Microsoft Entra: 
 
     ```powershell
     $domainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
     ```
 
-7. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un account utente per Isabel Garcia: 
+8. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per creare un account utente per Isabel Garcia: 
 
     ```powershell
     New-AzureADUser -DisplayName 'Isabel Garcia' -PasswordProfile $passwordProfile -UserPrincipalName "Isabel@$domainName" -AccountEnabled $true -MailNickName 'Isabel'
     ```
 
-8. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli utenti di Microsoft Entra ID (gli account di Joseph e Isabel saranno inclusi tra quelli elencati): 
+9. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per elencare gli utenti di Microsoft Entra ID (gli account di Joseph e Isabel saranno inclusi tra quelli elencati): 
 
     ```powershell
     Get-AzureADUser -All $true | Where-Object {$_.UserPrincipalName -like "*43846135@LOD*"} 
@@ -296,7 +298,9 @@ In questo esercizio si completeranno le seguenti attività:
 
 3. Nel pannello **AZ500Lab01 \| Controllo di accesso (IAM)** fare clic su **+ Aggiungi** e nel menu a discesa fare clic su **Aggiungi un'assegnazione di ruolo**.
 
-4. Nel pannello **Aggiungi assegnazione di ruolo** specificare le impostazioni seguenti e fare clic su **Avanti** dopo ogni passaggio:
+4. Nel pannello **Aggiungi assegnazione** di ruolo completare ognuna delle impostazioni seguenti prima di fare clic su Avanti:
+
+   **Nota:** dopo aver completato tutti i passaggi, fare clic su **Avanti**.
 
    |Impostazione|Valore|
    |---|---|
@@ -304,17 +308,17 @@ In questo esercizio si completeranno le seguenti attività:
    |Assegna accesso a (nel riquadro Membri)|**Utente, gruppo o entità servizio**|
    |Seleziona (+Seleziona membri)|**Service Desk**|
 
-5. Fare clic su **Verifica e assegna** due volte per creare l'assegnazione di ruolo.
+6. Fare clic su **Verifica e assegna** due volte per creare l'assegnazione di ruolo.
 
-6. Nel pannello **Controllo di accesso (IAM)** selezionare **Assegnazioni di ruolo**.
+7. Nel pannello **Controllo di accesso (IAM)** selezionare **Assegnazioni di ruolo**.
 
-7. Nel pannello **AZ500Lab01 \| Controllo di accesso (IAM)** digitare **Dylan Williams** nella casella di testo **Cerca per nome o indirizzo di posta** nella scheda **Verifica l'accesso**.
+8. Nel pannello **AZ500Lab01 \| Controllo di accesso (IAM)** digitare **Dylan Williams** nella casella di testo **Cerca per nome o indirizzo di posta** nella scheda **Verifica l'accesso**.
 
-8. Nell'elenco dei risultati della ricerca selezionare l'account utente di Dylan Williams e nel pannello **Assegnazioni di Dylan Williams - AZ500Lab01** visualizzare la nuova assegnazione creata.
+9. Nell'elenco dei risultati della ricerca selezionare l'account utente di Dylan Williams e nel pannello **Assegnazioni di Dylan Williams - AZ500Lab01** visualizzare la nuova assegnazione creata.
 
-9. Chiudere il pannello **Assegnazioni di Dylan Williams - AZ500Lab01**.
+10. Chiudere il pannello **Assegnazioni di Dylan Williams - AZ500Lab01**.
 
-10. Ripetere gli stessi ultimi due passaggi per controllare l'accesso per **Joseph Price**. 
+11. Ripetere gli stessi ultimi due passaggi per controllare l'accesso per **Joseph Price**. 
 
 > Risultato: sono state assegnate e controllate le autorizzazioni di controllo degli accessi in base al ruolo. 
 
