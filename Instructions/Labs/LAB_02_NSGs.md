@@ -204,7 +204,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
    |Paese|**(Stati Uniti) Stati Uniti orientali**|
    |Opzioni di disponibilità|**La ridondanza dell'infrastruttura non è richiesta**
    |Tipo di sicurezza|**Standard**
-   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen 2**|
+   |Image|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen 2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Student**|
    |Password|**Creare la password e prenderne nota per riferimento futuro nei lab successivi**|
