@@ -146,7 +146,7 @@ In questa attività si creerà un account di archiviazione.
 
     >**Nota**: attendere che l'account di archiviazione venga creato. L'operazione richiede circa 2 minuti.
 
-### Esercizio 3: Creare una regola di raccolta dati
+### Esercizio 4: Creare una regola di raccolta dati
 
 ### Tempo stimato: 15 minuti
 
