@@ -295,9 +295,11 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 15. Tornare al pannello dell'account di archiviazione, quindi nella sezione **Sicurezza e rete** fare clic su **Rete**.
 
-16. Nel pannello **Firewall e reti virtuali** selezionare l'opzione **Abilitato da reti virtuali e indirizzi IP selezionati** e fare clic sul collegamento **+ Aggiungi rete virtuale esistente**. 
+16. In **Accesso** alla rete pubblica selezionare **Gestisci** e come **azione** predefinita selezionare **Abilita dalle reti** selezionate.
 
-17. Nel pannello **Aggiungi reti** specificare le impostazioni seguenti:
+17. In **Impostazioni risorsa: reti virtuali, indirizzi IP e eccezioni** selezionare **visualizza** e fare clic sul **collegamento + Aggiungi rete** virtuale esistente. 
+
+18. Nel pannello **Aggiungi reti** specificare le impostazioni seguenti:
 
     |Impostazione|Valore|
     |---|---|
@@ -305,9 +307,9 @@ In questa attività verrà creato un account di archiviazione con una condivisio
     |Reti virtuali|**myVirtualNetwork**|
     |Subnet|**Privata**|
 
-18. Nel pannello **Aggiungi reti** fare clic su **Aggiungi**. 
+19. Nel pannello **Aggiungi reti** fare clic su **Aggiungi**. 
 
-19. Tornare al pannello dell'account di archiviazione e fare clic su **Salva**.
+20. Tornare al pannello dell'account di archiviazione e fare clic su **Salva**.
 
     >**Nota**: a questo punto del lab sono stati configurati una rete virtuale, un gruppo di sicurezza di rete e un account di archiviazione con una condivisione file. 
 
@@ -387,7 +389,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
 13. Nel pannello **Rivedi e crea** assicurarsi che la convalida sia riuscita e fare clic su **Crea**.
 
-    >**Nota**: è possibile passare all'attività successiva una volta completata la distribuzione della macchina virtuale di Azure **myVMPrivate**.
+    >**Nota**: dopo aver completato la distribuzione della macchina virtuale di Azure myVMPublic **, è possibile continuare con l'attività **successiva.
 
 #### Attività 7: Testare la connessione di archiviazione dalla subnet privata per verificare che l'accesso sia consentito
 

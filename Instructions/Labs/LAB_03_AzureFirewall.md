@@ -164,7 +164,7 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
    |Impostazione|Valore|
    |---|---|
    |Nome route|**FW-DG**|
-   |Destinazione prefisso indirizzo|**Indirizzo IP**|
+   |Tipo destinazione|**Indirizzo IP**|
    |Indirizzi IP/Intervalli CIDR di destinazione|**0.0.0.0/0**
    |Tipo hop successivo|**Appliance virtuale**|
    |Indirizzo hop successivo|Indirizzo IP privato del firewall identificato nell'attività precedente|
@@ -248,7 +248,7 @@ In questa attività si configureranno gli indirizzi DNS primario e secondario pe
 
 3. Nel pannello **Srv-Work** fare clic su **Rete**.
 
-4. Nel pannello **Srv-Work \| Rete** fare clic sul collegamento accanto alla voce **Interfaccia di rete**.
+4. Nel pannello **Impostazioni** di rete Srv-Work \| fare clic sul collegamento accanto alla **voce Interfaccia** di rete.
 
 5. Nella sezione **Impostazioni** nel pannello dell'interfaccia di rete fare clic su **Server DNS**, selezionare l'opzione **Personalizzato**, aggiungere i due server DNS cui fa riferimento la regola di rete, **209.244.0.3** e **209.244.0.4**, e fare clic su **Salva** per salvare la modifica.
 
