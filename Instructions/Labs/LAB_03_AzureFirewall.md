@@ -161,13 +161,14 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
 
 10. Nel pannello **Aggiungi route** specificare le impostazioni seguenti:  
 
-   |Impostazione|Valore|
-   |---|---|
-   |Nome route|**FW-DG**|
-   |Tipo destinazione|**Indirizzo IP**|
-   |Indirizzi IP/Intervalli CIDR di destinazione|**0.0.0.0/0**
-   |Tipo hop successivo|**Appliance virtuale**|
-   |Indirizzo hop successivo|Indirizzo IP privato del firewall identificato nell'attività precedente|
+    |Impostazione|Valore|
+    |---|---|
+    |Nome route|**FW-DG**|
+    |Tipo destinazione|**Indirizzo IP**|
+    |Indirizzi IP/Intervalli CIDR di destinazione|**0.0.0.0/0**
+    |Tipo hop successivo|**Appliance virtuale**|
+    |Indirizzo hop successivo|Indirizzo IP privato del firewall identificato nell'attività precedente|
+
 
     >**Nota**: Firewall di Azure è in realtà un servizio gestito, ma l'appliance virtuale è efficace in questa situazione.
     
@@ -266,9 +267,9 @@ In questa attività si testerà il firewall per verificare che funzioni come pre
 
 2. Nel pannello **AZ500LAB08** fare clic sulla macchina virtuale **Srv-Jump** nell'elenco delle risorse.
 
-3. Nel pannello **Srv-Jump** fare clic su **Connetti** e nel menu a discesa fare clic su **RDP**. 
+3. **Nel pannello Srv-Jump** fare clic su **Connetti e scegliere Connetti**** dal menu **a discesa. 
 
-4. Fare clic su **Scarica file RDP** e usare il file per connettersi alla macchina virtuale di Azure **Srv-Jump** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
+4. Scaricare il file RDP e usarlo per connettersi alla **macchina virtuale di Azure Srv-Jump** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
    |Impostazione|Valore|
    |---|---|
