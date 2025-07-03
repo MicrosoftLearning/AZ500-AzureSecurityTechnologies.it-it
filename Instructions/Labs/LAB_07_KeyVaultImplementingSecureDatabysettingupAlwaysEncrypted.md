@@ -256,7 +256,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
 8. Nel riquadro **Aggiungi un segreto client** specificare le impostazioni seguenti:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |----|----|
     |Descrizione|**Chiave1**|
     |Scade il|**12 mesi**|
@@ -347,9 +347,9 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
     >**Nota**: in questo modo vengono modificate le impostazioni del firewall del server, consentendo le connessioni al database medical dall'indirizzo IP pubblico della macchina virtuale di Azure distribuita in questo lab.
 
-4. Tornare nel pannello **az500-10-vm1**, fare clic su **Panoramica**, quindi fare clic su **Connetti** e poi su **RDP** nel menu a discesa. 
+4. Tornare al **pannello az500-10-vm1**, fare clic su Panoramica **, quindi fare **clic **su **Connetti e scegliere Connetti**** dal menu a discesa. 
 
-5. Fare clic su **Scarica file RDP** e usare il file per connettersi alla macchina virtuale di Azure **az500-10-vm1** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
+5. Scaricare il file RDP e usarlo per connettersi alla **macchina virtuale di Azure az500-10-vm1** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
     |Impostazione|Valore|
     |---|---|

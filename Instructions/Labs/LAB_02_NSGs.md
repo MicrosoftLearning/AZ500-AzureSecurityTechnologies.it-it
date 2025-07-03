@@ -242,7 +242,9 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
    |Gruppo di risorse|**AZ500LAB07**|
    |Virtual machine name|**myVMMgmt**|
    |Paese|(Stati Uniti) Stati Uniti orientali|
-   |Immagine|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen 2**|
+   |Opzioni di disponibilità|**La ridondanza dell'infrastruttura non è richiesta**
+   |Tipo di sicurezza|**Standard**
+   |Image|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen 2**|
    |Dimensione|**Standard D2s v3**|
    |Username|**Student**|
    |Password|**Usare la password personale creata in Lab 02 > Esercizio 2 > Attività 1 > Passaggio 3.**|
@@ -251,19 +253,19 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
     >**Nota**: per le porte in ingresso pubbliche, verrà usato il gruppo di sicurezza di rete creato in precedenza. 
 
-3. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >**.
+4. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >**.
 
-4. Nella scheda **Rete** del pannello **Crea macchina virtuale** selezionare la rete **myVirtualNetwork** creata in precedenza.
+5. Nella scheda **Rete** del pannello **Crea macchina virtuale** selezionare la rete **myVirtualNetwork** creata in precedenza.
 
-5. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
+6. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
-6. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Gestione** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti:
+7. Fare clic su **Avanti: Gestione >**, quindi fare clic su **Avanti: Monitoraggio >**. Nella scheda **Gestione** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti:
 
    |Impostazione|Valore|
    |---|---|
    |Diagnostica di avvio|**Abilita con account di archiviazione gestito (scelta consigliata)**|
 
-7. Fare clic su **Rivedi e crea**, nel pannello **Rivedi e crea** assicurarsi che la convalida sia riuscita e fare clic su **Crea**.
+8. Fare clic su **Rivedi e crea**, nel pannello **Rivedi e crea** assicurarsi che la convalida sia riuscita e fare clic su **Crea**.
 
     >**Nota**: attendere che venga effettuato il provisioning di entrambe le macchine virtuali prima di continuare. 
 
@@ -291,9 +293,9 @@ In questa attività si testeranno i filtri del traffico di rete. Si dovrà esser
 
 1. Tornare nel pannello della macchina virtuale **myVMMgmt**.
 
-2. Nel pannello **myVMMgmt** fare clic su **Connetti** e nel menu a discesa fare clic su **RDP**. 
+2. Nel pannello **Panoramica di myVMMgmt** fare clic su **Connetti e scegliere Connetti**** dal menu **a discesa. 
 
-3. Fare clic su **Scarica file RDP** e usare il file per connettersi alla macchina virtuale di Azure **myVMMgmt** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
+3. Scaricare il file RDP e usarlo per connettersi alla **macchina virtuale di Azure myVMMgmt** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
    |Impostazione|Valore|
    |---|---|

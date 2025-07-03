@@ -399,9 +399,9 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
 
 2. Nel pannello **Macchine virtuali** fare clic su **myVMPrivate**.
 
-3. Nel pannello **myVMPrivate** fare clic su **Connetti** e nel menu a discesa fare clic su **RDP**. 
+3. **Nel pannello myVMPrivate** fare clic su **Connetti** e scegliere Connetti** dal menu **a discesa. 
 
-4. Fare clic su **Scarica file RDP** e usare il file per connettersi alla macchina virtuale di Azure **myVMPrivate** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
+4. Scaricare il file RDP e usarlo per connettersi alla **macchina virtuale myVMPrivate** di Azure tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
     |Impostazione|Valore|
     |---|---|
@@ -450,9 +450,9 @@ In questa attività si eseguirà la connessione alla macchina virtuale myVMPriva
 
 2. Nel pannello **Macchine virtuali** fare clic su **myVMPublic**.
 
-3. Nel pannello **myVMPublic** fare clic su **Connetti** e nel menu a discesa fare clic su **RDP**. 
+3. **Nel pannello myVMPublic** fare clic su **Connetti e scegliere Connetti**** dal menu **a discesa. 
 
-4. Fare clic su **Scarica file RDP** e usare il file per connettersi alla macchina virtuale di Azure **myVMPublic** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
+4. Fare clic su **Connetti tramite RDP** e usarlo per connettersi alla **macchina virtuale di Azure myVMPublic** tramite Desktop remoto. Quando viene chiesto di eseguire l'autenticazione, specificare le credenziali seguenti:
 
     |Impostazione|Valore|
     |---|---|
