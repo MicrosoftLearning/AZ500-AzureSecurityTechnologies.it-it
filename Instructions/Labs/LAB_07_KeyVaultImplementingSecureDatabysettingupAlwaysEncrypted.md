@@ -74,7 +74,6 @@ In questa attività si distribuirà una macchina virtuale di Azure e come parte 
    |Username|**Student**|
    |Password|**Usare la password personale creata in Lab 02 > Esercizio 2 > Attività 1 > Passaggio 3.**|
    
-   
     >**Nota**: anche se è possibile cambiare le credenziali amministrative usate per accedere alla macchina virtuale, non è necessario farlo.
 
     >**Nota**: per identificare le aree di Azure in cui è possibile effettuare il provisioning di macchine virtuali di Azure, vedere [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
@@ -84,6 +83,18 @@ In questa attività si distribuirà una macchina virtuale di Azure e come parte 
     >**Nota**: viene avviata la distribuzione della macchina virtuale di Azure e del database SQL di Azure necessari per questo lab. 
 
     >**Nota**: non attendere il completamento della distribuzione del modello di ARM, ma continuare con l'esercizio successivo. La distribuzione può richiedere **20-25 minuti**. 
+
+#### Installare il modello personalizzato az500-10-DB.json
+
+1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Distribuire un modello personalizzato** e premere **INVIO**.
+
+2. Nel pannello **Distribuzione personalizzata** fare clic sull'opzione **Creare un modello personalizzato nell'editor**.
+
+3. **Nel pannello Modifica modello** fare clic su **Carica file**, individuare il **file \Allfiles\Labs\10\az-500-10_DB.json** e fare clic su **Apri**.
+
+4. Verificare che sia selezionato il gruppo di risorse corretto.
+
+5. Impostare la **password** amministratore sulla stessa password usata per il passaggio precedente.
 
 ### Esercizio 2: Configurare la risorsa Key Vault con una chiave e un segreto
 
@@ -256,7 +267,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
 8. Nel riquadro **Aggiungi un segreto client** specificare le impostazioni seguenti:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |----|----|
     |Descrizione|**Chiave1**|
     |Scade il|**12 mesi**|
@@ -418,14 +429,35 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
     >**Nota**: il sottonodo **Chiavi Always Encrypted** contiene le sottocartelle **Chiavi master della colonna** e **Chiavi di crittografia della colonna**.
 
-
 ### Esercizio 4: Illustrare l'uso di Azure Key Vault crittografando il database SQL di Azure
 
 In questo esercizio si completeranno le seguenti attività:
 
-- Attività 1: Eseguire un'applicazione basata sui dati per illustrare l'uso di Azure Key Vault per la crittografia del database SQL di Azure
+- Attività 1: Installare Visutal Studio 2022
+- Attività 2: Eseguire un'applicazione guidata dai dati per illustrare l'uso di Azure Key Vault per crittografare il database SQL di Azure
 
-#### Attività 1: Eseguire un'applicazione basata sui dati per illustrare l'uso di Azure Key Vault per la crittografia del database SQL di Azure
+#### Attività 1: Installare Visual Studio 2022
+
+1. Passare alla macchina virtuale Server, se non è già presente.
+
+2. Aprire Gestione server.
+
+3. Selezionare Server locali.
+
+4. Impostare **Configurazione sicurezza** avanzata di Internet Explorer su **Disattivato**.
+
+5. Aprire il browser e ignorare l'avviso relativo alla disattivazione di IE ESC.
+
+6. Vai a https://visualstudio.microsoft.com/downloads.
+
+7. **Nella casella Visual Studio 2022**, in **Community** selezionare **Download** gratuito.
+
+8. Al termine del download, selezionare **Apri file**.
+
+9. Selezionare Continua per avviare l'installazione.
+  - L'installazione richiede circa 10 minuti
+
+#### Attività 2: Eseguire un'applicazione guidata dai dati per illustrare l'uso di Azure Key Vault per crittografare il database SQL di Azure
 
 Si creerà un'applicazione console usando Visual Studio per caricare i dati nelle colonne crittografate e quindi accedervi in modo sicuro usando una stringa di connessione che accede alla chiave in Key Vault.
 
