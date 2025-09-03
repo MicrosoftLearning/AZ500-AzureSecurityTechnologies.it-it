@@ -26,7 +26,7 @@ In questo lab verrà completato l'esercizio seguente:
 
 ## Diagramma di configurazione e protezione del Registro Azure Container e del servizio Azure Kubernetes
 
-![image](https://user-images.githubusercontent.com/91347931/157532250-1104a829-792a-4b6d-beff-fe976e2d5d4b.png)
+![Diagramma che mostra il flusso di processo delle attività in questo lab.](../media/configuring-and-securing-acr-and-aks-diagram.png)
 
 ## Istruzioni
 
@@ -81,6 +81,11 @@ In questa attività verrà creato un gruppo di risorse per il lab e un'istanza d
     ```sh
     az acr create --resource-group AZ500LAB09 --name az500$RANDOM$RANDOM --sku Basic
     ```
+    > **Nota** Registrare Registro Azure Container provider di risorse. Se si verifica un errore durante l'esecuzione `az acr create`di , è probabile che il **servizio Registro Azure Container** non sia ancora stato registrato per la sottoscrizione. Per risolvere questo problema, è possibile registrare il servizio e creare il registro in un unico comando:
+    
+    > ```sh
+    > az provider register --namespace Microsoft.ContainerRegistry
+    > ```
 
 7. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per verificare la creazione del nuovo Registro Azure Container:
 
