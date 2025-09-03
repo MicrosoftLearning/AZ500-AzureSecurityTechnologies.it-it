@@ -30,7 +30,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 ## Diagramma di Key Vault
 
-![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/38c4ba6d-2fc7-45e5-b9a2-d5dbb4fbbcbc)
+![Diagramma che mostra il flusso di processo delle attività in questo lab.](../media/key-vault-diagram.png)
 
 ## Istruzioni
 
@@ -145,7 +145,7 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
     |Autorizzazioni chiave/Operazioni crittografiche|Fare clic su **Firma** per selezionare **1 autorizzazione** in totale|
     |Autorizzazioni dei segreti|Fare clic su **Seleziona tutto** per selezionare **7 autorizzazioni** in totale|
     |Autorizzazioni per i certificati|Fare clic su **Seleziona tutto** per selezionare **15 autorizzazioni** in totale|
-    |Selezionare un'entità|Fare clic su **Nessuna selezione**, nel pannello **Entità di sicurezza** selezionare il proprio account utente, quindi fare clic su **Avanti**|
+    |Selezionare un'entità|Nel pannello **Entità** selezionare l'account utente e fare clic su **Avanti**|
     |Applicazione (facoltativa)|Fare clic su **Avanti**|
     |Rivedi e crea|Fare clic su **Crea**|
     
@@ -248,7 +248,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
 3. Nel pannello **Registra un'applicazione** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |----|----|
     |Nome|**sqlApp**|
     |URI di reindirizzamento (facoltativo)|**Web** e **https://sqlapp**|
@@ -267,7 +267,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
 8. Nel riquadro **Aggiungi un segreto client** specificare le impostazioni seguenti:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |----|----|
     |Descrizione|**Chiave1**|
     |Scade il|**12 mesi**|
@@ -440,7 +440,7 @@ In questo esercizio si completeranno le seguenti attività:
 
 1. Passare alla macchina virtuale Server, se non è già presente.
 
-2. Aprire Gestione server.
+2. Aprire Server Manager.
 
 3. Selezionare Server locali.
 

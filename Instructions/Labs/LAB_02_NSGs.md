@@ -28,7 +28,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 ## Diagramma dei gruppi di sicurezza delle applicazioni e di rete
 
-![image](https://user-images.githubusercontent.com/91347931/157526438-6da4f68b-db88-4931-a041-8474e66d3fe5.png)
+![Diagramma che mostra il flusso di processo delle attività del lab.](../media/network-and-application-security-groups-diagram.png)
 
 ## Istruzioni
 
@@ -53,7 +53,7 @@ In questa attività si creerà una rete virtuale da usare con i gruppi di sicure
 
     >**Nota**: accedere al portale di Azure con un account con il ruolo Proprietario o Collaboratore nella sottoscrizione di Azure usata per il lab.
 
-2. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Reti virtuali** e premere **INVIO**.
+2. Nella portale di Azure casella **di testo Cerca risorse, servizi e documenti** nella parte superiore della pagina portale di Azure digitare +++Reti virtuali+++ e premere **INVIO**.
 
 3. Nel pannello **Reti virtuali** fare clic su **+ Crea**.
 
@@ -61,27 +61,27 @@ In questa attività si creerà una rete virtuale da usare con i gruppi di sicure
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
-    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB07**|
-    |Nome|**myVirtualNetwork**|
-    |Area geografica|**Stati Uniti orientali**|
+    |Subscription | Nome della sottoscrizione di Azure in uso in questo lab |
+    |Gruppo di risorse | Usare il gruppo di risorse fornito denominato **AZ500LAB07** |
+    |Nome| +++myVirtualNetwork+++ |
+    |Area geografica| **Stati Uniti orientali** |
 
 5. Nella scheda **Indirizzi IP** del pannello **Crea rete virtuale** impostare **Spazio indirizzi IPv4** su **10.0.0.0/16** e, se necessario, nella colonna **Nome della subnet** fare clic su **predefinito**, quindi nel pannello **Modifica subnet** specificare le impostazioni seguenti e fare clic su **Salva**:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Nome subnet|**default**|
     |Intervallo di indirizzi subnet|**10.0.0.0/24**|
 
-6. Nella scheda **Indirizzi IP** del pannello **Crea rete virtuale** fare clic su **Rivedi e crea**.
+6. **Nella scheda Indirizzi** IP della **schermata Crea rete** virtuale fare clic su **Rivedi e crea**.
 
-7. Nella scheda **Rivedi e crea** del pannello **Crea rete virtuale** fare clic su **Crea**.
+7. Nella **scheda Rivedi e crea** della **schermata Crea rete** virtuale fare clic su **Crea**.
 
 #### Attività 2: Creare gruppi di sicurezza delle applicazioni
 
 In questa attività si creerà un gruppo di sicurezza delle applicazioni.
 
-1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Gruppi di sicurezza delle applicazioni** e premere **INVIO**.
+1. Nella casella di testo Cerca risorse, servizi e documenti** nella parte superiore della pagina portale di Azure portale di Azure **digitare +++Gruppi di sicurezza applicazioni+++ e premere **INVIO**.
 
 2. Nel pannello **Gruppi di sicurezza delle applicazioni** fare clic su **+ Crea**.
 
@@ -89,9 +89,9 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
 
     |Impostazione|Valore|
     |---|---|
-    |Gruppo di risorse|**AZ500LAB07**|
-    |Nome|**myAsgWebServers**|
-    |Area geografica|**Stati Uniti orientali**|
+    | Gruppo di risorse | **AZ500LAB07** |
+    | Nome | +++myAsgWebServers+++ |
+    | Area geografica | **Stati Uniti orientali** |
 
     >**Nota**: questo gruppo sarà riservato ai server Web.
 
@@ -104,7 +104,7 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
     |Impostazione|Valore|
     |---|---|
     |Gruppo di risorse|**AZ500LAB07**|
-    |Nome|**myAsgMgmtServers**|
+    |Nome| +++myAsgMgmtServers+++ |
     |Area geografica|**Stati Uniti orientali**|
 
     >**Nota**: questo gruppo sarà riservato ai server di gestione.
@@ -115,7 +115,7 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
 
 In questa attività si creerà un gruppo di sicurezza di rete. 
 
-1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Gruppi di sicurezza di rete** e premere **INVIO**.
+1. Nella casella di testo Cerca risorse, servizi e documenti** nella parte superiore della pagina portale di Azure portale di Azure **digitare +++Gruppi di sicurezza di rete+++ e premere **INVIO**.
 
 2. Nel pannello **Gruppi di sicurezza di rete** fare clic su **+ Crea**.
 
@@ -123,20 +123,20 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
     |Impostazione|Valore|
     |---|---|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
-    |Gruppo di risorse|**AZ500LAB07**|
-    |Nome|**myNsg**|
-    |Area geografica|**Stati Uniti orientali**|
+    | Subscription | Nome della sottoscrizione di Azure in uso in questo lab |
+    | Gruppo di risorse | **AZ500LAB07** |
+    | Nome | +++myNsg+++ |
+    | Area geografica | **Stati Uniti orientali** |
 
 4. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
-5. Nel portale di Azure tornare nel pannello **Gruppi di sicurezza di rete** e fare clic sulla voce **myNsg**.
+5. Nel portale di Azure tornare al **pannello Gruppi** di sicurezza di rete e selezionare la **voce myNsg**. In alternativa, selezionare **Vai alla risorsa** , se disponibile.
 
-6. Nella sezione **Impostazioni** del pannello **myNsg** fare clic su **Subnet** e quindi su **+ Associa**. 
+6. Nella sezione Impostazioni del pannello **myNsg** fare clic su **Subnet** e quindi selezionare **+ Associa**.**** 
 
-7. Nel pannello **Associa subnet** specificare le impostazioni seguenti e fare clic su **OK**:
+7. Nel pannello **Associa subnet** specificare le impostazioni seguenti e selezionare **OK**:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**default**|
@@ -151,13 +151,17 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
     |Impostazione|Valore|
     |---|---|
+    | Origine | **Any** |
+    | Intervalli di porte di origine | * |
     |Destinazione|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgWebServers**|
+    | Servizioo | **Personalizzazione** |
     |Intervalli porte di destinazione|**80,443**|
     |Protocollo|**TCP**|
-    |Priorità|**100**|                                                    
+    | Azione | **Consenti** |
+    |Priorità|**100**|
     |Nome|**Allow-Web-All**|
 
-4. Nel pannello **Aggiungi regola di sicurezza in ingresso** fare clic su **Aggiungi** per creare la nuova regola in ingresso. 
+4. Selezionare il **pulsante Aggiungi** nella **pagina Aggiungi regola** di sicurezza in ingresso per creare la nuova regola in ingresso.
 
 5. Nella sezione **Impostazioni** del pannello **myNsg** fare clic su **Regole di sicurezza in ingresso**, quindi fare clic su **+Aggiungi**.
 
@@ -165,13 +169,17 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
     |Impostazione|Valore|
     |---|---|
+    | Origine | **Any** |
+    | Intervalli di porte di origine | * |
     |Destinazione|Nell'elenco a discesa selezionare **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **myAsgMgmtServers**|
-    |Intervalli porte di destinazione|**3389**|
+    | Servizioo | **Personalizzazione** |
+    |Intervalli di porte di destinazione|**3389**|
     |Protocollo|**TCP**|
-    |Priorità|**110**|                                                    
+    | Azione | **Consenti** |
+    |Priorità|**110**|
     |Nome|**Allow-RDP-All**|
 
-7. Nel pannello **Aggiungi regola di sicurezza in ingresso** fare clic su **Aggiungi** per creare la nuova regola in ingresso. 
+7. Selezionare **Aggiungi** nella **pagina Aggiungi regola** di sicurezza in ingresso per creare la nuova regola in ingresso. 
 
 > Risultato: è stata completata la distribuzione di una rete virtuale, delle regole in ingresso per la sicurezza della rete e di due gruppi di sicurezza delle applicazioni. 
 
@@ -182,15 +190,15 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 In questo esercizio si completeranno le seguenti attività:
 
 - Attività 1: Creare una macchina virtuale da usare come server Web.
-- Attività 2: Creare una macchina virtuale da usare come server di gestione. 
+- Attività 2: Creare una macchina virtuale da usare come server di gestione.
 - Attività 3: Associare l'interfaccia di rete di ogni macchina virtuale al gruppo di sicurezza delle applicazioni.
 - Attività 4: Testare il filtro del traffico di rete.
 
-#### Attività 1: Creare una macchina virtuale da usare come server Web.
+#### Attività 1: Creare una macchina virtuale da usare come server Web
 
 In questa attività si creerà una macchina virtuale da usare come server Web.
 
-1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Macchine virtuali** e premere **INVIO**.
+1. Nella casella di testo Cerca risorse, servizi e documenti** nella parte superiore della pagina portale di Azure portale di Azure **digitare +++Macchine virtuali+++ e premere **INVIO**.
 
 2. Nel pannello **Macchine virtuali** fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale di Azure**.
 
