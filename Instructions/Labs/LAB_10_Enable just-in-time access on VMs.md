@@ -41,7 +41,7 @@ In questo lab verranno completati gli esercizi seguenti:
    - Computer Windows
    
      - Porta RDP: 3389
-     - Accesso massimo consentito: Tre ore
+     - Accesso massimo consentito: tre ore
      - Indirizzi IP di origine consentiti: Qualsiasi
 
    - Computer Linux
