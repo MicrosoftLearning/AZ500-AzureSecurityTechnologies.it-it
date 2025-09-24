@@ -192,7 +192,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
 4. Nella scheda **Generale** del pannello **Procedura guidata per la regola di analisi - Crea una nuova regola pianificata** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |---|---|
     |Nome|**Playbook Demo**|
     |Tattiche|**Accesso iniziale**|

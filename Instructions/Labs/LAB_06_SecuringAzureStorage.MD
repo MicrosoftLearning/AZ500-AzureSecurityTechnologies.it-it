@@ -67,7 +67,7 @@ In questa attività verrà creata una rete virtuale.
 
 5. Nella scheda **Indirizzi IP** del pannello **Crea rete virtuale** impostare lo **Spazio indirizzi IPv4** su **10.0.0.0/16**, nella colonna **Nome della subnet** fare clic su **default** e nel pannello **Modifica subnet** specificare le impostazioni seguenti e fare clic su **Salva**:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Nome subnet|**Pubblica**|
     |Intervallo di indirizzi subnet|**10.0.0.0/24**|
@@ -90,7 +90,7 @@ In questa attività verrà creata un'altra subnet in cui verrà abilitato un end
 
 5. Nel pannello **Aggiungi subnet** specificare le impostazioni, seguenti lasciando i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Nome subnet|**Privata**|
     |Intervallo di indirizzi subnet|**10.0.1.0/24**|
@@ -172,7 +172,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
     |Impostazione|Valore|
     |---|---|
     |Origine|**Any**|
-    |Intervalli porte di origine|**\***|
+    |Intervalli di porte di origine|**\***|
     |Destinazione|**Tag del servizio**|
     |Tag del servizio di destinazione|**VirtualNetwork**|
     |Intervalli porte di destinazione|**3389**|
@@ -187,7 +187,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
 
 15. Nel pannello **Subnet** selezionare **+ Associa** e specificare le impostazioni seguenti nella sezione **Associa subnet**, quindi fare clic su **OK**:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**Privata**|
@@ -222,7 +222,7 @@ In questa attività si creerà un gruppo di sicurezza di rete con una regola di 
     |Impostazione|Valore|
     |---|---|
     |Origine|**Any**|
-    |Intervalli porte di origine|**\***|
+    |Intervalli di porte di origine|**\***|
     |Destinazione|**Tag del servizio**|
     |Tag del servizio di destinazione|**VirtualNetwork**|
     |Intervalli porte di destinazione|**3389**|
@@ -237,7 +237,7 @@ In questa attività si creerà un gruppo di sicurezza di rete con una regola di 
 
 9. Nel pannello **Subnet** selezionare **+ Associa** e specificare le impostazioni seguenti nella sezione **Associa subnet**, quindi fare clic su **OK**:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**Pubblica**|
@@ -277,7 +277,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 10. Nel pannello **Nuova condivisione file** specificare le impostazioni seguenti:
 
-    |Impostazione|valore|
+    |Impostazione|Valore|
     |---|---|
     |Nome|**my-file-share**|
 
@@ -343,7 +343,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
 5. Fare clic su **Avanti: Rete >** e quindi di nuovo nella scheda **Rete** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**Privata (10.0.1.0/24)**|
@@ -378,7 +378,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
 11. Fare clic su **Avanti: Rete >** e quindi di nuovo nella scheda **Rete** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Rete virtuale|**myVirtualNetwork**|
     |Subnet|**Pubblica (10.0.0.0/24)**|

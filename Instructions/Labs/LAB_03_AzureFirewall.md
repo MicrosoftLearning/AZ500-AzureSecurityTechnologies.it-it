@@ -148,7 +148,7 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
 
 7. Nel pannello **Associa subnet** specificare le impostazioni seguenti:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Rete virtuale|**Test-FW-VN**|
    |Subnet|**Workload-SN**|
@@ -161,7 +161,7 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
 
 10. Nel pannello **Aggiungi route** specificare le impostazioni seguenti:  
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Nome route|**FW-DG**|
     |Tipo destinazione|**Indirizzo IP**|
@@ -187,7 +187,7 @@ In questa attività si creerà una regola dell'applicazione che consente l'acces
 
 4. Nel pannello **Aggiungi raccolta regole dell'applicazione** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
    |Nome|**App-Coll01**|
    |Priorità|**200**|
@@ -195,7 +195,7 @@ In questa attività si creerà una regola dell'applicazione che consente l'acces
 
 5. Nel pannello **Aggiungi raccolta regole dell'applicazione** creare una nuova voce nella sezione **FQDN di destinazione** con le impostazioni seguenti, lasciando i valori predefiniti per le altre impostazioni:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
    |name|**AllowGH**|
    |Source type|**Indirizzo IP**|
@@ -217,7 +217,7 @@ In questa attività si creerà una regola di rete che consente l'accesso in usci
 
 3. Nel pannello **Aggiungi raccolta regole di rete** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
    |Nome|**Net-Coll01**|
    |Priorità|**200**|
@@ -225,7 +225,7 @@ In questa attività si creerà una regola di rete che consente l'accesso in usci
 
 4. Nel pannello **Aggiungi raccolta regole di rete** creare una nuova voce nella sezione **Indirizzi IP** specificando le impostazioni seguenti e mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|valore|
+   |Impostazione|Valore|
    |---|---|
    |Nome|**AllowDNS**|
    |Protocollo|**UDP**|
