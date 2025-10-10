@@ -293,7 +293,7 @@ In questa attività l'interfaccia di rete di ogni macchina virtuale verrà assoc
 
 6. Nel pannello **myVMMgmt**, nella sezione **Networking**, fare clic su **Impostazioni di networking** e quindi, nel pannello **myVMMgmt \| Impostazioni di rete**, fare clic sulla scheda **Gruppi di sicurezza delle applicazioni**.
 
-7. Fare clic su + **Aggiungi i gruppi di sicurezza delle applicazioni**, selezionare **myAsgMgmtServers** nell'elenco **Gruppo di sicurezza delle applicazioni** e quindi fare clic su **Salva**.
+7. Fare clic su + **Aggiungi gruppi** di sicurezza delle applicazioni, nell'elenco **Gruppo** di sicurezza delle applicazioni selezionare **myAsgMgmtServers** e quindi fare clic su **Aggiungi**.
 
 #### Attività 4: Testare il filtro del traffico di rete
 
