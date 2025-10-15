@@ -53,7 +53,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
    - Nella scheda Configurato** fare clic con il **pulsante destro del mouse sulla macchina virtuale a cui si vuole aggiungere una porta e selezionare Modifica.
 
-   ![image](https://github.com/user-attachments/assets/aa4ded55-c5b1-4d40-b5a0-a4c33b9eb81b)
+   ![Acquisizione dello schermo dell'accesso JUST-In-Time per la schermata di configurazione della macchina virtuale.](../media/just-in-time-vm-access.png)
    
    - In **Configurazione dell'accesso JIT alla VM** è possibile modificare le impostazioni esistenti di una porta già protetta o aggiungere una nuova porta personalizzata.
    - Al termine della modifica delle porte, selezionare **Salva**.   
@@ -72,6 +72,6 @@ In questo lab verranno completati gli esercizi seguenti:
     
         - Se JIT è abilitato, selezionare **Richiedi accesso** per passare una richiesta di accesso con l'indirizzo IP, l'intervallo di tempo e le porte richieste configurate per la macchina virtuale.
     
-   ![image](https://github.com/user-attachments/assets/f5d0b67c-7731-4261-b0eb-a56c505dadd4)
+   ![Acquisizione dello schermo della connessione a una macchina virtuale tramite JIT.](../media/vm-connection-for-vm1.png)
 
 > **Risultati**: sono stati esaminati vari metodi su come abilitare JIT nelle macchine virtuali e su come richiedere l'accesso alle macchine virtuali con JIT abilitato in Microsoft Defender per il cloud.

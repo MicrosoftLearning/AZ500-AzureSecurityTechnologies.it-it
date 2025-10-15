@@ -102,7 +102,7 @@ In questa attività si creerà un'area di lavoro Log Analytics.
 
 3. Nella scheda **Dati principali** del pannello **Crea area di lavoro Log Analytics** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
@@ -129,7 +129,7 @@ In questa attività si creerà un account di archiviazione.
 
 3. Nella scheda **Informazioni di base** del pannello **Crea account di archiviazione** specificare le impostazioni seguenti (lasciare i valori predefiniti per le altre impostazioni):
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
@@ -168,7 +168,7 @@ In questa attività si creerà una regola di raccolta dati.
     orientali |Tipo di piattaforma |**Windows**|
     |Endpoint raccolta dati |*Lasciare vuoto*|
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/9b58c4ce-b7a8-4acf-8289-d95b270a6083)
+    ![Acquisizione dello schermo della scheda Informazioni di base su Crea regola di raccolta dati.](../media/crete-a-data-collection-rule-basics-tab.png)
 
 
 5. Fare clic sul pulsante con etichetta **Avanti: Risorse >** per continuare.
@@ -191,7 +191,7 @@ In questa attività si creerà una regola di raccolta dati.
     |Disco|60|
     |Rete|60|
 
-   ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/a24e44ad-1d10-4533-80e2-bae1b3f6564d)
+   ![Acquisizione dello schermo della scheda Raccolta e recapito della regola di raccolta dati.](../media/crete-a-data-collection-rule-collectanddeliver-tab.png)
 
 11. Fare clic sul pulsante con etichetta **Avanti: Destinazione >** per continuare.
   
@@ -199,11 +199,11 @@ In questa attività si creerà una regola di raccolta dati.
 
 13. Fare clic su **Aggiungi origine dati** nella parte inferiore della pagina.
     
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/964091e7-bbbc-4ca8-8383-bb2871a1e7f0)
+    ![Acquisizione dello schermo della pagina Aggiungi un'origine dati nella pagina Regola di collction dei dati.](../media/crete-a-data-collection-rule-add-datasource.png)
 
 14. Fare clic su **Rivedi e crea**.
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/50dd8407-a106-4540-9e14-ae40a3c04830)
+    ![Acquisizione dello schermo della scheda Rivedi e crea della procedura guidata Regola raccolta dati.](../media/crete-a-data-collection-rule-reviewcreate-tab.png)
 
 15. Cliccare su **Crea**.
 

@@ -59,7 +59,7 @@ In questa attività si creerà una rete virtuale da usare con i gruppi di sicure
 
 4. Nella scheda **Informazioni di base** del pannello **Crea rete virtuale** specificare le impostazioni seguenti lasciando i valori predefiniti per le altre, quindi fare clic su **Avanti: Indirizzi IP**:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription | Nome della sottoscrizione di Azure in uso in questo lab |
     |Gruppo di risorse | Usare il gruppo di risorse fornito denominato **AZ500LAB07** |
@@ -87,7 +87,7 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
 
 3. Nella scheda **Informazioni di base** del pannello **Crea un gruppo di sicurezza delle applicazioni** specificare le impostazioni seguenti: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     | Gruppo di risorse | **AZ500LAB07** |
     | Nome | +++myAsgWebServers+++ |
@@ -101,7 +101,7 @@ In questa attività si creerà un gruppo di sicurezza delle applicazioni.
 
 6. Nella scheda **Informazioni di base** del pannello **Crea un gruppo di sicurezza delle applicazioni** specificare le impostazioni seguenti: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Gruppo di risorse|**AZ500LAB07**|
     |Nome| +++myAsgMgmtServers+++ |
@@ -121,7 +121,7 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 3. Nella scheda **Informazioni di base** del pannello **Crea gruppo di sicurezza di rete** specificare le impostazioni seguenti: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     | Subscription | Nome della sottoscrizione di Azure in uso in questo lab |
     | Gruppo di risorse | **AZ500LAB07** |
@@ -149,7 +149,7 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 3. Nel pannello **Aggiungi regola di sicurezza in ingresso** specificare le impostazioni seguenti per autorizzare le porte TCP 80 e 443 per il gruppo di sicurezza delle applicazioni **myAsgWebServers**, lasciando i valori predefiniti per tutte le altre impostazioni: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     | Origine | **Any** |
     | Intervalli di porte di origine | * |
@@ -167,7 +167,7 @@ In questa attività si creerà un gruppo di sicurezza di rete.
 
 6. Nel pannello **Aggiungi regola di sicurezza in ingresso** specificare le impostazioni seguenti per autorizzare la porta RDP (TCP 3389) per il gruppo di sicurezza delle applicazioni **myAsgMgmtServers**, lasciando i valori predefiniti per tutte le altre impostazioni: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     | Origine | **Any** |
     | Intervalli di porte di origine | * |
@@ -204,7 +204,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 3. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|**AZ500LAB07**|
@@ -244,7 +244,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
 2. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|**AZ500LAB07**|

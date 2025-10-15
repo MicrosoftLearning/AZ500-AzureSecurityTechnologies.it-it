@@ -66,7 +66,7 @@ In questa attività si distribuirà una macchina virtuale di Azure e come parte 
 
 6. Nel pannello **Distribuzione personalizzata**, in **Ambito di distribuzione**, assicurarsi che siano configurate le impostazioni seguenti, lasciando i valori predefiniti per le altre impostazioni:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB10**|
@@ -248,7 +248,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
 3. Nel pannello **Registra un'applicazione** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |----|----|
     |Nome|**sqlApp**|
     |URI di reindirizzamento (facoltativo)|**Web** e **https://sqlapp**|
@@ -267,7 +267,7 @@ In questa attività si consentirà a un'applicazione client di accedere al servi
 
 8. Nel riquadro **Aggiungi un segreto client** specificare le impostazioni seguenti:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |----|----|
     |Descrizione|**Chiave1**|
     |Scade il|**12 mesi**|
@@ -440,7 +440,7 @@ In questo esercizio si completeranno le seguenti attività:
 
 1. Passare alla macchina virtuale Server, se non è già presente.
 
-2. Aprire Server Manager.
+2. Aprire Gestione server.
 
 3. Selezionare Server locali.
 

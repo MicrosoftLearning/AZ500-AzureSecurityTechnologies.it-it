@@ -26,7 +26,7 @@ In qualità di tecnico della sicurezza di Azure per una società globale di e-co
 
 2. **Nel pannello Microsoft Defender per il cloud**, **Gestione** passare a **Impostazioni** ambiente. Espandere le cartelle delle impostazioni dell'ambiente fino a visualizzare la **sezione sottoscrizione** , quindi fare clic sulla **sottoscrizione** per visualizzare i dettagli.
 
-   ![image](https://github.com/user-attachments/assets/3b25dd82-e09e-4f8a-b85e-c9bc6c4bd488)
+   ![Acquisizione dello schermo delle impostazioni dell'ambiente di Microsoft Defender per il cloud](../media/defender-for-cloud-environment-settings.png)
    
 3. Nel pannello **Impostazioni, in **Piani** di Defender espandere **Cloud Workload Protection (CWP)****.
 
@@ -36,6 +36,6 @@ In qualità di tecnico della sicurezza di Azure per una società globale di e-co
 
    Nota: l'abilitazione del piano Server CWP (Cloud Workload Protection) da Off a On abilita Microsoft Defender per server piano 2.
  
-   ![image](https://github.com/user-attachments/assets/de434a75-345a-4023-83f1-fa53fcb5f288)
+   ![Acquisizione dello schermo della pagina di selezione del piano di Microsoft Defender per il cloud.](../media/defender-for-cloud-plan-selection.png)
    
 > **Risultati**: è stato abilitato Microsoft Defender per server piano 2 nella sottoscrizione.

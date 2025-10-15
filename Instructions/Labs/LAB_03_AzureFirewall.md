@@ -27,7 +27,7 @@ In questo lab verrà completato l'esercizio seguente:
 
 ## Diagramma di firewall di Azure
 
-![image](https://user-images.githubusercontent.com/91347931/157529954-a1bc434b-2eca-41c1-b875-1f0c977d5e20.png)
+![Diagramma che mostra il flusso di processo delle attività in questo lab.](../media/azure-firewall-diagram.png)
 
 ## Istruzioni
 
@@ -73,7 +73,7 @@ In questa attività si creerà una macchina virtuale usando un modello di ARM. L
 
 6. Nel pannello **Distribuzione personalizzata** assicurarsi che siano configurate le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB08**|
@@ -96,7 +96,7 @@ In questa attività si distribuirà il firewall di Azure nella rete virtuale.
 
 3. Nella **scheda Informazioni di base** del pannello **Crea un firewall** specificare le impostazioni seguenti: 
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Gruppo di risorse|**AZ500LAB08**|
    |Nome|**Test-FW01**|
@@ -134,7 +134,7 @@ In questa attività si creerà una route predefinita per la subnet **Workload-SN
 
 3. Nel pannello **Crea tabella di route** specificare le impostazioni seguenti:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Gruppo di risorse|**AZ500LAB08**|
    |Area geografica| **Stati Uniti orientali**|
@@ -187,7 +187,7 @@ In questa attività si creerà una regola dell'applicazione che consente l'acces
 
 4. Nel pannello **Aggiungi raccolta regole dell'applicazione** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Nome|**App-Coll01**|
    |Priorità|**200**|
@@ -195,7 +195,7 @@ In questa attività si creerà una regola dell'applicazione che consente l'acces
 
 5. Nel pannello **Aggiungi raccolta regole dell'applicazione** creare una nuova voce nella sezione **FQDN di destinazione** con le impostazioni seguenti, lasciando i valori predefiniti per le altre impostazioni:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |name|**AllowGH**|
    |Source type|**Indirizzo IP**|
@@ -217,7 +217,7 @@ In questa attività si creerà una regola di rete che consente l'accesso in usci
 
 3. Nel pannello **Aggiungi raccolta regole di rete** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Nome|**Net-Coll01**|
    |Priorità|**200**|
@@ -225,7 +225,7 @@ In questa attività si creerà una regola di rete che consente l'accesso in usci
 
 4. Nel pannello **Aggiungi raccolta regole di rete** creare una nuova voce nella sezione **Indirizzi IP** specificando le impostazioni seguenti e mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Nome|**AllowDNS**|
    |Protocollo|**UDP**|
