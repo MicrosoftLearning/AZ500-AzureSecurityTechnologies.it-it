@@ -25,7 +25,7 @@ In questo lab verrà completato l'esercizio seguente:
 
 ## Diagramma della protezione del database SQL di Azure
 
-![image](https://user-images.githubusercontent.com/91347931/157533836-7250fa58-a109-4882-a55b-d3fa3baf34ab.png)
+![Diagramma che mostra il flusso di processo delle attività in questo lab.](../media/securing-azure-sql-database-diagram.png)
 
 ## Istruzioni
 
@@ -64,7 +64,7 @@ In questa attività si userà un modello per distribuire l'infrastruttura del la
 
 6. Nel pannello **Distribuzione personalizzata** assicurarsi che siano configurate le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-   |Impostazione|Valore|
+   |Impostazione|valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
    |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB11**|

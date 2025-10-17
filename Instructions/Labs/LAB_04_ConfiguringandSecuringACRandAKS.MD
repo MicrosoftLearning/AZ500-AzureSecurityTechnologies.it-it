@@ -76,18 +76,24 @@ In questa attività verrà creato un gruppo di risorse per il lab e un'istanza d
     az group list --query "[?name=='AZ500LAB09']" -o table
     ```
 
-6. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per creare una nuova istanza di Registro Azure Container che abbia un nome univoco a livello globale: 
+6. Nella sessione Bash eseguire i comandi seguenti per registrare Container **Registery** nell'ambiente lab.
+
+   ```sh
+   az provider register --namespace Microsoft.Kubernetes
+   az provider register --namespace Microsoft.KubernetesConfiguration
+   az provider register --namespace Microsoft.OperationsManagement
+   az provider register --namespace Microsoft.OperationalInsights
+   az provider register --namespace Microsoft.ContainerService
+   az provider register --namespace Microsoft.ContainerRegistry
+   ```
+
+7. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per creare una nuova istanza di Registro Azure Container che abbia un nome univoco a livello globale: 
 
     ```sh
     az acr create --resource-group AZ500LAB09 --name az500$RANDOM$RANDOM --sku Basic
     ```
-    > **Nota** Registrare Registro Azure Container provider di risorse. Se si verifica un errore durante l'esecuzione `az acr create`di , è probabile che il **servizio Registro Azure Container** non sia ancora stato registrato per la sottoscrizione. Per risolvere questo problema, è possibile registrare il servizio e creare il registro in un unico comando:
-    
-    > ```sh
-    > az provider register --namespace Microsoft.ContainerRegistry
-    > ```
 
-7. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per verificare la creazione del nuovo Registro Azure Container:
+8. Nella sessione di Bash all'interno del riquadro Cloud Shell eseguire questo comando per verificare la creazione del nuovo Registro Azure Container:
 
     ```sh
     az acr list --resource-group AZ500LAB09
@@ -135,40 +141,53 @@ In questa attività verrà creato un Dockerfile, da cui verrà creata un'immagin
 
 In questa attività verrà creato un servizio Azure Kubernetes e verranno esaminate le risorse distribuite. 
 
-1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **servizi Kubernetes** e premere **INVIO**.
+1. Nella portale di Azure casella **di testo Cerca risorse, servizi e documentazione** nella parte superiore della pagina portale di Azure digitare +++Kubernetes services+++ e premere **INVIO**.
 
 2. Nel pannello **Servizi Kubernetes** fare clic su **+ Crea** e nel menu a discesa fare clic su **+ Crea un cluster Kubernetes**
 
 3. Nella scheda **Informazioni di base** del pannello **Crea un cluster Kubernetes** selezionare **Configurazione predefinita del cluster** e selezionare **Sviluppo/test ($)**. Specificare ora le impostazioni seguenti, senza modificare i valori predefiniti per le altre impostazioni:
 
+    |Impostazione|valore|
+    |----|----|
+    | Subscription | *Usare il nome della sottoscrizione di Azure in uso in questo lab* |
+    | Gruppo di risorse | **AZ500LAB09** |
+    | Configurazione predefinita del cluster | **Sviluppo/test** |
+    | Nome del cluster Kubernetes | +++MyKubernetesCluster+++ |
+    | Paese | **(Stati Uniti) Stati Uniti orientali** |
+    | Fleet Manager | **Nessuno** |
+    | Zone di disponibilità | **Nessuno** |
+    | Piano tariffario del servizio Azure Kubernetes | **Gratuito** |
+    | Abilitare il supporto a lungo termine | **Non selezionato** |
+    | Versione di Kubernetes | *Predefinito dell'utente* |
+    | aggiornamento automatico | *Mantenere il valore predefinito * |
+    | Tipo di canale di sicurezza del nodo | *Mantenere l'impostazione predefinita* |
+    | Autenticazione e autorizzazione | **Account locali con controllo degli accessi in base al ruolo di Kubernetes** |
+
+4. Fare clic su **Avanti e nella **scheda Pool** di nodi del **pannello Crea cluster** Kubernetes specificare le impostazioni seguenti (lasciare** altri valori predefiniti):
+
     |Impostazione|Valore|
     |----|----|
-    |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
-    |Gruppo di risorse|**AZ500LAB09**|
-    |Nome del cluster Kubernetes|**MyKubernetesCluster**|
-    |Paese|**(Stati Uniti) Stati Uniti orientali**|
-    |Zone di disponibilità |**Nessuno**|
-    |Metodo di scalabilità|**Manualee**|
-    |Numero di nodi|**1**|
+    | Abilitare il provisioning automatico dei nodi | **Deselezionare la casella** |
+    | Abilitare i nodi virtuali | **Deselezionare la casella** |
+    | Altri valori | *Mantenere le impostazioni predefinite* |
 
-4. Fare clic su **Avanti: Pool di nodi >** e, nella scheda **Pool di nodi** del pannello **Crea cluster Kubernetes**, specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
+5. Fare clic su **Avanti** per passare a **Rete**. 
 
-    |Impostazione|Valore|
-    |----|----|
-    |Abilitare i nodi virtuali|Casella di controllo deselezionata|
-    
-5. Fare clic su **Avanti: Accesso >**, nella scheda **Accesso** del pannello **Crea cluster Kubernetes** accettare le impostazioni predefinite e fare clic su **Avanti: Rete >**. 
+  >NOTA: si otterrà un popup che indica che è disponibile una **raccomandazione** per le dimensioni della macchina virtuale.  **Accettare la raccomandazione** di procedere.
 
 6. Nella scheda **Rete** del pannello **Crea cluster Kubernetes** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
     |Impostazione|Valore|
     |----|----|
-    |Configurazione di rete|**Sovrimpressione di Azure CNI**|
-    |Prefisso nome DNS|**Lasciare il valore predefinito**|
+    | Abilitare un cluster privato | **Non selezionato** |
+    | Impostare intervalli IP autorizzati | **Non selezionato** |
+    | Configurazione di rete | **Sovrimpressione di Azure CNI** |
+    | Prefisso nome DNS | **Lasciare il valore predefinito** |
+    | Criteri di rete | **Nessuno** |
 
     >**Nota**: il servizio Azure Kubernetes può essere configurato come cluster privato. In questo modo viene assegnato un indirizzo IP privato al server API per garantire che il traffico di rete tra il server API e i pool di nodi rimanga solo nella rete privata. Per altre informazioni, visitare la pagina [Creare un cluster privato del servizio Azure Kubernetes](https://docs.microsoft.com/en-us/azure/aks/private-clusters).
 
-7. Fare clic su **Avanti: Integrazioni >**, nella scheda **Integrazioni** del pannello **Crea cluster Kubernetes** impostare **Monitoraggio contenitori** su **Disabilitato**. 
+7. Fare clic su **Avanti e nella **scheda Integrazioni** della **pagina Crea cluster** Kubernetes lasciare **tutti i valori predefiniti****. 
 
     >**Nota**: negli scenari di produzione è necessario abilitare il monitoraggio. Il monitoraggio è disabilitato in questo caso perché non è trattato nel lab. 
 

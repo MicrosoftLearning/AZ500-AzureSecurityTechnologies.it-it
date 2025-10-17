@@ -30,7 +30,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 ## Diagramma dell'architettura del controllo degli accessi in base al ruolo
 
-![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/506cde9c-5242-4438-a793-f88a5434a2b2)
+![Diagramma che mostra il layout di sistema per questo lab e il flusso del processo dei lab](../media/role-based-access-control-architecture-diagram.png)
 
 ## Istruzioni
 
@@ -68,7 +68,7 @@ In questa attività si creerà un account utente per Joseph Price.
 
 7. Cliccare su **Crea**.
 
-8. Aggiornare il pannello **Utenti \| Tutti gli utenti** per verificare che il nuovo utente sia stato creato nel tenant di Microsoft Entra.
+8. Aggiornare gli **utenti | Pannello Tutti gli utenti** per verificare che il nuovo utente sia stato creato nel tenant di Microsoft Entra.
 
 #### Attività 2: Usare il portale di Azure per creare un gruppo Senior Admins e aggiungere l'account utente di Joseph Price al gruppo.
 

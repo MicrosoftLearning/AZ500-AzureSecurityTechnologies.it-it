@@ -25,7 +25,7 @@ In questo lab verrà completato l'esercizio seguente:
 
 ## Diagramma di endpoint servizio e archiviazione di sicurezza
 
-![image](https://user-images.githubusercontent.com/91347931/157534883-29664a05-85d1-4c70-99a7-f16d2360755d.png)
+![Diagramma che mostra il flusso di processo delle attività nel lab.](../media/service-endpoints-and-securing-storage-diagram.png)
 
 ## Istruzioni
 
@@ -58,7 +58,7 @@ In questa attività verrà creata una rete virtuale.
 
 4. Nella scheda **Informazioni di base** del pannello **Crea rete virtuale** specificare le impostazioni seguenti lasciando i valori predefiniti per le altre, quindi fare clic su **Avanti: Indirizzi IP**:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB12**|
@@ -110,7 +110,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
 
 3. Nella scheda **Informazioni di base** del pannello **Crea gruppo di sicurezza di rete** specificare le impostazioni seguenti: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB12**|
@@ -129,7 +129,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
 
 8. Nel pannello **Aggiungi regola di sicurezza in uscita** specificare le impostazioni seguenti per consentire in modo esplicito il traffico in uscita verso Archiviazione di Azure (usare le impostazioni predefinite per tutti gli altri valori): 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Origine|**Tag del servizio**|
     |Tag del servizio di origine|**VirtualNetwork**|
@@ -148,7 +148,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
 
 11. Nel pannello **Aggiungi regola di sicurezza in uscita** specificare le impostazioni seguenti per negare in modo esplicito il traffico in uscita verso Internet (usare le impostazioni predefinite per tutti gli altri valori): 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Origine|**Tag del servizio**|
     |Tag del servizio di origine|**VirtualNetwork**|
@@ -169,7 +169,7 @@ In questa attività verrà creato un gruppo di sicurezza di rete con due regole 
 
 13. Nel pannello **Aggiungi regola di sicurezza in ingresso** specificare le impostazioni seguenti, lasciando i valori predefiniti per le altre voci: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Origine|**Any**|
     |Intervalli di porte di origine|**\***|
@@ -202,7 +202,7 @@ In questa attività si creerà un gruppo di sicurezza di rete con una regola di 
 
 3. Nella scheda **Informazioni di base** del pannello **Crea gruppo di sicurezza di rete** specificare le impostazioni seguenti: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB12**|
@@ -219,7 +219,7 @@ In questa attività si creerà un gruppo di sicurezza di rete con una regola di 
 
 7. Nel pannello **Aggiungi regola di sicurezza in ingresso** specificare le impostazioni seguenti, lasciando i valori predefiniti per le altre voci: 
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Origine|**Any**|
     |Intervalli di porte di origine|**\***|
@@ -252,7 +252,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 3. Nella scheda **Informazioni di base** del pannello **Crea account di archiviazione** specificare le impostazioni seguenti (lasciare i valori predefiniti per le altre impostazioni):
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB12**|
@@ -277,7 +277,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 10. Nel pannello **Nuova condivisione file** specificare le impostazioni seguenti:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Nome|**my-file-share**|
 
@@ -301,7 +301,7 @@ In questa attività verrà creato un account di archiviazione con una condivisio
 
 18. Nel pannello **Aggiungi reti** specificare le impostazioni seguenti:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Reti virtuali|**myVirtualNetwork**|
@@ -325,7 +325,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
 3. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
     |Gruppo di risorse|**AZ500LAB12**|
@@ -360,7 +360,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
 9. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
     |Gruppo di risorse|**AZ500LAB12**|

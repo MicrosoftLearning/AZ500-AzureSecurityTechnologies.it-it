@@ -27,7 +27,7 @@ In questo lab verrà completato l'esercizio seguente:
 
 ## Diagramma di Microsoft Sentinel
 
-![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/509aa70d-de11-4470-a289-877fbfecbc00)
+![Diagramma del flusso di processo delle attività per questo lab.](../media/microsoft-sentinel-diagram.png)
 
 ## Istruzioni
 
@@ -146,7 +146,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
 5. Nel pannello **Distribuzione personalizzata** assicurarsi che siano configurate le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
@@ -192,7 +192,7 @@ In questa attività verrà creato un playbook. Un playbook della sicurezza è un
 
 4. Nella scheda **Generale** del pannello **Procedura guidata per la regola di analisi - Crea una nuova regola pianificata** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
-    |Impostazione|Valore|
+    |Impostazione|valore|
     |---|---|
     |Nome|**Playbook Demo**|
     |Tattiche|**Accesso iniziale**|
