@@ -66,7 +66,7 @@ In questo esercizio si completeranno le seguenti attività:
 5. Nella sessione di PowerShell all'interno del pannello Cloud Shell eseguire il comando seguente per creare una nuova macchina virtuale di Azure. 
 
     ```powershell
-    New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -PublicIpSku Standard -OpenPorts 80,3389 -Size Standard_D2s_v3 
+    New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -PublicIpSku Standard -OpenPorts 80,3389 -Size Standard_D2_v4 
     ```
     
 6.  Verranno chieste le seguenti credenziali.
@@ -106,7 +106,7 @@ In questa attività si creerà un'area di lavoro Log Analytics.
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
-    |Nome|Qualunque nome univoco a livello globale, valido|
+    |Nome|**lgawIgnite**|
     |Area geografica|**Stati Uniti orientali**|
 
 4. Selezionare **Rivedi e crea**.
@@ -133,7 +133,8 @@ In questa attività si creerà un account di archiviazione.
     |---|---|
     |Subscription|Nome della sottoscrizione di Azure usata in questo lab|
     |Gruppo di risorse|**AZ500LAB131415**|
-    **Dettagli** istanza |Nome dell'account di archiviazione|qualsiasi nome univoco globale compreso tra 3 e 24 in lunghezza costituito da lettere e cifre|  |Area|**(Stati Uniti) EastUS**|
+    **Dettagli** istanza |Nome dell'account di archiviazione |**strgactignite**|
+    |Area|**(Stati Uniti) EastUS**|
     |Servizio primario |**Archiviazione BLOB di Azure o Azure Data Lake Storage Gen 2**|
     |Prestazioni |**Standard (account per utilizzo generico v2)**|
     |Ridondanza |**Archiviazione con ridondanza locale**|
