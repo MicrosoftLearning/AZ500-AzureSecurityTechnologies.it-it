@@ -36,7 +36,7 @@ In questo lab verranno completati gli esercizi seguenti:
 
 ### Tempo stimato: 20 minuti
 
-> Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
+> Per tutte le risorse di questo lab, viene usata l'area **Stati Uniti orientali**. Verificare con l'insegnante che questa sia l'area da usare per la classe. 
 
 In questo esercizio si completeranno le seguenti attività:
 
@@ -200,7 +200,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 1. Nella casella di testo Cerca risorse, servizi e documenti** nella parte superiore della pagina portale di Azure portale di Azure **digitare +++Macchine virtuali+++ e premere **INVIO**.
 
-2. Nel pannello **Macchine virtuali** fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale di Azure**.
+2. Nel pannello **Macchine** virtuali fare clic su **+ Crea** e, nell'elenco a discesa, fare clic su **Macchina** virtuale.
 
 3. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -224,7 +224,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 5. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >**.
 
-6. Nella scheda **Rete** del pannello **Crea macchina virtuale** selezionare la rete **myVirtualNetwork** creata in precedenza.
+6. Nella **scheda Rete** del **pannello Crea una macchina** virtuale selezionare la subnet **myVirtualNetwork** creata in precedenza e la **subnet predefinita (10.0.0.0/24).**
 
 7. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
@@ -240,7 +240,7 @@ In questa attività si creerà una macchina virtuale da usare come server Web.
 
 In questa attività si creerà una macchina virtuale da usare come server di gestione.
 
-1. Nel portale di Azure passare al pannello **Macchine virtuali**, fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale di Azure**.
+1. Nel portale di Azure tornare al **pannello Macchine** virtuali, fare clic su **+ Crea** e, nell'elenco a discesa, fare clic su **Macchina** virtuale.
 
 2. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -263,7 +263,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
 4. Fare clic su **Avanti: Dischi >** e nella scheda **Dischi** del pannello **Crea macchina virtuale** impostare **Tipo di disco del sistema operativo** su **HDD Standard**, quindi fare clic su **Avanti: Rete >**.
 
-5. Nella scheda **Rete** del pannello **Crea macchina virtuale** selezionare la rete **myVirtualNetwork** creata in precedenza.
+5. Nella **scheda Rete** del **pannello Crea una macchina** virtuale selezionare la subnet **myVirtualNetwork** creata in precedenza e la **subnet predefinita (10.0.0.0/24).**
 
 6. In **Gruppo di sicurezza di rete della scheda di interfaccia di rete** selezionare **Nessuno**.
 
@@ -277,7 +277,7 @@ In questa attività si creerà una macchina virtuale da usare come server di ges
 
     >**Nota**: attendere che venga effettuato il provisioning di entrambe le macchine virtuali prima di continuare. 
 
-#### Attività 3: Associare l'interfaccia di rete di ogni macchina virtuale al gruppo di sicurezza delle applicazioni.
+#### Attività 3: Associare l'interfaccia di rete di ogni macchina virtuale al relativo gruppo di sicurezza delle applicazioni.
 
 In questa attività l'interfaccia di rete di ogni macchina virtuale verrà associata al gruppo di sicurezza delle applicazioni corrispondente. L'interfaccia della macchina virtuale myVMWeb verrà associata al gruppo di sicurezza delle applicazioni myAsgWebServers. L'interfaccia della macchina virtuale myVMWeb verrà associata al gruppo di sicurezza delle applicazioni myAsgMgmtServers. 
 
@@ -338,7 +338,7 @@ In questa attività si testeranno i filtri del traffico di rete. Si dovrà esser
 
 > Ricordarsi di rimuovere tutte le risorse di Azure appena create che non vengono più usate. La rimozione delle risorse inutilizzate evita l'addebito di costi imprevisti. 
 
-1. Aprire Cloud Shell facendo clic sulla prima icona in alto a destra nel portale di Azure. Se richiesto, selezionare **PowerShell** e **Crea risorsa di archiviazione**.
+1. Aprire Cloud Shell facendo clic sulla prima icona in alto a destra nel portale di Azure. Se richiesto, selezionare **PowerShell** e **Nessun account di archiviazione necessario**, selezionare il nome della sottoscrizione e quindi selezionare **Applica**.
 
 2. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **PowerShell**.
 
