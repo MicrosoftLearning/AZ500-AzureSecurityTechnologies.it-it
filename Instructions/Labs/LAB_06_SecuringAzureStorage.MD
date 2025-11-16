@@ -96,7 +96,7 @@ In questa attività verrà creata un'altra subnet in cui verrà abilitato un end
     |Intervallo di indirizzi subnet|**10.0.1.0/24**|
     |Endpoint di servizio|**Lasciare il valore predefinito Nessuno**|
 
-6. Nel pannello **Aggiungi subnet** fare clic su **Salva** per aggiungere la nuova subnet.
+6. Nel pannello **Aggiungi subnet** fare clic su **Aggiungi**.
 
     >**Nota**: la rete virtuale ha ora due subnet, Pubblica e Privata. 
     
@@ -321,7 +321,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Macchine virtuali** e premere **INVIO**.
 
-2. Nel pannello **Macchine virtuali** fare clic su **+ Crea** e nell'elenco a discesa fare clic su **+ Macchina virtuale di Azure**.
+2. Nel pannello **Macchine** virtuali fare clic su **+ Crea** e, nell'elenco a discesa, fare clic su **Macchina virtuale**
 
 3. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 
@@ -356,7 +356,7 @@ In questa attività verranno create due macchine virtuali, una nella subnet Priv
 
     >**Nota**: la seconda macchina virtuale verrà connessa alla subnet Pubblica.
 
-8. Nel pannello **Macchine virtuali** fare clic su **+ Aggiungi** e nell'elenco a discesa fare clic su **+ Macchina virtuale di Azure**.
+8. Nel pannello **Macchine** virtuali fare clic su **+ Aggiungi** e, nell'elenco a discesa, fare clic su **Macchina** virtuale.
 
 9. Nella scheda **Informazioni di base** del pannello **Crea macchina virtuale** specificare le impostazioni seguenti, mantenendo i valori predefiniti per le altre:
 

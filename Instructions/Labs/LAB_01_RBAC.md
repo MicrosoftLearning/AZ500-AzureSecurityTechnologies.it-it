@@ -109,9 +109,9 @@ In questa attività si creerà un account utente per Isabel Garcia usando PowerS
 
 1. **Aprire Cloud Shell facendo clic sull'icona **** di Cloud Shell** nell'angolo superiore destro del portale di Azure.
 
-2. **Se richiesto, configurare Cloud Shell creando un account** di archiviazione. Questa operazione è necessaria **solo la prima volta** che si avvia Cloud Shell.
+2. Se richiesto, selezionare **Nessun account di archiviazione necessario**, selezionare il nome della sottoscrizione e quindi selezionare **Applica**. Questa operazione è necessaria *solo la prima volta* che si avvia Cloud Shell.
 
-3. Nel riquadro **Cloud Shell verificare che PowerShell sia selezionato** dal menu a discesa nell'angolo superiore sinistro.
+3. Nel riquadro **Cloud Shell verificare che PowerShell sia selezionato** dal menu a discesa nell'angolo superiore sinistro. (Nota: nella nuova Cloud Shell, questo dirà: **-->Switch a Bash**)
 
    >**Nota**: per incollare il testo copiato in Cloud Shell, fare clic con il pulsante destro del mouse nella finestra del riquadro e scegliere **Incolla**. In alternativa, è possibile usare la combinazione di tasti **MAIUSC+INS**.
 
@@ -198,7 +198,7 @@ In questo esercizio si completeranno le seguenti attività:
 
 In questa attività si creerà un account utente per Dylan Williams.
 
-1. Nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell selezionare **Bash** e, quando richiesto, fare clic su **Conferma**. 
+1. Nel menu a discesa nell'angolo superiore sinistro del riquadro Cloud Shell selezionare **Bash (o: **Passa a Bash****) e, quando richiesto, fare clic su **Conferma**. 
 
 2. Nella sessione Bash all'interno del riquadro Cloud Shell eseguire il comando seguente per identificare il nome del tenant di Microsoft Entra:
 

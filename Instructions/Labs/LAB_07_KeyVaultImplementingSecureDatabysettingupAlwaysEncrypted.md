@@ -69,7 +69,7 @@ In questa attività si distribuirà una macchina virtuale di Azure e come parte 
    |Impostazione|valore|
    |---|---|
    |Subscription|Nome della sottoscrizione di Azure che verrà usata nel lab|
-   |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500LAB10**|
+   |Gruppo di risorse|Fare clic su **Crea nuovo** e digitare il nome **AZ500Lab10-lod@lab.LabInstance.Id**|
    |Ufficio|**Stati Uniti orientali**|
    |Username|**Student**|
    |Password|**Usare la password personale creata in Lab 02 > Esercizio 2 > Attività 1 > Passaggio 3.**|
@@ -98,7 +98,7 @@ In questa attività si distribuirà una macchina virtuale di Azure e come parte 
 
 ### Esercizio 2: Configurare la risorsa Key Vault con una chiave e un segreto
 
->**Nota**: per tutte le risorse di questo lab viene usata l'area **Stati Uniti orientali**. Verificare con il docente che questa sia l'area da usare per il corso. 
+>**Nota**: per tutte le risorse di questo lab viene usata l'area **Stati Uniti orientali**. Verificare con l'insegnante che questa sia l'area da usare per la classe. 
 
 In questo esercizio si completeranno le seguenti attività:
 
@@ -114,14 +114,14 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
 
 2. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **PowerShell**.
 
-3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per creare un'istanza di Azure Key Vault nel gruppo di risorse **AZ500LAB10**. Se si è scelto un altro nome per il gruppo di risorse di questo lab nell'Attività 1, usare tale nome anche per questa attività. Il nome dell'istanza di Key Vault deve essere univoco. Ricordare il nome scelto. Sarà necessario in tutto il lab.  
+3. Nella sessione di PowerShell nel riquadro Cloud Shell eseguire quanto segue per creare un insieme di credenziali delle chiavi di Azure nel gruppo **AZ500Lab10-lod@lab.LabInstance.Id**di risorse . Se è stato scelto un altro nome per il gruppo di risorse del lab all'esterno dell'attività 1, usare anche tale nome per questa attività. Il nome dell'istanza di Key Vault deve essere univoco. Ricordare il nome scelto. Sarà necessario in tutto il lab.  
 
     ```powershell
     $kvName = 'az500kv' + $(Get-Random)
 
-    $location = (Get-AzResourceGroup -ResourceGroupName 'AZ500LAB10').Location
+    $location = (Get-AzResourceGroup -ResourceGroupName 'AZ500Lab10-lod@lab.LabInstance.Id').Location
 
-    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500LAB10' -Location $location -DisableRbacAuthorization
+    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500Lab10-lod@lab.LabInstance.Id' -Location $location -DisableRbacAuthorization
     ```
 
     >**Nota**: l'output dell'ultimo comando visualizza il nome e l'URL dell'insieme di credenziali. L'URI dell'insieme di credenziali è nel formato `https://<vault_name>.vault.azure.net/`
@@ -130,7 +130,7 @@ In questa attività verrà creata una risorsa Azure Key Vault. Verranno anche co
 
 5. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Gruppi di risorse** e premere **INVIO**.
 
-6. Nel pannello **Gruppi di risorse** fare clic sulla voce **AZ500LAB10** nell'elenco (o su un altro nome scelto in precedenza per il gruppo di risorse).
+6. **Nel pannello Gruppi** di risorse, nell'elenco del gruppo di risorse, fare clic sulla **AZ500Lab10-lod@lab.LabInstance.Id** voce (o altro nome scelto in precedenza per il gruppo di risorse).
 
 7. Nel pannello Gruppo di risorse fare clic sulla voce che rappresenta l'istanza di Key Vault appena creata. 
 
@@ -162,7 +162,7 @@ In questa attività si aggiungerà una chiave all'istanza di Key Vault e si visu
 3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per aggiungere una chiave protetta tramite software all'istanza di Key Vault: 
 
     ```powershell
-    $kv = Get-AzKeyVault -ResourceGroupName 'AZ500LAB10'
+    $kv = Get-AzKeyVault -ResourceGroupName 'AZ500Lab10-lod@lab.LabInstance.Id'
 
     $key = Add-AZKeyVaultKey -VaultName $kv.VaultName -Name 'MyLabKey' -Destination 'Software'
     ```
@@ -296,7 +296,7 @@ In questa attività si concederanno all'app appena registrata le autorizzazioni 
     ```
 4. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per creare una variabile in cui archiviare il nome di Key Vault.
     ```
-    $kvName = (Get-AzKeyVault -ResourceGroupName 'AZ500LAB10').VaultName
+    $kvName = (Get-AzKeyVault -ResourceGroupName 'AZ500Lab10-lod@lab.LabInstance.Id').VaultName
 
     $kvName
     ```
@@ -304,7 +304,7 @@ In questa attività si concederanno all'app appena registrata le autorizzazioni 
 5. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire quanto segue per concedere le autorizzazioni per Key Vault all'applicazione registrata nell'attività precedente:
 
     ```powershell
-    Set-AZKeyVaultAccessPolicy -VaultName $kvName -ResourceGroupName AZ500LAB10 -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
+    Set-AZKeyVaultAccessPolicy -VaultName $kvName -ResourceGroupName AZ500Lab10-lod@lab.LabInstance.Id -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
     ```
 
 6. Chiudere il riquadro Cloud Shell. 
@@ -318,7 +318,7 @@ Con la distribuzione del modello di ARM nell'Esercizio 1 è stato effettuato il 
 
 2. Nell'elenco di database SQL fare clic sulla voce **medical(<randomsqlservername>)**.
 
-    >**Nota**: se non è possibile trovare il database, è probabile che la distribuzione avviata nell'Esercizio 1 non sia stata ancora completata. Per verificarlo, passare al gruppo di risorse di Azure "AZ500LAB10" (o il nome scelto) e selezionare **Distribuzioni** nel riquadro Impostazioni.  
+    >**Nota**: se non è possibile trovare il database, è probabile che la distribuzione avviata nell'Esercizio 1 non sia stata ancora completata. È possibile convalidarlo passando al gruppo di risorse di Azure "AZ500Lab10-lod@lab.LabInstance.Id" (o al nome scelto) e selezionando **Distribuzioni** nel riquadro Impostazioni.  
 
 3. Nella sezione **Impostazioni** del pannello del database SQL fare clic su **Stringhe di connessione**. 
 
@@ -332,7 +332,7 @@ Con la distribuzione del modello di ARM nell'Esercizio 1 è stato effettuato il 
 
 In questa attività si accede alla macchina virtuale di Azure di cui è stata avviata la distribuzione nell'Esercizio 1. Questa macchina virtuale di Azure ospita Visual Studio 2019 e SQL Server Management Studio 19.
 
-    >**Note**: Before you proceed with this task, ensure that the deployment you initiated in the first exercise has completed successfully. You can validate this by navigating to the blade of the Azure resource group "Az500Lab10" (or other name you chose) and selecting **Deployments** from the Settings pane.  
+    >**Note**: Before you proceed with this task, ensure that the deployment you initiated in the first exercise has completed successfully. You can validate this by navigating to the blade of the Azure resource group "AZ500Lab10-lod@lab.LabInstance.Id" (or other name you chose) and selecting **Deployments** from the Settings pane.  
 
 1. Nella casella di testo **Cerca risorse, servizi e documentazione** nella parte superiore della pagina del portale di Azure digitare **Macchine virtuali** e premere **INVIO**.
 
@@ -415,7 +415,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
 15. Nella pagina **Selezione colonna** selezionare le colonne **SSN** e **Birthdate**, impostare il valore di **Tipo di crittografia** della colonna **SSN** su **Deterministico** e quello della colonna **Birthdate** su **Casuale**, quindi fare clic su **Avanti**.
 
-    >**Nota**: se durante l'esecuzione della crittografia viene generato un errore come **È stata generata un'eccezione dalla destinazione di una chiamata** correlato a **Rotary(Microsoft.SQLServer.Management.ServiceManagement)**, assicurarsi che i valori di **Autorizzazioni delle chiavi** per **Operazioni criteri di rotazione** siano **deselezionati**. In caso contrario, nel portale di Azure passare a **Key Vault** >> **Criteri di accesso** >> **Autorizzazioni delle chiavi** >> deselezionare tutti i valori in **Operazioni criteri di rotazione** >> in **Operazioni relative alle chiavi con privilegi** >> deselezionare **Release**.
+    >**Nota**: durante l'esecuzione della crittografia se viene generato un errore simile **a Exception è stato generato dalla destinazione di una chiamata** correlata a **Rotary(Microsoft.SQLServer.Management.ServiceManagement),** assicurarsi che i **valori delle** operazioni** dei criteri di rotazione dell'autorizzazione **della chiave siano **deselezionati**, se non nel portale di Azure passare ai criteri di accesso >> **** di **Key Vault** >> **Autorizzazioni** chiave >> Deselezionare tutti i valori in **Operazioni** criteri di rotazione >> In **Operazioni** chiave con privilegi >> Deselezionare **Rilascio**.
 
 16. Nella pagina **Configurazione della chiave master** selezionare **Azure Key Vault**, fare clic su **Accedi**, quando richiesto eseguire l'autenticazione usando lo stesso account utente usato in precedenza per effettuare il provisioning dell'istanza di Azure Key Vault in questo lab, assicurarsi che l'opzione Key Vault venga visualizzata nell'elenco a discesa **Selezionare un insieme di credenziali delle chiavi di Azure**, quindi fare clic su **Avanti**.
 
@@ -433,7 +433,7 @@ In questa attività ci si connetterà al database SQL con SQL Server Management 
 
 In questo esercizio si completeranno le seguenti attività:
 
-- Attività 1: Installare Visutal Studio 2022
+- Attività 1: Installare Visual Studio 2022
 - Attività 2: Eseguire un'applicazione guidata dai dati per illustrare l'uso di Azure Key Vault per crittografare il database SQL di Azure
 
 #### Attività 1: Installare Visual Studio 2022
@@ -457,13 +457,15 @@ In questo esercizio si completeranno le seguenti attività:
 9. Selezionare Continua per avviare l'installazione.
   - L'installazione richiede circa 10 minuti
 
+10. Scegliere **Sviluppo di applicazioni desktop** .NET nella schermata Carichi di lavoro.
+
 #### Attività 2: Eseguire un'applicazione guidata dai dati per illustrare l'uso di Azure Key Vault per crittografare il database SQL di Azure
 
 Si creerà un'applicazione console usando Visual Studio per caricare i dati nelle colonne crittografate e quindi accedervi in modo sicuro usando una stringa di connessione che accede alla chiave in Key Vault.
 
 1. Nella sessione RDP per **az500-10-vm1** avviare **Visual Studio 2019** dal **menu Start**.
 
-2. Passare alla finestra che visualizza il messaggio di benvenuto di Visual Studio 2019, fare clic sul pulsante **Accedi** e, quando richiesto, specificare le credenziali usate per eseguire l'autenticazione alla sottoscrizione di Azure in uso in questo lab.
+2. Passare alla finestra che visualizza il messaggio di benvenuto di Visual Studio 2019, fare clic sul **pulsante Accedi** e, quando richiesto, specificare le credenziali usate per l'autenticazione alla sottoscrizione di Azure in uso in questo lab.
 
 3. Nella pagina **Attività iniziali** fare clic su **Crea un nuovo progetto**. 
 
@@ -495,7 +497,7 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
 
 10. Tornare alla sessione RDP e nella console di Visual Studio, nella finestra **Esplora soluzioni** fare clic su **Program.cs** e sostituirne il contenuto con il codice copiato negli Appunti.
 
-11. Nella finestra di Visual Studio, nella riga 15 del file **Program.cs** sostituire il segnaposto `<connection string noted earlier>` con la stringa di connessione **ADO.NET** del database SQL di Azure registrata in precedenza nel lab. Nella stringa di connessione sostituire il segnaposto `{your_password}` con la password specificata nella distribuzione nell'Esercizio 1. Se la stringa è stata salvata nel computer del lab, potrebbe essere necessario lasciare la sessione RDP per copiare la stringa ADO, quindi tornare alla macchina virtuale di Azure per incollarla.
+11. Nella finestra di Visual Studio, nella riga 15 del file **Program.cs** sostituire il segnaposto `<connection string noted earlier>` con la stringa di connessione **ADO.NET** del database SQL di Azure registrata in precedenza nel lab. Nella stringa di connessione sostituire il `{your_password}` segnaposto con la password specificata nella distribuzione nell'esercizio 1. Se la stringa è stata salvata nel computer del lab, potrebbe essere necessario lasciare la sessione RDP per copiare la stringa ADO, quindi tornare alla macchina virtuale di Azure per incollarla.
 
 12. Nella finestra di Visual Studio, nella riga 16 del file **Program.cs** sostituire il segnaposto `<client id noted earlier>` con il valore di **ID applicazione (client)** dell'app registrata annotato in precedenza nel lab. 
 
@@ -536,7 +538,7 @@ Si creerà un'applicazione console usando Visual Studio per caricare i dati nell
 3. Nella sessione di PowerShell all'interno del riquadro Cloud Shell eseguire il comando seguente per rimuovere il gruppo di risorse creato in questo lab:
   
     ```powershell
-    Remove-AzResourceGroup -Name "AZ500LAB10" -Force -AsJob
+    Remove-AzResourceGroup -Name "AZ500Lab10-lod@lab.LabInstance.Id" -Force -AsJob
     ```
 
 4.  Chiudere il riquadro **Cloud Shell**. 
